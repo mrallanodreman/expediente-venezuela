@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-17T03:20:49.922615+00:00",
-  "count": 20,
+  "updated_at": "2026-07-17T03:28:02.868942+00:00",
+  "count": 24,
   "categories": {
     "corrupcion": 3,
     "abuso": 3,
@@ -9,7 +9,8 @@
     "censura": 3,
     "represion": 2,
     "persecucion": 2,
-    "extorsion": 1
+    "extorsion": 1,
+    "general": 4
   },
   "denuncias": [
     {
@@ -139,6 +140,84 @@
           "url": "https://x.com/AndromedaOffic1/status/2077862936320921663"
         }
       ]
+    },
+    {
+      "expediente_id": "EV-2026-0025",
+      "username": "glagaresc",
+      "name": "El-lagar-de-buenvino",
+      "text": "Todo bien con esta denuncia, lo único que no lo está es esa narrativa de que todo lo que hizo Alex Saab en Venezuela fue corrupción, narrativa impulsada por los norteamericanos para perseguir a un gobierno opositor y a un \"contratista Privilegiado\" de ese gobierno.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0025.mp4",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T22:25:14.000Z",
+      "url": "https://x.com/glagaresc/status/2077882277791449270",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0023",
+      "username": "Ministerio_TIC",
+      "name": "Ministerio TIC",
+      "text": "𝐏𝐫𝐨𝐭𝐞𝐠𝐞𝐫 𝐚 𝐥𝐚 𝐧𝐢𝐧̃𝐞𝐳 𝐧𝐨 𝐭𝐢𝐞𝐧𝐞 𝐟𝐫𝐨𝐧𝐭𝐞𝐫𝐚𝐬.\n\nLas emergencias también aumentan los riesgos en los entornos digitales. Tras el sismo ocurrido en Venezuela, es fundamental reforzar la protección de niñas, niños y adolescentes frente a amenazas como la",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0023.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2059667403005444096/RKNy_48o_normal.jpg"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T20:03:59.000Z",
+      "url": "https://x.com/Ministerio_TIC/status/2077846729412714933",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0019",
+      "username": "rabmeirsoto",
+      "name": "Meir Calev Soto",
+      "text": "Si es cierto que Estados Unidos no solo invertirá entre 2.500 y 3.000 millones de dólares en la reconstrucción de Venezuela, sino que además administrará el país por un tiempo, entonces estamos ante algo mucho más profundo que una simple ayuda económica.\n\nEso significaría una",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0019.mp4",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T14:26:16.000Z",
+      "url": "https://x.com/rabmeirsoto/status/2077761741845385257",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0020",
+      "username": "sergiohdzguerra",
+      "name": "Sergio Hernandez",
+      "text": "TODOS los malditos polichoros son MALANDROS... aquí NADIE que sea honesto, se mete a policía... en Venezuela, para ser policía, tienes que ser MALANDRO, SADICO, COBARDE Y JALABOLAS DE ENCHUFADOS...TIENES QUE ESTAR EMBARRADO DE MIERDA para convivir en esa LETRINA de corrupción.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0020.mp4",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T14:21:48.000Z",
+      "url": "https://x.com/sergiohdzguerra/status/2077760617365045499",
+      "source_count": 1,
+      "sources": []
     },
     {
       "expediente_id": "EV-2026-0041",

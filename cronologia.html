@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronología del Expediente — Expediente Venezuela</title>
+<meta name="description" content="Línea de tiempo completa de hechos documentados en la plataforma Expediente Venezuela. Cronología narrativa de corrupción, abuso de poder y derechos en Venezuela.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/cronologia.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;
+  --bg-card:#111111;
+  --bg-elevated:#181818;
+  --text:#a0a0a0;
+  --text-bright:#e8e8e8;
+  --text-dim:#666;
+  --beige:#c4b898;
+  --yellow:#c9a227;
+  --red:#8b2500;
+  --mono:'Courier Prime',monospace;
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --radius:2px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--beige);text-decoration:none}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,184,152,.06);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.site-logo{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige)}
+.site-logo span{color:var(--yellow)}
+.site-nav{display:flex;gap:1.5rem;align-items:center}
+.site-nav a{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);transition:color .2s}
+.site-nav a:hover,.site-nav a.active{color:var(--beige)}
+
+/* Hero */
+.ch-hero{padding:4rem 2rem 2rem;border-bottom:1px solid rgba(196,184,152,.06)}
+.ch-hero-inner{max-width:1000px;margin:0 auto}
+.ch-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
+.ch-title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;letter-spacing:-.01em;line-height:1.1;color:var(--text-bright);margin-bottom:.75rem}
+.ch-subtitle{font-size:1rem;color:var(--text-dim);line-height:1.7;max-width:600px}
+.ch-stats{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+.ch-stat{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--text-dim)}
+.ch-stat strong{color:var(--yellow);font-size:1.1rem;display:block;margin-bottom:.15rem}
+
+/* Controls */
+.ch-controls{max-width:1000px;margin:2rem auto;padding:0 2rem}
+.ch-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.ch-filter{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .7rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
+.ch-filter:hover{border-color:var(--beige);color:var(--text-bright)}
+.ch-filter.active{background:var(--yellow);color:var(--bg);border-color:var(--yellow)}
+.ch-search-row{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.ch-search{flex:1;min-width:200px;font-family:var(--mono);font-size:.7rem;padding:.5rem .75rem;background:var(--bg-card);border:1px solid rgba(196,184,152,.1);color:var(--text-bright);outline:none;transition:border-color .2s}
+.ch-search:focus{border-color:var(--yellow)}
+.ch-search::placeholder{color:var(--text-dim)}
+.ch-jump{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;padding:.4rem .6rem;background:var(--bg-card);border:1px solid rgba(196,184,152,.1);color:var(--text-dim);cursor:pointer}
+.ch-jump:hover{border-color:var(--beige);color:var(--text-bright)}
+.ch-group-toggle{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;padding:.4rem .6rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
+.ch-group-toggle.active{background:var(--bg-elevated);color:var(--beige);border-color:var(--beige)}
+.ch-result-count{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);letter-spacing:.08em;margin-top:.75rem}
+
+/* Year Jump Bar */
+.ch-yearbar{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.75rem}
+.ch-yearbtn{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;padding:.3rem .6rem;border:1px solid rgba(196,184,152,.08);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
+.ch-yearbtn:hover{border-color:var(--beige);color:var(--text-bright)}
+.ch-yearbtn.active{background:var(--yellow);color:var(--bg);border-color:var(--yellow)}
+
+/* Timeline Vertical */
+.ch-timeline{max-width:1000px;margin:0 auto;padding:2rem 2rem 4rem 5rem;position:relative}
+.ch-timeline::before{content:'';position:absolute;left:2.5rem;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(196,184,152,.12) 5rem,rgba(196,184,152,.12) calc(100% - 5rem),transparent)}
+
+/* Year Group */
+.ch-year-group{margin-bottom:2rem}
+.ch-year-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;position:relative;padding-left:1rem}
+.ch-year-label::before{content:'';position:absolute;left:-2.55rem;top:50%;width:10px;height:10px;border:2px solid var(--yellow);background:var(--bg);border-radius:50%;transform:translateY(-50%)}
+
+/* Event Block */
+.ch-event{position:relative;margin-bottom:1rem;opacity:0;transform:translateY(15px);transition:opacity .4s,transform .4s}
+.ch-event.visible{opacity:1;transform:none}
+.ch-event::before{content:'';position:absolute;left:-2.5rem;top:1.5rem;width:8px;height:8px;border:2px solid var(--beige);background:var(--bg);border-radius:50%;z-index:2;transition:all .3s}
+.ch-event.critical::before{border-color:var(--red);background:var(--red);box-shadow:0 0 10px rgba(139,37,0,.4)}
+.ch-event.highlight::before{border-color:var(--yellow);box-shadow:0 0 8px rgba(201,162,39,.3)}
+.ch-event-inner{background:var(--bg-card);border:1px solid rgba(196,184,152,.06);padding:1.25rem 1.5rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.ch-event-inner::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--beige);opacity:.3;transition:opacity .3s}
+.ch-event.critical .ch-event-inner::before{background:var(--red);opacity:1}
+.ch-event.highlight .ch-event-inner::before{background:var(--yellow);opacity:1}
+.ch-event-inner:hover{border-color:rgba(196,184,152,.15);background:var(--bg-elevated)}
+.ch-event-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem}
+.ch-event-date{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--yellow);white-space:nowrap}
+.ch-event-badges{display:flex;gap:.4rem;flex-wrap:wrap}
+.ch-event-badge{font-family:var(--mono);font-size:.45rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid}
+.ch-event-badge.verificado{color:#4a9;border-color:#4a930}
+.ch-event-badge.recibido{color:var(--beige);border-color:rgba(196,184,152,.3)}
+.ch-event-badge.pendiente{color:#c9a227;border-color:rgba(201,162,39,.3)}
+.ch-event-badge.critical{color:var(--red);border-color:var(--red)}
+.ch-event-badge.high{color:var(--yellow);border-color:var(--yellow)}
+.ch-event-cat{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
+.ch-event-cat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ch-event-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--text-bright);line-height:1.35;margin-bottom:.3rem}
+.ch-event-location{font-family:var(--mono);font-size:.5rem;color:var(--text-dim);letter-spacing:.08em;margin-bottom:.4rem}
+.ch-event-summary{font-size:.85rem;color:var(--text);line-height:1.65;margin-bottom:.5rem}
+.ch-event-narrative{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.4rem}
+.ch-event-exp{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;color:var(--yellow);margin-bottom:.3rem}
+.ch-event-source{font-family:var(--mono);font-size:.5rem;color:var(--text-dim);margin-bottom:.3rem}
+.ch-event-source a{color:var(--beige)}
+.ch-event-expand{font-family:var(--mono);font-size:.55rem;color:var(--beige);letter-spacing:.08em;display:inline-flex;align-items:center;gap:.3rem;margin-top:.5rem;cursor:pointer;background:none;border:none;padding:0}
+.ch-event-expand:hover{color:var(--yellow)}
+
+/* Expanded Detail */
+.ch-event-detail{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(196,184,152,.06)}
+.ch-event-detail.open{display:block}
+.ch-event-detail p{font-size:.85rem;color:var(--text);line-height:1.7;margin-bottom:.75rem}
+.ch-event-sources{margin-top:.75rem}
+.ch-event-sources h4{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem}
+.ch-event-sources li{font-size:.8rem;color:var(--text-dim);padding:.25rem 0;padding-left:.75rem;position:relative}
+.ch-event-sources li::before{content:'—';position:absolute;left:0;color:var(--text-dim)}
+.ch-event-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.75rem}
+.ch-event-tag{font-family:var(--mono);font-size:.45rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .4rem;border:1px solid rgba(196,184,152,.08);color:var(--text-dim)}
+.ch-event-related{margin-top:.75rem}
+.ch-event-related h4{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--beige);margin-bottom:.5rem}
+.ch-event-actions{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
+.ch-event-actions a,.ch-event-actions button{font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;padding:.4rem .7rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--beige);cursor:pointer;transition:all .2s}
+.ch-event-actions a:hover,.ch-event-actions button:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* No results */
+.ch-no-results{text-align:center;padding:4rem 2rem;font-family:var(--mono);font-size:.75rem;color:var(--text-dim)}
+
+/* Back to top */
+.ch-back-top{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;border:1px solid rgba(196,184,152,.15);background:var(--bg-card);color:var(--beige);font-size:1rem;cursor:pointer;z-index:50;display:none;align-items:center;justify-content:center;transition:all .2s}
+.ch-back-top:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(196,184,152,.06);padding:2rem;text-align:center}
+.footer-inner{max-width:1000px;margin:0 auto}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem}
+.footer-links a{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);transition:color .2s}
+.footer-links a:hover{color:var(--beige)}
+.footer-copy{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);letter-spacing:.08em}
+
+/* Responsive */
+@media(max-width:768px){
+  .ch-timeline{padding:2rem 1rem 4rem 3rem}
+  .ch-timeline::before{left:1.5rem}
+  .ch-event::before{left:-1.55rem}
+  .ch-year-label::before{left:-1.55rem}
+  .site-header{padding:.75rem 1rem}
+  .site-nav{gap:1rem}
+  .ch-hero{padding:2.5rem 1rem 1.5rem}
+  .ch-controls{padding:0 1rem}
+  .ch-event-head{flex-direction:column;gap:.3rem}
+  .ch-title{font-size:1.6rem}
+}
+@media(max-width:480px){
+  .ch-timeline{padding:1.5rem .75rem 3rem 2.5rem}
+  .ch-timeline::before{left:1rem}
+  .ch-event::before{left:-1.05rem;width:6px;height:6px}
+  .ch-year-label::before{left:-1.05rem;width:8px;height:8px}
+  .ch-event-inner{padding:1rem}
+  .site-nav a{font-size:.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo"><span>Expediente</span> Venezuela</a>
+  <nav class="site-nav">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#cronologia" class="active">Cronología</a>
+    <a href="index.html#categorias">Categorías</a>
+    <a href="index.html#destacada">Destacado</a>
+  </nav>
+</header>
+
+<section class="ch-hero">
+  <div class="ch-hero-inner">
+    <div class="ch-eyebrow">Cronología documental</div>
+    <h1 class="ch-title">Línea de tiempo nacional</h1>
+    <p class="ch-subtitle">Cada evento forma parte de una historia más grande. Explora la secuencia completa y entiende cómo se conectan los hechos.</p>
+    <div class="ch-stats" id="ch-stats"></div>
+  </div>
+</section>
+
+<div class="ch-controls">
+  <div class="ch-filters" id="ch-filters">
+    <button class="ch-filter active" data-filter="all">Todos</button>
+    <button class="ch-filter" data-filter="corrupcion">Corrupción</button>
+    <button class="ch-filter" data-filter="abuso">Abuso</button>
+    <button class="ch-filter" data-filter="servicios">Servicios</button>
+    <button class="ch-filter" data-filter="salud">Salud</button>
+    <button class="ch-filter" data-filter="censura">Censura</button>
+    <button class="ch-filter" data-filter="represion">Represión</button>
+    <button class="ch-filter" data-filter="persecucion">Persecución</button>
+    <button class="ch-filter" data-filter="extorsion">Extorsión</button>
+    <button class="ch-filter" data-filter="general">General</button>
+  </div>
+  <div class="ch-search-row">
+    <input class="ch-search" id="ch-search" type="text" placeholder="Buscar por palabra clave...">
+    <button class="ch-group-toggle" id="ch-group-toggle">Agrupar por año</button>
+  </div>
+  <div class="ch-yearbar" id="ch-yearbar"></div>
+  <div class="ch-result-count" id="ch-result-count"></div>
+</div>
+
+<div class="ch-timeline" id="ch-timeline"></div>
+
+<div class="ch-no-results" id="ch-no-results" style="display:none">No se encontraron eventos con los filtros seleccionados.</div>
+
+<button class="ch-back-top" id="ch-back-top" aria-label="Volver arriba">&uarr;</button>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="cronologia.html">Cronología</a>
+      <a href="index.html#categorias">Categorías</a>
+      <a href="index.html#destacada">Destacado</a>
+    </div>
+    <div class="footer-copy">Expediente Venezuela &copy; 2026 &middot; Plataforma independiente de investigación ciudadana</div>
+  </div>
+</footer>
+
+<script>
+const CAT_COLORS={corrupcion:'#c9a227',abuso:'#8b2500',servicios:'#4a9',salud:'#c4b898',censura:'#888',represion:'#c44',persecucion:'#a87',extorsion:'#c9a227',general:'#888'};
+const CAT_LABELS={corrupcion:'Corrupción',abuso:'Abuso de poder',servicios:'Servicios públicos',salud:'Salud',censura:'Censura',represion:'Represión',persecucion:'Persecución',extorsion:'Extorsión',general:'General'};
+const NARRATIVE={inicio:'Inicio',desarrollo:'Desarrollo',escalada:'Escalada','actualización':'Actualización','resolución parcial':'Resolución parcial',cierre:'Cierre'};
+
+let allEvents = [];
+let filteredEvents = [];
+let groupByYear = false;
+let activeFilter = 'all';
+let searchQuery = '';
+
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function fmtDate(iso){if(!iso)return'';const d=new Date(iso);return d.toLocaleDateString('es-VE',{day:'numeric',month:'short',year:'numeric'})}
+
+(async function loadChronology(){
+  try{
+    const res=await fetch('scraper/data/cronologia.json');
+    if(!res.ok) throw new Error('no data');
+    const data=await res.json();
+    allEvents=(data.events||[]).sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
+    const cats={};
+    allEvents.forEach(e=>{cats[e.category]=(cats[e.category]||0)+1});
+    document.getElementById('ch-stats').innerHTML=
+      '<div class="ch-stat"><strong>'+allEvents.length+'</strong>Eventos totales</div>'+
+      '<div class="ch-stat"><strong>'+Object.keys(cats).length+'</strong>Categorías</div>'+
+      '<div class="ch-stat"><strong>'+allEvents.filter(e=>e.verification==='verificado').length+'</strong>Verificados</div>'+
+      '<div class="ch-stat"><strong>'+allEvents.filter(e=>e.impact==='critical').length+'</strong>Críticos</div>';
+    buildYearBar(allEvents);
+    filteredEvents=[...allEvents];
+    renderTimeline();
+  }catch(e){
+    document.getElementById('ch-timeline').innerHTML='<div class="ch-no-results">No se pudieron cargar los eventos.</div>';
+  }
+})();
+
+function buildYearBar(events){
+  const years=[...new Set(events.map(e=>e.date?e.date.substring(0,4):null).filter(Boolean))].sort().reverse();
+  const bar=document.getElementById('ch-yearbar');
+  bar.innerHTML=years.map(y=>'<button class="ch-yearbtn" data-year="'+y+'">'+y+'</button>').join('');
+  bar.addEventListener('click',e=>{
+    const btn=e.target.closest('.ch-yearbtn');
+    if(!btn)return;
+    const y=btn.dataset.year;
+    document.querySelectorAll('.ch-yearbtn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const target=document.getElementById('year-'+y);
+    if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+}
+
+function applyFilters(){
+  filteredEvents=allEvents.filter(ev=>{
+    if(activeFilter!=='all'&&ev.category!==activeFilter)return false;
+    if(searchQuery){
+      const q=searchQuery.toLowerCase();
+      const hay=(ev.title+' '+ev.description+' '+ev.category_label+' '+ev.location+' '+(ev.tags||[]).join(' ')).toLowerCase();
+      if(!hay.includes(q))return false;
+    }
+    return true;
+  });
+}
+
+function renderTimeline(){
+  applyFilters();
+  const container=document.getElementById('ch-timeline');
+  const noRes=document.getElementById('ch-no-results');
+  const countEl=document.getElementById('ch-result-count');
+
+  if(!filteredEvents.length){
+    container.innerHTML='';
+    noRes.style.display='block';
+    countEl.textContent='0 eventos encontrados';
+    return;
+  }
+  noRes.style.display='none';
+  countEl.textContent=filteredEvents.length+' evento'+(filteredEvents.length!==1?'s':'')+' encontrado'+(filteredEvents.length!==1?'s':'');
+
+  if(!groupByYear){
+    container.innerHTML=filteredEvents.map(ev=>renderEvent(ev)).join('');
+  }else{
+    const groups={};
+    filteredEvents.forEach(ev=>{
+      const y=ev.date?ev.date.substring(0,4):'Sin fecha';
+      if(!groups[y])groups[y]=[];
+      groups[y].push(ev);
+    });
+    const sorted=Object.entries(groups).sort((a,b)=>b[0].localeCompare(a[0]));
+    container.innerHTML=sorted.map(([year,evs])=>{
+      return '<div class="ch-year-group" id="year-'+year+'">'+
+        '<div class="ch-year-label">'+year+' ('+evs.length+')</div>'+
+        evs.map(ev=>renderEvent(ev)).join('')+
+      '</div>';
+    }).join('');
+  }
+
+  requestAnimationFrame(()=>{
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}});
+    },{threshold:0.1});
+    container.querySelectorAll('.ch-event').forEach(el=>obs.observe(el));
+  });
+}
+
+function renderEvent(ev){
+  const color=CAT_COLORS[ev.category]||CAT_COLORS.general;
+  const label=CAT_LABELS[ev.category]||ev.category_label||ev.category||'General';
+  const date=fmtDate(ev.date);
+  const narrative=NARRATIVE[ev.narrative_state]||ev.narrative_state||'';
+  const impactClass=ev.impact==='critical'?'critical':(ev.impact==='high'?'highlight':'');
+  const statusClass=ev.verification==='verificado'?'verificado':(ev.verification==='pendiente'?'pendiente':'recibido');
+  const expList=(ev.expedientes||[]).join(', ');
+  const sources=ev.source_primary?[ev.source_primary,...(ev.sources_secondary||[])]:[];
+  const tags=ev.tags||[];
+  const related=ev.related_events||[];
+
+  let detailHtml='';
+  if(ev.description_expanded&&ev.description_expanded!==ev.description){
+    detailHtml+='<p>'+esc(ev.description_expanded)+'</p>';
+  }
+  if(sources.length){
+    detailHtml+='<div class="ch-event-sources"><h4>Fuentes</h4><ul>'+
+      sources.map(s=>'<li><a href="'+esc(s)+'" target="_blank" rel="noopener">'+esc(s)+'</a></li>').join('')+
+    '</ul></div>';
+  }
+  if(tags.length){
+    detailHtml+='<div class="ch-event-tags">'+tags.map(t=>'<span class="ch-event-tag">'+esc(t)+'</span>').join('')+'</div>';
+  }
+  if(related.length){
+    detailHtml+='<div class="ch-event-related"><h4>Eventos relacionados</h4><ul>'+
+      related.map(r=>'<li>'+esc(r)+'</li>').join('')+
+    '</ul></div>';
+  }
+
+  const link=ev.original_post||'#';
+
+  return '<div class="ch-event '+impactClass+'" data-id="'+esc(ev.id)+'">'+
+    '<div class="ch-event-inner" onclick="toggleDetail(this)">'+
+      '<div class="ch-event-head">'+
+        '<span class="ch-event-date">'+date+'</span>'+
+        '<div class="ch-event-badges">'+
+          '<span class="ch-event-badge '+statusClass+'">'+(ev.verification||'recibido')+'</span>'+
+          (ev.impact==='critical'?'<span class="ch-event-badge critical">Crítico</span>':'')+
+          (ev.impact==='high'?'<span class="ch-event-badge high">Alto</span>':'')+
+        '</div>'+
+      '</div>'+
+      '<div class="ch-event-cat" style="color:'+color+'">'+
+        '<span class="ch-event-cat-dot" style="background:'+color+'"></span>'+
+        label+
+      '</div>'+
+      '<h3 class="ch-event-title">'+esc(ev.title||'')+'</h3>'+
+      (expList?'<div class="ch-event-exp">Expediente: '+esc(expList)+'</div>':'')+
+      '<div class="ch-event-location">&#9906; '+esc(ev.location||'Venezuela')+'</div>'+
+      (narrative?'<div class="ch-event-narrative">'+esc(narrative)+'</div>':'')+
+      '<p class="ch-event-summary">'+esc((ev.description||'').substring(0,200))+((ev.description||'').length>200?'...':'')+'</p>'+
+      '<button class="ch-event-expand">Ver detalle &darr;</button>'+
+      '<div class="ch-event-detail">'+detailHtml+'</div>'+
+      '<div class="ch-event-actions">'+
+        (ev.original_post?'<a href="'+esc(ev.original_post)+'" target="_blank" rel="noopener">Ver publicación</a>':'')+
+        '<a href="index.html#destacada">Abrir expediente</a>'+
+        '<button onclick="event.stopPropagation()">Aportar información</button>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+function toggleDetail(inner){
+  const detail=inner.querySelector('.ch-event-detail');
+  const btn=inner.querySelector('.ch-event-expand');
+  if(!detail)return;
+  const isOpen=detail.classList.contains('open');
+  detail.classList.toggle('open');
+  if(btn)btn.innerHTML=isOpen?'Ver detalle &darr;':'Ocultar &uarr;';
+}
+
+// Filters
+document.getElementById('ch-filters')?.addEventListener('click',e=>{
+  const btn=e.target.closest('.ch-filter');
+  if(!btn)return;
+  document.querySelectorAll('.ch-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter=btn.dataset.filter;
+  renderTimeline();
+});
+
+// Search
+let searchTimer;
+document.getElementById('ch-search')?.addEventListener('input',e=>{
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(()=>{
+    searchQuery=e.target.value.trim();
+    renderTimeline();
+  },250);
+});
+
+// Group toggle
+document.getElementById('ch-group-toggle')?.addEventListener('click',e=>{
+  groupByYear=!groupByYear;
+  e.target.classList.toggle('active',groupByYear);
+  renderTimeline();
+});
+
+// Back to top
+const btt=document.getElementById('ch-back-top');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>400){btt.style.display='flex'}
+  else{btt.style.display='none'}
+});
+btt?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>

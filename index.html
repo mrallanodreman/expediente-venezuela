@@ -140,15 +140,57 @@ section{padding:5rem 2rem}
 .map-legend-dot{width:6px;height:6px;border-radius:50%}
 
 /* --- TIMELINE --- */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(196,184,152,.1)}
-.timeline-item{position:relative;padding:1.5rem 0 1.5rem 1.5rem;border-bottom:1px solid rgba(196,184,152,.04)}
-.timeline-item::before{content:'';position:absolute;left:-2rem;top:1.75rem;width:8px;height:8px;border:1.5px solid var(--beige);background:var(--bg);transform:translateX(-3.5px)}
-.timeline-date{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--yellow);margin-bottom:.4rem}
-.timeline-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text-bright);margin-bottom:.3rem}
-.timeline-excerpt{font-size:.8rem;color:var(--text-dim);line-height:1.6}
-.timeline-tags{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
-.timeline-tag{font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .5rem;border:1px solid rgba(196,184,152,.1);color:var(--text-dim)}
+/* Timeline Widget Horizontal */
+.tw-section{padding:3rem 0;overflow:hidden}
+.tw-filters{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tw-filter{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .7rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
+.tw-filter:hover{border-color:var(--beige);color:var(--text-bright)}
+.tw-filter.active{background:var(--yellow);color:var(--bg);border-color:var(--yellow)}
+.tw-track-wrap{position:relative;padding:0 3rem}
+.tw-track{display:flex;gap:0;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:2.5rem 0 1.5rem;position:relative}
+.tw-track::-webkit-scrollbar{display:none}
+.tw-track::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(196,184,152,.15),rgba(196,184,152,.15),transparent);transform:translateY(-50%);z-index:0}
+.tw-node{position:absolute;top:50%;width:10px;height:10px;border:2px solid var(--beige);background:var(--bg);border-radius:50%;transform:translateY(-50%);z-index:2;transition:all .3s}
+.tw-node.critical{border-color:var(--red);background:var(--red);box-shadow:0 0 12px rgba(139,37,0,.4)}
+.tw-node.highlight{border-color:var(--yellow);box-shadow:0 0 8px rgba(201,162,39,.3)}
+.tw-card{flex:0 0 280px;position:relative;z-index:1;padding:0 .75rem}
+.tw-card-inner{background:var(--bg-card);border:1px solid rgba(196,184,152,.08);padding:1.25rem;position:relative;overflow:hidden;transition:all .3s;cursor:default}
+.tw-card-inner::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--beige);opacity:.4;transition:opacity .3s}
+.tw-card-inner:hover{border-color:rgba(196,184,152,.2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.tw-card-inner:hover::before{opacity:1}
+.tw-card.critical .tw-card-inner::before{background:var(--red);opacity:1}
+.tw-card.highlight .tw-card-inner::before{background:var(--yellow);opacity:1}
+.tw-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.6rem}
+.tw-card-date{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;color:var(--yellow);white-space:nowrap}
+.tw-card-status{font-family:var(--mono);font-size:.45rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid}
+.tw-card-status.verificado{color:#4a9;border-color:#4a930}
+.tw-card-status.recibido{color:var(--beige);border-color:rgba(196,184,152,.3)}
+.tw-card-status.pendiente{color:#c9a227;border-color:rgba(201,162,39,.3)}
+.tw-card-cat{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.tw-card-cat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.tw-card-title{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--text-bright);line-height:1.3;margin-bottom:.4rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tw-card-location{font-family:var(--mono);font-size:.5rem;color:var(--text-dim);letter-spacing:.08em;margin-bottom:.5rem;display:flex;align-items:center;gap:.3rem}
+.tw-card-excerpt{font-size:.78rem;color:var(--text-dim);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.75rem}
+.tw-card-link{font-family:var(--mono);font-size:.55rem;color:var(--beige);text-decoration:none;letter-spacing:.08em;display:inline-flex;align-items:center;gap:.3rem;transition:color .2s}
+.tw-card-link:hover{color:var(--yellow)}
+.tw-nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border:1px solid rgba(196,184,152,.15);background:var(--bg-card);color:var(--beige);font-size:1rem;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.tw-nav:hover{border-color:var(--beige);color:var(--text-bright)}
+.tw-nav.prev{left:0}
+.tw-nav.next{right:0}
+.tw-cta{margin-top:2rem;text-align:center}
+.tw-cta a{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);text-decoration:none;padding:.6rem 1.5rem;border:1px solid rgba(201,162,39,.3);transition:all .3s}
+.tw-cta a:hover{background:var(--yellow);color:var(--bg)}
+@media(max-width:768px){
+  .tw-track-wrap{padding:0 2rem}
+  .tw-card{flex:0 0 260px}
+  .tw-nav{display:none}
+  .tw-filters{gap:.4rem}
+  .tw-filter{font-size:.5rem;padding:.3rem .5rem}
+}
+@media(max-width:480px){
+  .tw-card{flex:0 0 85vw}
+  .tw-track{padding:2rem 0 1rem}
+}
 
 /* --- CATEGORIES --- */
 .categories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
@@ -234,7 +276,7 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
 
 .slider-container{position:relative;overflow:hidden;background:var(--bg-card);border:1px solid rgba(196,184,152,.06);border-radius:0 0 var(--radius) var(--radius);padding:0}
 .slider-track{display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1)}
-.slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative;aspect-ratio:2/1}
+.slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative}
 .slide::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;z-index:2}
 .slide[data-cat="corrupcion"]::before{background:var(--red)}
 .slide[data-cat="abuso"]::before{background:var(--red-light)}
@@ -288,21 +330,7 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
 .slider-empty{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);text-align:center;padding:4rem 2rem}
 
 /* --- INFINITE SCROLL TIMELINE --- */
-.timeline-loader{display:flex;align-items:center;justify-content:center;gap:.75rem;padding:2rem;opacity:.6}
-.timeline-spinner{width:16px;height:16px;border:1.5px solid rgba(196,184,152,.15);border-top-color:var(--yellow);border-radius:50%;animation:spin .8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.timeline-loader-text{font-family:var(--mono);font-size:.65rem;color:var(--text-dim);letter-spacing:.05em}
 .timeline-end{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;color:var(--text-dim)}
-.timeline-item{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
-.timeline-item.visible{opacity:1;transform:none}
-.timeline-item.has-video::before{background:var(--red);border-color:var(--red)}
-.timeline-expediente{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;color:var(--yellow);margin-bottom:.3rem}
-.timeline-category{display:inline-block;font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .5rem;border-radius:1px;margin-bottom:.4rem}
-.timeline-media{margin-top:.75rem;border-radius:var(--radius);overflow:hidden;max-height:200px}
-.timeline-media img{width:100%;height:100%;object-fit:cover;opacity:.8}
-.timeline-media video{width:100%;max-height:200px;object-fit:contain}
-.timeline-link{font-family:var(--mono);font-size:.55rem;color:var(--beige);text-decoration:none}
-
 /* --- REVEAL --- */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:none}
@@ -484,24 +512,35 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
   </div>
 </section>
 
-<!-- CRONOLOGÍA -->
-<section id="cronologia">
+<!-- CRONOLOGÍA WIDGET -->
+<section id="cronologia" class="tw-section">
   <div class="section-inner">
     <div class="section-header reveal">
       <div class="section-eyebrow">Línea de tiempo</div>
-      <h2 class="section-title">Cronología de denuncias</h2>
-      <p class="section-desc">Scroll infinito con todas las denuncias recibidas, de más reciente a más antigua.</p>
+      <h2 class="section-title">Cronología de los hechos</h2>
+      <p class="section-desc">Una vista rápida de los eventos más relevantes registrados en los expedientes.</p>
     </div>
 
-    <div class="timeline" id="timeline"></div>
-
-    <div class="timeline-loader" id="timeline-loader">
-      <div class="timeline-spinner"></div>
-      <span class="timeline-loader-text">Cargando más denuncias...</span>
+    <div class="tw-filters" id="tw-filters">
+      <button class="tw-filter active" data-filter="all">Todos</button>
+      <button class="tw-filter" data-filter="corrupcion">Corrupción</button>
+      <button class="tw-filter" data-filter="abuso">Abuso</button>
+      <button class="tw-filter" data-filter="servicios">Servicios</button>
+      <button class="tw-filter" data-filter="salud">Salud</button>
+      <button class="tw-filter" data-filter="censura">Censura</button>
+      <button class="tw-filter" data-filter="represion">Represión</button>
+      <button class="tw-filter" data-filter="persecucion">Persecución</button>
+      <button class="tw-filter" data-filter="extorsion">Extorsión</button>
     </div>
 
-    <div class="timeline-end" id="timeline-end" style="display:none">
-      <span>No hay más denuncias</span>
+    <div class="tw-track-wrap">
+      <button class="tw-nav prev" id="tw-prev" aria-label="Anterior">&larr;</button>
+      <div class="tw-track" id="tw-track"></div>
+      <button class="tw-nav next" id="tw-next" aria-label="Siguiente">&rarr;</button>
+    </div>
+
+    <div class="tw-cta">
+      <a href="cronologia.html">Abrir cronología completa &rarr;</a>
     </div>
   </div>
 </section>
@@ -848,7 +887,6 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
 
     updateStats(data);
     initSlider(denuncias);
-    initTimeline(denuncias);
     updateCategories(data.categories);
 
     const status = document.getElementById('slider-status');
@@ -857,13 +895,18 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
     }
   } catch (e) {
     console.log('Expediente Venezuela: could not load data', e);
-    // Show empty states
     const status = document.getElementById('slider-status');
     if (status) status.textContent = 'Sin denuncias disponibles';
-    const loader = document.getElementById('timeline-loader');
-    if (loader) loader.style.display = 'none';
-    const end = document.getElementById('timeline-end');
-    if (end) { end.style.display = 'block'; end.textContent = 'Sin denuncias disponibles'; }
+  }
+
+  try {
+    const res2 = await fetch('scraper/data/cronologia.json');
+    if (res2.ok) {
+      const cdata = await res2.json();
+      initTimelineWidget(cdata.events || []);
+    }
+  } catch (e) {
+    console.log('Timeline: could not load cronologia.json', e);
   }
 })();
 
@@ -986,86 +1029,95 @@ function initSlider(denuncias) {
   container?.addEventListener('mouseleave', resetSliderTimer);
 }
 
-// --- Infinite Scroll Timeline ---
-const TIMELINE_BATCH = 8;
-let timelineData = [];
-let timelineIndex = 0;
-let timelineLoading = false;
+// --- Timeline Widget Horizontal ---
+let twData = [];
+let twFilter = 'all';
 
-function initTimeline(denuncias) {
-  const container = document.getElementById('timeline');
-  const loader = document.getElementById('timeline-loader');
-  const endMsg = document.getElementById('timeline-end');
-  if (!container) return;
+const TW_ICONS = {
+  corrupcion:'&#9878;', abuso:'&#9888;', servicios:'&#9881;', salud:'&#9829;',
+  censura:'&#9898;', represion:'&#9876;', persecucion:'&#9873;', extorsion:'&#36;',
+  general:'&#9673;'
+};
+const TW_LABELS = {
+  corrupcion:'Corrupción', abuso:'Abuso de poder', servicios:'Servicios públicos',
+  salud:'Salud', censura:'Censura', represion:'Represión', persecucion:'Persecución',
+  extorsion:'Extorsión', general:'General'
+};
+const TW_STATES = {
+  inicio:'&#9679; Inicio', desarrollo:'&#9679; Desarrollo', escalada:'&#9679; Escalada',
+  'actualización':'&#9679; Actualización', 'resolución parcial':'&#9670; Resolución', cierre:'&#9632; Cierre'
+};
 
-  if (!denuncias || !denuncias.length) {
-    if (loader) loader.style.display = 'none';
-    if (endMsg) { endMsg.style.display = 'block'; endMsg.textContent = 'Sin denuncias disponibles'; }
-    return;
-  }
+function initTimelineWidget(events) {
+  const track = document.getElementById('tw-track');
+  if (!track || !events || !events.length) return;
 
-  timelineData = [...denuncias].sort((a, b) =>
-    new Date(b.created_at || b.scraped_at || 0) - new Date(a.created_at || a.scraped_at || 0)
-  );
-  timelineIndex = 0;
-  loadTimelineBatch();
+  twData = [...events].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
-  const sentinel = document.createElement('div');
-  sentinel.id = 'timeline-sentinel';
-  container.after(sentinel);
-  const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !timelineLoading) loadTimelineBatch();
-  }, { rootMargin: '200px' });
-  observer.observe(sentinel);
-}
+  renderTW(twData);
 
-function loadTimelineBatch() {
-  if (timelineLoading || timelineIndex >= timelineData.length) {
-    const loader = document.getElementById('timeline-loader');
-    const endMsg = document.getElementById('timeline-end');
-    if (loader) loader.style.display = 'none';
-    if (endMsg && timelineIndex >= timelineData.length) endMsg.style.display = 'block';
-    return;
-  }
-  timelineLoading = true;
-  const container = document.getElementById('timeline');
-  const batch = timelineData.slice(timelineIndex, timelineIndex + TIMELINE_BATCH);
-
-  batch.forEach((t, i) => {
-    const item = document.createElement('div');
-    item.className = 'timeline-item' + (t.video_url ? ' has-video' : '');
-    const catColor = CAT_COLORS[t.category] || CAT_COLORS.general;
-    const catLabel = t.category_label || CAT_LABELS[t.category] || t.category || 'General';
-    const date = t.created_at ? fmtDate(t.created_at) : '';
-    const timeAgo = timeSince(t.created_at);
-
-    let media = '';
-    if (t.video_url) {
-      media = '<div class="timeline-media"><video src="' + esc(t.video_url) + '" controls muted playsinline preload="metadata"></video></div>';
-    } else if (t.images && t.images.length) {
-      media = '<div class="timeline-media"><img src="' + esc(t.images[0]) + '" alt="Evidencia" loading="lazy"></div>';
-    }
-
-    item.innerHTML =
-      '<div class="timeline-expediente">' + esc(t.expediente_id || '') + '</div>' +
-      '<span class="timeline-category" style="color:' + catColor + ';border:1px solid ' + catColor + '30">' + catLabel + '</span>' +
-      '<div class="timeline-date">' + date + ' · hace ' + timeAgo + '</div>' +
-      '<h3 class="timeline-title">' + esc(t.name) + ' (@' + esc(t.username) + ')</h3>' +
-      '<p class="timeline-excerpt">' + esc(t.text) + '</p>' +
-      media +
-      '<div class="timeline-meta" style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap">' +
-        '<span class="timeline-stat" style="font-family:var(--mono);font-size:.55rem;color:var(--text-dim)">&#9829; ' + fmt(t.likes) + '</span>' +
-        '<span class="timeline-stat" style="font-family:var(--mono);font-size:.55rem;color:var(--text-dim)">&#8634; ' + fmt(t.retweets) + '</span>' +
-        '<span class="timeline-stat" style="font-family:var(--mono);font-size:.55rem;color:var(--text-dim)">&#8617; ' + fmt(t.replies) + '</span>' +
-        '<a href="' + esc(t.url) + '" target="_blank" rel="noopener" class="timeline-link">Ver denuncia &rarr;</a>' +
-      '</div>';
-
-    container.appendChild(item);
-    setTimeout(() => item.classList.add('visible'), i * 80);
+  document.getElementById('tw-prev')?.addEventListener('click', () => {
+    track.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+  document.getElementById('tw-next')?.addEventListener('click', () => {
+    track.scrollBy({ left: 320, behavior: 'smooth' });
   });
 
-  timelineIndex += batch.length;
-  timelineLoading = false;
+  document.getElementById('tw-filters')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tw-filter');
+    if (!btn) return;
+    document.querySelectorAll('.tw-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    twFilter = btn.dataset.filter;
+    const filtered = twFilter === 'all' ? twData : twData.filter(ev => ev.category === twFilter);
+    renderTW(filtered);
+  });
+
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) track.scrollBy({ left: diff > 0 ? 320 : -320, behavior: 'smooth' });
+  }, { passive: true });
+}
+
+function renderTW(events) {
+  const track = document.getElementById('tw-track');
+  if (!track) return;
+  if (!events.length) {
+    track.innerHTML = '<div style="padding:2rem;font-family:var(--mono);font-size:.7rem;color:var(--text-dim)">No hay eventos en esta categoría</div>';
+    return;
+  }
+  track.innerHTML = events.map(ev => {
+    const color = CAT_COLORS[ev.category] || CAT_COLORS.general;
+    const label = TW_LABELS[ev.category] || ev.category_label || ev.category || 'General';
+    const icon = TW_ICONS[ev.category] || '&#9673;';
+    const date = ev.date ? fmtDate(ev.date) : '';
+    const year = ev.date ? ev.date.substring(0, 4) : '';
+    const state = ev.narrative_state || 'desarrollo';
+    const stateHtml = TW_STATES[state] || '&#9679; ' + state;
+    const impactClass = ev.impact === 'critical' ? ' critical' : (ev.impact === 'high' ? ' highlight' : '');
+    const statusClass = ev.verification === 'verificado' ? 'verificado' : (ev.verification === 'pendiente' ? 'pendiente' : 'recibido');
+    const excerpt = (ev.description || '').substring(0, 140) + ((ev.description || '').length > 140 ? '...' : '');
+    const link = ev.original_post || '#';
+
+    return '<div class="tw-card' + impactClass + '">' +
+      '<div class="tw-card-inner">' +
+        '<div class="tw-card-head">' +
+          '<span class="tw-card-date">' + date + '</span>' +
+          '<span class="tw-card-status ' + statusClass + '">' + (ev.verification || 'recibido') + '</span>' +
+        '</div>' +
+        '<div class="tw-card-cat" style="color:' + color + '">' +
+          '<span class="tw-card-cat-dot" style="background:' + color + '"></span>' +
+          label +
+        '</div>' +
+        '<h3 class="tw-card-title">' + esc(ev.title || '') + '</h3>' +
+        '<div class="tw-card-location">&#9906; ' + esc(ev.location || 'Venezuela') + ' &middot; ' + year + '</div>' +
+        '<p class="tw-card-excerpt">' + esc(excerpt) + '</p>' +
+        '<a href="' + esc(link) + '" target="_blank" rel="noopener" class="tw-card-link">Ver evento &rarr;</a>' +
+      '</div>' +
+    '</div>';
+  }).join('');
 }
 
 // --- Dynamic Categories ---
