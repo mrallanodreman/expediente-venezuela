@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expediente EV-2026-0087 — Expediente Venezuela</title>
+<meta name="description" content="Infraestructura digital militar expuesta al acceso público. Gitea del Ejército Bolivariano con 847 repositorios visibles.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/expediente.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg-card:#141414;--bg-elevated:#1a1a1a;
+  --text:#d4cfc4;--text-dim:#7a7568;--text-bright:#e8e2d4;
+  --red:#8b2500;--red-light:#a63200;--yellow:#c9a227;--beige:#c4b898;
+  --green:#2d6a4f;--green-light:#40916c;
+  --mono:'Courier Prime',monospace;--serif:'Source Serif 4',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--text)}
+body{font-family:var(--sans);background:var(--bg);-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
+a{color:var(--beige);text-decoration:none}
+a:hover{color:var(--yellow)}
+
+.header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,184,152,.08);padding:0 2rem}
+.header-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.back{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);display:flex;align-items:center;gap:.4rem}
+.back:hover{color:var(--beige)}
+.header-title{font-family:var(--mono);font-size:.65rem;color:var(--yellow);letter-spacing:.1em}
+
+main{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+/* DOSSIER */
+.dossier{background:var(--bg-card);border:1px solid rgba(196,184,152,.08);border-radius:2px;overflow:hidden}
+.dossier-top{padding:2rem;border-bottom:1px solid rgba(196,184,152,.06);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem}
+.dossier-id{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--yellow);margin-bottom:.5rem}
+.dossier-title{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--text-bright);line-height:1.15;max-width:600px}
+.dossier-stamp{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .9rem;border:1px solid}
+.stamp-verificado{background:rgba(45,106,79,.2);color:#52b788;border-color:rgba(45,106,79,.3)}
+.stamp-revision{background:rgba(201,162,39,.15);color:var(--yellow);border-color:rgba(201,162,39,.2)}
+.stamp-recibido{background:rgba(196,184,152,.12);color:var(--beige);border-color:rgba(196,184,152,.2)}
+.stamp-parcial{background:rgba(45,106,79,.12);color:var(--green-light);border-color:rgba(45,106,79,.2)}
+.stamp-descartado{background:rgba(122,117,104,.1);color:var(--text-dim);border-color:rgba(122,117,104,.15)}
+
+.dossier-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid rgba(196,184,152,.06)}
+.meta-cell{padding:1rem 1.5rem;border-right:1px solid rgba(196,184,152,.06)}
+.meta-cell:last-child{border-right:none}
+.meta-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.3rem}
+.meta-value{font-family:var(--mono);font-size:.8rem;color:var(--text-bright)}
+
+.section{padding:1.5rem 2rem;border-bottom:1px solid rgba(196,184,152,.04)}
+.section-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
+.section-content{font-size:.88rem;color:var(--text);line-height:1.8}
+.section-content ul{list-style:none;padding:0}
+.section-content li{padding:.4rem 0;padding-left:1.2rem;position:relative}
+.section-content li::before{content:'—';position:absolute;left:0;color:var(--text-dim)}
+.source-tag{font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid rgba(196,184,152,.1);color:var(--text-dim);margin-left:.5rem}
+.source-tag.verified{border-color:rgba(45,106,79,.3);color:var(--green-light)}
+.source-tag.unverified{border-color:rgba(201,162,39,.2);color:var(--yellow)}
+
+.evidence-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:.75rem}
+.evidence-item{background:var(--bg);border:1px solid rgba(196,184,152,.06);padding:1rem;font-family:var(--mono);font-size:.75rem;color:var(--text-dim);line-height:1.6}
+.evidence-item strong{color:var(--text-bright);font-weight:600}
+
+.connections{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem}
+.connection-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.05em;padding:.3rem .7rem;border:1px solid rgba(196,184,152,.1);color:var(--beige);transition:all .2s}
+.connection-tag:hover{border-color:var(--beige);color:var(--text-bright)}
+
+.history-item{padding:.5rem 0;border-bottom:1px solid rgba(196,184,152,.03);font-size:.8rem;display:flex;gap:1rem}
+.history-date{font-family:var(--mono);font-size:.65rem;color:var(--yellow);min-width:80px}
+.history-text{color:var(--text-dim)}
+
+.actions{display:flex;gap:1rem;padding:2rem;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.65rem 1.25rem;border:1px solid;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;background:transparent}
+.btn-primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn-primary:hover{background:var(--red-light)}
+.btn-secondary{border-color:rgba(196,184,152,.2);color:var(--beige)}
+.btn-secondary:hover{border-color:var(--beige);color:var(--text-bright)}
+
+@media(max-width:768px){
+  .dossier-meta{grid-template-columns:1fr 1fr}
+  .meta-cell{border-right:none}
+  .section{padding:1.25rem 1.25rem}
+  .dossier-top{padding:1.5rem 1.25rem}
+  .actions{padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="back">← Volver a expedientes</a>
+    <span class="header-title">EXPEDIENTE EV-2026-0087</span>
+  </div>
+</header>
+
+<main>
+  <div class="dossier">
+    <div class="dossier-top">
+      <div>
+        <div class="dossier-id">EXPEDIENTE EV-2026-0087</div>
+        <h1 class="dossier-title">Infraestructura digital militar expuesta al acceso público</h1>
+      </div>
+      <span class="dossier-stamp stamp-verificado">Verificado con fuentes</span>
+    </div>
+
+    <div class="dossier-meta">
+      <div class="meta-cell"><div class="meta-label">Fecha de apertura</div><div class="meta-value">2024-03-15</div></div>
+      <div class="meta-cell"><div class="meta-label">Última actualización</div><div class="meta-value">2026-07-08</div></div>
+      <div class="meta-cell"><div class="meta-label">Categoría</div><div class="meta-value">Corrupción</div></div>
+      <div class="meta-cell"><div class="meta-label">Ubicación</div><div class="meta-value">Nacional</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Resumen del caso</div>
+      <div class="section-content">Un repositorio de código fuente del Ejército Bolivariano (Gitea) se encuentra accesible públicamente sin autenticación. Se identificaron 847 repositorios visibles, incluyendo sistemas de gestión interna, herramientas de comunicaciones y documentación técnica militar. La vulnerabilidad persiste desde al menos marzo de 2024.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Cronología</div>
+      <div class="section-content">
+        <div class="history-item"><span class="history-date">2024-03-15</span><span class="history-text">Primera detección vía Certificate Transparency. Subdominio git.ejercito.mil.ve registrado públicamente.</span></div>
+        <div class="history-item"><span class="history-text">Confirmación de acceso público sin autenticación. Instancia Gitea accesible.</span><span class="history-date">2024-06-22</span></div>
+        <div class="history-item"><span class="history-date">2025-01-10</span><span class="history-text">Actualización: 847 repositorios visibles. Código fuente de sistemas de gestión interna identificado.</span></div>
+        <div class="history-item"><span class="history-date">2026-07-08</span><span class="history-text">Verificación final. Instancia sigue activa y accesible. Sin cambios en configuración de seguridad.</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Resumen del caso</div>
+      <div class="section-content">Un repositorio de código fuente del Ejército Bolivariano (Gitea) se encuentra accesible públicamente sin autenticación. Se identificaron 847 repositorios visibles, incluyendo sistemas de gestión interna, herramientas de comunicaciones y documentación técnica militar. La vulnerabilidad persiste desde al menos marzo de 2024.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Personas e instituciones mencionadas</div>
+      <div class="section-content">
+        <ul>
+          <li>Ejército Bolivariano — Institución relacionada <span class="source-tag verified">Verificado</span></li>
+          <li>Comando de Comunicaciones — Signals <span class="source-tag verified">Verificado</span></li>
+          <li>Funcionario señalado — Alegación en revisión <span class="source-tag unverified">No confirmado</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Evidencias verificadas</div>
+      <div class="evidence-grid">
+        <div class="evidence-item"><strong>Instancia Gitea</strong><br>git.ejercito.mil.ve accesible sin autenticación</div>
+        <div class="evidence-item"><strong>847 repositorios</strong><br>Visibles en la interfaz pública de Gitea</div>
+        <div class="evidence-item"><strong>Código fuente</strong><br>Sistemas de gestión interna documentados</div>
+        <div class="evidence-item"><strong>Comunicaciones</strong><br>Documentación técnica de sistemas militares</div>
+        <div class="evidence-item"><strong>Historial</strong><br>Commits con nombres de desarrolladores</div>
+        <div class="evidence-item"><strong>Certificados</strong><br>Registro CT confirma subdominio público</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Elementos no confirmados</div>
+      <div class="section-content">
+        <ul>
+          <li>Contenido específico de los repositorios — Acceso no solicitado <span class="source-tag unverified">No verificado</span></li>
+          <li>Responsable administrativo del servidor — No identificado <span class="source-tag unverified">No verificado</span></li>
+          <li>Fecha exacta de implementación — No verificada <span class="source-tag unverified">No verificado</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Fuentes</div>
+      <div class="section-content">
+        <ul>
+          <li>Certificate Transparency (crt.sh) <span class="source-tag verified">Primaria</span></li>
+          <li>Registro público de dominios .mil.ve <span class="source-tag verified">Primaria</span></li>
+          <li>Verificación directa de acceso <span class="source-tag verified">Directa</span></li>
+          <li>Reporte de seguridad independiente <span class="source-tag">Corroborativa</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Documentos relacionados</div>
+      <div class="section-content">
+        <ul>
+          <li>HALLAZGO 07 — Dossier Gobierno Digital Expuesto</li>
+          <li>HALLAZGO 08 — Psicología del Ejército (.env expuesto)</li>
+          <li>EV-2026-0045 — Cluster Observatorio Antibloqueo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Casos conectados</div>
+      <div class="connections">
+        <a href="#" class="connection-tag">EV-2026-0045 · Cluster Observatorio</a>
+        <a href="#" class="connection-tag">EV-2026-0052 · Alcaldía Independencia</a>
+        <a href="#" class="connection-tag">EV-2026-0091 · mail.incret.gob.ve</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Ubicación general</div>
+      <div class="section-content">Caracas, Distrito Capital — Sede del Comando de Comunicaciones del Ejército Bolivariano. Ubicación aproximada por seguridad.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Conclusiones provisionales</div>
+      <div class="section-content">La infraestructura presenta una falla crítica de seguridad que expone código fuente y documentación técnica militar al acceso público. La vulnerabilidad persiste desde al menos 2024. Se recomienda revisión urgente de políticas de acceso a repositorios de código fuente en instituciones militares.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Historial de modificaciones</div>
+      <div class="history-item"><span class="history-date">2026-07-08</span><span class="history-text">Verificación final agregada. Estado cambiado de "En revisión" a "Verificado con fuentes".</span></div>
+      <div class="history-item"><span class="history-date">2025-01-10</span><span class="history-text">Actualización de cronología. Nuevo conteo de repositorios (847).</span></div>
+      <div class="history-item"><span class="history-date">2024-06-22</span><span class="history-text">Confirmación de acceso público. Evidencia verificada agregada.</span></div>
+      <div class="history-item"><span class="history-date">2024-03-15</span><span class="history-text">Expediente creado. Estado: Recibido.</span></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary">Aportar nueva evidencia</button>
+      <button class="btn btn-secondary">Solicitar corrección</button>
+      <button class="btn btn-secondary">Derecho a réplica</button>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

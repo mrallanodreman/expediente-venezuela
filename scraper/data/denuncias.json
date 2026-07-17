@@ -1,0 +1,487 @@
+{
+  "updated_at": "2026-07-17T03:05:39.157256+00:00",
+  "count": 20,
+  "categories": {
+    "corrupcion": 3,
+    "abuso": 3,
+    "servicios": 3,
+    "salud": 3,
+    "censura": 3,
+    "represion": 2,
+    "persecucion": 2,
+    "extorsion": 1
+  },
+  "denuncias": [
+    {
+      "expediente_id": "EV-2026-0035",
+      "username": "CristianDFDS",
+      "name": "Cristian",
+      "text": "Pero como te va a valer el hecho de no saber diferenciar entre un estado y una ciudad? Eso es ignorancia, gran responsabilidad de la marginalidad. Por ese pensamiento estamos jodidos.\nLa corrupción está en toda Venezuela. En cada punto donde el Gobierno se encuentre.",
+      "category": "persecucion",
+      "category_label": "Persecución",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "https://video.twimg.com/amplify_video/2077380992482852864/pl/5eF7nv-S-aFoXJYd.m3u8?tag=28&v=d77&variant_version=1",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T22:18:19.000Z",
+      "url": "https://x.com/CristianDFDS/status/2077880536375115957",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "CristianDFDS",
+          "url": "https://x.com/CristianDFDS/status/2077880536375115957"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0041",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F. @cristiancrespoj·27 abr.",
+      "text": "¿Transición en #Venezuela? Sí claro, al fascismo.\n\n DENUNCIA: Brutal detención de Polisucre genera indignación; denuncian tortura y allanamiento ilegal\n\nCaracas – Un escenario de violencia y presunto abuso de autoridad se registró recientemente cuando funcionarios de la Policía",
+      "category": "corrupcion",
+      "category_label": "Corrupción",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HG8k3jLaYAAZPzA?format=jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-04-27T19:04:23.000Z",
+      "url": "https://x.com/cristiancrespoj/status/2048840702881411516",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2048840702881411516"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0040",
+      "username": "LibertadLuchSoc",
+      "name": "Comité por la Libertad de los Luchadores Sociales",
+      "text": "DESAPARICIÓN FORZADA |\nFaustino Hermoso García, estudiante de la UCV, cumple 5 días desaparecido tras ser detenido por funcionarios del CONAS. Su familia no sabe dónde está.\n\nUn funcionario policial le envió un audio de amenaza: \n“Donde te vea te voy a reventar”. Días después, el",
+      "category": "abuso",
+      "category_label": "Abuso",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HHhHinaXkAAC16y?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-05-05T01:05:30.000Z",
+      "url": "https://x.com/LibertadLuchSoc/status/2051468295061049534",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "LibertadLuchSoc",
+          "url": "https://x.com/LibertadLuchSoc/status/2051468295061049534"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0039",
+      "username": "RandyCorreaVE",
+      "name": "Randy Correa",
+      "text": "#Venezuela | PROSTITUÍA A SU HIJA DE 12 AÑOS POR 5$ DÓLARES\n\nUna mujer de 39 años y un hombre fueron detenidos, por el abuso sexual continuado de una menor de 12 años. Los capturados fueron identificados como Rosaura Aura Flores (madre de la víctima) y Nelson Torres González.\n\nDe",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HIzUAltWMAA12Ow?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HIzUCp3XAAAigFx?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HIzUCqJW0AA-MHa?format=jpg&name=360x360"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-05-21T00:09:02.000Z",
+      "url": "https://x.com/RandyCorreaVE/status/2057252289715261447",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "RandyCorreaVE",
+          "url": "https://x.com/RandyCorreaVE/status/2057252289715261447"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0038",
+      "username": "morichesabana",
+      "name": "Enrique cicla",
+      "text": "No mas abuso policial! Exceso de fuerza! Venezuela de primer mundo!!",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-06-03T19:59:27.000Z",
+      "url": "https://x.com/morichesabana/status/2062262908558409933",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "morichesabana",
+          "url": "https://x.com/morichesabana/status/2062262908558409933"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0037",
+      "username": "Sofia67926381",
+      "name": "Sofia@Sofia67926381·9h",
+      "text": "España ya supera en corrupción a Venezuela. Tenemos al embajador narco Zapatero, todas las instituciones del Estado colonizadas, corruptas, terroristas asesinos y golpistas en el gobierno. \nY un dictador farlopero. \n¿ Quién da más?",
+      "category": "censura",
+      "category_label": "Censura",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HNVi1saW4AArKHm?format=jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T15:46:28.000Z",
+      "url": "https://x.com/Sofia67926381/status/2077781923888300485",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Sofia67926381",
+          "url": "https://x.com/Sofia67926381/status/2077781923888300485"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0036",
+      "username": "jovenlandes",
+      "name": "Jovenlandés",
+      "text": "Que la noticia sea un streamer y no la corrupción del gobierno, luego dicen que no somos Venezuela 2.0",
+      "category": "represion",
+      "category_label": "Represión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T21:01:14.000Z",
+      "url": "https://x.com/jovenlandes/status/2077861137148682657",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "jovenlandes",
+          "url": "https://x.com/jovenlandes/status/2077861137148682657"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0034",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "“LA MATRACA YA NI SE ESCONDE”: DENUNCIAN A FUNCIONARIO DE CHACAO RECIBIENDO DINERO EN PLENA CALLE\n\nUn video que comenzó a circular en redes sociales ha generado indignación entre ciudadanos luego de mostrar a un funcionario policial presuntamente recibiendo dinero de un",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-05-30T02:55:32.000Z",
+      "url": "https://x.com/cristiancrespoj/status/2060555681686556814",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2060555681686556814"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0033",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "En #Venezuela, muchos ciudadanos sienten más temor cuando se encuentran con un funcionario policial que cuando enfrentan a un delincuente.\n\nQuienes deberían garantizar la seguridad, el orden y la protección de la población terminan siendo señalados constantemente en denuncias",
+      "category": "corrupcion",
+      "category_label": "Corrupción",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HJsPDsoWMAEIjiq?format=jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-05-30T17:04:29.000Z",
+      "url": "https://x.com/cristiancrespoj/status/2060769325091323936",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2060769325091323936"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0032",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "DENUNCIA CIUDADANA | ABUSO DE AUTORIDAD EN PROCEDIMIENTO DE TRÁNSITO\n\nEn este video podemos observar cómo un funcionario policial alega que un ciudadano cometió una infracción de tránsito. Sin embargo, la legislación venezolana establece claramente cuáles son las sanciones",
+      "category": "abuso",
+      "category_label": "Abuso",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HLHLCC7WwAA-c7K?format=jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-06-18T00:03:42.000Z",
+      "url": "https://x.com/cristiancrespoj/status/2067397806000681093",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2067397806000681093"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0031",
+      "username": "vitugol",
+      "name": "VITU",
+      "text": "Gracias a la lealtad y la profesionalidad de los servidores públicos por no ceder al poder,se ha podido destapar toda la corrupción a la que este Gobierno nos tiene sometidos.Estamos más cerca de lo que muchos creen de países como Liberia,Venezuela o Somalia.Poca broma con esto.",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T19:12:51.000Z",
+      "url": "https://x.com/vitugol/status/2077833861459779937",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "vitugol",
+          "url": "https://x.com/vitugol/status/2077833861459779937"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0030",
+      "username": "AndromedaOffic1",
+      "name": "AndromedaOfficial",
+      "text": "LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy alzamos la voz con fuerza: la transición no puede basarse en la mentira.\n\n LOS",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HNYNKHAXIAATL4M?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T20:29:18.000Z",
+      "url": "https://x.com/AndromedaOffic1/status/2077853100367356378",
+      "source_count": 2,
+      "sources": [
+        {
+          "username": "AndromedaOffic1",
+          "url": "https://x.com/AndromedaOffic1/status/2077853100367356378"
+        },
+        {
+          "username": "AndromedaOffic1",
+          "url": "https://x.com/AndromedaOffic1/status/2077862936320921663"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0029",
+      "username": "alexvzlalibre",
+      "name": "AlexVzlaLibre",
+      "text": "ALERTA MÁXIMA \nEl tráfico de niños es uno de los mercados ilícitos más grandes del mundo.\n\nEn Venezuela, tras el terremoto, miles de niños están en grave peligro de ser víctimas de trata. El caos, el desplazamiento y la desesperación son el mejor terreno para las redes",
+      "category": "censura",
+      "category_label": "Censura",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T20:11:00.000Z",
+      "url": "https://x.com/alexvzlalibre/status/2077848493553750347",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0028",
+      "username": "NotiExpressColo",
+      "name": "NotiExpresColor",
+      "text": "\"Nos dejaron solos\": la desgarradora historia del padre que encontró el cuerpo de su hija 20 días después de los terremotos\n\n“Nos abandonaron, nos dejaron solos”\n\nEra la denuncia de Jan Carlo Barrios que, mirando a la cámara de su teléfono para grabar un video, contaba que era la",
+      "category": "represion",
+      "category_label": "Represión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HNYCDW9WYAA0ZK9?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T20:19:17.000Z",
+      "url": "https://x.com/NotiExpressColo/status/2077850579041234950",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0027",
+      "username": "HuracanRodrigui",
+      "name": "Huracán Rodriguista",
+      "text": "Cabello denuncia \"laboratorios mediáticos\" que fabrican \"noticias falsas\" para generar caos en Venezuela - RT \nhttps://\nactualidad.rt.com/actualidad/617\n192-cabello-denuncia-laboratorios-mediaticos-caotizar-venezuela\n…",
+      "category": "persecucion",
+      "category_label": "Persecución",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T21:46:05.000Z",
+      "url": "https://x.com/HuracanRodrigui/status/2077872423257395525",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0010",
+      "username": "thorxx20",
+      "name": "jualave",
+      "text": "Si sobre todo al Estado 51... la mejor y mas rapida manera de sacar adelante a Venezuela despues del nefasto chavismo y no retroceder jamas... todos nuestros politicos tienen la enfermedad mental de la corrupcion y quien sufre es el pueblo",
+      "category": "corrupcion",
+      "category_label": "Corrupción",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T15:30:52.000Z",
+      "url": "https://x.com/thorxx20/status/2077777996891467803",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0011",
+      "username": "periodicodeuna",
+      "name": "Periódico D'Una",
+      "text": "Ronny Aleaga, procesados en el caso Metástasis y también investigados por el asesinato del excandidato presidencial Fernando Villavicencio. El pedido fue dirigido a Estados Unidos y Venezuela, respectivamente.\nLa solicitud fue presentada por el presidente subrogante de la Corte",
+      "category": "abuso",
+      "category_label": "Abuso",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HNW-5pBWYAAFUwk?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T15:25:44.000Z",
+      "url": "https://x.com/periodicodeuna/status/2077776706711035979",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0001",
+      "username": "estebanoria",
+      "name": "Esteban Oria",
+      "text": "ÚLTIMA HORA | INTERVENCIÓN TOTAL: SE VIENE UNA ADMINISTRACIÓN TEMPORAL DE VENEZUELA\n\nEstados Unidos prepara el despliegue de 3.000 técnicos para sustituir al gobierno ineficiente de Delcy Rodríguez y asumir temporalmente la reconstrucción institucional del país.\n\nEl plan",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HNYtaEoWIAA8Fvs?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HNYtaEgW0AAFeUL?format=jpg&name=large",
+        "https://pbs.twimg.com/media/HNYtaEnWEAADpPc?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HNYtaEzXwAAjtb0?format=jpg&name=360x360"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T15:23:51.000Z",
+      "url": "https://x.com/estebanoria/status/2077776231940940088",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0002",
+      "username": "fallaElectricas",
+      "name": "@FallaelectricasNoticias",
+      "text": "VENEZUELA \nEl chavismo la peste del siglo 21, debieran ser catalogado sus acciones como Crimen de lesa Humanidad, imponer impuestos a la ayuda Humanitaria es mas que un Crimen, denuncia el Uruguay",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [
+        "https://pbs.twimg.com/media/HNW6sJ4XoAAmQhA?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T15:07:20.000Z",
+      "url": "https://x.com/fallaElectricas/status/2077772073552826701",
+      "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0012",
+      "username": "RazonDeEstadoTV",
+      "name": "Razón de Estado",
+      "text": "‍ El verdadero drama es que Venezuela ya estaba destruida institucionalmente.\n\n #RazónDeEstado | Conversamos con Tomás Arias sobre cómo décadas de corrupción, deterioro institucional y saqueo agravaron el impacto del terremoto en Venezuela. \n\n¿Está Venezuela ante una",
+      "category": "censura",
+      "category_label": "Censura",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T15:00:02.000Z",
+      "url": "https://x.com/RazonDeEstadoTV/status/2077770238918328580",
+      "source_count": 1,
+      "sources": []
+    }
+  ]
+}

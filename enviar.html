@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enviar evidencia — Expediente Venezuela</title>
+<meta name="description" content="Envía evidencia de forma anónima y cifrada. Tus datos nunca serán almacenados.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/enviar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem}
+.form-input,.form-textarea,.form-select{width:100%;background:var(--bg);border:1px solid rgba(196,184,152,.12);color:var(--text);font-family:var(--sans);font-size:.88rem;padding:.75rem 1rem;border-radius:2px;transition:border-color .2s}
+.form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:var(--beige)}
+.form-textarea{min-height:160px;resize:vertical;font-family:var(--mono);font-size:.82rem;line-height:1.7}
+.form-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23c4b898' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-hint{font-size:.75rem;color:var(--text-dim);margin-top:.3rem;font-family:var(--mono)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-check{display:flex;align-items:flex-start;gap:.6rem;margin:1rem 0}
+.form-check input{margin-top:.15rem;accent-color:var(--yellow)}
+.form-check label{font-size:.82rem;color:var(--text-dim);line-height:1.5}
+.form-check a{color:var(--beige);text-decoration:underline}
+.btn-submit{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.75rem 2rem;background:var(--red);border:1px solid var(--red);color:#fff;cursor:pointer;transition:all .25s}
+.btn-submit:hover{background:var(--red-light)}
+.btn-submit:disabled{opacity:.4;cursor:not-allowed}
+.secure-badge{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.6rem;color:var(--green-light);letter-spacing:.05em;margin-bottom:2rem;padding:.6rem 1rem;border:1px solid rgba(45,106,79,.2);background:rgba(45,106,79,.08);width:fit-content}
+.secure-dot{width:6px;height:6px;border-radius:50%;background:var(--green-light);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.success-msg{display:none;text-align:center;padding:3rem 2rem}
+.success-msg h2{font-family:var(--serif);font-size:1.5rem;color:var(--text-bright);margin-bottom:1rem}
+.success-msg p{color:var(--text-dim);font-size:.9rem;line-height:1.7}
+.form-wrapper{display:block}
+.form-wrapper.sent .form-wrapper-inner{display:none}
+.form-wrapper.sent .success-msg{display:block}
+</style>
+</head>
+<body>
+<div class="texture"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark">EV</div>Expediente Venezuela</a>
+    <nav class="nav">
+      <a href="index.html">Expedientes</a>
+      <a href="metodologia.html">Metodología</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <button class="mobile-menu" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="page-eyebrow">Canal seguro</div>
+  <h1 class="page-title">Enviar evidencia</h1>
+  <p class="page-desc">Tu identidad será protegida. No se almacenan direcciones IP ni metadatos de identificación. Todo envío es cifrado.</p>
+
+  <div class="form-wrapper" id="formWrapper">
+    <div class="form-wrapper-inner">
+      <div class="secure-badge"><div class="secure-dot"></div>Conexión cifrada · Anónimo · Sin tracking</div>
+
+      <form id="evidenceForm">
+        <div class="form-group">
+          <label class="form-label">Tipo de hallazgo</label>
+          <select class="form-select" name="tipo" required>
+            <option value="">Seleccionar...</option>
+            <option value="vuln_web">Vulnerabilidad web</option>
+            <option value="data_leak">Fuga de datos</option>
+            <option value="credencial">Credenciales expuestas</option>
+            <option value="git_exposure">Repositorio Git expuesto</option>
+            <option value="admin_panel">Panel de administración</option>
+            <option value="corrupcion">Corrupción documentada</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Dominio o institución afectada</label>
+          <input class="form-input" type="text" name="dominio" placeholder="ej: ministerio.gob.ve" required>
+          <div class="form-hint">Dominio exacto o nombre de la institución</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Descripción del hallazgo</label>
+          <textarea class="form-textarea" name="descripcion" placeholder="Describe lo que encontraste con el mayor detalle posible. Incluye URLs, paths, parámetros, y cualquier evidencia técnica." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Evidencia técnica (opcional)</label>
+          <input class="form-input" type="text" name="evidencia" placeholder="URL directa, screenshot link, commit hash, etc.">
+          <div class="form-hint">Puedes pegar URLs de imágenes en servicios como imgur o drive</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Severidad estimada</label>
+            <select class="form-select" name="severidad">
+              <option value="critical">Crítico</option>
+              <option value="high" selected>Alto</option>
+              <option value="medium">Medio</option>
+              <option value="info">Informativo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Fecha de detección</label>
+            <input class="form-input" type="date" name="fecha">
+          </div>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="verify" name="verificar" required>
+          <label for="verify">Entiendo que esta información será verificada antes de su publicación y que Expediente Venezuela se reserva el derecho de no publicar hallazgos que no cumplan con los criterios de verificación. He leído la <a href="privacidad.html">política de privacidad</a>.</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="anon" name="anonimo" required>
+          <label for="anon">Confirmo que no soy funcionario público en ejercicio de funciones y que esta evidencia no contiene datos personales de ciudadanos privados.</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar evidencia de forma segura</button>
+      </form>
+    </div>
+
+    <div class="success-msg">
+      <h2>Evidencia recibida</h2>
+      <p>Tu aporte será revisado por el equipo de verificación. No se almacenan datos identificables. Si necesitas dar seguimiento, guarda el código de referencia que recibirás por correo seguro.</p>
+      <br>
+      <a href="index.html" class="btn-submit" style="display:inline-block;text-decoration:none">Volver a expedientes</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>Expediente Venezuela · <a href="https://edgemarketing.art">edgemarketing.art</a> · Datos verificados, hechos documentados</p>
+</footer>
+
+<script>
+document.getElementById('evidenceForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('formWrapper').classList.add('sent');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+</script>
+
+</body>
+</html>

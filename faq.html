@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas frecuentes — Expediente Venezuela</title>
+<meta name="description" content="Respuestas a las preguntas más frecuentes sobre Expediente Venezuela.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/faq.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.faq-item{border-bottom:1px solid rgba(196,184,152,.06);padding:1.25rem 0}
+.faq-q{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text-bright);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q::after{content:'+';font-family:var(--mono);font-size:1.1rem;color:var(--yellow);transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:.88rem;color:var(--text-dim);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-top:.75rem}
+</style>
+</head>
+<body>
+<div class="texture"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark">EV</div>Expediente Venezuela</a>
+    <nav class="nav">
+      <a href="index.html">Expedientes</a>
+      <a href="metodologia.html">Metodología</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="faq.html" class="active">FAQ</a>
+    </nav>
+    <button class="mobile-menu" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="page-eyebrow">Preguntas frecuentes</div>
+  <h1 class="page-title">Lo que necesitas saber</h1>
+  <p class="page-desc">Respuestas claras sobre el propósito, el método y los límites de esta investigación ciudadana.</p>
+
+  <div class="content">
+    <div class="faq-item open">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Qué es Expediente Venezuela?</div>
+      <div class="faq-a">Una plataforma de investigación ciudadana que documenta vulnerabilidades digitales en instituciones públicas venezolanas. No es un medio de prensa ni un tribunal — es un archivo vivo de evidencia verificada.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Quién está detrás?</div>
+      <div class="faq-a">Un equipo de investigadores independientes que utiliza herramientas de seguridad ofensiva y OSINT para documentar el estado de la infraestructura digital gubernamental. No tenemos afiliación política.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Es legal lo que hacen?</div>
+      <div class="faq-a">Sí. Todo el análisis se realiza sobre infraestructura accesible públicamente. No se realizan ataques, no se accede a sistemas protegidos, no se roban datos. Se documenta lo que ya está expuesto.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Cómo verifican la información?</div>
+      <div class="faq-a">Cada hallazgo se verifica con al menos dos fuentes independientes: escaneo técnico directo, Certificate Transparency, registros DNS, y documentación de soporte. Los elementos no confirmados se marcan explícitamente.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Puedo enviar información?</div>
+      <div class="faq-a">Sí. El formulario de envío es anónimo y cifrado. No se almacenan IPs ni datos personales. Toda evidencia recibida pasa por el mismo proceso de verificación que los hallazgos propios.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Qué pasa si soy una institución mencionada?</div>
+      <div class="faq-a">Tienes derecho a responder, corregir, o solicitar revisión. Cada respuesta es publicada íntegramente junto al expediente. El proceso está detallado en la página de Privacidad.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Borran datos de personas privadas?</div>
+      <div class="faq-a">Sí. Si algún hallazgo afecta a una persona que no es funcionario público, se elimina inmediatamente. La investigación se enfoca en instituciones y funcionarios en ejercicio de sus funciones.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Cuántos expedientes hay?</div>
+      <div class="faq-a">Actualmente 35 expedientes abiertos, con 28 verificados y 7 en proceso de verificación. El dossier completo contiene 10 hallazgos principales con evidencia documentada.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Con qué frecuencia se actualiza?</div>
+      <div class="faq-a">Los expedientes se actualizan cuando hay nueva evidencia, correcciones, o cambios en el estado de las vulnerabilidades. El sistema CuRioso realiza escaneos periódicos de monitoreo.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Puedo republicar el contenido?</div>
+      <div class="faq-a">Sí, bajo atribución y sin modificaciones al contenido factual. Los datos deben citarse con su número de expediente y fecha de verificación. El contenido editorial y las opiniones no están sujetas a republicación.</div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>Expediente Venezuela · <a href="https://edgemarketing.art">edgemarketing.art</a> · Datos verificados, hechos documentados</p>
+</footer>
+
+</body>
+</html>

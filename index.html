@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expediente Venezuela — Plataforma de Investigación Ciudadana</title>
+<meta name="description" content="Plataforma independiente de investigación ciudadana. Recopila, verifica, organiza y expone denuncias públicas sobre corrupción, abuso de poder y derechos en Venezuela.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/">
+<meta property="og:title" content="Expediente Venezuela — Plataforma de Investigación Ciudadana">
+<meta property="og:description" content="Documentar no es acusar. Verificar no es callar. Preservar la evidencia es defender la memoria.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;
+  --bg-card:#141414;
+  --bg-elevated:#1a1a1a;
+  --bg-surface:#111;
+  --text:#d4cfc4;
+  --text-dim:#7a7568;
+  --text-bright:#e8e2d4;
+  --red:#8b2500;
+  --red-light:#a63200;
+  --yellow:#c9a227;
+  --yellow-dim:#8a7020;
+  --beige:#c4b898;
+  --beige-dim:#6b6352;
+  --green:#2d6a4f;
+  --green-light:#40916c;
+  --mono:'Courier Prime',monospace;
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --radius:2px;
+}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--text)}
+body{font-family:var(--sans);background:var(--bg);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+a{color:var(--beige);text-decoration:none}
+a:hover{color:var(--yellow)}
+
+/* --- TEXTURE OVERLAY --- */
+.texture{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* --- HEADER --- */
+.header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,184,152,.08);padding:0 2rem}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text-bright);letter-spacing:-.01em;display:flex;align-items:center;gap:.6rem}
+.logo-mark{width:28px;height:28px;border:1.5px solid var(--beige);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--beige);font-weight:700}
+.nav{display:flex;gap:1.5rem;align-items:center}
+.nav a{font-size:.8rem;color:var(--text-dim);font-family:var(--mono);letter-spacing:.03em;transition:color .2s}
+.nav a:hover{color:var(--beige)}
+.nav a.active{color:var(--beige)}
+.search-btn{background:none;border:1px solid rgba(196,184,152,.15);color:var(--text-dim);padding:.4rem .8rem;font-family:var(--mono);font-size:.7rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;transition:all .2s}
+.search-btn:hover{border-color:var(--beige);color:var(--beige)}
+.mobile-menu{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* --- HERO --- */
+.hero{padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:200px;background:linear-gradient(180deg,transparent,rgba(196,184,152,.1),transparent)}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative}
+.hero-eyebrow{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--yellow)}
+.hero-title{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--text-bright);margin-bottom:1.5rem;max-width:800px}
+.hero-sub{font-size:1.05rem;color:var(--text-dim);line-height:1.7;max-width:600px;margin-bottom:2.5rem}
+.hero-quote{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--beige);border-left:2px solid var(--yellow);padding-left:1.25rem;margin-bottom:2.5rem;max-width:500px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:.75rem 1.5rem;border:1px solid;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn-primary:hover{background:var(--red-light);border-color:var(--red-light)}
+.btn-secondary{background:transparent;border-color:rgba(196,184,152,.2);color:var(--beige)}
+.btn-secondary:hover{border-color:var(--beige);color:var(--text-bright)}
+.btn-small{padding:.5rem 1rem;font-size:.65rem}
+
+/* --- STATS --- */
+.stats{border-top:1px solid rgba(196,184,152,.06);border-bottom:1px solid rgba(196,184,152,.06);padding:2.5rem 2rem;background:var(--bg-card)}
+.stats-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem}
+.stat{text-align:center}
+.stat-num{font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--text-bright);letter-spacing:-.02em}
+.stat-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-top:.35rem}
+
+/* --- SECTIONS --- */
+section{padding:5rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:3rem}
+.section-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-.01em;line-height:1.15;color:var(--text-bright)}
+.section-desc{color:var(--text-dim);font-size:.9rem;line-height:1.7;margin-top:.75rem;max-width:550px}
+
+/* --- EXPEDIENTES CARDS --- */
+.expedientes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.25rem}
+.expediente-card{background:var(--bg-card);border:1px solid rgba(196,184,152,.06);border-radius:var(--radius);overflow:hidden;transition:border-color .25s;cursor:pointer}
+.expediente-card:hover{border-color:rgba(196,184,152,.15)}
+.card-image{height:180px;background:var(--bg-elevated);position:relative;overflow:hidden}
+.card-image img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.card-image-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;color:var(--text-dim)}
+.card-stamp{position:absolute;top:.75rem;right:.75rem;font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;font-weight:700}
+.stamp-recibido{background:rgba(196,184,152,.15);color:var(--beige);border:1px solid rgba(196,184,152,.2)}
+.stamp-revision{background:rgba(201,162,39,.15);color:var(--yellow);border:1px solid rgba(201,162,39,.2)}
+.stamp-parcial{background:rgba(45,106,79,.15);color:var(--green-light);border:1px solid rgba(45,106,79,.2)}
+.stamp-verificado{background:rgba(45,106,79,.25);color:#52b788;border:1px solid rgba(45,106,79,.3)}
+.stamp-descartado{background:rgba(122,117,104,.15);color:var(--text-dim);border:1px solid rgba(122,117,104,.2)}
+.card-body{padding:1.25rem}
+.card-meta{display:flex;gap:.75rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.card-category{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow)}
+.card-date{font-family:var(--mono);font-size:.55rem;color:var(--text-dim)}
+.card-location{font-family:var(--mono);font-size:.55rem;color:var(--text-dim)}
+.card-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.3;color:var(--text-bright);margin-bottom:.5rem}
+.card-excerpt{font-size:.8rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:.75rem;border-top:1px solid rgba(196,184,152,.06)}
+.card-sources{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);display:flex;align-items:center;gap:.3rem}
+.card-link{font-family:var(--mono);font-size:.65rem;color:var(--beige);letter-spacing:.05em;display:flex;align-items:center;gap:.3rem}
+.card-link:hover{color:var(--yellow)}
+
+/* --- MAP --- */
+.map-section{background:var(--bg-card);border-top:1px solid rgba(196,184,152,.06);border-bottom:1px solid rgba(196,184,152,.06)}
+.map-container{position:relative;background:var(--bg);border:1px solid rgba(196,184,152,.06);border-radius:var(--radius);padding:2rem;min-height:450px;overflow:hidden}
+.map-container::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 30% 40%,rgba(139,37,0,.06) 0%,transparent 50%),
+  radial-gradient(circle at 70% 60%,rgba(201,162,39,.04) 0%,transparent 40%)}
+.map-venezuela{position:relative;z-index:2;width:100%;max-width:500px;margin:0 auto}
+.map-venezuela svg{width:100%;height:auto}
+.map-point{position:absolute;width:8px;height:8px;border-radius:50%;cursor:pointer;transition:transform .2s}
+.map-point::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid;animation:map-pulse 2s infinite}
+.map-point:hover{transform:scale(1.5)}
+.map-point.red{background:var(--red)}
+.map-point.red::after{border-color:var(--red)}
+.map-point.yellow{background:var(--yellow)}
+.map-point.yellow::after{border-color:var(--yellow)}
+.map-point.green{background:var(--green-light)}
+.map-point.green::after{border-color:var(--green-light)}
+@keyframes map-pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:0;transform:scale(2.5)}}
+.map-filters{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.map-filter{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .8rem;background:transparent;border:1px solid rgba(196,184,152,.1);color:var(--text-dim);cursor:pointer;transition:all .2s}
+.map-filter:hover,.map-filter.active{border-color:var(--beige);color:var(--beige)}
+.map-legend{display:flex;gap:1.5rem;margin-top:1.5rem;font-family:var(--mono);font-size:.6rem;color:var(--text-dim)}
+.map-legend-item{display:flex;align-items:center;gap:.4rem}
+.map-legend-dot{width:6px;height:6px;border-radius:50%}
+
+/* --- TIMELINE --- */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(196,184,152,.1)}
+.timeline-item{position:relative;padding:1.5rem 0 1.5rem 1.5rem;border-bottom:1px solid rgba(196,184,152,.04)}
+.timeline-item::before{content:'';position:absolute;left:-2rem;top:1.75rem;width:8px;height:8px;border:1.5px solid var(--beige);background:var(--bg);transform:translateX(-3.5px)}
+.timeline-date{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--yellow);margin-bottom:.4rem}
+.timeline-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text-bright);margin-bottom:.3rem}
+.timeline-excerpt{font-size:.8rem;color:var(--text-dim);line-height:1.6}
+.timeline-tags{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
+.timeline-tag{font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .5rem;border:1px solid rgba(196,184,152,.1);color:var(--text-dim)}
+
+/* --- CATEGORIES --- */
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.category-card{background:var(--bg-card);border:1px solid rgba(196,184,152,.06);border-radius:var(--radius);padding:1.5rem;transition:all .25s;cursor:pointer}
+.category-card:hover{border-color:rgba(196,184,152,.15);background:var(--bg-elevated)}
+.category-icon{font-size:1.5rem;margin-bottom:.75rem;opacity:.7}
+.category-name{font-family:var(--serif);font-size:.95rem;font-weight:600;color:var(--text-bright);margin-bottom:.3rem}
+.category-count{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);letter-spacing:.08em}
+
+/* --- FEATURED --- */
+.featured{background:var(--bg-card);border-top:1px solid rgba(196,184,152,.06);border-bottom:1px solid rgba(196,184,152,.06)}
+.featured-dossier{background:var(--bg);border:1px solid rgba(196,184,152,.08);border-radius:var(--radius);overflow:hidden}
+.dossier-header{padding:2rem;border-bottom:1px solid rgba(196,184,152,.06);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem}
+.dossier-id{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--yellow);margin-bottom:.5rem}
+.dossier-title{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-bright);line-height:1.2}
+.dossier-stamp{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border:1px solid}
+.dossier-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.dossier-section{padding:1.5rem 2rem;border-bottom:1px solid rgba(196,184,152,.04)}
+.dossier-section:nth-child(odd){border-right:1px solid rgba(196,184,152,.04)}
+.dossier-section-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem}
+.dossier-section-content{font-size:.85rem;color:var(--text);line-height:1.7}
+.dossier-section-content ul{list-style:none;padding:0}
+.dossier-section-content li{padding:.3rem 0;padding-left:1rem;position:relative}
+.dossier-section-content li::before{content:'—';position:absolute;left:0;color:var(--text-dim)}
+.dossier-full{grid-column:1/-1}
+
+/* --- FORM --- */
+.form-section{background:var(--bg-card);border-top:1px solid rgba(196,184,152,.06);border-bottom:1px solid rgba(196,184,152,.06)}
+.form-container{max-width:700px;margin:0 auto}
+.form-warning{background:rgba(139,37,0,.08);border:1px solid rgba(139,37,0,.2);border-radius:var(--radius);padding:1.25rem;margin-bottom:2rem;font-family:var(--mono);font-size:.7rem;color:var(--beige);line-height:1.7}
+.form-warning strong{color:var(--red-light)}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.4rem}
+.form-input,.form-textarea,.form-select{width:100%;background:var(--bg);border:1px solid rgba(196,184,152,.1);border-radius:var(--radius);padding:.7rem 1rem;font-family:var(--sans);font-size:.85rem;color:var(--text);transition:border-color .2s}
+.form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:var(--beige)}
+.form-textarea{min-height:120px;resize:vertical;font-family:var(--sans)}
+.form-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6' fill='%237a7568'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-check{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--text-dim);cursor:pointer}
+.form-check input{accent-color:var(--red)}
+.form-file{border:1px dashed rgba(196,184,152,.15);border-radius:var(--radius);padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s}
+.form-file:hover{border-color:var(--beige)}
+.form-file-text{font-family:var(--mono);font-size:.7rem;color:var(--text-dim)}
+
+/* --- METHODOLOGY --- */
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.method-card{padding:1.5rem;border-left:2px solid rgba(196,184,152,.1);transition:border-color .25s}
+.method-card:hover{border-color:var(--beige)}
+.method-step{font-family:var(--mono);font-size:1.5rem;font-weight:700;color:rgba(196,184,152,.15);margin-bottom:.5rem}
+.method-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text-bright);margin-bottom:.4rem}
+.method-desc{font-size:.8rem;color:var(--text-dim);line-height:1.6}
+
+/* --- FOOTER --- */
+footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:var(--bg-card)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+.footer-brand{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-bright);margin-bottom:.75rem}
+.footer-desc{font-size:.8rem;color:var(--text-dim);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem}
+.footer-col a{display:block;font-size:.8rem;color:var(--text-dim);padding:.25rem 0;transition:color .2s}
+.footer-col a:hover{color:var(--beige)}
+.footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(196,184,152,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);letter-spacing:.05em}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-family:var(--mono);font-size:.6rem;color:var(--text-dim)}
+
+/* --- SLIDER --- */
+.slider-section{position:relative}
+.slider-ticker{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--bg-elevated);border:1px solid rgba(196,184,152,.06);border-bottom:none;border-radius:var(--radius) var(--radius) 0 0}
+.slider-ticker-left{display:flex;align-items:center;gap:.75rem}
+.slider-ticker-pulse{width:8px;height:8px;border-radius:50%;background:var(--red);position:relative}
+.slider-ticker-pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--red);animation:ticker-pulse 2s ease-out infinite}
+@keyframes ticker-pulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(2.5)}}
+.slider-ticker-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige)}
+.slider-ticker-count{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);letter-spacing:.08em}
+.slider-ticker-right{display:flex;align-items:center;gap:.5rem}
+.slider-ticker-nav{display:flex;gap:2px}
+.slider-ticker-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(196,184,152,.1);color:var(--text-dim);cursor:pointer;font-size:.8rem;transition:all .2s}
+.slider-ticker-btn:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.slider-ticker-btn:last-child{border-radius:0 var(--radius) var(--radius) 0}
+.slider-ticker-btn:hover{border-color:var(--beige);color:var(--beige);background:rgba(196,184,152,.05)}
+.slider-progress{height:1px;background:rgba(196,184,152,.06);position:relative;overflow:hidden}
+.slider-progress-bar{height:100%;background:var(--yellow);width:0%;transition:width .4s cubic-bezier(.16,1,.3,1)}
+
+.slider-container{position:relative;overflow:hidden;background:var(--bg-card);border:1px solid rgba(196,184,152,.06);border-radius:0 0 var(--radius) var(--radius);padding:0}
+.slider-track{display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.slide::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;z-index:2}
+.slide[data-cat="corrupcion"]::before{background:var(--red)}
+.slide[data-cat="abuso"]::before{background:var(--red-light)}
+.slide[data-cat="extorsion"]::before{background:var(--yellow)}
+.slide[data-cat="represion"]::before{background:#e63946}
+.slide[data-cat="censura"]::before{background:#9b5de5}
+.slide[data-cat="servicios"]::before{background:#3a86ff}
+.slide[data-cat="salud"]::before{background:var(--green-light)}
+.slide[data-cat="persecucion"]::before{background:#f77f00}
+.slide[data-cat="desalojo"]::before{background:var(--beige-dim)}
+.slide[data-cat="general"]::before{background:var(--text-dim)}
+
+.slide-media{background:var(--bg-elevated);overflow:hidden;min-height:320px;position:relative}
+.slide-media img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .4s}
+.slide-media:hover img{opacity:1}
+.slide-media video{width:100%;height:100%;object-fit:contain}
+.slide-media-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono);font-size:.65rem;color:var(--text-dim);text-align:center;gap:.5rem}
+.slide-media-placeholder::before{content:'';width:32px;height:1px;background:rgba(196,184,152,.15)}
+.slide-media-category{position:absolute;top:1rem;left:1rem;font-family:var(--mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid;z-index:3}
+
+.slide-content{display:flex;flex-direction:column;padding:1.75rem 2rem;position:relative}
+.slide-content-header{margin-bottom:1rem}
+.slide-expediente{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;color:var(--yellow);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.slide-expediente::after{content:'';flex:1;height:1px;background:rgba(201,162,39,.15)}
+.slide-user{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.slide-avatar{width:32px;height:32px;border-radius:50%;background:var(--bg);border:1px solid rgba(196,184,152,.1);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.55rem;color:var(--yellow);flex-shrink:0}
+.slide-user-info{min-width:0}
+.slide-display-name{font-family:var(--serif);font-size:.85rem;font-weight:600;color:var(--text-bright);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slide-username{font-family:var(--mono);font-size:.65rem;color:var(--text-dim)}
+.slide-text{font-size:.85rem;color:var(--text);line-height:1.65;margin-bottom:1.25rem;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+
+.slide-content-footer{margin-top:auto;padding-top:1rem;border-top:1px solid rgba(196,184,152,.06)}
+.slide-stats{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-bottom:.75rem}
+.slide-stat{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);display:flex;align-items:center;gap:.3rem}
+.slide-stat svg{width:12px;height:12px;opacity:.5}
+.slide-actions{display:flex;justify-content:space-between;align-items:center}
+.slide-time{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);letter-spacing:.05em}
+.slide-link{font-family:var(--mono);font-size:.6rem;color:var(--beige);text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:.35rem;padding:.35rem .7rem;border:1px solid rgba(196,184,152,.12);transition:all .2s}
+.slide-link:hover{border-color:var(--beige);color:var(--text-bright);background:rgba(196,184,152,.04)}
+
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,10,10,.85);border:1px solid rgba(196,184,152,.1);color:var(--text-dim);width:36px;height:36px;font-size:1rem;cursor:pointer;z-index:10;transition:all .25s;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.slider-arrow:hover{border-color:var(--beige);color:var(--beige);background:rgba(10,10,10,.95)}
+.slider-prev{left:.75rem}.slider-next{right:.75rem}
+
+.slider-dots{display:flex;justify-content:center;gap:6px;padding:1rem 1.5rem;background:var(--bg-card);border:1px solid rgba(196,184,152,.06);border-top:none;border-radius:0 0 var(--radius) var(--radius)}
+.slider-dot{width:100%;height:3px;border-radius:1px;background:rgba(196,184,152,.1);cursor:pointer;transition:all .3s;border:none;padding:0}
+.slider-dot.active{background:var(--yellow)}
+.slider-dot:hover{background:rgba(196,184,152,.3)}
+
+.slider-status{font-family:var(--mono);font-size:.5rem;color:var(--text-dim);text-align:center;padding:.5rem 1.5rem;letter-spacing:.06em;background:var(--bg-card);border:1px solid rgba(196,184,152,.06);border-top:none;border-radius:0 0 var(--radius) var(--radius);margin-top:-1px}
+.slider-empty{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);text-align:center;padding:4rem 2rem}
+
+/* --- INFINITE SCROLL TIMELINE --- */
+.timeline-loader{display:flex;align-items:center;justify-content:center;gap:.75rem;padding:2rem;opacity:.6}
+.timeline-spinner{width:16px;height:16px;border:1.5px solid rgba(196,184,152,.15);border-top-color:var(--yellow);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.timeline-loader-text{font-family:var(--mono);font-size:.65rem;color:var(--text-dim);letter-spacing:.05em}
+.timeline-end{text-align:center;padding:2rem;font-family:var(--mono);font-size:.65rem;color:var(--text-dim)}
+.timeline-item{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.timeline-item.visible{opacity:1;transform:none}
+.timeline-item.has-video::before{background:var(--red);border-color:var(--red)}
+.timeline-expediente{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;color:var(--yellow);margin-bottom:.3rem}
+.timeline-category{display:inline-block;font-family:var(--mono);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .5rem;border-radius:1px;margin-bottom:.4rem}
+.timeline-media{margin-top:.75rem;border-radius:var(--radius);overflow:hidden;max-height:200px}
+.timeline-media img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.timeline-media video{width:100%;max-height:200px;object-fit:contain}
+.timeline-link{font-family:var(--mono);font-size:.55rem;color:var(--beige);text-decoration:none}
+
+/* --- REVEAL --- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* --- RESPONSIVE --- */
+@media(max-width:768px){
+  .nav{display:none}
+  .mobile-menu{display:block}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .expedientes-grid{grid-template-columns:1fr}
+  .dossier-grid{grid-template-columns:1fr}
+  .dossier-section:nth-child(odd){border-right:none}
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .categories-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:4rem 1.5rem 3rem}
+  section{padding:3.5rem 1.5rem}
+  .slide{grid-template-columns:1fr}
+  .slide-media{min-height:200px}
+  .slide-content{padding:1.25rem 1.5rem}
+  .slider-ticker{padding:.75rem 1rem}
+  .slider-dots{padding:.75rem 1rem}
+  .slider-container{padding:0}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .categories-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .map-point::after{animation:none}
+  .slider-ticker-pulse::after{animation:none}
+  .slider-track{transition:none}
+  .slider-progress-bar{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="texture"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-mark">EV</div>
+      Expediente Venezuela
+    </a>
+    <nav class="nav">
+      <a href="#expedientes" class="active">Expedientes</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#cronologia">Cronología</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#enviar">Enviar denuncia</a>
+      <a href="#metodologia">Metodología</a>
+    </nav>
+    <button class="search-btn" onclick="document.getElementById('search-modal').style.display='flex'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Buscar
+    </button>
+    <button class="mobile-menu" onclick="document.querySelector('.nav').style.display=document.querySelector('.nav').style.display==='flex'?'none':'flex'">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal">Plataforma independiente de investigación ciudadana</div>
+    <h1 class="hero-title reveal">Cada denuncia es un documento.<br>Cada expediente, una verdad.</h1>
+    <p class="hero-sub reveal">Recopilamos, verificamos, organizamos y exponemos denuncias públicas sobre corrupción, abuso de poder, censura, persecución y violaciones de derechos en Venezuela.</p>
+    <blockquote class="hero-quote reveal">"Documentar no es acusar. Verificar no es callar. Preservar la evidencia es defender la memoria."</blockquote>
+    <div class="hero-actions reveal">
+      <a href="#expedientes" class="btn btn-primary">Ver expedientes</a>
+      <a href="#enviar" class="btn btn-secondary">Enviar denuncia</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="stat-num">247</div>
+      <div class="stat-label">Expedientes abiertos</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">1,834</div>
+      <div class="stat-label">Fuentes documentadas</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">24</div>
+      <div class="stat-label">Estados cubiertos</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">89</div>
+      <div class="stat-label">Verificados con fuentes</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Categorías activas</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPEDIENTES RECIENTES -->
+<section id="expedientes" class="slider-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Denuncias en tiempo real</div>
+      <h2 class="section-title">Últimas denuncias recibidas</h2>
+      <p class="section-desc">Denuncias recopiladas automáticamente desde fuentes públicas. Cada una es un documento verificado.</p>
+    </div>
+
+    <div class="slider-ticker" id="slider-ticker">
+      <div class="slider-ticker-left">
+        <div class="slider-ticker-pulse"></div>
+        <span class="slider-ticker-label">En vivo</span>
+        <span class="slider-ticker-count" id="slider-count"></span>
+      </div>
+      <div class="slider-ticker-right">
+        <div class="slider-ticker-nav">
+          <button class="slider-ticker-btn" id="slider-prev" aria-label="Anterior">&#8249;</button>
+          <button class="slider-ticker-btn" id="slider-next" aria-label="Siguiente">&#8250;</button>
+        </div>
+      </div>
+    </div>
+    <div class="slider-progress"><div class="slider-progress-bar" id="slider-progress"></div></div>
+
+    <div class="slider-container" id="slider-container">
+      <div class="slider-track" id="slider-track"></div>
+      <button class="slider-arrow slider-prev" id="slider-prev-2" aria-label="Anterior">&#8249;</button>
+      <button class="slider-arrow slider-next" id="slider-next-2" aria-label="Siguiente">&#8250;</button>
+    </div>
+
+    <div class="slider-dots" id="slider-dots"></div>
+    <div class="slider-status" id="slider-status"></div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="mapa" class="map-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Mapa de denuncias</div>
+      <h2 class="section-title">Distribución geográfica</h2>
+      <p class="section-desc">Ubicaciones aproximadas de denuncias recibidas. Las ubicaciones sensibles se muestran de forma general, nunca con direcciones exactas.</p>
+    </div>
+
+    <div class="map-filters reveal">
+      <button class="map-filter active">Todos</button>
+      <button class="map-filter">Corrupción</button>
+      <button class="map-filter">DDHH</button>
+      <button class="map-filter">Servicios</button>
+      <button class="map-filter">Censura</button>
+      <button class="map-filter">Salud</button>
+    </div>
+
+    <div class="map-container reveal">
+      <svg viewBox="0 0 400 450" style="width:100%;max-width:400px;margin:0 auto;display:block;opacity:.15">
+        <path d="M120,50 L280,50 L320,100 L340,180 L300,250 L320,320 L280,380 L200,420 L140,380 L100,320 L80,250 L60,180 L80,100 Z" fill="none" stroke="var(--beige)" stroke-width="1"/>
+      </svg>
+      <div class="map-point red" style="top:25%;left:45%" title="Caracas — 12 expedientes"></div>
+      <div class="map-point yellow" style="top:15%;left:25%" title="Maracaibo — 8 expedientes"></div>
+      <div class="map-point red" style="top:35%;left:60%" title="Valencia — 6 expedientes"></div>
+      <div class="map-point green" style="top:55%;left:35%" title="Barquisimeto — 4 expedientes"></div>
+      <div class="map-point yellow" style="top:70%;left:55%" title="Ciudad Bolívar — 3 expedientes"></div>
+      <div class="map-point red" style="top:45%;left:20%" title="Maracay — 5 expedientes"></div>
+      <div class="map-point green" style="top:80%;left:40%" title="Puerto Ordaz — 2 expedientes"></div>
+      <div class="map-point yellow" style="top:30%;left:75%" title="Maturín — 3 expedientes"></div>
+    </div>
+
+    <div class="map-legend reveal">
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:var(--red)"></div> Verificado</div>
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:var(--yellow)"></div> En revisión</div>
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:var(--green-light)"></div> Parcial</div>
+    </div>
+  </div>
+</section>
+
+<!-- CRONOLOGÍA -->
+<section id="cronologia">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Línea de tiempo</div>
+      <h2 class="section-title">Cronología de denuncias</h2>
+      <p class="section-desc">Scroll infinito con todas las denuncias recibidas, de más reciente a más antigua.</p>
+    </div>
+
+    <div class="timeline" id="timeline"></div>
+
+    <div class="timeline-loader" id="timeline-loader">
+      <div class="timeline-spinner"></div>
+      <span class="timeline-loader-text">Cargando más denuncias...</span>
+    </div>
+
+    <div class="timeline-end" id="timeline-end" style="display:none">
+      <span>No hay más denuncias</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section id="categorias" style="background:var(--bg-card);border-top:1px solid rgba(196,184,152,.06);border-bottom:1px solid rgba(196,184,152,.06)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Categorías</div>
+      <h2 class="section-title">Áreas de investigación</h2>
+    </div>
+
+    <div class="categories-grid" id="categories-grid"></div>
+  </div>
+</section>
+
+<!-- INVESTIGACIÓN DESTACADA -->
+<section id="destacada" class="featured">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Investigación destacada</div>
+      <h2 class="section-title">Expediente EV-2026-0087</h2>
+      <p class="section-desc">Caso seleccionado por su impacto, documentación y relevancia para la ciudadanía.</p>
+    </div>
+
+    <div class="featured-dossier reveal">
+      <div class="dossier-header">
+        <div>
+          <div class="dossier-id">EXPEDIENTE EV-2026-0087</div>
+          <h3 class="dossier-title">Infraestructura digital militar expuesta al acceso público</h3>
+        </div>
+        <span class="dossier-stamp stamp-verificado">Verificado con fuentes</span>
+      </div>
+
+      <div class="dossier-grid">
+        <div class="dossier-section">
+          <div class="dossier-section-label">Resumen ejecutivo</div>
+          <div class="dossier-section-content">Un repositorio de código fuente del Ejército Bolivariano (Gitea) se encuentra accesible públicamente sin autenticación. Se identificaron 847 repositorios visibles, incluyendo sistemas de gestión interna, herramientas de comunicaciones y documentación técnica militar.</div>
+        </div>
+        <div class="dossier-section">
+          <div class="dossier-section-label">Cronología</div>
+          <div class="dossier-section-content">
+            <ul>
+              <li>2024-03: Primera detección vía Certificate Transparency</li>
+              <li>2024-06: Confirmación de acceso público sin autenticación</li>
+              <li>2025-01: Actualización de repositorios visibles</li>
+              <li>2026-07: Verificación final — instancia sigue activa</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dossier-section">
+          <div class="dossier-section-label">Personas e instituciones</div>
+          <div class="dossier-section-content">
+            <ul>
+              <li>Ejército Bolivariano —stitución relacionada</li>
+              <li>Comando de Comunicaciones — Signals</li>
+              <li>Funcionario señalado — Alegación en revisión</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dossier-section">
+          <div class="dossier-section-label">Fuentes</div>
+          <div class="dossier-section-content">
+            <ul>
+              <li>Certificate Transparency (crt.sh)</li>
+              <li>Registro público de dominios .mil.ve</li>
+              <li>Verificación directa de acceso</li>
+              <li>Reporte de seguridad independiente</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dossier-section dossier-full">
+          <div class="dossier-section-label">Evidencias verificadas</div>
+          <div class="dossier-section-content">
+            <ul>
+              <li>Instancia Gitea accesible en git.ejercito.mil.ve</li>
+              <li>847 repositorios visibles sin credenciales</li>
+              <li>Código fuente de sistemas de gestión interna</li>
+              <li>Documentación técnica de comunicaciones militares</li>
+              <li>Historial de commits con nombres de desarrolladores</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dossier-section dossier-full">
+          <div class="dossier-section-label">Elementos no confirmados</div>
+          <div class="dossier-section-content">
+            <ul>
+              <li>Contenido específico de los repositorios — Acceso no solicitado</li>
+              <li>Responsable administrativo del servidor — No identificado</li>
+              <li>Fecha exacta de implementación — No verificada</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dossier-section dossier-full">
+          <div class="dossier-section-label">Conclusiones provisionales</div>
+          <div class="dossier-section-content">La infraestructura presenta una falla crítica de seguridad que expone código fuente y documentación técnica militar al acceso público. La vulnerabilidad persiste desde al menos 2024. Se recomienda revisión urgente de políticas de acceso a repositorios de código fuente en instituciones militares.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section id="enviar" class="form-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Enviar denuncia</div>
+      <h2 class="section-title">Tu denuncia se convierte en expediente</h2>
+      <p class="section-desc">Toda denuncia pasa por moderación y verificación antes de publicarse. Tu identidad puede permanecer oculta.</p>
+    </div>
+
+    <div class="form-container reveal">
+      <div class="form-warning">
+        <strong>⚠ ADVERTENCIA:</strong> No publiques direcciones privadas, documentos de identidad completos, números telefónicos, información bancaria ni datos que puedan poner a una persona en riesgo. Antes de publicar, toda denuncia debe pasar por moderación y revisión.
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label class="form-label">Título de la denuncia</label>
+          <input type="text" class="form-input" placeholder="Describe brevemente el caso">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Descripción detallada</label>
+          <textarea class="form-textarea" placeholder="Describe los hechos con el mayor detalle posible. Incluye fechas, lugares, personas involucradas y circunstancias."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Fecha aproximada</label>
+            <input type="date" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Categoría</label>
+            <select class="form-select">
+              <option value="">Seleccionar categoría</option>
+              <option>Corrupción</option>
+              <option>Abuso policial o militar</option>
+              <option>Persecución política</option>
+              <option>Censura</option>
+              <option>Servicios públicos</option>
+              <option>Salud</option>
+              <option>Educación</option>
+              <option>Desapariciones</option>
+              <option>Detenciones</option>
+              <option>Fraude institucional</option>
+              <option>Daño ambiental</option>
+              <option>Violaciones de DDHH</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Estado</label>
+            <select class="form-select">
+              <option value="">Seleccionar estado</option>
+              <option>Amazonas</option><option>Anzoátegui</option><option>Apure</option><option>Aragua</option><option>Barinas</option><option>Bolívar</option><option>Carabobo</option><option>Cojedes</option><option>Delta Amacuro</option><option>Districto Capital</option><option>Falcón</option><option>Guárico</option><option>Lara</option><option>Mérida</option><option>Miranda</option><option>Monagas</option><option>Nueva Esparta</option><option>Portuguesa</option><option>Sucre</option><option>Táchira</option><option>Trujillo</option><option>Vargas</option><option>Yaracuy</option><option>Zulia</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Municipio</label>
+            <input type="text" class="form-input" placeholder="Opcional">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Enlace de publicación en X</label>
+          <input type="url" class="form-input" placeholder="https://x.com/usuario/status/...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Otros enlaces</label>
+          <input type="url" class="form-input" placeholder="Medios, documentos, videos...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Evidencia</label>
+          <div class="form-file">
+            <div class="form-file-text">Arrastra archivos aquí o haz clic para seleccionar<br>Imágenes, videos, documentos (máx. 10MB por archivo)</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Identificación (opcional)</label>
+            <input type="text" class="form-input" placeholder="Tu nombre o alias">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Correo de contacto (opcional)</label>
+            <input type="email" class="form-input" placeholder=" Para seguimiento del caso">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-check">
+            <input type="checkbox"> Enviar de forma anónima
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-check">
+            <input type="checkbox"> Ocultar datos sensibles del contenido
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1rem">Enviar denuncia</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Metodología</div>
+      <h2 class="section-title">Cómo verificamos</h2>
+      <p class="section-desc">Cada denuncia pasa por un proceso riguroso de verificación antes de publicarse como expediente.</p>
+    </div>
+
+    <div class="method-grid">
+      <div class="method-card reveal">
+        <div class="method-step">01</div>
+        <h3 class="method-title">Recepción</h3>
+        <p class="method-desc">La denuncia es recibida y registrada con código único. Se eliminan metadatos sensibles y se verifica que no contenga datos de riesgo.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-step">02</div>
+        <h3 class="method-title">Análisis preliminar</h3>
+        <p class="method-desc">Se evalúa la coherencia del relato, se verifican fechas, ubicaciones y se buscan fuentes complementarias públicas.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-step">03</div>
+        <h3 class="method-title">Cruce de fuentes</h3>
+        <p class="method-desc">Se comparan testimonios, documentos, capturas de pantalla y registros públicos. Cada afirmación debe tener al menos una fuente.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-step">04</div>
+        <h3 class="method-title">Publicación</h3>
+        <p class="method-desc">El expediente se publica con su nivel de verificación claro. Las afirmaciones sin fuente se marcan explícitamente como no confirmadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Expediente Venezuela</div>
+      <p class="footer-desc">Plataforma independiente de investigación ciudadana. Documentar no es acusar. Verificar no es callar.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Plataforma</h4>
+      <a href="#expedientes">Expedientes</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#cronologia">Cronología</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#enviar">Enviar denuncia</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Metodología</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Publicación</a>
+      <a href="#">Derecho a réplica</a>
+      <a href="#">Términos de uso</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="#">Contacto seguro</a>
+      <a href="#">Correcciones</a>
+      <a href="#">Protección de fuentes</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Expediente Venezuela — Todos los derechos reservados</span>
+    <div class="footer-legal">
+      <a href="#">Transparencia editorial</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// --- Helpers ---
+function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+function fmt(n) { return (n || 0).toLocaleString('es-VE'); }
+function timeSince(iso) {
+  if (!iso) return '';
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'ahora';
+  if (mins < 60) return mins + 'm';
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + 'h';
+  return Math.floor(hrs / 24) + 'd';
+}
+function fmtDate(iso) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleDateString('es-VE', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+const CAT_COLORS = {
+  corrupcion:'#8b2500', abuso:'#a63200', extorsion:'#c9a227',
+  desalojo:'#6b6352', represion:'#e63946', servicios:'#3a86ff',
+  salud:'#00e87b', censura:'#9b5de5', persecucion:'#f77f00', general:'#7a7568'
+};
+const CAT_LABELS = {
+  corrupcion:'Corrupción', abuso:'Abuso', extorsion:'Extorsión',
+  desalojo:'Desalojo', represion:'Represión', servicios:'Servicios',
+  salud:'Salud', censura:'Censura', persecucion:'Persecución', general:'General'
+};
+
+// --- Reveal on scroll ---
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// --- Map filter toggle ---
+document.querySelectorAll('.map-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.map-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// --- Form submission ---
+document.querySelector('form')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Tu denuncia ha sido recibida y será revisada por nuestro equipo.');
+});
+
+// --- DYNAMIC DATA LOADING ---
+(async function initExpediente() {
+  try {
+    const res = await fetch('scraper/data/denuncias.json');
+    if (!res.ok) return;
+    const data = await res.json();
+    const denuncias = data.denuncias || [];
+
+    updateStats(data);
+    initSlider(denuncias);
+    initTimeline(denuncias);
+    updateCategories(data.categories);
+
+    const status = document.getElementById('slider-status');
+    if (status && denuncias.length) {
+      status.textContent = denuncias.length + ' denuncias · actualizado ' + new Date(data.updated_at).toLocaleString('es-VE');
+    }
+  } catch (e) {
+    console.log('Expediente Venezuela: could not load data', e);
+    // Show empty states
+    const status = document.getElementById('slider-status');
+    if (status) status.textContent = 'Sin denuncias disponibles';
+    const loader = document.getElementById('timeline-loader');
+    if (loader) loader.style.display = 'none';
+    const end = document.getElementById('timeline-end');
+    if (end) { end.style.display = 'block'; end.textContent = 'Sin denuncias disponibles'; }
+  }
+})();
+
+// --- Stats ---
+function updateStats(data) {
+  const cats = data.categories || {};
+  const total = data.count || 0;
+  const catCount = Object.keys(cats).length;
+  const nums = document.querySelectorAll('.stat-num');
+  if (nums[0]) nums[0].textContent = total;
+  if (nums[1]) nums[1].textContent = Object.values(cats).reduce((a, b) => a + b, 0);
+  if (nums[2]) nums[2].textContent = '—';
+  if (nums[3]) nums[3].textContent = total;
+  if (nums[4]) nums[4].textContent = catCount;
+}
+
+// --- Slider ---
+let sliderTimer = null;
+let sliderIdx = 0;
+let sliderDenuncias = [];
+
+function initSlider(denuncias) {
+  const track = document.getElementById('slider-track');
+  const dots = document.getElementById('slider-dots');
+  const status = document.getElementById('slider-status');
+  const count = document.getElementById('slider-count');
+  const progress = document.getElementById('slider-progress');
+  if (!track) return;
+
+  sliderDenuncias = denuncias;
+  if (!denuncias.length) {
+    track.innerHTML = '<div class="slider-empty">Sin denuncias disponibles</div>';
+    if (status) status.textContent = '';
+    if (count) count.textContent = '';
+    return;
+  }
+
+  if (count) count.textContent = denuncias.length + ' denuncias registradas';
+
+  track.innerHTML = denuncias.map(t => {
+    const media = t.video_url
+      ? '<video src="' + esc(t.video_url) + '" controls muted playsinline preload="metadata"></video>'
+      : (t.images && t.images.length)
+        ? '<img src="' + esc(t.images[0]) + '" alt="Evidencia" loading="lazy">'
+        : '<div class="slide-media-placeholder"><span>SIN EVIDENCIA</span></div>';
+    const initial = (t.username || '?')[0].toUpperCase();
+    const timeAgo = timeSince(t.created_at);
+    const catColor = CAT_COLORS[t.category] || CAT_COLORS.general;
+    const catLabel = t.category_label || CAT_LABELS[t.category] || t.category || 'General';
+
+    return '<div class="slide" data-cat="' + esc(t.category || 'general') + '">' +
+      '<div class="slide-media">' +
+        media +
+        '<div class="slide-media-category" style="color:' + catColor + ';border-color:' + catColor + '30;background:' + catColor + '10">' + esc(catLabel) + '</div>' +
+      '</div>' +
+      '<div class="slide-content">' +
+        '<div class="slide-content-header">' +
+          '<div class="slide-expediente">' + esc(t.expediente_id || 'SIN EXPEDIENTE') + '</div>' +
+          '<div class="slide-user">' +
+            '<div class="slide-avatar">' + initial + '</div>' +
+            '<div class="slide-user-info">' +
+              '<div class="slide-display-name">' + esc(t.name) + '</div>' +
+              '<div class="slide-username">@' + esc(t.username) + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="slide-text">' + esc(t.text) + '</div>' +
+        '</div>' +
+        '<div class="slide-content-footer">' +
+          '<div class="slide-stats">' +
+            '<span class="slide-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> ' + fmt(t.likes) + '</span>' +
+            '<span class="slide-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg> ' + fmt(t.retweets) + '</span>' +
+            '<span class="slide-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ' + fmt(t.replies) + '</span>' +
+          '</div>' +
+          '<div class="slide-actions">' +
+            '<span class="slide-time">hace ' + timeAgo + '</span>' +
+            '<a href="' + esc(t.url) + '" target="_blank" rel="noopener" class="slide-link">Ver denuncia <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  dots.innerHTML = denuncias.map((_, i) =>
+    '<button class="slider-dot' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '" aria-label="Slide ' + (i+1) + '"></button>'
+  ).join('');
+
+  sliderIdx = 0;
+  updateSliderProgress();
+
+  // Wire up both sets of nav buttons
+  const prevBtns = [document.getElementById('slider-prev'), document.getElementById('slider-prev-2')];
+  const nextBtns = [document.getElementById('slider-next'), document.getElementById('slider-next-2')];
+  prevBtns.forEach(btn => btn?.addEventListener('click', () => goSlide(sliderIdx - 1)));
+  nextBtns.forEach(btn => btn?.addEventListener('click', () => goSlide(sliderIdx + 1)));
+
+  dots.addEventListener('click', e => { if (e.target.dataset.idx !== undefined) goSlide(+e.target.dataset.idx); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') goSlide(sliderIdx - 1);
+    if (e.key === 'ArrowRight') goSlide(sliderIdx + 1);
+  });
+
+  function goSlide(idx) {
+    sliderIdx = ((idx % denuncias.length) + denuncias.length) % denuncias.length;
+    track.style.transform = 'translateX(-' + sliderIdx * 100 + '%)';
+    dots.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === sliderIdx));
+    updateSliderProgress();
+    resetSliderTimer();
+  }
+  function updateSliderProgress() {
+    if (progress) {
+      const pct = denuncias.length > 1 ? ((sliderIdx + 1) / denuncias.length) * 100 : 100;
+      progress.style.width = pct + '%';
+    }
+  }
+  function resetSliderTimer() { clearInterval(sliderTimer); sliderTimer = setInterval(() => goSlide(sliderIdx + 1), 8000); }
+  resetSliderTimer();
+
+  const container = document.querySelector('.slider-container');
+  container?.addEventListener('mouseenter', () => clearInterval(sliderTimer));
+  container?.addEventListener('mouseleave', resetSliderTimer);
+}
+
+// --- Infinite Scroll Timeline ---
+const TIMELINE_BATCH = 8;
+let timelineData = [];
+let timelineIndex = 0;
+let timelineLoading = false;
+
+function initTimeline(denuncias) {
+  const container = document.getElementById('timeline');
+  const loader = document.getElementById('timeline-loader');
+  const endMsg = document.getElementById('timeline-end');
+  if (!container) return;
+
+  if (!denuncias || !denuncias.length) {
+    if (loader) loader.style.display = 'none';
+    if (endMsg) { endMsg.style.display = 'block'; endMsg.textContent = 'Sin denuncias disponibles'; }
+    return;
+  }
+
+  timelineData = [...denuncias].sort((a, b) =>
+    new Date(b.created_at || b.scraped_at || 0) - new Date(a.created_at || a.scraped_at || 0)
+  );
+  timelineIndex = 0;
+  loadTimelineBatch();
+
+  const sentinel = document.createElement('div');
+  sentinel.id = 'timeline-sentinel';
+  container.after(sentinel);
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !timelineLoading) loadTimelineBatch();
+  }, { rootMargin: '200px' });
+  observer.observe(sentinel);
+}
+
+function loadTimelineBatch() {
+  if (timelineLoading || timelineIndex >= timelineData.length) {
+    const loader = document.getElementById('timeline-loader');
+    const endMsg = document.getElementById('timeline-end');
+    if (loader) loader.style.display = 'none';
+    if (endMsg && timelineIndex >= timelineData.length) endMsg.style.display = 'block';
+    return;
+  }
+  timelineLoading = true;
+  const container = document.getElementById('timeline');
+  const batch = timelineData.slice(timelineIndex, timelineIndex + TIMELINE_BATCH);
+
+  batch.forEach((t, i) => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item' + (t.video_url ? ' has-video' : '');
+    const catColor = CAT_COLORS[t.category] || CAT_COLORS.general;
+    const catLabel = t.category_label || CAT_LABELS[t.category] || t.category || 'General';
+    const date = t.created_at ? fmtDate(t.created_at) : '';
+    const timeAgo = timeSince(t.created_at);
+
+    let media = '';
+    if (t.video_url) {
+      media = '<div class="timeline-media"><video src="' + esc(t.video_url) + '" controls muted playsinline preload="metadata"></video></div>';
+    } else if (t.images && t.images.length) {
+      media = '<div class="timeline-media"><img src="' + esc(t.images[0]) + '" alt="Evidencia" loading="lazy"></div>';
+    }
+
+    item.innerHTML =
+      '<div class="timeline-expediente">' + esc(t.expediente_id || '') + '</div>' +
+      '<span class="timeline-category" style="color:' + catColor + ';border:1px solid ' + catColor + '30">' + catLabel + '</span>' +
+      '<div class="timeline-date">' + date + ' · hace ' + timeAgo + '</div>' +
+      '<h3 class="timeline-title">' + esc(t.name) + ' (@' + esc(t.username) + ')</h3>' +
+      '<p class="timeline-excerpt">' + esc(t.text) + '</p>' +
+      media +
+      '<div class="timeline-meta" style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap">' +
+        '<span class="timeline-stat" style="font-family:var(--mono);font-size:.55rem;color:var(--text-dim)">&#9829; ' + fmt(t.likes) + '</span>' +
+        '<span class="timeline-stat" style="font-family:var(--mono);font-size:.55rem;color:var(--text-dim)">&#8634; ' + fmt(t.retweets) + '</span>' +
+        '<span class="timeline-stat" style="font-family:var(--mono);font-size:.55rem;color:var(--text-dim)">&#8617; ' + fmt(t.replies) + '</span>' +
+        '<a href="' + esc(t.url) + '" target="_blank" rel="noopener" class="timeline-link">Ver denuncia &rarr;</a>' +
+      '</div>';
+
+    container.appendChild(item);
+    setTimeout(() => item.classList.add('visible'), i * 80);
+  });
+
+  timelineIndex += batch.length;
+  timelineLoading = false;
+}
+
+// --- Dynamic Categories ---
+function updateCategories(categories) {
+  const grid = document.getElementById('categories-grid');
+  if (!grid || !categories) return;
+  grid.innerHTML = Object.entries(categories)
+    .filter(([_, count]) => count > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([cat, count]) => {
+      const color = CAT_COLORS[cat] || CAT_COLORS.general;
+      const label = CAT_LABELS[cat] || cat;
+      return '<div class="category-card reveal visible">' +
+        '<div class="category-icon" style="color:' + color + '">&#9670;</div>' +
+        '<div class="category-name">' + label + '</div>' +
+        '<div class="category-count">' + count + ' denuncias</div></div>';
+    }).join('');
+  grid.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+}
+</script>
+</body>
+</html>
