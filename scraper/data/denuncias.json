@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-07-17T03:28:02.868942+00:00",
-  "count": 24,
+  "updated_at": "2026-07-17T03:40:39.347011+00:00",
+  "count": 23,
   "categories": {
     "corrupcion": 3,
-    "abuso": 3,
+    "abuso": 2,
     "servicios": 3,
     "salud": 3,
     "censura": 3,
@@ -22,7 +22,7 @@
       "category_label": "Persecución",
       "severity": "info",
       "resumen": null,
-      "video_url": "https://video.twimg.com/amplify_video/2077380992482852864/pl/5eF7nv-S-aFoXJYd.m3u8?tag=28&v=d77&variant_version=1",
+      "video_url": "media/videos/EV-2026-0035.mp4",
       "images": [],
       "likes": 0,
       "retweets": 0,
@@ -58,32 +58,6 @@
         {
           "username": "cristiancrespoj",
           "url": "https://x.com/cristiancrespoj/status/2060555681686556814"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0032",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F.",
-      "text": "DENUNCIA CIUDADANA | ABUSO DE AUTORIDAD EN PROCEDIMIENTO DE TRÁNSITO\n\nEn este video podemos observar cómo un funcionario policial alega que un ciudadano cometió una infracción de tránsito. Sin embargo, la legislación venezolana establece claramente cuáles son las sanciones",
-      "category": "abuso",
-      "category_label": "Abuso",
-      "severity": "info",
-      "resumen": null,
-      "video_url": "media/videos/EV-2026-0032.mp4",
-      "images": [
-        "https://pbs.twimg.com/media/HLHLCC7WwAA-c7K?format=jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-06-18T00:03:42.000Z",
-      "url": "https://x.com/cristiancrespoj/status/2067397806000681093",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2067397806000681093"
         }
       ]
     },
