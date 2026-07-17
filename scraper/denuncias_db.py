@@ -380,7 +380,7 @@ def _merge_source(
     source_entry = {
         "tweet_id": new_tweet_id,
         "username": new_data.get("username", ""),
-        "text": (new_data.get("text") or "")[:200],
+        "text": (new_data.get("text") or ""),
         "url": new_data.get("source_url", ""),
     }
     existing_sources.append(source_entry)

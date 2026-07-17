@@ -32,21 +32,29 @@ def download_m3u8_as_mp4(m3u8_url: str, output_path: Path) -> bool:
         return False
 
 
-async def capture_and_download(max_videos: int = 20):
+async def capture_and_download(max_videos: int = 50):
+    """Capture and download videos from tweet pages.
+    
+    Targets:
+    1. Denuncias with no video URL (NULL or 'None')
+    2. Denuncias with HTTP video URLs (expired m3u8/mp4)
+    3. Denuncias with blob: video URLs (expired)
+    """
     from playwright.async_api import async_playwright
 
     conn = init_db()
     rows = conn.execute(
         "SELECT expediente_id, tweet_id, source_url, video_url "
         "FROM denuncias "
-        "WHERE video_url IS NULL OR video_url LIKE 'https://%' "
+        "WHERE (video_url IS NULL OR video_url = 'None' OR video_url LIKE 'http%' OR video_url LIKE 'blob:%') "
+        "AND source_url IS NOT NULL "
         "ORDER BY id DESC "
         f"LIMIT {max_videos}"
     ).fetchall()
     conn.close()
 
     if not rows:
-        print("No denuncias without video URLs.")
+        print("No denuncias need video capture.")
         return
 
     print(f"Checking {len(rows)} denuncias for videos...")
@@ -58,6 +66,7 @@ async def capture_and_download(max_videos: int = 20):
 
     downloaded = 0
     skipped = 0
+    failed = 0
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(
@@ -84,7 +93,7 @@ async def capture_and_download(max_videos: int = 20):
             if not source_url:
                 continue
 
-            # Skip if already downloaded
+            # Skip if already downloaded locally
             local_file = VIDEOS_DIR / f"{exp_id}.mp4"
             if local_file.exists() and local_file.stat().st_size > 1000:
                 print(f"  {exp_id}: already downloaded, skipping")
@@ -127,13 +136,13 @@ async def capture_and_download(max_videos: int = 20):
                 except Exception:
                     pass
 
-                await asyncio.sleep(2)
+                await asyncio.sleep(3)
 
                 page.remove_listener("response", on_response)
 
                 if not captured_video_urls:
                     print(f"    No video URL captured")
-                    skipped += 1
+                    failed += 1
                     continue
 
                 # Find the best m3u8 URL (prefer variant playlists with resolution)
@@ -169,17 +178,18 @@ async def capture_and_download(max_videos: int = 20):
                     downloaded += 1
                 else:
                     print(f"    Download failed")
+                    failed += 1
 
             except Exception as e:
                 print(f"    Error: {e}")
                 page.remove_listener("response", on_response)
-                skipped += 1
+                failed += 1
 
             await asyncio.sleep(2)
 
         await browser.close()
 
-    print(f"\nDone: {downloaded} downloaded, {skipped} skipped")
+    print(f"\nDone: {downloaded} downloaded, {skipped} skipped, {failed} failed")
 
 
 if __name__ == "__main__":

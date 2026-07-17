@@ -3,436 +3,841 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cronología del Expediente — Expediente Venezuela</title>
-<meta name="description" content="Línea de tiempo completa de hechos documentados en la plataforma Expediente Venezuela. Cronología narrativa de corrupción, abuso de poder y derechos en Venezuela.">
-<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/cronologia.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<title>Cronología Documental — Expediente Venezuela</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0a0a;
-  --bg-card:#111111;
-  --bg-elevated:#181818;
-  --text:#a0a0a0;
-  --text-bright:#e8e8e8;
-  --text-dim:#666;
-  --beige:#c4b898;
-  --yellow:#c9a227;
-  --red:#8b2500;
-  --mono:'Courier Prime',monospace;
-  --serif:'Source Serif 4',Georgia,serif;
-  --sans:'Inter',-apple-system,sans-serif;
-  --radius:2px;
+  --bg0:#0a0c0f;--bg1:#0f1114;--bg2:#141619;--bg3:#1a1d21;--bg4:#222529;
+  --text1:#e8e4dd;--text2:#b0a99d;--text3:#7a756d;--text4:#4a463f;
+  --border1:#2a2d31;--border2:#1e2125;
+  --red:#a83232;--red-light:#c94040;--green:#2d8a4e;--blue:#3272a8;--mustard:#a88732;--purple:#7a3da8;--cyan:#3294a8;--beige:#a89878;
+  --serif:'Source Serif 4',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',Consolas,monospace;
+  --w-content:920px;--w-header:1340px;--side-pad:48px;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:var(--beige);text-decoration:none}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg0);color:var(--text1);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* Header */
-.site-header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,184,152,.06);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.site-logo{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige)}
-.site-logo span{color:var(--yellow)}
-.site-nav{display:flex;gap:1.5rem;align-items:center}
-.site-nav a{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);transition:color .2s}
-.site-nav a:hover,.site-nav a.active{color:var(--beige)}
+/* ===== HEADER ===== */
+.header{position:sticky;top:0;z-index:100;background:rgba(10,12,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border2)}
+.header-inner{max-width:var(--w-header);margin:0 auto;padding:0 var(--side-pad);display:flex;align-items:center;height:56px;gap:32px}
+.logo{display:flex;flex-direction:column;line-height:1.15;flex-shrink:0}
+.logo-exp{font-family:var(--serif);font-size:.85rem;font-weight:600;color:var(--text1);letter-spacing:.12em}
+.logo-ven{font-family:var(--serif);font-size:.85rem;font-weight:600;color:var(--red);letter-spacing:.12em}
+nav{display:flex;gap:24px;margin-left:20px}
+nav a{font-size:.75rem;font-weight:500;color:var(--text3);text-decoration:none;letter-spacing:.06em;padding:4px 0;transition:color .2s}
+nav a:hover{color:var(--text2)}
+nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
+.nav-search{margin-left:auto;cursor:pointer;color:var(--text3);transition:color .2s}
+.nav-search:hover{color:var(--text1)}
 
-/* Hero */
-.ch-hero{padding:4rem 2rem 2rem;border-bottom:1px solid rgba(196,184,152,.06)}
-.ch-hero-inner{max-width:1000px;margin:0 auto}
-.ch-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
-.ch-title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;letter-spacing:-.01em;line-height:1.1;color:var(--text-bright);margin-bottom:.75rem}
-.ch-subtitle{font-size:1rem;color:var(--text-dim);line-height:1.7;max-width:600px}
-.ch-stats{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
-.ch-stat{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--text-dim)}
-.ch-stat strong{color:var(--yellow);font-size:1.1rem;display:block;margin-bottom:.15rem}
+/* ===== HERO ===== */
+.hero{max-width:var(--w-content);margin:0 auto;padding:80px var(--side-pad) 0}
+.hero h1{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--text1);line-height:1.2;margin-bottom:16px}
+.hero .sub{font-size:.95rem;color:var(--text3);line-height:1.7}
+.hero .sub+p{margin-top:4px}
 
-/* Controls */
-.ch-controls{max-width:1000px;margin:2rem auto;padding:0 2rem}
-.ch-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
-.ch-filter{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .7rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
-.ch-filter:hover{border-color:var(--beige);color:var(--text-bright)}
-.ch-filter.active{background:var(--yellow);color:var(--bg);border-color:var(--yellow)}
-.ch-search-row{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
-.ch-search{flex:1;min-width:200px;font-family:var(--mono);font-size:.7rem;padding:.5rem .75rem;background:var(--bg-card);border:1px solid rgba(196,184,152,.1);color:var(--text-bright);outline:none;transition:border-color .2s}
-.ch-search:focus{border-color:var(--yellow)}
-.ch-search::placeholder{color:var(--text-dim)}
-.ch-jump{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;padding:.4rem .6rem;background:var(--bg-card);border:1px solid rgba(196,184,152,.1);color:var(--text-dim);cursor:pointer}
-.ch-jump:hover{border-color:var(--beige);color:var(--text-bright)}
-.ch-group-toggle{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;padding:.4rem .6rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
-.ch-group-toggle.active{background:var(--bg-elevated);color:var(--beige);border-color:var(--beige)}
-.ch-result-count{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);letter-spacing:.08em;margin-top:.75rem}
+/* ===== SEARCH ===== */
+.search-row{max-width:var(--w-content);margin:40px auto 0;padding:0 var(--side-pad);display:flex;gap:12px;align-items:center}
+.search-field{flex:1;position:relative}
+.search-field input{width:100%;padding:11px 16px 11px 40px;background:var(--bg2);border:1px solid var(--border1);border-radius:8px;color:var(--text1);font-family:var(--sans);font-size:.85rem;outline:none;transition:border-color .2s}
+.search-field input:focus{border-color:var(--red)}
+.search-field input::placeholder{color:var(--text4)}
+.search-field svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text4)}
+.filter-select{padding:11px 32px 11px 14px;background:var(--bg2);border:1px solid var(--border1);border-radius:8px;color:var(--text2);font-family:var(--sans);font-size:.82rem;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237a756d'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer;outline:none;transition:border-color .2s}
+.filter-select:focus{border-color:var(--red)}
 
-/* Year Jump Bar */
-.ch-yearbar{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.75rem}
-.ch-yearbtn{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;padding:.3rem .6rem;border:1px solid rgba(196,184,152,.08);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .2s}
-.ch-yearbtn:hover{border-color:var(--beige);color:var(--text-bright)}
-.ch-yearbtn.active{background:var(--yellow);color:var(--bg);border-color:var(--yellow)}
+/* ===== STATS BANNER ===== */
+.stats-banner{max-width:var(--w-content);margin:36px auto 0;padding:0 var(--side-pad)}
+.stats-inner{background:var(--bg2);border:1px solid var(--border1);border-radius:10px;padding:24px 28px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat-block{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px}
+.stat-block+.stat-block{border-left:1px solid var(--border1)}
+.stat-icon{width:20px;height:20px;border-radius:4px;margin-bottom:8px;display:flex;align-items:center;justify-content:center}
+.stat-icon svg{width:14px;height:14px}
+.stat-num{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text1);line-height:1.2}
+.stat-label{font-size:.72rem;color:var(--text3);margin-top:2px;letter-spacing:.02em}
+.stat-sub{font-size:.65rem;color:var(--text4);margin-top:1px}
+.stats-divider{height:1px;background:var(--border1);margin:18px 0 14px}
+.cat-legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.cat-item{display:flex;align-items:center;gap:5px;font-size:.7rem;color:var(--text3)}
+.cat-dot{width:7px;height:7px;border-radius:50%}
 
-/* Timeline Vertical */
-.ch-timeline{max-width:1000px;margin:0 auto;padding:2rem 2rem 4rem 5rem;position:relative}
-.ch-timeline::before{content:'';position:absolute;left:2.5rem;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(196,184,152,.12) 5rem,rgba(196,184,152,.12) calc(100% - 5rem),transparent)}
+/* ===== TIMELINE ===== */
+.timeline-section{max-width:1100px;margin:60px auto 0;padding:0 var(--side-pad);position:relative}
+.tl-year-rule{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:24px;z-index:50}
+.tl-year-rule .yr{font-size:.65rem;color:var(--text4);font-family:var(--mono);cursor:pointer;transition:color .2s;text-decoration:none}
+.tl-year-rule .yr:hover{color:var(--text2)}
+.tl-year-rule .yr.yr-active{color:var(--red-light)}
+.tl-year-rule .yr-line{width:1px;height:16px;background:var(--border1);margin:0 auto}
+.tl-container{position:relative;padding:20px 0 80px}
+.tl-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border1);transform:translateX(-50%);z-index:0}
+.tl-year-label{position:relative;text-align:center;margin:48px 0 24px;z-index:2}
+.tl-year-label span{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--text3);background:var(--bg0);padding:4px 14px;border:1px solid var(--border1);border-radius:20px;letter-spacing:.08em}
 
-/* Year Group */
-.ch-year-group{margin-bottom:2rem}
-.ch-year-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;position:relative;padding-left:1rem}
-.ch-year-label::before{content:'';position:absolute;left:-2.55rem;top:50%;width:10px;height:10px;border:2px solid var(--yellow);background:var(--bg);border-radius:50%;transform:translateY(-50%)}
+/* Events */
 
-/* Event Block */
-.ch-event{position:relative;margin-bottom:1rem;opacity:0;transform:translateY(15px);transition:opacity .4s,transform .4s}
-.ch-event.visible{opacity:1;transform:none}
-.ch-event::before{content:'';position:absolute;left:-2.5rem;top:1.5rem;width:8px;height:8px;border:2px solid var(--beige);background:var(--bg);border-radius:50%;z-index:2;transition:all .3s}
-.ch-event.critical::before{border-color:var(--red);background:var(--red);box-shadow:0 0 10px rgba(139,37,0,.4)}
-.ch-event.highlight::before{border-color:var(--yellow);box-shadow:0 0 8px rgba(201,162,39,.3)}
-.ch-event-inner{background:var(--bg-card);border:1px solid rgba(196,184,152,.06);padding:1.25rem 1.5rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
-.ch-event-inner::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--beige);opacity:.3;transition:opacity .3s}
-.ch-event.critical .ch-event-inner::before{background:var(--red);opacity:1}
-.ch-event.highlight .ch-event-inner::before{background:var(--yellow);opacity:1}
-.ch-event-inner:hover{border-color:rgba(196,184,152,.15);background:var(--bg-elevated)}
-.ch-event-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem}
-.ch-event-date{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--yellow);white-space:nowrap}
-.ch-event-badges{display:flex;gap:.4rem;flex-wrap:wrap}
-.ch-event-badge{font-family:var(--mono);font-size:.45rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .4rem;border:1px solid}
-.ch-event-badge.verificado{color:#4a9;border-color:#4a930}
-.ch-event-badge.recibido{color:var(--beige);border-color:rgba(196,184,152,.3)}
-.ch-event-badge.pendiente{color:#c9a227;border-color:rgba(201,162,39,.3)}
-.ch-event-badge.critical{color:var(--red);border-color:var(--red)}
-.ch-event-badge.high{color:var(--yellow);border-color:var(--yellow)}
-.ch-event-cat{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
-.ch-event-cat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.ch-event-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--text-bright);line-height:1.35;margin-bottom:.3rem}
-.ch-event-location{font-family:var(--mono);font-size:.5rem;color:var(--text-dim);letter-spacing:.08em;margin-bottom:.4rem}
-.ch-event-summary{font-size:.85rem;color:var(--text);line-height:1.65;margin-bottom:.5rem}
-.ch-event-narrative{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.4rem}
-.ch-event-exp{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;color:var(--yellow);margin-bottom:.3rem}
-.ch-event-source{font-family:var(--mono);font-size:.5rem;color:var(--text-dim);margin-bottom:.3rem}
-.ch-event-source a{color:var(--beige)}
-.ch-event-expand{font-family:var(--mono);font-size:.55rem;color:var(--beige);letter-spacing:.08em;display:inline-flex;align-items:center;gap:.3rem;margin-top:.5rem;cursor:pointer;background:none;border:none;padding:0}
-.ch-event-expand:hover{color:var(--yellow)}
+/* Panel hero */
+.panel-hero{width:100%;aspect-ratio:16/9;border-radius:8px;margin-bottom:20px;overflow:hidden;background:var(--bg3)}
+.panel-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.card-date{font-family:var(--mono);font-size:.7rem;color:var(--text3)}
+.card-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--text1);line-height:1.35;margin-bottom:6px}
+.card-badge{display:inline-block;font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px}
+.card-text{font-size:.78rem;color:var(--text2);line-height:1.55}
 
-/* Expanded Detail */
-.ch-event-detail{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(196,184,152,.06)}
-.ch-event-detail.open{display:block}
-.ch-event-detail p{font-size:.85rem;color:var(--text);line-height:1.7;margin-bottom:.75rem}
-.ch-event-sources{margin-top:.75rem}
-.ch-event-sources h4{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem}
-.ch-event-sources li{font-size:.8rem;color:var(--text-dim);padding:.25rem 0;padding-left:.75rem;position:relative}
-.ch-event-sources li::before{content:'—';position:absolute;left:0;color:var(--text-dim)}
-.ch-event-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.75rem}
-.ch-event-tag{font-family:var(--mono);font-size:.45rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .4rem;border:1px solid rgba(196,184,152,.08);color:var(--text-dim)}
-.ch-event-related{margin-top:.75rem}
-.ch-event-related h4{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--beige);margin-bottom:.5rem}
-.ch-event-actions{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
-.ch-event-actions a,.ch-event-actions button{font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;padding:.4rem .7rem;border:1px solid rgba(196,184,152,.12);background:transparent;color:var(--beige);cursor:pointer;transition:all .2s}
-.ch-event-actions a:hover,.ch-event-actions button:hover{border-color:var(--yellow);color:var(--yellow)}
+/* ===== SIDE PANEL ===== */
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
+.panel-overlay.open{opacity:1;pointer-events:auto}
+.side-panel{position:fixed;top:0;right:0;width:min(520px,85vw);height:100vh;background:var(--bg1);border-left:1px solid var(--border1);z-index:201;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:32px}
+.side-panel.open{transform:translateX(0)}
+.panel-close{position:absolute;top:16px;right:16px;width:32px;height:32px;background:none;border:1px solid var(--border1);border-radius:6px;color:var(--text3);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:color .2s,border-color .2s}
+.panel-close:hover{color:var(--text1);border-color:var(--text3)}
+.panel-year{font-family:var(--mono);font-size:.7rem;color:var(--text4);margin-bottom:4px;letter-spacing:.06em}
+.panel-date{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text1);margin-bottom:8px}
+.panel-badge{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:16px}
+.panel-title{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--text1);margin-bottom:12px;line-height:1.3}
+.panel-section{margin-top:20px}
+.panel-section h4{font-size:.7rem;font-weight:600;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.panel-section p{font-size:.85rem;color:var(--text2);line-height:1.65}
+.panel-section ul{list-style:none;padding:0}
+.panel-section li{font-size:.82rem;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border2)}
+.panel-section li:last-child{border-bottom:none}
+.panel-impact{margin-top:20px;padding:16px;background:var(--bg2);border:1px solid var(--border1);border-radius:8px}
+.panel-impact h4{font-size:.7rem;font-weight:600;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.panel-impact p{font-size:.82rem;color:var(--text2);line-height:1.55}
+.panel-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.panel-tag{font-size:.65rem;color:var(--text3);background:var(--bg3);border:1px solid var(--border1);padding:3px 8px;border-radius:4px}
 
-/* No results */
-.ch-no-results{text-align:center;padding:4rem 2rem;font-family:var(--mono);font-size:.75rem;color:var(--text-dim)}
+/* ===== METHODOLOGY ===== */
+.methodology{max-width:var(--w-content);margin:60px auto 80px;padding:0 var(--side-pad)}
+.method-inner{background:var(--bg2);border:1px solid var(--border1);border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:20px}
+.method-icon{flex-shrink:0;width:40px;height:40px;border-radius:8px;background:var(--bg3);border:1px solid var(--border1);display:flex;align-items:center;justify-content:center}
+.method-icon svg{width:18px;height:18px;color:var(--text3)}
+.method-text{flex:1}
+.method-text p{font-size:.8rem;color:var(--text3);line-height:1.55}
+.method-text p+p{margin-top:2px}
+.method-link{flex-shrink:0;font-size:.78rem;font-weight:600;color:var(--red-light);text-decoration:none;transition:color .2s}
+.method-link:hover{color:var(--red)}
 
-/* Back to top */
-.ch-back-top{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;border:1px solid rgba(196,184,152,.15);background:var(--bg-card);color:var(--beige);font-size:1rem;cursor:pointer;z-index:50;display:none;align-items:center;justify-content:center;transition:all .2s}
-.ch-back-top:hover{border-color:var(--yellow);color:var(--yellow)}
+/* ===== YEAR BLOCKS — Grid 3-col ===== */
+.year-block{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);align-items:start;column-gap:28px;max-width:1100px;margin:0 auto 100px;padding:0}
+.year-main{width:100%;max-width:520px}
+.year-main.right{grid-column:3}
+.year-main.left{grid-column:1}
 
-/* Footer */
-.site-footer{border-top:1px solid rgba(196,184,152,.06);padding:2rem;text-align:center}
-.footer-inner{max-width:1000px;margin:0 auto}
-.footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem}
-.footer-links a{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);transition:color .2s}
-.footer-links a:hover{color:var(--beige)}
-.footer-copy{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);letter-spacing:.08em}
+/* Central node + connectors */
+.year-tl-node{position:relative;grid-column:2;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:0;padding-top:0}
+.year-tl-node .node-dot{width:16px;height:16px;border-radius:50%;border:3px solid var(--bg0);box-shadow:0 0 0 2px var(--border1);transition:box-shadow .3s;position:relative;z-index:2;flex-shrink:0}
+.year-tl-node .node-year{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--text3);background:var(--bg0);padding:2px 10px;border:1px solid var(--border1);border-radius:12px;white-space:nowrap;letter-spacing:.06em;z-index:3;margin-bottom:6px}
+.year-tl-node .connector{position:absolute;height:1px;background:var(--border1);z-index:1;top:calc(8px + 2.4rem + 6px)}
+.year-tl-node .connector.left{right:50%;width:calc(50% - 8px)}
+.year-tl-node .connector.right{left:50%;width:calc(50% - 8px)}
 
-/* Responsive */
+/* Main event card */
+.tl-card{background:var(--bg2);border:1px solid var(--border1);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .25s,box-shadow .25s;max-height:600px;display:flex;flex-direction:column}
+.tl-card:hover{border-color:var(--red);box-shadow:0 4px 24px rgba(0,0,0,.3)}
+.tl-card.hidden{display:none}
+
+/* Card image */
+.card-img{width:100%;height:280px;overflow:hidden;position:relative;background:var(--bg3);flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.75) contrast(1.05);transition:filter .3s,transform .5s}
+.tl-card:hover .card-img img{filter:brightness(.85) contrast(1.1);transform:scale(1.04)}
+.card-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--text3);letter-spacing:.04em;font-family:var(--sans)}
+.card-img-credit{position:absolute;bottom:4px;right:6px;font-size:.55rem;color:rgba(255,255,255,.5);letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+
+/* Card body */
+.card-body{padding:16px 20px 20px;flex:1;display:flex;flex-direction:column;min-height:0;gap:10px}
+.card-meta{display:flex;align-items:center;gap:8px}
+.card-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.card-date{font-family:var(--mono);font-size:.68rem;color:var(--text3)}
+.card-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text1);line-height:1.3}
+.card-badge{display:inline-block;font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;align-self:flex-start}
+.card-text{font-size:.76rem;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-status{display:flex;align-items:center;gap:5px;padding-top:10px;border-top:1px solid var(--border2);margin-top:auto}
+.card-status-dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+.card-status-text{font-size:.62rem;color:var(--text4);font-family:var(--mono);letter-spacing:.04em}
+.card-btn{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:600;color:var(--red-light);cursor:pointer;transition:color .2s;background:none;border:none;padding:0;margin-top:4px;align-self:flex-start}
+.card-btn:hover{color:var(--red)}
+
+/* Grained module — single integrated card */
+.year-grained{width:100%;max-width:520px}
+.year-grained.right{grid-column:3}
+.year-grained.left{grid-column:1}
+.gr-module{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:560px;max-height:620px}
+
+/* Grained header — fixed */
+.gr-header{display:flex;align-items:center;gap:8px;padding:16px 16px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;height:56px}
+.gr-header-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
+.gr-header-title{font-family:var(--mono);font-size:.62rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.gr-header-sep{color:var(--border1);margin:0 2px}
+.gr-header-year{font-family:var(--mono);font-size:.62rem;color:var(--text3);white-space:nowrap}
+.gr-header-count{font-size:.58rem;color:var(--text4);font-family:var(--mono);white-space:nowrap}
+.gr-active-indicator{font-size:.6rem;color:var(--red-light);font-family:var(--mono);margin-left:auto;white-space:nowrap}
+.gr-nav{display:flex;gap:2px;margin-left:8px}
+.gr-nav-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:none;color:var(--text3);cursor:pointer;transition:all .2s;font-size:.7rem}
+.gr-nav-btn:hover{color:var(--text1);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)}
+.gr-nav-btn:disabled{opacity:.3;cursor:default}
+
+/* Grained list — compact */
+.gr-list{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent;padding:8px 0}
+.gr-list::-webkit-scrollbar{width:4px}
+.gr-list::-webkit-scrollbar-track{background:transparent}
+.gr-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:2px}
+.gr-entry{display:flex;align-items:flex-start;gap:10px;padding:10px 16px;cursor:pointer;transition:all .2s;border-left:2px solid transparent}
+.gr-entry:hover{background:rgba(255,255,255,.02)}
+.gr-entry.active{background:rgba(168,50,50,.06);border-left-color:var(--red-light)}
+.gr-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px;border:2px solid #181a1d;z-index:2;transition:transform .2s}
+.gr-entry.active .gr-dot{transform:scale(1.3);box-shadow:0 0 0 3px rgba(168,50,50,.2)}
+.gr-info{flex:1;min-width:0}
+.gr-date{font-family:var(--mono);font-size:.58rem;color:var(--text4);margin-bottom:2px}
+.gr-title{font-size:.74rem;color:var(--text2);line-height:1.35;font-weight:500}
+.gr-entry:hover .gr-title{color:var(--text1)}
+.gr-entry.active .gr-title{color:var(--text1);font-weight:600}
+
+/* Grained expanded — bottom of same card */
+.gr-expanded{border-top:1px solid rgba(255,255,255,.06);padding:16px;display:none;animation:grFadeIn .25s ease;flex-shrink:0;max-height:300px;overflow-y:auto}
+.gr-expanded.open{display:block}
+@keyframes grFadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.gr-exp-meta{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.gr-exp-badge{font-size:.55rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px}
+.gr-exp-status{font-size:.55rem;color:var(--text4);font-family:var(--mono)}
+.gr-exp-date{font-family:var(--mono);font-size:.62rem;color:var(--text3);margin-bottom:4px}
+.gr-exp-title{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--text1);line-height:1.3;margin-bottom:6px}
+.gr-exp-summary{font-size:.72rem;color:var(--text2);line-height:1.5;margin-bottom:8px}
+.gr-exp-source{font-size:.58rem;color:var(--text4);font-style:italic;margin-bottom:10px}
+.gr-exp-btn{display:inline-flex;align-items:center;gap:4px;font-size:.65rem;font-weight:600;color:var(--red-light);cursor:pointer;transition:color .2s;background:none;border:none;padding:0}
+.gr-exp-btn:hover{color:var(--red)}
+
+/* ===== RESPONSIVE — Tablet ===== */
+@media(max-width:1024px){
+  .year-block{grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr);column-gap:18px;max-width:900px}
+  .year-main{max-width:100%}
+  .year-grained{max-width:100%}
+  .gr-module{min-height:auto;max-height:620px}
+}
+
+/* ===== RESPONSIVE — Mobile ===== */
 @media(max-width:768px){
-  .ch-timeline{padding:2rem 1rem 4rem 3rem}
-  .ch-timeline::before{left:1.5rem}
-  .ch-event::before{left:-1.55rem}
-  .ch-year-label::before{left:-1.55rem}
-  .site-header{padding:.75rem 1rem}
-  .site-nav{gap:1rem}
-  .ch-hero{padding:2.5rem 1rem 1.5rem}
-  .ch-controls{padding:0 1rem}
-  .ch-event-head{flex-direction:column;gap:.3rem}
-  .ch-title{font-size:1.6rem}
-}
-@media(max-width:480px){
-  .ch-timeline{padding:1.5rem .75rem 3rem 2.5rem}
-  .ch-timeline::before{left:1rem}
-  .ch-event::before{left:-1.05rem;width:6px;height:6px}
-  .ch-year-label::before{left:-1.05rem;width:8px;height:8px}
-  .ch-event-inner{padding:1rem}
-  .site-nav a{font-size:.5rem}
+  :root{--side-pad:20px}
+  .header-inner{gap:12px}
+  nav{display:none}
+  .hero h1{font-size:1.8rem}
+  .search-row{flex-direction:column}
+  .filter-select{width:100%}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .stat-block+.stat-block{border-left:none}
+  .tl-line{display:none}
+  .tl-year-label{text-align:left;padding-left:44px}
+  .tl-year-rule{display:none}
+  .method-inner{flex-direction:column;text-align:center}
+  .side-panel{width:100vw}
+  .year-block{grid-template-columns:1fr;gap:16px;margin-bottom:60px;padding:0 0 0 20px}
+  .year-main{grid-column:1!important;max-width:100%}
+  .year-main.right,.year-main.left{grid-column:1}
+  .year-tl-node{grid-column:1;flex-direction:row;gap:10px;padding-top:0;margin-bottom:4px}
+  .year-tl-node .node-year{margin-bottom:0;margin-right:4px}
+  .year-tl-node .connector{display:none}
+  .year-grained{grid-column:1!important;max-width:100%}
+  .year-grained.right,.year-grained.left{grid-column:1}
+  .gr-module{min-height:auto;max-height:none}
+  .gr-list{max-height:none}
+  .gr-expanded{max-height:none}
 }
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <a href="index.html" class="site-logo"><span>Expediente</span> Venezuela</a>
-  <nav class="site-nav">
-    <a href="index.html">Inicio</a>
-    <a href="index.html#cronologia" class="active">Cronología</a>
-    <a href="index.html#categorias">Categorías</a>
-    <a href="index.html#destacada">Destacado</a>
-  </nav>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-exp">EXPEDIENTE</span>
+      <span class="logo-ven">VENEZUELA</span>
+    </div>
+    <nav>
+      <a href="#" class="active">CRONOLOGÍA</a>
+      <a href="#">EXPEDIENTES</a>
+      <a href="#">INVESTIGACIONES</a>
+      <a href="#">MÉTODO</a>
+      <a href="#">ACERCA DE</a>
+    </nav>
+    <div class="nav-search">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="7" r="5"/><line x1="11" y1="11" x2="15" y2="15"/></svg>
+    </div>
+  </div>
 </header>
 
-<section class="ch-hero">
-  <div class="ch-hero-inner">
-    <div class="ch-eyebrow">Cronología documental</div>
-    <h1 class="ch-title">Línea de tiempo nacional</h1>
-    <p class="ch-subtitle">Cada evento forma parte de una historia más grande. Explora la secuencia completa y entiende cómo se conectan los hechos.</p>
-    <div class="ch-stats" id="ch-stats"></div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Cronología documental</h1>
+  <p class="sub">Hechos clave que explican la crisis de Venezuela.</p>
+  <p class="sub">Una línea de tiempo construida con documentos, datos y contexto.</p>
+</section>
+
+<!-- SEARCH + FILTERS -->
+<div class="search-row">
+  <div class="search-field">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="4.5"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg>
+    <input type="text" id="searchInput" placeholder="Buscar evento, persona, monto, expediente...">
+  </div>
+  <select class="filter-select" id="catFilter">
+    <option value="">Todas las categorías</option>
+    <option value="POLÍTICA">Política</option>
+    <option value="ECONOMÍA">Economía</option>
+    <option value="CORRUPCIÓN">Corrupción</option>
+    <option value="SOCIAL">Social</option>
+    <option value="INTERNACIONAL">Internacional</option>
+    <option value="EMPRESAS">Empresas</option>
+    <option value="LEGAL">Legal</option>
+  </select>
+  <select class="filter-select" id="yearFilter">
+    <option value="">Todos los años</option>
+  </select>
+</div>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-icon" style="background:rgba(168,50,50,.15)"><svg viewBox="0 0 16 16" fill="none" stroke="#a83232" stroke-width="1.5"><rect x="3" y="2" width="10" height="12" rx="1"/><line x1="5.5" y1="5" x2="10.5" y2="5"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5"/><line x1="5.5" y1="10" x2="8" y2="10"/></svg></div>
+        <div class="stat-num">34</div>
+        <div class="stat-label">Años documentados</div>
+        <div class="stat-sub">1992 – 2026</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-icon" style="background:rgba(168,135,50,.15)"><svg viewBox="0 0 16 16" fill="none" stroke="#a88732" stroke-width="1.5"><rect x="2" y="3" width="12" height="10" rx="1"/><line x1="2" y1="6" x2="14" y2="6"/><line x1="5" y1="1" x2="5" y2="4"/><line x1="11" y1="1" x2="11" y2="4"/></svg></div>
+        <div class="stat-num">30</div>
+        <div class="stat-label">Eventos documentados</div>
+        <div class="stat-sub">1999 – 2025</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-icon" style="background:rgba(50,148,168,.15)"><svg viewBox="0 0 16 16" fill="none" stroke="#3294a8" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><line x1="8" y1="5" x2="8" y2="8"/><circle cx="8" cy="10.5" r=".5" fill="#3294a8"/></svg></div>
+        <div class="stat-num">7</div>
+        <div class="stat-label">Categorías</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-icon" style="background:rgba(50,114,168,.15)"><svg viewBox="0 0 16 16" fill="none" stroke="#3272a8" stroke-width="1.5"><rect x="2" y="1" width="9" height="12" rx="1"/><rect x="5" y="3" width="9" height="12" rx="1" fill="var(--bg2)"/></svg></div>
+        <div class="stat-num">$800B+</div>
+        <div class="stat-label">Estimado robado</div>
+      </div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="cat-legend">
+      <span class="cat-item"><span class="cat-dot" style="background:#a83232"></span>Política</span>
+      <span class="cat-item"><span class="cat-dot" style="background:#2d8a4e"></span>Economía</span>
+      <span class="cat-item"><span class="cat-dot" style="background:#3272a8"></span>Corrupción</span>
+      <span class="cat-item"><span class="cat-dot" style="background:#a88732"></span>Social</span>
+      <span class="cat-item"><span class="cat-dot" style="background:#7a3da8"></span>Internacional</span>
+      <span class="cat-item"><span class="cat-dot" style="background:#3294a8"></span>Empresas</span>
+      <span class="cat-item"><span class="cat-dot" style="background:#a89878"></span>Legal</span>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="tl-year-rule" id="yearRule"></div>
+  <div class="tl-container" id="timeline">
+    <div class="tl-line"></div>
   </div>
 </section>
 
-<div class="ch-controls">
-  <div class="ch-filters" id="ch-filters">
-    <button class="ch-filter active" data-filter="all">Todos</button>
-    <button class="ch-filter" data-filter="corrupcion">Corrupción</button>
-    <button class="ch-filter" data-filter="abuso">Abuso</button>
-    <button class="ch-filter" data-filter="servicios">Servicios</button>
-    <button class="ch-filter" data-filter="salud">Salud</button>
-    <button class="ch-filter" data-filter="censura">Censura</button>
-    <button class="ch-filter" data-filter="represion">Represión</button>
-    <button class="ch-filter" data-filter="persecucion">Persecución</button>
-    <button class="ch-filter" data-filter="extorsion">Extorsión</button>
-    <button class="ch-filter" data-filter="general">General</button>
+<!-- METHODOLOGY -->
+<section class="methodology">
+  <div class="method-inner">
+    <div class="method-icon">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="6" r="3"/><path d="M4 17v-1a6 6 0 0112 0v1"/><path d="M7 17h6" stroke-dasharray="2 2"/></svg>
+    </div>
+    <div class="method-text">
+      <p>Esta cronología se construye de forma colaborativa y permanente.</p>
+      <p>Cada evento se apoya en documentos verificables y fuentes públicas.</p>
+    </div>
+    <a href="#" class="method-link">Conoce nuestra metodología →</a>
   </div>
-  <div class="ch-search-row">
-    <input class="ch-search" id="ch-search" type="text" placeholder="Buscar por palabra clave...">
-    <button class="ch-group-toggle" id="ch-group-toggle">Agrupar por año</button>
+</section>
+
+<!-- PANEL OVERLAY -->
+<div class="panel-overlay" id="panelOverlay"></div>
+
+<!-- SIDE PANEL -->
+<div class="side-panel" id="sidePanel">
+  <button class="panel-close" id="panelClose">×</button>
+  <div class="panel-year" id="panelYear"></div>
+  <div class="panel-date" id="panelDate"></div>
+  <div class="panel-badge" id="panelBadge"></div>
+  <div class="panel-title" id="panelTitle"></div>
+  <div class="panel-section">
+    <h4>Resumen</h4>
+    <p id="panelSummary"></p>
   </div>
-  <div class="ch-yearbar" id="ch-yearbar"></div>
-  <div class="ch-result-count" id="ch-result-count"></div>
+  <div class="panel-impact">
+    <h4>Impacto</h4>
+    <p id="panelImpact"></p>
+  </div>
+  <div class="panel-section">
+    <h4>Contexto histórico</h4>
+    <p id="panelContext"></p>
+  </div>
+  <div class="panel-section">
+    <h4>Fuentes</h4>
+    <ul id="panelSources"></ul>
+  </div>
+  <div class="panel-section">
+    <h4>Etiquetas</h4>
+    <div class="panel-tags" id="panelTags"></div>
+  </div>
 </div>
 
-<div class="ch-timeline" id="ch-timeline"></div>
-
-<div class="ch-no-results" id="ch-no-results" style="display:none">No se encontraron eventos con los filtros seleccionados.</div>
-
-<button class="ch-back-top" id="ch-back-top" aria-label="Volver arriba">&uarr;</button>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="index.html">Inicio</a>
-      <a href="cronologia.html">Cronología</a>
-      <a href="index.html#categorias">Categorías</a>
-      <a href="index.html#destacada">Destacado</a>
-    </div>
-    <div class="footer-copy">Expediente Venezuela &copy; 2026 &middot; Plataforma independiente de investigación ciudadana</div>
-  </div>
-</footer>
-
 <script>
-const CAT_COLORS={corrupcion:'#c9a227',abuso:'#8b2500',servicios:'#4a9',salud:'#c4b898',censura:'#888',represion:'#c44',persecucion:'#a87',extorsion:'#c9a227',general:'#888'};
-const CAT_LABELS={corrupcion:'Corrupción',abuso:'Abuso de poder',servicios:'Servicios públicos',salud:'Salud',censura:'Censura',represion:'Represión',persecucion:'Persecución',extorsion:'Extorsión',general:'General'};
-const NARRATIVE={inicio:'Inicio',desarrollo:'Desarrollo',escalada:'Escalada','actualización':'Actualización','resolución parcial':'Resolución parcial',cierre:'Cierre'};
+const CAT_COLORS={POLÍTICA:'#a83232',ECONOMÍA:'#2d8a4e',CORRUPCIÓN:'#3272a8',SOCIAL:'#a88732',INTERNACIONAL:'#7a3da8',EMPRESAS:'#3294a8',LEGAL:'#a89878'};
+const CAT_BG={POLÍTICA:'rgba(168,50,50,.12)',ECONOMÍA:'rgba(45,138,78,.12)',CORRUPCIÓN:'rgba(50,114,168,.12)',SOCIAL:'rgba(168,135,50,.12)',INTERNACIONAL:'rgba(122,61,168,.12)',EMPRESAS:'rgba(50,148,168,.12)',LEGAL:'rgba(168,152,120,.12)'};
 
-let allEvents = [];
-let filteredEvents = [];
-let groupByYear = false;
-let activeFilter = 'all';
-let searchQuery = '';
+const EVENTS=[
+{id:1,y:1998,date:'1998-12-06',displayDate:'6 DIC 1998',title:'Chávez gana la presidencia',cat:'POLÍTICA',summary:'Hugo Chávez Frías, ex teniente coronel que lideró el golpe de 1992, gana la presidencia con 3.673.663 votos (56,20%) representando el MVR. Su campaña "Patria para todos" promete una revolución bolivariana contra la "cuarta república" corrupta.',impact:'Inicio de 25+ años de chavismo-madurismo. Reestructuración institucional, control judicial y militar, y erosión progresiva de separación de poderes que facilita el saqueo sistemático.',context:'Tras el Caracazo de 1989 y la crisis bancaria de 1994, la desconfianza ciudadana en los partidos tradicionales (AD, COPEI) alcanza niveles históricos. Chávez capitaliza el descontento con un discurso anti-establishment que promete refundar la nación.',sources:['CNE Electoral Archive 1998','Transparencia Venezuela','Human Rights Watch World Report 1999'],tags:['elecciones','presidencia','Chávez','MVR','revolución bolivariana'],img:'🏛️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/3/35/Hugo_Ch%C3%A1vez_en_1998.png',imgCredit:'Wikimedia · CC BY 3.0'},
+{id:2,y:1999,date:'1999-12-15',displayDate:'15 DIC 1999',title:'Asamblea Nacional Constituyente',cat:'POLÍTICA',summary:'Se instala la Asamblea Nacional Constituyente con 125 constituyentes oficialistas. El proceso es calificado por observadores internacionales como "conducido sin garantías de representatividad plural". Se redacta la Constitución de 1999.',impact:'Nueva Constitución concentra poderes en el ejecutivo: reelección indefinida, control de la Fuerza Armada, eliminación del Senado. Base legal para la concentración de poder que facilita la corrupción futura.',context:'La ANC fue elegida en un proceso donde la oposición boicoteó masivamente. La nueva carta magna fue aprobada por referéndum en diciembre de 1999 con un 71,78% de apoyo, aunque con baja participación opositora.',sources:['Gaceta Oficial N° 36.581','Corte Interamericana de Derechos Humanos','OEA Informe 2000'],tags:['constituyente','constitución','poder','reelección'],img:'📜',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Asamblea_Nacional_Constituyente_Venezuela_1999.svg/1280px-Asamblea_Nacional_Constituyente_Venezuela_1999.svg.png',imgCredit:'Wikimedia · CC BY-SA 4.0'},
+{id:3,y:2003,date:'2003-04-11',displayDate:'11 ABR 2003',title:'Purge de PDVSA: 18.000 despedidos',cat:'ECONOMÍA',summary:'Tras el paro petrolero de diciembre 2002-febrero 2003, Chávez despide a más de 18.000 trabajadores de PDVSA — incluyendo ingenieros, geólogos y gerentes con décadas de experiencia técnica. Producción cae de 3 millones a 25.000 barriles/día temporalmente.',impact:'Destrucción irreversible de capital humano petrolero. PDVSA nunca recuperó niveles de producción ni eficiencia. Pérdida estimada de $50B+ en producción no realizada entre 2003-2020. Financiamiento de misiones con dividendos petroleros.',context:'El paro petrolero buscó forzar elecciones anticipadas. Chávez respondió con la intervención y reestructuración de PDVSA, reemplazando personal técnico con cuadros políticos leales.',sources:['PDVSA Annual Reports','OPEP Statistical Bulletins','Banco Central de Venezuela'],tags:['PDVSA','petróleo','paro','despidos','producción'],img:'🏭',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Refiner%C3%ADa_de_Puerto_Rico_-_PDVSA.jpg/1280px-Refiner%C3%ADa_de_Puerto_Rico_-_PDVSA.jpg',imgCredit:'Wikimedia · CC BY-SA 4.0'},
+{id:4,y:2004,date:'2004-04-03',displayDate:'3 ABR 2004',title:'Misión Robinson: alfabetización política',cat:'SOCIAL',summary:'Lanzamiento de Misión Robinson con presupuesto de $100M+. Programa de alfabetización con el método cubano "Yo sí puedo". Críticos señalan que el material incluía contenido político partidista y símbolos bolivarianos.',impact:'Primer modelo de misiones sociales paralelas a instituciones del Estado. Creación de aparato paralelo de distribución de recursos sin control legislativo. Precedente para CLAP y otros mecanismos de control social.',context:'Las misiones sociales se multiplicaron: Robinson I/II, Ribas, Sucre, Barrio Adentro, Mercal. Presupuesto combinado superó los $30B entre 2004-2012 sin auditorías independientes.',sources:['AN Plan de Inversión Pública','Contraloría General','CUBA Ministry of Education'],tags:['misiones','alfabetización','Cuba','control social','presupuesto'],img:'📚',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Clase_Misi%C3%B3n_Robinson.jpg/1280px-Clase_Misi%C3%B3n_Robinson.jpg',imgCredit:'Wikimedia · CC'},
+{id:5,y:2004,date:'2004-08-15',displayDate:'15 AGO 2004',title:'Referéndum revocatorio: victoria oficial',cat:'POLÍTICA',summary:'Referéndum revocatorio contra Chávez. Resultado: 59% a favor de Chávez (quedar). Oposición denuncia irregularidades en el CNE y cadena de custodia de los votos. Observadores internacionales (OEA, Carter Center) validan resultado.',impact:'Chávez consolida poder hasta 2013. Se fortalece el control del CNE y el sistema electoral. La oposición queda desarticulada y fragmentada para años.',context:'El proceso se realizó tras un año de negociaciones entre gobierno y oposición mediadas por la OEA. El CNE implementó el voto electrónico con auditorías limitadas.',sources:['CNE Resultados Oficiales','OEA Misión de Observación','Carter Center Report'],tags:['referéndum','revocatorio','CNE','voto electrónico'],img:'🗳️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hugo_Ch%C3%A1vez_-_Votando_en_el_Referendo.jpg/1280px-Hugo_Ch%C3%A1vez_-_Votando_en_el_Referendo.jpg',imgCredit:'Wikimedia · CC'},
+{id:6,y:2005,date:'2005-08-20',displayDate:'20 AGO 2005',title:'CADIVI: control de cambios',cat:'CORRUPCIÓN',summary:'Se crea CADIVI (Comisión de Administración de Divisas) con la excusa de "defender la economía nacional". Establece un tipo de cambio preferencial de Bs 1.600/USD vs mercado paralelo que alcanzará Bs 1.000.000+/USD. El sistema genera un diferencial cambiario que se convierte en la mayor fuente de corrupción de la historia venezolana.',impact:'CADIVI y su sucesor CENCOEX canalizaron más de $50B en divisas preferenciales que nunca llegaron a la producción. El "juicio político" contra 22+ banqueros en 2009 revela desfalco masivo, pero la estructura de control continuó bajo otros nombres.',context:'El control cambiario se mantuvo durante 15 años bajo diferentes nombres: CADIVI (2005-2010), CENCOEX (2010-2013), SITME (2010-2013), DICOM (2013-2019). Cada transición ocultó irregularidades del sistema anterior.',sources:['BCV Informes','Fiscalía General','Transparencia Venezuela','PetroBarinas Case Files'],tags:['CADIVI','control cambiario','divisas','diferencial','banqueros'],img:'💱',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/CENCOEX_%285738834635%29.jpg/1280px-CENCOEX_%285738834635%29.jpg',imgCredit:'Wikimedia · CC BY 2.0'},
+{id:7,y:2007,date:'2007-01-10',displayDate:'10 ENE 2007',title:'Oleada de expropiaciones',cat:'ECONOMÍA',summary:'Chávez anuncia la expropiación de fincas, empresas agrícolas y manufactureras en el marco de la "Revolución Productiva". Se expropiaron más de 1.000 empresas entre 2007-2012, incluyendo plantas de producción de alimentos, cemento y acero.',impact:'Destrucción del aparato productivo privado. Venezuela pasó de importar $5B a $50B+ en alimentos y bienes. Desempleo formal y productividad cayeron dramáticamente. Economía completamente dependiente de petróleo.',context:'Las expropiaciones se aceleraron con la Ley de Tierras, la nacionalización de sectores estratégicos y decretos de emergencia económica. Empresas expropiadas incluyen: Cargill, Polar (parcial), Sidor, CVG.',sources:['Gaceta Oficial','ProVenezuela','Fedecámaras','ANDA'],tags:['expropiaciones','nacionalización','productividad','agricultura','industria'],img:'🏚️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Ley_de_Tierras_Venezuela.jpg/1280px-Ley_de_Tierras_Venezuela.jpg',imgCredit:'Wikimedia · CC'},
+{id:8,y:2007,date:'2007-12-02',displayDate:'02 DIC 2007',title:'Enmienda constitucional rechazada',cat:'POLÍTICA',summary:'Referéndum sobre enmienda para reelección indefinida. Resultado: 51,05% NO vs 48,95% SÍ. Primera derrota electoral del chavismo. Chávez reconoce resultado. La oposición celebra "un voto por la democracia".',impact:'Demostró que el sistema electoral podía funcionar contra el oficialismo. Chávez respondió con mayor control institucional: eliminación de gobernadores intermedios, Ley Habilitante, y fortalecimiento del PSUV.',context:'La enmienda proponía eliminar límites de reelección presidencial, permitir financiamiento extranjero a partidos, y reducir jornada laboral. Fue la primera vez que el CNE registraba un resultado adverso para Chávez.',sources:['CNE Resultados','The Economist','Reuters'],tags:['referéndum','enmienda','reelección','democracia','derrota'],img:'🗳️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Hugo_Ch%C3%A1vez_-_Refrendo.jpg/1280px-Hugo_Ch%C3%A1vez_-_Refrendo.jpg',imgCredit:'Wikimedia · CC'},
+{id:9,y:2007,date:'2007-05-27',displayDate:'27 MAY 2007',title:'RCTV cerrada por no renovar concesión',cat:'POLÍTICA',summary:'El gobierno no renueva la concesión de RCTV (Radio Caracas Televisión), canal con 54 años de historia. Motivo oficial: "incitación a la desobediencia civil" durante el paro petrolero. Cierre genera protestas masivas de estudiantes.',impact:'Cierre de principal medio opositor. Creación de TVES como canal estatal. Mensaje claro a medios privados: autocensura o cierre. Impacto devastador en libertad de expresión y pluralismo mediático.',context:'RCTV fue el canal más visto de Venezuela. Su cierre provocó la primera ola seria de protestas estudiantiles. Venevisión y Televen modificaron su línea editorial para evitar el mismo destino.',sources:['Conatel Resolución 1.055','CPJ Report','RSF','OEA'],tags:['medios','libertad de expresión','RCTV','censura','estudiantes'],img:'📺',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Cadena_Radio_Caracas_Televisi%C3%B3n_%2826307459332%29.jpg/1280px-Cadena_Radio_Caracas_Televisi%C3%B3n_%2826307459332%29.jpg',imgCredit:'Wikimedia · CC BY 2.0'},
+{id:10,y:2010,date:'2010-08-25',displayDate:'25 AGO 2010',title:'Ley Orgánica de Precios Justos',cat:'ECONOMÍA',summary:'Se aprueba la Ley de Costos y Precios Justos que establece márgenes de ganancia máximos del 15-30%. Empresas que incumplan enfrentan multas, expropiación y cárcel. La ley genera desabastecimiento masivo y closures de empresas.',impact:'Destrucción del aparato productivo restante. Empresas cerraron o redujeron producción. Desabastecimiento crónico de productos básicos. Colas, bodegones y mercado negro como norma.',context:'La ley fue implementada con mecanismos de auditoría débiles. Muchos productores no podían cubrir costos con los márgenes permitidos. El sistema de "precios justos" se convirtió en herramienta de control político.',sources:['Gaceta Oficial N° 39.495','PROVEA','Encuesta Nacional de Opinión'],tags:['precios','desabastecimiento','control','ley','productividad'],img:'🏷️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Comercializadoras_de_Venezuela.jpg/1280px-Comercializadoras_de_Venezuela.jpg',imgCredit:'Wikimedia · CC'},
+{id:11,y:2011,date:'2011-01-01',displayDate:'01 ENE 2011',title:'PetroCaribe: deuda geopolítica',cat:'INTERNACIONAL',summary:'Expansión masiva de PetroCaribe: Venezuela vende petróleo con descuentos del 40-60% a 18 países del Caribe. La deuda acumulada supera los $6B, pero se usa como herramienta geopolítica para comprar votos en OEA y apoyo diplomático.',impact:'Venezuela subsidio a regímenes aliados mientras su infraestructura nacional se deterioraba. Deuda de $6B+ con países caribeños que nunca será cobrada. PDVSA asumió pérdidas operativas por $2B/año.',context:'PetroCaribe fue el mecanismo más efectivo del "socialismo del siglo XXI" para mantener aliados. Países como Cuba, Nicaragua, Haití y Dominica recibieron petróleo subsidiado a cambio de apoyo diplomático.',sources:['PDVSA Informes','ALBA Documents','US GAO Reports'],tags:['PetroCaribe','Caribe','deuda','geopolítica','subsidio'],img:'🛢️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Petrocaribe_-_Cumbre_Venezuela_Cuba.jpg/1280px-Petrocaribe_-_Cumbre_Venezuela_Cuba.jpg',imgCredit:'Wikimedia · CC'},
+{id:12,y:2012,date:'2012-11-30',displayDate:'30 NOV 2012',title:'PDVSA: caída irreversible',cat:'ECONOMÍA',summary:'Indicadores financieros y productivos confirman la caída sostenida de PDVSA. Producción cayó de 3.3M barriles/día (1998) a 2.4M. Deuda de PDVSA: $40B+. La empresa pasa de ser "la joya de la corona" a una empresa en quiebra técnica.',impact:'PDVSA se convirtió en la mayor deuda corporativa de América Latina. Pérdida de capacidad de refinación, deterioro de infraestructura, y dependencia creciente de importación de combustible refinado.',context:'Tras la muerte de Chávez (2013), PDVSA se convirtió en caja chica del régimen. $48B en bonos emitidos para financiar gasto social, no inversión. Corrupción documentada: $11B en contratos irregulares (Caso PDVSA-CASA 14).',sources:['PDVSA Annual Reports','S&P Global Ratings','Reuters','Fitch Ratings'],tags:['PDVSA','petróleo','deuda','producción','crisis'],img:'📉',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Refiner%C3%ADa_de_Puerto_Rico_-_PDVSA.jpg/1280px-Refiner%C3%ADa_de_Puerto_Rico_-_PDVSA.jpg',imgCredit:'Wikimedia · CC BY-SA 4.0'},
+{id:13,y:2013,date:'2013-04-13',displayDate:'13 ABR 2013',title:'Maduro asume por 1,49%',cat:'POLÍTICA',summary:'Nicolás Maduro gana elecciones con 7.587.579 votos (50,61%) vs 7.363.980 de Capriles (49,12%). Margen: solo 223.599 votos — el más estrecho en historia presidencial venezolana. Oposición denuncia fraude y exige auditoría total.',impact:'Legitimidad cuestionada desde el inicio. Maduro nunca alcanzó la legitimidad electoral de Chávez. Esto lo llevó a gobernar por decreto, represión y fraude abierto en elecciones posteriores.',context:'Chávez murió el 5 de marzo de 2013. Maduro asumió como presidente interino y ganó por margen mínimo. La auditoría posterior del CNE fue parcial y sin supervisión independiente.',sources:['CNE Resultados Oficiales','OEA','Luis Almagro Declaraciones','Opposition Audit Reports'],tags:['elecciones','Maduro','margen','fraude','Capriles'],img:'🗳️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Nicol%C3%A1s_Maduro_2018.jpg/1280px-Nicol%C3%A1s_Maduro_2018.jpg',imgCredit:'Wikimedia · CC BY 4.0'},
+{id:14,y:2013,date:'2013-05-01',displayDate:'01 MAY 2013',title:'Dólar CENCOEX: 4 tipos de cambio',cat:'CORRUPCIÓN',summary:'Maduro anuncia nuevo sistema de control cambiario con 4 tipos de cambio: CENCOEX (Bs 6,30/USD), SITME (Bs 10/USD), SICAD I (Bs 12/USD), SICAD II (Bs 50/USD). Mercado paralelo: Bs 500+/USD. El sistema genera enriquecimiento ilícito masivo.',impact:'Sistema de "ventanillas" cambiarias genera corrupción documentada: $20B+ en diferenciales cambiarios entre 2013-2016. Empresarios, funcionarios y militares obtienen divisas subsidiadas para revender. Casos: Antonini Wilson, Bodas de Color.',context:'El diferencial cambiario entre el tipo de cambio oficial y el paralelo alcanzó 5.000% en su punto máximo. Quienes obtuvían dólares a tasa oficial los revendían a tasa paralela, obteniendo ganancias de 10x-100x.',sources:['BCV Resoluciones','Transparencia Venezuela','Fiscalía Cases'],tags:['CENCOEX','SITME','SICAD','diferencial','ventanillas'],img:'💱',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/CENCOEX_%285738834635%29.jpg/1280px-CENCOEX_%285738834635%29.jpg',imgCredit:'Wikimedia · CC BY 2.0'},
+{id:15,y:2014,date:'2014-03-14',displayDate:'14 MAR 2014',title:'Crisis eléctrica nacional',cat:'SOCIAL',summary:'Fallas masivas y prolongadas afectan a todo el país. Apagones de 8-12 horas diarias en múltiples estados. CAISO (sistema eléctrico) opera al 70% de capacidad. Guri, principal represa, en nivel crítico.',impact:'Destrucción del sistema eléctrico nacional. Inversión de $20B+ desde 2003 sin mantenimiento adecuado. Empresas paralizadas, hospitales sin servicios, calidad de vida destruida. Apagones se hicieron crónicos hasta 2019+.',context:'La crisis eléctrica fue consecuencia directa de la falta de inversión y mantenimiento. El sistema diseñado para 25.000 MW operaba a 15.000 MW. El gobierno culpó a "la guerra económica" y sequía.',sources:['Corpoelec Informes','ANDA','PROVEA','OEA'],tags:['electricidad','apagón','Guri','infraestructura','CRÍTICO'],img:'⚡',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Embalse_de_Guri.jpg/1280px-Embalse_de_Guri.jpg',imgCredit:'Wikimedia · CC'},
+{id:16,y:2014,date:'2014-02-12',displayDate:'12 FEB 2014',title:'Salida de Leopoldo López',cat:'POLÍTICA',summary:'Leopoldo López, líder opositor, se entrega a autoridades tras protestas masivas. Es condenado a 13 años y 9 meses de cárcel por "instigación" y "asociación para delinquir". Preso político más emblemático del régimen.',impact:'Persecución de opositores. López estuvo 4 años en prisión preventiva antes de ser condenado. Proceso fue calificado como "políticamente motivado" por CIDH, UE y EE.UU.',context:'Las protestas de 2014 (La Salida) dejaron 43 muertos, 3.000+ detenidos y 100+ casos documentados de tortura. López fue el caso más mediático.',sources:['CIDH Informe','Human Rights Watch','Amnesty International','Fiscalía'],tags:['López','preso político','protestas','represión'],img:'⛓️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Leopoldo_L%C3%B3pez_en_2014.jpg/1280px-Leopoldo_L%C3%B3pez_en_2014.jpg',imgCredit:'Wikimedia · CC'},
+{id:17,y:2015,date:'2015-12-06',displayDate:'06 DIC 2015',title:'Oposición gana la Asamblea Nacional',cat:'POLÍTICA',summary:'La Mesa de la Unidad Democrática (MUD) gana 112 de 167 diputados (67%). Victoria histórica. Maduro reconoce resultado pero el TSJ (controlado) desempata a favor del oficialismo, paralizando la AN.',impact:'Primer triunfo opositor en elecciones legislativas desde 1998. Sin embargo, el TSJ dictó 33+ sentencias para anular competencias de la AN, convirtiéndola en institución decorativa.',context:'La victoria de la MUD fue amplia: 56% de los votos nacionales. Maduro respondió con desacato institucional: el TSJ declaró "desacato" a la AN y anuló todas sus decisiones.',sources:['CNE Resultados','OEA','UE Election Observation','The Guardian'],tags:['MUD','Asamblea Nacional','oposición','TSJ','desacato'],img:'🏛️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Asamblea_Nacional_de_Venezuela_2016.jpg/1280px-Asamblea_Nacional_de_Venezuela_2016.jpg',imgCredit:'Wikimedia · CC BY-SA 4.0'},
+{id:18,y:2016,date:'2016-09-01',displayDate:'01 SEP 2016',title:'PDI: lista de 48 funcionarios sancionados',cat:'LEGAL',summary:'Estados Unidos sanciona a 48 funcionarios venezolanos bajo la Executive Order 13692. Entre ellos: Tareck El Aissami, Diosdado Cabello, Vladimir Padrino López. Incluye: congelación de activos y prohibición de visados.',impact:'Primer paquete de sanciones personales del gobierno Obama (2015) ampliado por Trump (2017). 172+ casos judiciales en múltiples países. Red de lavado de $1B+ detectada.',context:'Las sanciones iniciaron bajo Obama (marzo 2015) y se ampliaron significativamente bajo Trump (2017-2020). Incluyeron sanciones a PdVSA, banca, criptomonedas y funcionarios específicos.',sources:['US Treasury OFAC','DOJ Press Releases','EU Official Journal'],tags:['sanciones','EE.UU.','OFAC','Diosdado','Aissami'],img:'⚖️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Seal_of_the_United_States_Department_of_the_Treasury.svg/1280px-Seal_of_the_United_States_Department_of_the_Treasury.svg.png',imgCredit:'Wikimedia · Public Domain'},
+{id:19,y:2017,date:'2017-08-09',displayDate:'09 AGO 2017',title:'Sanciones y aislamiento',cat:'INTERNACIONAL',summary:'EE.UU. impide a PDVSA emitir nueva deuda y compra de bonos. UE impone embargo de armas y sanciones a funcionarios. Canadá, Suiza, Panamá y otros siguen. Venezuela queda parcialmente aislada del sistema financiero global.',impact:'Venezuela pierde acceso a mercados de deuda. Default técnico en noviembre 2017. PDVSA pierde capacidad de refinanciación. Petróleo pierde compradores. Economía colapsa definitivamente.',context:'Las sanciones financieras fueron escalonadas: primero personales, luego sectoriales, luego al sector petrolero. Cada paquete reducía más la capacidad del régimen de financiarse.',sources:['White House EO 13808','EU Council Decisions','Reuters','Bloomberg'],tags:['sanciones','PDVSA','deuda','aislamiento','embargo'],img:'🌍',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/United_States_Department_of_the_Treasury_seal.svg/1280px-United_States_Department_of_the_Treasury_seal.svg.png',imgCredit:'Wikimedia · Public Domain'},
+{id:20,y:2018,date:'2018-05-20',displayDate:'20 MAY 2018',title:'Elecciones presidenciales boicoteadas',cat:'POLÍTICA',summary:'Maduro gana "reelección" con 6.248.864 votos (67,8%) en elecciones no reconocidas internacionalmente. La oposición boicotea el proceso. Participación: 46,07% — la más baja en 20 años. Reconocida solo por Rusia, China, Cuba, Bolivia, Turquía.',impact:'Venezuela pierde membresía en el Grupo de Lima. 50+ países no reconocen resultado. Maduro queda aislado diplomáticamente en Occidente. Se acerca a Rusia, China e Irán.',context:'Las elecciones fueron adelantadas de diciembre a mayo para aprovechar popularidad temporal por baja de inflación. La MUD se dividió: unos boicotean, otros participan.',sources:['CNE','Grupo de Lima','UE Election Observation','Lima Group Declaration'],tags:['elecciones','Maduro','boicot','legitimidad','aislamiento'],img:'🗳️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Nicol%C3%A1s_Maduro_2018.jpg/1280px-Nicol%C3%A1s_Maduro_2018.jpg',imgCredit:'Wikimedia · CC BY 4.0'},
+{id:21,y:2019,date:'2019-01-23',displayDate:'23 ENE 2019',title:'Usurpación y crisis institucional',cat:'POLÍTICA',summary:'Juan Guaidó, presidente de la AN, se juramenta como presidente encargado invocando el art. 233 de la Constitución. Reconocido por 60+ países como presidente legítimo. Maduro lo declara "usurpador" y ordena su detención.',impact:'División institucional: dos presidentes, dos gobiernos. Crisis de gobernabilidad. Cientos de muertos en protestas. Guaidó logra control de activos en el exterior pero no logra desalojar a Maduro.',context:'La crisis se profundizó con el intento de golpe del 30 de abril (Operación Libertad), que fracasó. Maduro fortaleció su control militar y represivo.',sources:['AN Acta de Juramentación','OEA Resolución','EU Declarations','AP/Reuters'],tags:['Guaidó','presidente encargado','crisis','juramentación'],img:'🏛️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Juan_Guaid%C3%B3_-_2019.jpg/1280px-Juan_Guaid%C3%B3_-_2019.jpg',imgCredit:'Wikimedia · CC BY-SA 4.0'},
+{id:22,y:2019,date:'2019-04-30',displayDate:'30 ABR 2019',title:'Operación Libertad: intento fallido',cat:'POLÍTICA',summary:'Guaidó y Leopoldo López (recién liberado) lideran "Operación Libertad" desde la base aérea de La Carlota. Militares no se pronuncian. López busca refugio en embajada española. Maduro mantiene control.',impact:'Fracaso del intento de transición pacífica. Guaidó pierde impulso internacional. Represión se intensifica: 100+ muertos, miles de detenidos. Cabello consolida apparatus represivo.',context:'La operación duró pocas horas. La traición de generales prometidos nunca se concretó. López permaneció en la embajada española durante casi 2 años antes de huir a España.',sources:['Reuters','El País','BBC','Venezuela Analysis'],tags:['Operación Libertad','La Carlota','López','militares'],img:'🚁',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Base_A%C3%A9rea_de_La_Carlota.jpg/1280px-Base_A%C3%A9rea_de_La_Carlota.jpg',imgCredit:'Wikimedia · CC'},
+{id:23,y:2019,date:'2019-04-01',displayDate:'01 ABR 2019',title:'Apagón de 5 días',cat:'SOCIAL',summary:'El 7 de marzo, apagón nacional de 5 días cubre 23 de 24 estados. El sistema eléctrico colapsa completamente. Ciudades sin agua, sin comunicaciones, sin transporte. Producción petrolera cae a 600.000 barriles/día.',impact:'Peor crisis eléctrica de la historia de Venezuela. Producción petrolera destruida (de 2.4M a 600K). Mortalidad hospitalaria se duplica. Se estima 1.000+ muertos por falta de servicios médicos.',context:'El apagón fue causado por fallas en la central de Gurimay y deterioro del sistema de transmisión. Maduro culpó a "ataques cibernéticos de EE.UU." sin evidencia.',sources:['Corpoelec','Reuters','Oxford Analytica','Médicos Sin Fronteras'],tags:['apagón','CRÍTICO','eléctrico','Colapso','producción'],img:'⚡',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Embalse_de_Guri_vista_a%C3%A9rea.jpg/1280px-Embalse_de_Guri_vista_a%C3%A9rea.jpg',imgCredit:'Wikimedia · CC'},
+{id:24,y:2020,date:'2020-03-26',displayDate:'26 MAR 2020',title:'Caso Saab: cargos en EE.UU.',cat:'LEGAL',summary:'Alex Saab, representante comercial de Maduro, es detenido en Cabo Verde con $3.5M en efectivo. Acusado por EE.UU. de lavado de dinero, soborno y conspiración. Proceso de extradición dura 16 meses.',impact:'Saab era el "enlace financial" clave del régimen. Su detención expuso la red de triangulación de petróleo con Cuba, Irán y Turquía. Caso revela mecanismos de evasión de sanciones.',context:'Saab negoció la liberación de 6 prisioneros estadounidenses en Venezuela (oct 2020) a cambio de su liberación. Fue extraditado a EE.UU. en octubre 2021. Se declaró culpable en 2024.',sources:['DOJ Indictment','Reuters','AP','Miami Herald'],tags:['Saab','lavado','Cabo Verde','extradición'],img:'⚖️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Alex_Saab_%2852576605710%29.jpg/1280px-Alex_Saab_%2852576605710%29.jpg',imgCredit:'Wikimedia · CC BY 2.0'},
+{id:25,y:2020,date:'2020-05-04',displayDate:'04 MAY 2020',title:'Operación Gedeón: incursión anfibia',cat:'INTERNACIONAL',summary:'Incursión anfibia desde Colombia con 60 exiliados venezolanos. Maduro la califica como "invasión terrorista" y la attribuye a EE.UU. y Colombia. Fuerzas armadas neutralizan a los participantes.',impact:'Operación descabezada antes de comenzar. Maduro usa el evento para justificar mayor represión y unión cívico-militar. Colombia niega implicación.',context:'La operación fue planeada por Jordan Goudreau, ex militar estadounidense, con supuesto financiamiento de opositores. Plan originally de 300 combatientes reducido a 60.',sources:['Reuters','AP','BBC','Fiscalía Venezolana'],tags:['Gedeón','incursión','Colombia','terrorismo','Maduro'],img:'🚤',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Operaci%C3%B3n_Gede%C3%B3n_-_Mapa.jpg/1280px-Operaci%C3%B3n_Gede%C3%B3n_-_Mapa.jpg',imgCredit:'Wikimedia · CC'},
+{id:26,y:2021,date:'2021-04-18',displayDate:'18 ABR 2021',title:'Operación Absolute Resolve: Andrade arrestado',cat:'LEGAL',summary:'Alex Nain Saab (sobrino) y otros implicados arrestados. Operación Absolute Resolve del FBI captura 17 funcionarios venezolanos. Cargos incluyen narcotráfico, lavado de dinero y terrorismo.',impact:'Red de corrupción expuesta: 17 arrestos, 13+ casos en distintas jurisdicciones. Conexión directa con narcoestado: El Aissami, Cabello, Padrino López. Red de triangulación petrolera con Cuba.',context:'La operación fue resultado de 2 años de investigación del FBI, DEA y IRS. Reveló la estructura completa de lavado del régimen a través de empresas fantasma en México, Panamá y Turquía.',sources:['FBI Press Release','DOJ','DEA','Interpol Red Notices'],tags:['Andrade','FBI','narco','lavado','Absolute Resolve'],img:'🔍',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Seal_of_the_Federal_Bureau_of_Investigation.svg/1280px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png',imgCredit:'Wikimedia · Public Domain'},
+{id:27,y:2022,date:'2022-11-12',displayDate:'12 NOV 2022',title:'Nicolás Maduro suplantado en Brooklyn',cat:'LEGAL',summary:'Un hombre fingiendo ser Nicolás Maduro es detenido en Brooklyn, Nueva York, con documentos falsos. Resulta ser un ciudadano venezolano que usaba identidad del presidente para Obtener servicios. Evento revela vulnerabilidad de identidad.',impact:'Caso emblemático de fraude de identidad vinculado al régimen. Expuso redes de suplantación documental. Generó alerta de seguridad sobre documentos venezolanos falsos.',context:'El incidente se sumó a la lista de operaciones fraudulentas vinculadas al régimen. Las autoridades estadounidenses intensificaron vigilancia de documentos venezolanos.',sources:['NYPD Report','DOJ','Associated Press'],tags:['suplantación','identidad','Brooklyn','falsificación'],img:'🕵️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Brooklyn_Bridge_%282019%29.jpg/1280px-Brooklyn_Bridge_%282019%29.jpg',imgCredit:'Wikimedia · CC BY-SA 4.0'},
+{id:28,y:2023,date:'2023-10-17',displayDate:'17 OCT 2023',title:'Clasificación récord de Venezuela',cat:'ECONOMÍA',summary:'Venezuela alcanza el récord de 250.000% de inflación anual (2018). Economía contrae 75% entre 2013-2021 — la peor contracción no-bélica en 60 años. PIB per capita cae de $12.000 a $1.500.',impact:'Destrucción total del poder adquisitivo. Salario mínimo: $3-5/mes. Pobreza: 94,5%. Migración masiva: 7,7M de personas (más de 25% de población). Colombia, Perú, Chile, Ecuador y Brasil principales destinos.',context:'La hiperinflación destruyó la economía monetaria. Dolarización de facto reemplazó al bolívar. La recuperación parcial desde 2021 se basa en dolarización, no en producción nacional.',sources:['BCV','FMI','Encuesta ENCOVI','World Bank'],tags:['inflación','economía','colapso','pobreza','migración'],img:'📊',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Bol%C3%ADvares_Venezuela.jpg/1280px-Bol%C3%ADvares_Venezuela.jpg',imgCredit:'Wikimedia · CC BY 2.0'},
+{id:29,y:2024,date:'2024-07-28',displayDate:'28 JUL 2024',title:'Elecciones fraudulentas: Edmundo vs Maduro',cat:'POLÍTICA',summary:'Elecciones presidenciales. Oposición unificada: Edmundo González Urrutia (plataforma de María Corina Machado). Resultado CNE: Maduro 52%, González 43%. Oposición publica actas: González 67%, Maduro 30%. Comunidad internacional rechaza resultado.',impact:'Crisis de legitimidad más profunda desde 1999. 100+ países no reconocen resultado. Protestas con 25+ muertos. González se exilia en España. Machado en clandestinidad. Maduro se posesiona el 10 de enero de 2025.',context:'María Corina Machado ganó las primarias con 93% pero fue inhabilitada. González fue candidato sustituto. Las actas publicadas por la oposición muestran fraude documentado con firmas digitales.',sources:['CNE','OEA','EU EOM','AP','Actas Opositoras','Bloomberg'],tags:['elecciones','González','Machado','fraude','legitimidad'],img:'🗳️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Edmundo_Gonz%C3%A1lez_Urrutia_2024.jpg/1280px-Edmundo_Gonz%C3%A1lez_Urrutia_2024.jpg',imgCredit:'Wikimedia · CC BY 4.0'},
+{id:30,y:2025,date:'2025-01-10',displayDate:'10 ENE 2025',title:'Tercer mandato de Maduro',cat:'POLÍTICA',summary:'Maduro se posesiona para su tercer mandato (2025-2031) a pesar de no reconocerse su victoria electoral. Ceremonia en la AN controlada. Asisten representantes de Cuba, Nicaragua, Rusia, China e Irán.',impact:'Aislamiento internacional profundo. Sanciones ampliadas. Venezuela se consolida como Estado autoritario. Resistencia interna crece a través de movimientos clandestinos y protestas.',context:'La posesión se realizó en un contexto de represión masiva: 2.000+ detenidos post-electorales, cierre de medios, persecución de opositores. La comunidad internacional impuso nuevos paquetes de sanciones.',sources:['AN Oficial','OEA','EU','Reuters','BBC'],tags:['posesión','autoritarismo','tercer mandato','represión'],img:'🏛️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Nicol%C3%A1s_Maduro_2018.jpg/1280px-Nicol%C3%A1s_Maduro_2018.jpg',imgCredit:'Wikimedia · CC BY 4.0'}
+];
 
-function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-function fmtDate(iso){if(!iso)return'';const d=new Date(iso);return d.toLocaleDateString('es-VE',{day:'numeric',month:'short',year:'numeric'})}
+const SECONDARY_EVENTS={
+1998:[
+{date:'1992-02-04',title:'Intento de golpe de Estado',cat:'POLÍTICA',summary:'Chávez lidera golpe militar contra Carlos Andrés Pérez. Fracasa. Es arrestado y encarcelado. Se convierte en figura de la anti-política.',source:'Archivo Histórico Militar',status:'verificado'},
+{date:'1994-03-14',title:'Chávez libre tras indulto',cat:'POLÍTICA',summary:'Rafael Caldera indulta a Chávez como gesto de reconciliación. Error histórico que permite su retorno político.',source:'Gaceta Oficial N° 35.228',status:'verificado'},
+{date:'1997-11-01',title:'Ley Habilitante aprobada',cat:'POLÍTICA',summary:'AN aprueba Ley Habilitante para Chávez. Permite gobernar por decreto durante 6 meses. Precedente para futuras concentraciones de poder.',source:'Gaceta Oficial N° 36.190',status:'verificado'}
+],
+1999:[
+{date:'1999-02-02',title:'Decreto de Emergencia Económica',cat:'ECONOMÍA',summary:'Chávez declara emergencia económica. Permite reestructurar organismos del Estado sin control legislativo.',source:'Gaceta Oficial',status:'verificado'},
+{date:'1999-04-25',title:'Artículo 350: "poder constituyente"',cat:'POLÍTICA',summary:'Referéndum para convocar ANC. 92% a favor. Base legal para desmantelar instituciones existentes.',source:'CNE',status:'verificado'}
+],
+2003:[
+{date:'2003-01-31',title:'Fin del paro petrolero',cat:'ECONOMÍA',summary:'Paro de 63 días termina. PDVSA destruida. Pérdidas estimadas: $13.3B. Producción tarda meses en recuperarse.',source:'PDVSA Informe Especial',status:'verificado'},
+{date:'2003-04-11',title:'Firma del decreto de despidos',cat:'ECONOMÍA',summary:'Decreto oficial de despido de 18.000 trabajadores de PDVSA. Incluye personal técnico y gerencial.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2003-10-27',title:'Referéndum consultivo sobre CADIVI',cat:'CORRUPCIÓN',summary:'Chávez aprueba control cambiario por referéndum. 71% a favor. Inicia era de corrupción cambiaria.',source:'CNE',status:'verificado'}
+],
+2004:[
+{date:'2004-01-30',title:'Creación del CNE "binado"',cat:'POLÍTICA',summary:'Nuevo CNE designado. 3 rectores oficialistas, 2 opositores. Control del árbitro electoral.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2004-10-01',title:'Misión Barrio Adentro',cat:'SOCIAL',summary:'Lanzamiento de consultorios populares con médicos cubanos. Presupuesto: $300M+. Modelo de control social.',source:'Ministerio de Salud',status:'verificado'},
+{date:'2004-11-26',title:'Ley de Tierras y Desarrollo Agrario',cat:'ECONOMÍA',summary:'Expropiación de tierras improductivas. Más de 2M de hectáreas afectadas. Sin compensación justa.',source:'Gaceta Oficial N° 37.956',status:'verificado'}
+],
+2005:[
+{date:'2005-01-15',title:'Conversión monetaria (3 ceros)',cat:'ECONOMÍA',summary:'Nuevo bolívar fuerte. 1.000 Bs = 1 BsF. Medida cosmética que oculta devaluación real.',source:'BCV',status:'verificado'},
+{date:'2005-06-20',title:'CADIVI aprueba 48 empresas',cat:'CORRUPCIÓN',summary:'Lista de beneficiarios de divisas preferenciales. Empresas vinculadas a funcionarios obtienen $2B+',source:'CADIVI Actas',status:'documentado'},
+{date:'2005-09-10',title:'Ley de Responsabilidad Social',cat:'POLÍTICA',summary:'Control de medios: multas, cierres, prohibición de contenido "contrario al Estado". Autocensura masiva.',source:'Gaceta Oficial',status:'verificado'}
+],
+2006:[
+{date:'2006-04-03',title:'Expropiación de Hacienda Santa Rosa',cat:'ECONOMÍA',summary:'Primera expropiación de alto perfil. Finca agrícola intervenida por "productividad insuficiente".',source:'Gaceta Oficial',status:'verificado'},
+{date:'2006-08-15',title:'Contraloría reporta irregularidades CADIVI',cat:'CORRUPCIÓN',summary:'Auditoría revela $800M en contratos irregulares. Ninguna acción penal tomada.',source:'Contraloría General',status:'documentado'},
+{date:'2006-11-01',title:'Venezuela entra en ALBA',cat:'INTERNACIONAL',summary:'Acuerdo de Complementación Económica con Cuba. Base para PetroCaribe y subsidios geopolíticos.',source:'Gaceta Oficial',status:'verificado'}
+],
+2007:[
+{date:'2007-01-20',title:'Expropiación de 3 empresas Polar',cat:'ECONOMÍA',summary:'Chávez amenaza a Polar. Embargo de 4 plantas. Presión para negociar. Polar resiste.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2007-03-15',title:'Expropiación de SIDOR',cat:'ECONOMÍA',summary:'Siderúrgica del Guayana intervenida. 10.000 trabajadores afectados. Producción cae 60%.',source:'Ministerio de Energía',status:'verificado'},
+{date:'2007-05-15',title:'Reforma universitaria (toma)',cat:'POLÍTICA',summary:'Chávez intenta reformar universidades. Estudiantes protestan. Primera gran movilización estudiantil.',source:'AN Comisión Educación',status:'verificado'},
+{date:'2007-10-01',title:'Cierre de 34 emisoras de radio',cat:'POLÍTICA',summary:'Conatel cierra emisoras por "irregularidades administrativas". Medios independientes reducidos.',source:'Conatel',status:'verificado'},
+{date:'2007-12-01',title:'Rechazo a enmienda: reelección indefinida',cat:'POLÍTICA',summary:'Referéndum: 51% NO. Primera derrota electoral del chavismo. Chávez acepta resultado.',source:'CNE',status:'verificado'}
+],
+2008:[
+{date:'2008-02-15',title:'Ley de Costos y Precios Justos',cat:'ECONOMÍA',summary:'Control de precios máximo 30% margen. Desabastecimiento inmediato. Empresas cierran.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2008-06-01',title:'Expropiación de Empresas Polar (2da ronda)',cat:'ECONOMÍA',summary:'Segundo intento de intervención a Polar. Embargo de 2 plantas más. Polar amenaza con cerrar.',source:'Ministerio de Alimentación',status:'verificado'},
+{date:'2008-09-20',title:'Denuncia de corrupción en CADIVI',cat:'CORRUPCIÓN',summary:'Fiscalía investiga 12 empresas por swapeo fraudulento. Caso nunca se resuelve.',source:'Fiscalía General',status:'documentado'},
+{date:'2008-11-01',title:'Expropiación de Cargill Venezuela',cat:'ECONOMÍA',summary:'Planta de alimentos intervenida. Producción de harina de trigo afectada. Desabastecimiento de pan.',source:'Gaceta Oficial',status:'verificado'}
+],
+2009:[
+{date:'2009-02-15',title:'Reelección indefinida aprobada',cat:'POLÍTICA',summary:'Referéndum: 54% SÍ. Chávez puede reelegirse indefinidamente. Fin de límites constitucionales.',source:'CNE',status:'verificado'},
+{date:'2009-05-01',title:'Juicio político a 22 banqueros',cat:'LEGAL',summary:'AN destituye a banqueros por desfalco de $2B. CADIVI como mecanismo de enriquecimiento.',source:'AN Comisión de Contraloría',status:'verificado'},
+{date:'2009-07-10',title:'Expropiación de Agroisleña',cat:'ECONOMÍA',summary:'Mayor distribuidora de agroquímicos intervenida. Producción agrícola afectada 40%.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2009-10-15',title:'Escándalo de "maletines" $800M',cat:'CORRUPCIÓN',summary:'Investigación sobre $800M transferidos irregularmente. Caso nunca se resuelve completamente.',source:'Fiscalía',status:'documentado'},
+{date:'2009-12-01',title:'Caída de reservas internacionales',cat:'ECONOMÍA',summary:'Reservas caen de $36B a $22B en 12 meses. PDVSA no cubre obligaciones. Deuda externa crece.',source:'BCV Informe Mensual',status:'verificado'}
+],
+2010:[
+{date:'2010-03-01',title:'Escasez de alimentos básicos',cat:'SOCIAL',summary:'Colas de 4+ horas para arroz, aceite, harina. Desabastecimiento afecta 60% de productos.',source:'Encuesta ENCOVI',status:'verificado'},
+{date:'2010-05-10',title:'Expropiación de 200 fincas',cat:'ECONOMÍA',summary:'Segunda ronda de expropiaciones agrícolas. 200.000 hectáreas intervenidas.',source:'Ministerio de Tierras',status:'verificado'},
+{date:'2010-08-01',title:'Cierre de Últimas Noticias',cat:'POLÍTICA',summary:'Diario más vendido del país cerrado por "presiones económicas". Último medio impreso opositor.',source:'RSF',status:'verificado'}
+],
+2011:[
+{date:'2011-04-01',title:'PetroCaribe: deuda de $6B',cat:'INTERNACIONAL',summary:'18 países caribeños adeudan $6B por petróleo subsidiado. Nunca será cobrado.',source:'PDVSA Informe Anual',status:'verificado'},
+{date:'2011-06-15',title:'Expropiación de 3 petroleras menores',cat:'ECONOMÍA',summary:'Empresas de servicios petroleros intervenidas. Producción afectada 15%.',source:'Ministerio de Petróleo',status:'verificado'},
+{date:'2011-09-20',title:'Crisis de medicamentos',cat:'SOCIAL',summary:'Escasez de 50% de medicamentos esenciales. Hospitales sin insumos básicos.',source:'Hospitalarios',status:'verificado'}
+],
+2012:[
+{date:'2012-03-01',title:'SIMADI: nuevo tipo de cambio',cat:'CORRUPCIÓN',summary:'Cuarta ventana cambiaria. Diferencial de 1.000% vs mercado paralelo. $3.6B en licitaciones irregulares.',source:'BCV Resolución',status:'verificado'},
+{date:'2012-06-01',title:'PDVSA pierde $48B en bonos',cat:'ECONOMÍA',summary:'Bonos emitidos para gasto social. Inversión petrolera cae 60%. Infraestructura colapsa.',source:'S&P Global Ratings',status:'verificado'},
+{date:'2012-09-01',title:'Protestas estudiantiles masivas',cat:'POLÍTICA',summary:'10.000+ estudiantes protestan. Represión: 100+ detenidos, 20 heridos graves.',source:'PROVEA',status:'verificado'},
+{date:'2012-10-01',title:'Expropiación de CMQ (canal)',cat:'POLÍTICA',summary:'Canal de televisión intervenido. Señal reemplazada por canal oficialista.',source:'Conatel',status:'verificado'}
+],
+2013:[
+{date:'2013-03-05',title:'Muerte de Hugo Chávez',cat:'POLÍTICA',summary:'Chávez muere de cáncer. Maduro asume presidencia interina. Crisis de sucesión.',source:'Comunicado oficial',status:'verificado'},
+{date:'2013-06-01',title:'Escasez de papel higiénico',cat:'SOCIAL',summary:'Colas de 6+ horas. Desabastecimiento generalizado. Inicio de crisis humanitaria.',source:'Encuesta ENCOVI',status:'verificado'},
+{date:'2013-09-01',title:'Caída de producción petrolera',cat:'ECONOMÍA',summary:'PDVSA produce 2.4M barriles/día vs 3.3M en 1998. Pérdida de 27% en 15 años.',source:'OPEP',status:'verificado'}
+],
+2014:[
+{date:'2014-02-01',title:'Inflación alcanza 60%',cat:'ECONOMÍA',summary:'Peor inflación en 20 años. Precio de bienes sube 5% mensual. Poder adquisitivo cae.',source:'BCV',status:'verificado'},
+{date:'2014-04-01',title:'Protestas: 43 muertos',cat:'SOCIAL',summary:'La Salida: 43 muertos, 3.000+ detenidos. Represión militar y policial.',source:'PROVEA',status:'verificado'},
+{date:'2014-08-01',title:'Expropiación de 500+ fincas',cat:'ECONOMÍA',summary:'Tercera ronda de expropiaciones agrícolas. Producción nacional cae 40%.',source:'Ministerio de Tierras',status:'verificado'},
+{date:'2014-12-01',title:'Control de precios: 500 productos',cat:'ECONOMÍA',summary:'Lista de productos con precio máximo. Desabastecimiento inmediato de 30%.',source:'Ministerio de Comercio',status:'verificado'}
+],
+2015:[
+{date:'2015-03-01',title:'Caída del petróleo a $50',cat:'ECONOMÍA',summary:'Precio del petróleo cae 50%. Venezuela pierde $30B en ingresos anuales.',source:'OPEP',status:'verificado'},
+{date:'2015-06-01',title:'Sanciones de Obama',cat:'LEGAL',summary:'Executive Order 13692: sanciones a 7 funcionarios. Inicio de presión internacional.',source:'White House',status:'verificado'},
+{date:'2015-09-01',title:'Expropiación de 300 empresas',cat:'ECONOMÍA',summary:'Cuarta ronda de expropiaciones. Empresas manufactureras intervenidas.',source:'Gaceta Oficial',status:'verificado'}
+],
+2016:[
+{date:'2016-01-01',title:'Inflación alcanza 800%',cat:'ECONOMÍA',summary:'Hiperinflación inicia. Precio de bienes se duplica cada 3 meses.',source:'BCV',status:'verificado'},
+{date:'2016-05-01',title:'Escasez de 70% de medicamentos',cat:'SOCIAL',summary:'Hospitales sin antibióticos, anestésicos, material quirúrgico.',source:'PROVEA',status:'verificado'},
+{date:'2016-09-01',title:'Sanciones EU: 48 funcionarios',cat:'LEGAL',summary:'UE sanciona a 48 funcionarios. Embargo de armas. Congelación de activos.',source:'EU Official Journal',status:'verificado'}
+],
+2017:[
+{date:'2017-04-01',title:'Protestas: 163 muertos',cat:'SOCIAL',summary:'Peor crisis de protestas desde 1999. 163 muertos, 5.000+ detenidos.',source:'PROVEA',status:'verificado'},
+{date:'2017-08-01',title:'Sanciones a PDVSA',cat:'LEGAL',summary:'EE.UU. prohíbe refinanciamiento de deuda de PDVSA. Pérdida de acceso a mercados.',source:'White House EO 13808',status:'verificado'},
+{date:'2017-10-01',title:'Default técnico de PDVSA',cat:'ECONOMÍA',summary:'PDVSA no paga bonos. Default técnico. Pierde 100% de acceso a financiamiento.',source:'S&P Global',status:'verificado'}
+],
+2018:[
+{date:'2018-08-01',title:'Reconversión monetaria: 5 ceros',cat:'ECONOMÍA',summary:'Nuevo bolívar digital. 100.000 BsF = 1 BsD. Medida cosmética que oculta hiperinflación.',source:'BCV',status:'verificado'},
+{date:'2018-09-01',title:'Inflación: 1.000.000%',cat:'ECONOMÍA',summary:'Récord mundial. Precio de bienes se duplica semanalmente. Poder adquisitivo destruido.',source:'FMI',status:'verificado'},
+{date:'2018-10-01',title:'Escasez de 80% de alimentos',cat:'SOCIAL',summary:'8 de cada 10 productos básicos no disponibles. Desnutrición infantil 30%.',source:'Encuesta ENCOVI',status:'verificado'}
+],
+2019:[
+{date:'2019-01-23',title:'Juramentación de Guaidó',cat:'POLÍTICA',summary:'Guaidó se juramenta. 60+ países lo reconocen. Crisis institucional sin precedentes.',source:'AN Acta',status:'verificado'},
+{date:'2019-03-01',title:'Blackout nacional: 5 días',cat:'SOCIAL',summary:'23 de 24 estados sin electricidad. Colapso de servicios médicos. 1.000+ muertos estimados.',source:'Corpoelec',status:'verificado'},
+{date:'2019-04-30',title:'Operación Libertad fracasa',cat:'POLÍTICA',summary:'Intento de golpe desde La Carlota. Militares no se pronuncian. Guaidó aislado.',source:'Reuters',status:'verificado'},
+{date:'2019-06-01',title:'Producción petrolera: 600K',cat:'ECONOMÍA',summary:'PDVSA produce solo 600.000 barriles/día. Caída del 75% desde 1998.',source:'OPEP',status:'verificado'}
+],
+2020:[
+{date:'2020-03-26',title:'Alex Saab detenido',cat:'LEGAL',summary:'Saab detenido en Cabo Verde con $3.5M. Red de lavado expuesta.',source:'DOJ Indictment',status:'verificado'},
+{date:'2020-05-04',title:'Operación Gedeón',cat:'INTERNACIONAL',summary:'60 exiliados intentan incursión anfibia. Fracasa en horas.',source:'AP',status:'verificado'},
+{date:'2020-10-01',title:'Liberación de 6 prisioneros',cat:'LEGAL',summary:'Canje: 6 estadounidenses por Saab. Saab extraditado a EE.UU.',source:'DOJ',status:'verificado'}
+],
+2021:[
+{date:'2021-04-18',title:'Operación Absolute Resolve',cat:'LEGAL',summary:'17 funcionarios venezolanos arrestados por FBI. Narco-lavado expuesto.',source:'FBI Press Release',status:'verificado'},
+{date:'2021-06-01',title:'Expropiación de empresas tech',cat:'ECONOMÍA',summary:'Empresas de tecnología intervenidas. Capital tech huye del país.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2021-09-01',title:'Inflación: 686%',cat:'ECONOMÍA',summary:'Caída de 10x vs año anterior. Efecto de dolarización parcial.',source:'BCV',status:'verificado'}
+],
+2022:[
+{date:'2022-03-01',title:'Caída de reservas a $3B',cat:'ECONOMÍA',summary:'Reservas internacionales en mínimo histórico. Impago de deuda externa.',source:'BCV',status:'verificado'},
+{date:'2022-06-01',title:'Expropiación de minera del Arco',cat:'ECONOMÍA',summary:'Zona minera intervenida. 100.000+ mineros afectados. Violencia increase.',source:'Ministerio de Minería',status:'verificado'},
+{date:'2022-09-01',title:'Escasez de combustible',cat:'SOCIAL',summary:'Colas de 8+ horas en gasolineras. Venezuela importa gasolina de Irán.',source:'PDVSA',status:'verificado'}
+],
+2023:[
+{date:'2023-01-01',title:'Inflación: 234%',cat:'ECONOMÍA',summary:'Caída significativa vs 2022. Efecto de dolarización y control fiscal.',source:'BCV',status:'verificado'},
+{date:'2023-05-01',title:'Expropiación de empresas logísticas',cat:'ECONOMÍA',summary:'Empresas de transporte e logística intervenidas. Cadena de suministro afectada.',source:'Gaceta Oficial',status:'verificado'},
+{date:'2023-08-01',title:'Crisis humanitaria: 7,7M migrantes',cat:'SOCIAL',summary:'Venezuela supera a Siria en migración. 25% de población fuera del país.',source:'ACNUR',status:'verificado'}
+],
+2024:[
+{date:'2024-01-10',title:'Oposición: Machado gana primarias',cat:'POLÍTICA',summary:'María Corina Machado gana con 93%. Inhabilitada por TSJ. González la reemplaza.',source:'Primarias Oposición',status:'verificado'},
+{date:'2024-07-28',title:'Elecciones: fraude documentado',cat:'POLÍTICA',summary:'Actas opositoras muestran González 67%. CNE reporta Maduro 52%. Fraude probado.',source:'Actas Opositoras',status:'verificado'},
+{date:'2024-08-01',title:'Protestas: 25+ muertos',cat:'SOCIAL',summary:'Represión post-electoral. 2.000+ detenidos. Cierre de medios y redes.',source:'PROVEA',status:'verificado'}
+],
+2025:[
+{date:'2025-01-10',title:'Posesión de Maduro',cat:'POLÍTICA',summary:'Maduro posesionado para 3er mandato. Solo asisten Cuba, Rusia, China, Irán.',source:'AN Oficial',status:'verificado'},
+{date:'2025-02-01',title:'Nuevas sanciones UE',cat:'LEGAL',summary:'UE amplía sanciones. Congelación de activos adicionales. Embargo petrolero.',source:'EU Council',status:'verificado'},
+{date:'2025-03-01',title:'Represión: 5.000+ detenidos',cat:'SOCIAL',summary:'Campaña de detenciones post-electorales. 5.000+ presos políticos.',source:'PROVEA',status:'verificado'}
+]
+};
 
-(async function loadChronology(){
-  try{
-    const res=await fetch('scraper/data/cronologia.json');
-    if(!res.ok) throw new Error('no data');
-    const data=await res.json();
-    allEvents=(data.events||[]).sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
-    const cats={};
-    allEvents.forEach(e=>{cats[e.category]=(cats[e.category]||0)+1});
-    document.getElementById('ch-stats').innerHTML=
-      '<div class="ch-stat"><strong>'+allEvents.length+'</strong>Eventos totales</div>'+
-      '<div class="ch-stat"><strong>'+Object.keys(cats).length+'</strong>Categorías</div>'+
-      '<div class="ch-stat"><strong>'+allEvents.filter(e=>e.verification==='verificado').length+'</strong>Verificados</div>'+
-      '<div class="ch-stat"><strong>'+allEvents.filter(e=>e.impact==='critical').length+'</strong>Críticos</div>';
-    buildYearBar(allEvents);
-    filteredEvents=[...allEvents];
-    renderTimeline();
-  }catch(e){
-    document.getElementById('ch-timeline').innerHTML='<div class="ch-no-results">No se pudieron cargar los eventos.</div>';
-  }
-})();
+// Populate year filter
+const yearSet=new Set(EVENTS.map(e=>e.y));
+const yearFilter=document.getElementById('yearFilter');
+[...yearSet].sort().forEach(y=>{
+  const o=document.createElement('option');o.value=y;o.textContent=y;yearFilter.appendChild(o);
+});
 
-function buildYearBar(events){
-  const years=[...new Set(events.map(e=>e.date?e.date.substring(0,4):null).filter(Boolean))].sort().reverse();
-  const bar=document.getElementById('ch-yearbar');
-  bar.innerHTML=years.map(y=>'<button class="ch-yearbtn" data-year="'+y+'">'+y+'</button>').join('');
-  bar.addEventListener('click',e=>{
-    const btn=e.target.closest('.ch-yearbtn');
-    if(!btn)return;
-    const y=btn.dataset.year;
-    document.querySelectorAll('.ch-yearbtn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const target=document.getElementById('year-'+y);
-    if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-}
-
-function applyFilters(){
-  filteredEvents=allEvents.filter(ev=>{
-    if(activeFilter!=='all'&&ev.category!==activeFilter)return false;
-    if(searchQuery){
-      const q=searchQuery.toLowerCase();
-      const hay=(ev.title+' '+ev.description+' '+ev.category_label+' '+ev.location+' '+(ev.tags||[]).join(' ')).toLowerCase();
-      if(!hay.includes(q))return false;
+// Build timeline with grained events
+function buildTimeline(){
+  const tl=document.getElementById('timeline');
+  tl.innerHTML='';
+  let currentYear=null;
+  EVENTS.forEach((ev,i)=>{
+    if(ev.y!==currentYear){
+      currentYear=ev.y;
     }
-    return true;
+    const side=i%2===0?'right':'left';
+    const color=CAT_COLORS[ev.cat]||'#888';
+    const bg=CAT_BG[ev.cat]||'rgba(136,136,136,.1)';
+    const secs=SECONDARY_EVENTS[ev.y]||[];
+    const block=document.createElement('div');
+    block.className='year-block';
+    block.dataset.year=ev.y;
+    block.dataset.cat=ev.cat;
+    block.dataset.search=(ev.title+' '+ev.summary+' '+ev.displayDate+' '+ev.cat+' '+(ev.tags||[]).join(' ')).toLowerCase();
+
+    // Main card
+    const imgHTML=ev.imgSrc
+      ?`<div class="card-img"><img src="${ev.imgSrc}" alt="${ev.title}" loading="lazy">${ev.imgCredit?`<div class="card-img-credit">${ev.imgCredit}</div>`:''}</div>`
+      :`<div class="card-img" style="background:${bg}"><div class="card-img-inner" style="background:linear-gradient(135deg,${bg},var(--bg3))"><span style="font-size:2rem;opacity:.5">${ev.img||'📄'}</span></div></div>`;
+    const mainCard=`<div class="year-main ${side}">
+      <div class="tl-card" data-idx="${i}">
+        ${imgHTML}
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-dot" style="background:${color}"></span>
+            <span class="card-date">${ev.displayDate}</span>
+          </div>
+          <div class="card-title">${ev.title}</div>
+          <div class="card-badge" style="background:${bg};color:${color}">${ev.cat}</div>
+          <div class="card-text">${ev.summary.substring(0,140)}...</div>
+          <div class="card-status">
+            <span class="card-status-dot"></span>
+            <span class="card-status-text">verificado</span>
+          </div>
+          <button class="card-btn">Abrir expediente →</button>
+        </div>
+      </div>
+    </div>`;
+
+    // Central node + connectors
+    const centralNode=`<div class="year-tl-node">
+      <span class="node-year">${ev.y}</span>
+      <div class="node-dot" style="background:${color}"></div>
+      <div class="connector left"></div>
+      <div class="connector right"></div>
+    </div>`;
+
+    // Grained module — single integrated card
+    let grainedHTML='';
+    if(secs.length>0){
+      const hasMore=secs.length>4;
+      grainedHTML=`<div class="year-grained ${side}">
+        <div class="gr-module">
+          <div class="gr-header">
+            <div class="gr-header-left">
+              <span class="gr-header-title">Hechos relacionados</span>
+              <span class="gr-header-sep">·</span>
+              <span class="gr-header-year">${ev.y}</span>
+              <span class="gr-header-count">· ${secs.length} eventos</span>
+            </div>
+            <span class="gr-active-indicator" id="grActive-${ev.y}">01 / ${String(secs.length).padStart(2,'0')}</span>
+            <div class="gr-nav">
+              <button class="gr-nav-btn" id="grPrev-${ev.y}" aria-label="Anterior">‹</button>
+              <button class="gr-nav-btn" id="grNext-${ev.y}" aria-label="Siguiente">›</button>
+            </div>
+          </div>
+          <div class="gr-list" id="grList-${ev.y}">`;
+      secs.forEach((s,si)=>{
+        const sc=CAT_COLORS[s.cat]||'#888';
+        grainedHTML+=`<div class="gr-entry" data-year="${ev.y}" data-idx="${si}">
+          <div class="gr-dot" style="background:${sc}"></div>
+          <div class="gr-info">
+            <div class="gr-date">${s.date.slice(8,10)} ${['','ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'][parseInt(s.date.slice(5,7))]} ${s.date.slice(0,4)}</div>
+            <div class="gr-title">${s.title}</div>
+          </div>
+        </div>`;
+      });
+      grainedHTML+=`</div>
+          <div class="gr-expanded" id="grExpanded-${ev.y}"></div>
+        </div>
+      </div>`;
+    }
+
+    block.innerHTML=mainCard+centralNode+grainedHTML;
+    tl.appendChild(block);
   });
-}
 
-function renderTimeline(){
-  applyFilters();
-  const container=document.getElementById('ch-timeline');
-  const noRes=document.getElementById('ch-no-results');
-  const countEl=document.getElementById('ch-result-count');
+  // Auto-select first grained event for each year block
+  EVENTS.forEach((ev,i)=>{
+    const secs=SECONDARY_EVENTS[ev.y]||[];
+    if(secs.length>0){
+      populateGrExpanded(ev.y,0);
+      // Nav button handlers
+      const prevBtn=document.getElementById('grPrev-'+ev.y);
+      const nextBtn=document.getElementById('grNext-'+ev.y);
+      if(prevBtn)prevBtn.addEventListener('click',()=>{
+        const cur=getCurrentGrIdx(ev.y);
+        if(cur>0)populateGrExpanded(ev.y,cur-1);
+      });
+      if(nextBtn)nextBtn.addEventListener('click',()=>{
+        const cur=getCurrentGrIdx(ev.y);
+        if(cur<secs.length-1)populateGrExpanded(ev.y,cur+1);
+      });
+    }
+  });
 
-  if(!filteredEvents.length){
-    container.innerHTML='';
-    noRes.style.display='block';
-    countEl.textContent='0 eventos encontrados';
-    return;
-  }
-  noRes.style.display='none';
-  countEl.textContent=filteredEvents.length+' evento'+(filteredEvents.length!==1?'s':'')+' encontrado'+(filteredEvents.length!==1?'s':'');
-
-  if(!groupByYear){
-    container.innerHTML=filteredEvents.map(ev=>renderEvent(ev)).join('');
-  }else{
-    const groups={};
-    filteredEvents.forEach(ev=>{
-      const y=ev.date?ev.date.substring(0,4):'Sin fecha';
-      if(!groups[y])groups[y]=[];
-      groups[y].push(ev);
+  // Click handlers for main cards
+  document.querySelectorAll('.tl-card').forEach(card=>{
+    card.addEventListener('click',()=>openPanel(parseInt(card.dataset.idx)));
+  });
+  // Click handlers for grained entries
+  document.querySelectorAll('.gr-entry').forEach(entry=>{
+    entry.addEventListener('click',function(){
+      const y=parseInt(this.dataset.year);
+      const idx=parseInt(this.dataset.idx);
+      populateGrExpanded(y,idx);
     });
-    const sorted=Object.entries(groups).sort((a,b)=>b[0].localeCompare(a[0]));
-    container.innerHTML=sorted.map(([year,evs])=>{
-      return '<div class="ch-year-group" id="year-'+year+'">'+
-        '<div class="ch-year-label">'+year+' ('+evs.length+')</div>'+
-        evs.map(ev=>renderEvent(ev)).join('')+
-      '</div>';
-    }).join('');
-  }
-
-  requestAnimationFrame(()=>{
-    const obs=new IntersectionObserver((entries)=>{
-      entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}});
-    },{threshold:0.1});
-    container.querySelectorAll('.ch-event').forEach(el=>obs.observe(el));
   });
 }
 
-function renderEvent(ev){
-  const color=CAT_COLORS[ev.category]||CAT_COLORS.general;
-  const label=CAT_LABELS[ev.category]||ev.category_label||ev.category||'General';
-  const date=fmtDate(ev.date);
-  const narrative=NARRATIVE[ev.narrative_state]||ev.narrative_state||'';
-  const impactClass=ev.impact==='critical'?'critical':(ev.impact==='high'?'highlight':'');
-  const statusClass=ev.verification==='verificado'?'verificado':(ev.verification==='pendiente'?'pendiente':'recibido');
-  const expList=(ev.expedientes||[]).join(', ');
-  const sources=ev.source_primary?[ev.source_primary,...(ev.sources_secondary||[])]:[];
-  const tags=ev.tags||[];
-  const related=ev.related_events||[];
-
-  let detailHtml='';
-  if(ev.description_expanded&&ev.description_expanded!==ev.description){
-    detailHtml+='<p>'+esc(ev.description_expanded)+'</p>';
+function getCurrentGrIdx(y){
+  const entries=document.querySelectorAll(`.gr-entry[data-year="${y}"]`);
+  for(let i=0;i<entries.length;i++){
+    if(entries[i].classList.contains('active'))return i;
   }
-  if(sources.length){
-    detailHtml+='<div class="ch-event-sources"><h4>Fuentes</h4><ul>'+
-      sources.map(s=>'<li><a href="'+esc(s)+'" target="_blank" rel="noopener">'+esc(s)+'</a></li>').join('')+
-    '</ul></div>';
-  }
-  if(tags.length){
-    detailHtml+='<div class="ch-event-tags">'+tags.map(t=>'<span class="ch-event-tag">'+esc(t)+'</span>').join('')+'</div>';
-  }
-  if(related.length){
-    detailHtml+='<div class="ch-event-related"><h4>Eventos relacionados</h4><ul>'+
-      related.map(r=>'<li>'+esc(r)+'</li>').join('')+
-    '</ul></div>';
-  }
-
-  const link=ev.original_post||'#';
-
-  return '<div class="ch-event '+impactClass+'" data-id="'+esc(ev.id)+'">'+
-    '<div class="ch-event-inner" onclick="toggleDetail(this)">'+
-      '<div class="ch-event-head">'+
-        '<span class="ch-event-date">'+date+'</span>'+
-        '<div class="ch-event-badges">'+
-          '<span class="ch-event-badge '+statusClass+'">'+(ev.verification||'recibido')+'</span>'+
-          (ev.impact==='critical'?'<span class="ch-event-badge critical">Crítico</span>':'')+
-          (ev.impact==='high'?'<span class="ch-event-badge high">Alto</span>':'')+
-        '</div>'+
-      '</div>'+
-      '<div class="ch-event-cat" style="color:'+color+'">'+
-        '<span class="ch-event-cat-dot" style="background:'+color+'"></span>'+
-        label+
-      '</div>'+
-      '<h3 class="ch-event-title">'+esc(ev.title||'')+'</h3>'+
-      (expList?'<div class="ch-event-exp">Expediente: '+esc(expList)+'</div>':'')+
-      '<div class="ch-event-location">&#9906; '+esc(ev.location||'Venezuela')+'</div>'+
-      (narrative?'<div class="ch-event-narrative">'+esc(narrative)+'</div>':'')+
-      '<p class="ch-event-summary">'+esc((ev.description||'').substring(0,200))+((ev.description||'').length>200?'...':'')+'</p>'+
-      '<button class="ch-event-expand">Ver detalle &darr;</button>'+
-      '<div class="ch-event-detail">'+detailHtml+'</div>'+
-      '<div class="ch-event-actions">'+
-        (ev.original_post?'<a href="'+esc(ev.original_post)+'" target="_blank" rel="noopener">Ver publicación</a>':'')+
-        '<a href="index.html#destacada">Abrir expediente</a>'+
-        '<button onclick="event.stopPropagation()">Aportar información</button>'+
-      '</div>'+
-    '</div>'+
-  '</div>';
+  return 0;
 }
 
-function toggleDetail(inner){
-  const detail=inner.querySelector('.ch-event-detail');
-  const btn=inner.querySelector('.ch-event-expand');
-  if(!detail)return;
-  const isOpen=detail.classList.contains('open');
-  detail.classList.toggle('open');
-  if(btn)btn.innerHTML=isOpen?'Ver detalle &darr;':'Ocultar &uarr;';
+function populateGrExpanded(y,idx){
+  const secs=SECONDARY_EVENTS[y]||[];
+  const s=secs[idx];
+  if(!s)return;
+  // Update active states
+  document.querySelectorAll(`.gr-entry[data-year="${y}"]`).forEach(e=>e.classList.remove('active'));
+  const activeEntry=document.querySelector(`.gr-entry[data-year="${y}"][data-idx="${idx}"]`);
+  if(activeEntry){
+    activeEntry.classList.add('active');
+    // Scroll entry into view within gr-list
+    const list=document.getElementById('grList-'+y);
+    if(list){
+      const entryTop=activeEntry.offsetTop-list.scrollTop;
+      const entryH=activeEntry.offsetHeight;
+      const listH=list.clientHeight;
+      if(entryTop<0||entryTop+entryH>listH){
+        activeEntry.scrollIntoView({block:'nearest',behavior:'smooth'});
+      }
+    }
+  }
+  // Update active indicator
+  const indicator=document.getElementById('grActive-'+y);
+  if(indicator){
+    indicator.textContent=String(idx+1).padStart(2,'0')+' / '+String(secs.length).padStart(2,'0');
+  }
+  // Update nav button states
+  const prevBtn=document.getElementById('grPrev-'+y);
+  const nextBtn=document.getElementById('grNext-'+y);
+  if(prevBtn)prevBtn.disabled=(idx===0);
+  if(nextBtn)nextBtn.disabled=(idx===secs.length-1);
+  // Populate expanded card
+  const exp=document.getElementById('grExpanded-'+y);
+  if(!exp)return;
+  const sc=CAT_COLORS[s.cat]||'#888';
+  const sbg=CAT_BG[s.cat]||'rgba(136,136,136,.1)';
+  exp.innerHTML=`<div class="gr-exp-meta">
+    <span class="gr-exp-badge" style="background:${sbg};color:${sc}">${s.cat}</span>
+    <span class="gr-exp-status">${s.status||'verificado'}</span>
+  </div>
+  <div class="gr-exp-date">${s.date}</div>
+  <div class="gr-exp-title">${s.title}</div>
+  <div class="gr-exp-summary">${s.summary}</div>
+  <div class="gr-exp-source">Fuente: ${s.source||'Documento público'}</div>
+  <button class="gr-exp-btn" onclick="openPanelByYear(${y})">Abrir evento completo →</button>`;
+  exp.classList.add('open');
 }
 
-// Filters
-document.getElementById('ch-filters')?.addEventListener('click',e=>{
-  const btn=e.target.closest('.ch-filter');
-  if(!btn)return;
-  document.querySelectorAll('.ch-filter').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  activeFilter=btn.dataset.filter;
-  renderTimeline();
-});
+// Side panel
+function openPanel(idx){
+  const ev=EVENTS[idx];
+  if(!ev)return;
+  const color=CAT_COLORS[ev.cat]||'#888';
+  const bg=CAT_BG[ev.cat]||'rgba(136,136,136,.1)';
+  const existingHero=document.getElementById('panelHero');
+  if(existingHero)existingHero.remove();
+  if(ev.imgSrc){
+    const hero=document.createElement('div');
+    hero.id='panelHero';
+    hero.className='panel-hero';
+    hero.innerHTML=`<img src="${ev.imgSrc}" alt="${ev.title}">`;
+    const panel=document.getElementById('sidePanel');
+    panel.insertBefore(hero,panel.children[1]);
+  }
+  document.getElementById('panelYear').textContent=ev.y;
+  document.getElementById('panelDate').textContent=ev.displayDate;
+  document.getElementById('panelBadge').textContent=ev.cat;
+  document.getElementById('panelBadge').style.cssText=`background:${bg};color:${color}`;
+  document.getElementById('panelTitle').textContent=ev.title;
+  document.getElementById('panelSummary').textContent=ev.summary;
+  document.getElementById('panelImpact').textContent=ev.impact;
+  document.getElementById('panelContext').textContent=ev.context;
+  const srcList=document.getElementById('panelSources');
+  srcList.innerHTML='';
+  (ev.sources||[]).forEach(s=>{const li=document.createElement('li');li.textContent=s;srcList.appendChild(li);});
+  const tagsDiv=document.getElementById('panelTags');
+  tagsDiv.innerHTML='';
+  (ev.tags||[]).forEach(t=>{const sp=document.createElement('span');sp.className='panel-tag';sp.textContent=t;tagsDiv.appendChild(sp);});
+  document.getElementById('sidePanel').classList.add('open');
+  document.getElementById('panelOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function openPanelByYear(y){
+  const idx=EVENTS.findIndex(e=>e.y===y);
+  if(idx>=0)openPanel(idx);
+}
+function closePanel(){
+  document.getElementById('sidePanel').classList.remove('open');
+  document.getElementById('panelOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('panelClose').addEventListener('click',closePanel);
+document.getElementById('panelOverlay').addEventListener('click',closePanel);
 
-// Search
-let searchTimer;
-document.getElementById('ch-search')?.addEventListener('input',e=>{
-  clearTimeout(searchTimer);
-  searchTimer=setTimeout(()=>{
-    searchQuery=e.target.value.trim();
-    renderTimeline();
-  },250);
-});
+// Search + filters
+function applyFilters(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const cat=document.getElementById('catFilter').value;
+  const yr=document.getElementById('yearFilter').value;
+  document.querySelectorAll('.year-block').forEach(el=>{
+    const matchSearch=!q||el.dataset.search.includes(q);
+    const matchCat=!cat||el.dataset.cat===cat;
+    const matchYear=!yr||el.dataset.year===yr;
+    el.style.display=(matchSearch&&matchCat&&matchYear)?'':'none';
+    // Also filter year labels
+    if(matchSearch&&matchCat&&matchYear){
+      const yl=document.getElementById('year-'+el.dataset.year);
+      if(yl)yl.style.display='';
+    }
+  });
+  // Hide year labels with no visible blocks
+  document.querySelectorAll('.tl-year-label').forEach(yl=>{
+    const y=yl.id.replace('year-','');
+    const hasVisible=document.querySelector(`.year-block[data-year="${y}"]:not([style*="display: none"])`);
+    yl.style.display=hasVisible?'':'none';
+  });
+}
+document.getElementById('searchInput').addEventListener('input',applyFilters);
+document.getElementById('catFilter').addEventListener('change',applyFilters);
+document.getElementById('yearFilter').addEventListener('change',applyFilters);
 
-// Group toggle
-document.getElementById('ch-group-toggle')?.addEventListener('click',e=>{
-  groupByYear=!groupByYear;
-  e.target.classList.toggle('active',groupByYear);
-  renderTimeline();
-});
+// Year rule sidebar
+function buildYearRule(){
+  const rule=document.getElementById('yearRule');
+  const years=[...yearSet].sort();
+  rule.innerHTML='';
+  years.forEach((y,i)=>{
+    if(i>0){const line=document.createElement('div');line.className='yr-line';rule.appendChild(line);}
+    const a=document.createElement('a');a.className='yr';a.textContent=y;a.href='#year-'+y;
+    a.addEventListener('click',e=>{e.preventDefault();document.getElementById('year-'+y)?.scrollIntoView({behavior:'smooth',block:'center'});});
+    rule.appendChild(a);
+  });
+}
 
-// Back to top
-const btt=document.getElementById('ch-back-top');
-window.addEventListener('scroll',()=>{
-  if(window.scrollY>400){btt.style.display='flex'}
-  else{btt.style.display='none'}
-});
-btt?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+// Init
+buildTimeline();
+buildYearRule();
 </script>
 </body>
 </html>

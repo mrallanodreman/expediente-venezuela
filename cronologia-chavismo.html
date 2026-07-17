@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Expediente Venezuela — Cronología del Saqueo</title>
+<meta name="description" content="Cronología interactiva del expediente de corrupción en Venezuela. 1992–2026.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/cronologia.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0c;--bg2:#111114;--bg3:#18181c;--bg4:#1e1e24;
+  --surface:#222228;--surface2:#2a2a32;
+  --text:#e8e6e3;--text2:#b0aea8;--text3:#78766f;--text4:#4a4940;
+  --red:#c41e3a;--red-glow:#ff2d55;--red-dim:#6b1020;
+  --gold:#d4a853;--gold-dim:#8a7a4a;
+  --blue:#4a8fe7;--blue-dim:#1e3a5f;
+  --green:#3a9d6a;--green-dim:#1a4a2e;
+  --purple:#9b6dff;--purple-dim:#3a2a6a;
+  --teal:#2dd4bf;--teal-dim:#1a4a40;
+  --cyan:#38bdf8;--cyan-dim:#1a3a5a;
+  --orange:#f59e0b;--orange-dim:#5a3a0a;
+  --border:#2a2a30;--border2:#3a3a42;
+  --font-display:'Source Serif 4',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --font-mono:'Courier Prime','Courier New',monospace;
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--font-body)}
+
+/* ═══ TIMELINE CANVAS ═══ */
+#timeline-wrap{position:absolute;inset:0;overflow:hidden}
+#timeline-canvas{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
+
+/* ═══ YEAR MARKERS ═══ */
+.year-marker{
+  position:absolute;pointer-events:none;
+  font-family:var(--font-mono);font-size:11px;color:var(--text4);
+  letter-spacing:.08em;opacity:.6;
+  border-left:1px solid var(--border);
+  padding-left:8px;height:100%;
+}
+
+/* ═══ EVENT NODES ═══ */
+.event-node{
+  position:absolute;cursor:pointer;
+  width:220px;
+  transition:opacity .2s;
+}
+.event-node:hover{z-index:10}
+.event-node.dimmed{opacity:.15;pointer-events:none}
+.event-node.selected{z-index:20}
+
+.node-stem{
+  position:absolute;left:50%;bottom:0;width:1px;
+  background:var(--border2);transform:translateX(-50%);
+}
+.node-dot{
+  position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);
+  border-radius:50%;z-index:2;
+  transition:transform .2s,box-shadow .2s;
+}
+.event-node:hover .node-dot{transform:translate(-50%,50%) scale(1.3)}
+.event-node.selected .node-dot{transform:translate(-50%,50%) scale(1.4);box-shadow:0 0 16px var(--cat-color)}
+
+.node-card{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:220px;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:6px;padding:10px 12px;
+  transition:border-color .2s,background .2s;
+  overflow:hidden;
+}
+.event-node:hover .node-card{border-color:var(--border2);background:var(--bg3)}
+.event-node.selected .node-card{border-color:var(--cat-color);background:var(--bg3)}
+
+.node-date{
+  font-family:var(--font-mono);font-size:10px;color:var(--text3);
+  letter-spacing:.05em;margin-bottom:4px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.node-title{
+  font-family:var(--font-body);font-size:12px;font-weight:600;
+  color:var(--text);line-height:1.3;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;text-overflow:ellipsis;
+  margin-bottom:6px;
+}
+.node-meta{
+  display:flex;align-items:center;gap:6px;
+}
+.node-cat{
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;
+  text-transform:uppercase;padding:2px 6px;border-radius:3px;
+  white-space:nowrap;
+}
+.node-impact{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;
+  border:2px solid;
+}
+
+/* ═══ CLUSTER NODES ═══ */
+.cluster-node{
+  position:absolute;cursor:pointer;
+  transition:opacity .2s;
+}
+.cluster-node.dimmed{opacity:.15;pointer-events:none}
+.cluster-ring{
+  width:56px;height:56px;border-radius:50%;
+  border:2px solid var(--gold);
+  background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:14px;font-weight:700;
+  color:var(--gold);
+  transition:transform .2s,box-shadow .2s;
+}
+.cluster-node:hover .cluster-ring{transform:scale(1.1);box-shadow:0 0 20px rgba(212,168,83,.3)}
+.cluster-label{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  margin-top:6px;font-family:var(--font-mono);font-size:10px;
+  color:var(--text3);white-space:nowrap;text-align:center;
+}
+
+/* ═══ LINKS (SVG layer) ═══ */
+#links-svg{
+  position:absolute;top:0;left:0;pointer-events:none;
+  overflow:visible;
+}
+.link-line{
+  fill:none;stroke-opacity:.15;stroke-width:1;
+  transition:stroke-opacity .3s;
+}
+.link-line.highlighted{stroke-opacity:.5;stroke-width:2}
+.link-line.cause{stroke-dasharray:6 4}
+.link-line.contradiction{stroke-dasharray:2 3}
+
+/* ═══ MINIMAP ═══ */
+#minimap{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  width:min(600px,calc(100vw - 40px));height:48px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  z-index:200;overflow:hidden;cursor:pointer;
+  backdrop-filter:blur(12px);
+}
+#minimap-canvas{width:100%;height:100%}
+#minimap-viewport{
+  position:absolute;top:0;height:100%;
+  border:1px solid var(--gold);border-radius:4px;
+  background:rgba(212,168,83,.08);
+  pointer-events:none;transition:left .1s,width .1s;
+}
+#minimap-dots{position:absolute;inset:0;pointer-events:none}
+
+/* ═══ SIDE PANEL ═══ */
+#side-panel{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(520px,90vw);background:var(--bg2);
+  border-left:1px solid var(--border);
+  z-index:400;transform:translateX(100%);
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+  display:flex;flex-direction:column;
+  backdrop-filter:blur(20px);
+}
+#side-panel.open{transform:translateX(0)}
+#panel-header{
+  padding:20px 24px 16px;border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:16px;
+}
+#panel-close{
+  width:32px;height:32px;border-radius:6px;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--text3);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;transition:all .2s;
+}
+#panel-close:hover{background:var(--red-dim);color:var(--red);border-color:var(--red)}
+#panel-title-group{flex:1;min-width:0}
+#panel-category{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+#panel-title{font-family:var(--font-display);font-size:22px;font-weight:700;line-height:1.2;color:var(--text)}
+#panel-date{font-family:var(--font-mono);font-size:12px;color:var(--text3);margin-top:6px}
+#panel-body{
+  flex:1;overflow-y:auto;padding:20px 24px;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+}
+#panel-body::-webkit-scrollbar{width:6px}
+#panel-body::-webkit-scrollbar-track{background:transparent}
+#panel-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.panel-section{margin-bottom:24px}
+.panel-section-title{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text4);margin-bottom:10px;
+  padding-bottom:6px;border-bottom:1px solid var(--border);
+}
+.panel-summary{font-family:var(--font-display);font-size:15px;line-height:1.7;color:var(--text2)}
+.panel-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.panel-meta-item{padding:8px 12px;background:var(--bg3);border-radius:6px}
+.panel-meta-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text4)}
+.panel-meta-value{font-size:13px;color:var(--text);margin-top:2px;font-weight:500}
+.panel-impact{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600}
+.panel-impact.critical{background:var(--red-dim);color:var(--red-glow)}
+.panel-impact.high{background:var(--orange-dim);color:var(--orange)}
+.panel-impact.medium{background:var(--blue-dim);color:var(--blue)}
+.panel-impact.low{background:var(--green-dim);color:var(--green)}
+.panel-sources{display:flex;flex-direction:column;gap:6px}
+.panel-source{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 12px;background:var(--bg3);border-radius:6px;
+  text-decoration:none;color:var(--text2);font-size:13px;
+  transition:background .15s;
+}
+.panel-source:hover{background:var(--surface)}
+.panel-connections{display:flex;flex-direction:column;gap:4px}
+.panel-conn{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 12px;background:var(--bg3);border-radius:6px;
+  cursor:pointer;font-size:13px;color:var(--text2);
+  transition:all .15s;border:1px solid transparent;
+}
+.panel-conn:hover{background:var(--surface);border-color:var(--border2);color:var(--text)}
+.panel-conn-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.panel-conn-type{font-family:var(--font-mono);font-size:9px;color:var(--text4);margin-left:auto;text-transform:uppercase;letter-spacing:.08em}
+.panel-evidence{display:flex;flex-direction:column;gap:6px}
+.panel-ev-item{
+  padding:10px 12px;background:var(--bg3);border-radius:6px;
+  font-size:13px;color:var(--text2);line-height:1.5;
+  border-left:3px solid var(--gold-dim);
+}
+
+/* ═══ CONTROLS ═══ */
+#controls{
+  position:fixed;top:20px;left:20px;z-index:300;
+  display:flex;flex-direction:column;gap:8px;
+}
+.ctrl-btn{
+  width:40px;height:40px;border-radius:8px;
+  background:var(--bg2);border:1px solid var(--border);
+  color:var(--text2);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;transition:all .2s;
+  backdrop-filter:blur(8px);
+}
+.ctrl-btn:hover{background:var(--surface);color:var(--text);border-color:var(--border2)}
+
+/* ═══ SEARCH ═══ */
+#search-bar{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  z-index:300;width:min(480px,calc(100vw - 180px));
+}
+#search-input{
+  width:100%;height:42px;padding:0 16px 0 40px;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;color:var(--text);
+  font-family:var(--font-body);font-size:14px;
+  outline:none;transition:border-color .2s;
+  backdrop-filter:blur(12px);
+}
+#search-input:focus{border-color:var(--gold)}
+#search-input::placeholder{color:var(--text4)}
+#search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text4);font-size:14px;pointer-events:none}
+#search-results{
+  position:absolute;top:48px;left:0;right:0;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;max-height:320px;overflow-y:auto;
+  display:none;z-index:310;backdrop-filter:blur(12px);
+}
+#search-results.visible{display:block}
+.sr-item{padding:10px 16px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .15s}
+.sr-item:hover{background:var(--surface)}
+.sr-item:last-child{border-bottom:none}
+.sr-item .sr-title{font-size:13px;font-weight:500;color:var(--text)}
+.sr-item .sr-meta{font-size:11px;color:var(--text4);margin-top:2px;font-family:var(--font-mono)}
+
+/* ═══ FILTERS ═══ */
+#filters{
+  position:fixed;top:72px;left:50%;transform:translateX(-50%);
+  z-index:300;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;
+}
+.filter-chip{
+  padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500;
+  background:var(--bg2);border:1px solid var(--border);
+  color:var(--text3);cursor:pointer;transition:all .2s;
+  white-space:nowrap;user-select:none;backdrop-filter:blur(8px);
+}
+.filter-chip:hover{border-color:var(--border2);color:var(--text2)}
+.filter-chip.active{border-color:currentColor;color:var(--text)}
+.filter-chip[data-cat="corrupcion"]{--chip:var(--red)}
+.filter-chip[data-cat="politica"]{--chip:var(--blue)}
+.filter-chip[data-cat="militar"]{--chip:var(--orange)}
+.filter-chip[data-cat="economia"]{--chip:var(--green)}
+.filter-chip[data-cat="internacional"]{--chip:var(--purple)}
+.filter-chip[data-cat="social"]{--chip:var(--teal)}
+.filter-chip[data-cat="legal"]{--chip:var(--cyan)}
+.filter-chip.active{color:var(--chip);border-color:var(--chip);background:color-mix(in srgb,var(--chip) 10%,transparent)}
+
+/* ═══ STATS ═══ */
+#stats{
+  position:fixed;bottom:20px;left:20px;z-index:200;
+  display:flex;gap:16px;
+  font-family:var(--font-mono);font-size:11px;color:var(--text4);
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:8px 16px;backdrop-filter:blur(12px);
+}
+#stats span{white-space:nowrap}
+#stats .sv{color:var(--gold);font-weight:700}
+
+/* ═══ LEGEND ═══ */
+#legend{
+  position:fixed;bottom:20px;right:20px;z-index:200;
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:12px 16px;backdrop-filter:blur(12px);
+}
+#legend-title{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text4);margin-bottom:8px}
+.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:11px;color:var(--text3)}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.legend-line{width:20px;height:0;flex-shrink:0;border-top:2px solid var(--text4)}
+.legend-line.dashed{border-top-style:dashed}
+
+/* ═══ OVERLAY ═══ */
+#overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.5);
+  z-index:350;opacity:0;pointer-events:none;transition:opacity .3s;
+}
+#overlay.visible{opacity:1;pointer-events:auto}
+
+/* ═══ TOOLTIP ═══ */
+#tooltip{
+  position:fixed;pointer-events:none;z-index:500;
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:6px;padding:10px 14px;
+  max-width:280px;backdrop-filter:blur(12px);
+  opacity:0;transition:opacity .2s;
+  box-shadow:0 8px 32px rgba(0,0,0,.5);
+}
+#tooltip.visible{opacity:1}
+
+/* ═══ MOBILE ═══ */
+@media(max-width:768px){
+  #minimap{display:none}
+  #legend{display:none}
+  #stats{top:12px;left:12px;right:auto;bottom:auto}
+  #search-bar{width:calc(100vw - 32px);top:52px}
+  #filters{top:102px;width:calc(100vw - 32px);flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  #filters::-webkit-scrollbar{display:none}
+  #side-panel{width:100vw}
+  #controls{top:auto;bottom:80px;left:12px}
+}
+</style>
+</head>
+<body>
+
+<div id="tooltip"></div>
+<div id="overlay" onclick="closePanel()"></div>
+
+<div id="search-bar">
+  <span id="search-icon">⌕</span>
+  <input id="search-input" type="text" placeholder="Buscar evento, persona, monto…" autocomplete="off" spellcheck="false">
+  <div id="search-results"></div>
+</div>
+
+<div id="filters"></div>
+
+<div id="controls">
+  <button class="ctrl-btn" onclick="zoomIn()" title="Acercar">+</button>
+  <button class="ctrl-btn" onclick="zoomOut()" title="Alejar">−</button>
+  <button class="ctrl-btn" onclick="resetView()" title="Reiniciar vista">◎</button>
+</div>
+
+<div id="timeline-wrap">
+  <div id="timeline-canvas"></div>
+</div>
+
+<svg id="links-svg"></svg>
+
+<div id="minimap">
+  <div id="minimap-dots"></div>
+  <canvas id="minimap-canvas"></canvas>
+  <div id="minimap-viewport"></div>
+</div>
+
+<div id="stats">
+  <span>Eventos: <span class="sv" id="s-events">0</span></span>
+  <span>Conexiones: <span class="sv" id="s-edges">0</span></span>
+  <span>Años: <span class="sv" id="s-years">0</span></span>
+</div>
+
+<div id="legend">
+  <div id="legend-title">Categorías</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Corrupción</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>Política</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div>Militar</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Economía</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Internacional</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div>Social</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div>Legal</div>
+  <div style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px">
+    <div class="legend-item"><div class="legend-line"></div>Causa</div>
+    <div class="legend-item"><div class="legend-line dashed"></div>Consecuencia</div>
+    <div class="legend-item"><div class="legend-line dashed"></div>Contradicción</div>
+  </div>
+</div>
+
+<div id="side-panel">
+  <div id="panel-header">
+    <button id="panel-close" onclick="closePanel()">✕</button>
+    <div id="panel-title-group">
+      <div id="panel-category"></div>
+      <div id="panel-title"></div>
+      <div id="panel-date"></div>
+    </div>
+  </div>
+  <div id="panel-body"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════
+const CATEGORIES = {
+  corrupcion:{label:'Corrupción',color:'#c41e3a',icon:'◈'},
+  politica:{label:'Política',color:'#4a8fe7',icon:'◆'},
+  militar:{label:'Militar',color:'#f59e0b',icon:'▲'},
+  economia:{label:'Economía',color:'#3a9d6a',icon:'●'},
+  internacional:{label:'Internacional',color:'#9b6dff',icon:'◇'},
+  social:{label:'Social',color:'#2dd4bf',icon:'■'},
+  legal:{label:'Legal',color:'#38bdf8',icon:'◎'},
+};
+
+const NODES = [
+  {id:'coup92',date:'1992-02-04',title:'Intento de golpe de Estado',cat:'politica',loc:'Caracas',impact:'high',
+   summary:'Hugo Chávez Frías, then a lieutenant colonel, leads a military coup against President Carlos Andrés Pérez. The assault on the Miraflores Palace fails. Chávez appears on Venevisión in a red beret, surrendering. The broadcast turns him into a national figure overnight. He is imprisoned at Yare and later pardoned in 1994.',
+   sources:[{label:'Biography – Britannica',url:'https://britannica.com/biography/Hugo-Chavez'},{label:'Wikipedia: 1992 coup',url:'https://en.wikipedia.org/wiki/1992_Venezuelan_coup_d%27état_attempt'}],
+   evidence:['Venevisión live broadcast, 4 Feb 1992','MBR-200 operational plan','Francisco Arias Cárdenas co-conspirator statement'],
+   expediente:'MBR-200 / Causa penal 8.94'},
+  {id:'prison',date:'1993-07-03',title:'Chávez encarcelado en Yare',cat:'politica',loc:'Yare',impact:'info',
+   summary:'Sentenced to prison. Writes "El golpe blando" from his cell. Plans his political ascent with Mario Silva Linares and other conspirators. The book becomes a manifesto for his movement.',
+   sources:[{label:'El golpe blando – Chávez, 1994',url:'#'}],
+   evidence:['Manuscript of "El golpe blando"','Prison correspondence with conspirators'],
+   conexiones:[{to:'coup92',type:'consequence'},{to:'pardon94',type:'cause'}]},
+  {id:'pardon94',date:'1994-03-26',title:'Indulto presidencial de Caldera',cat:'legal',loc:'Caracas',impact:'medium',
+   summary:'President Rafael Caldera pardons Chávez and the other conspirators via Gaceta Oficial Nº 35.226. The justification: "erradicar un foco de inestabilidad". The decision opens the path for Chávez\'s political career.',
+   sources:[{label:'Gaceta Oficial Nº 35.226',url:'#'},{label:'Wikipedia: Rafael Caldera',url:'https://en.wikipedia.org/wiki/Rafael_Caldera'}],
+   evidence:['Gaceta Oficial Nº 35.226, 26 Mar 1994','Caldera public statements','Press coverage of pardon'],
+   conexiones:[{to:'prison',type:'consequence'},{to:'election98',type:'cause'}]},
+  {id:'election98',date:'1998-12-06',title:'Chávez gana la presidencia',cat:'politica',loc:'Caracas',impact:'critical',
+   summary:'Hugo Chávez Frías is elected president with 56.2% of the vote (3,673,663 votes). He promises a "Bolivarian Revolution" against the corruption of the "Fourth Republic". His campaign slogan: "Pueblo, pobreza y promesas". Opponent Henrique Salas Römer gets 39.97%.',
+   sources:[{label:'CNE – Official results',url:'#'},{label:'Wikipedia: 1998 election',url:'https://en.wikipedia.org/wiki/1998_Venezuelan_presidential_election'}],
+   evidence:['CNE official tally: 3,673,663 votes (56.2%)','Victory speech at Miraflores Palace','International press coverage'],
+   expediente:'CNE-1998-001'},
+  {id:'const99',date:'1999-12-15',title:'Nueva Constitución Bolivariana',cat:'politica',loc:'Caracas',impact:'critical',
+   summary:'Constitutional referendum approves the new constitution with 71.78% support. It allows indefinite re-election, creates the "Poder Ciudadano" (Citizen Power), renames the country "República Bolivariana de Venezuela", and concentrates executive power. Voter turnout: 44.38%.',
+   sources:[{label:'Constitución BRV, 1999',url:'#'},{label:'Wikipedia: 1999 referendum',url:'https://en.wikipedia.org/wiki/1999_Venezuelan_constitutional_referendum'}],
+   evidence:['Full text of the 1999 Constitution','CNE results: 71.78% in favor','Constituent Assembly transcripts'],
+   expediente:'CONSTITUCION-1999',
+   conexiones:[{to:'election98',type:'consequence'},{to:'ley_habilitante01',type:'cause'}]},
+  {id:'ley_habilitante01',date:'2001-11-25',title:'49 Decretos Ley Habilitante',cat:'politica',loc:'Caracas',impact:'high',
+   summary:'Chávez signs 49 decree-laws via the Habilitante, bypassing the National Assembly. They reform land, fisheries, hydrocarbons, and the economy. Fedecámaras and the CTV call a general strike. The political crisis escalates.',
+   sources:[{label:'Gaceta Oficial Extraordinaria 5.499',url:'#'}],
+   evidence:['Gaceta Oficial Extraordinaria 5.499, Nov 2001','Fedecámaras and CTV joint declaration','Media coverage of strike calls'],
+   conexiones:[{to:'const99',type:'consequence'},{to:'coup02',type:'cause'}]},
+  {id:'coup02',date:'2002-04-11',title:'Golpe de Estado contra Chávez (47h)',cat:'militar',loc:'Caracas',impact:'critical',
+   summary:'A 47-hour coup. Pedro Carmona Estanga signs the "Acta de Carmona" dissolving all institutions. Chávez is held at La Orchila island. The coup collapses after military loyalists and popular pressure restore him on April 13. The OEA and Carter Center investigate.',
+   sources:[{label:'Wikipedia: 2002 coup',url:'https://en.wikipedia.org/wiki/2002_Venezuelan_coup_d%27état_attempt'},{label:'OEA/Carter Center Report',url:'#'}],
+   evidence:['Video: Carmona signing Acta de Carmona at Miraflores','RCTV broadcast footage','OEA fact-finding mission report, 2002'],
+   expediente:'FISCALÍA-2002-112',
+   conexiones:[{to:'ley_habilitante01',type:'cause'},{to:'strike02',type:'cause'},{to:'rctv07',type:'cause'}]},
+  {id:'strike02',date:'2002-12-02',title:'Paro petrolero general (63 días)',cat:'economia',loc:'Puerto Ordaz',impact:'critical',
+   summary:'General strike lasting 63 days. PDVSA is intervened. 18,000 workers fired. Production collapses from 3.1M to 25,000 barrels/day. The economic cost: $13.3 billion. Chávez consolidates control over PDVSA, turning it into a political tool.',
+   sources:[{label:'IEA – PDVSA production data',url:'https://iea.org'},{label:'Wikipedia: 2002-03 strike',url:'https://en.wikipedia.org/wiki/Venezuelan_general_strike_of_2002–03'}],
+   evidence:['IEA production data: 3.1M → 25,000 bbl/day','List of 18,000 fired PDVSA workers','Video: "La Noche de PDVSA" broadcast'],
+   expediente:'PDVSA-2002-001',
+   conexiones:[{to:'coup02',type:'consequence'},{to:'cadivi03',type:'cause'},{to:'pdvsa_lose',type:'cause'}]},
+  {id:'cadivi03',date:'2003-02-05',title:'Creación de CADIVI',cat:'corrupcion',loc:'Caracas',impact:'critical',
+   summary:'Comisión de Administración de Divisas is created via Convenio Cambiario signed by the Ministry of Finance and BCV. The system fixes the bolívar at 1,596 Bs/$ (official rate) while the parallel rate soars. Over 12 years, $25 billion disappears through fictitious imports and "empresas de maletín".',
+   sources:[{label:'Gaceta Oficial 37.574',url:'#'},{label:'Transparency Venezuela: CADIVI',url:'https://transparenciave.org/project/y-que-paso-con-cadivi/'},{label:'Wikipedia: CADIVI',url:'https://es.wikipedia.org/wiki/Cadivi'}],
+   evidence:['Gaceta Oficial 37.574, 5 Feb 2003','Ecoanalítica: $69.5B in import over-invoicing (2003-2012)','Ministerio Público: 1,490 individuals + 782 companies under investigation'],
+   expediente:'CADIVI-001',
+   conexiones:[{to:'strike02',type:'consequence'},{to:'maletines07',type:'cause'},{to:'dolar_difundido13',type:'consequence'}]},
+  {id:'exprop07',date:'2007-01-20',title:'Oleada de expropiaciones',cat:'economia',loc:'Venezuela',impact:'high',
+   summary:'Chávez announces mass expropriations of farms, agricultural and manufacturing companies. Over 1,000 enterprises are nationalized in the following years. Production collapses as state management fails.',
+   sources:[{label:'Gaceta Oficial Extraordinaria 5.879',url:'#'},{label:'Wikipedia: Economic policy',url:'https://en.wikipedia.org/wiki/Economic_policy_of_Hugo_Chávez'}],
+   evidence:['Decrees of expropriation, Gaceta Oficial','Agricultural production data post-expropriation','Photos of state takeovers'],
+   conexiones:[{to:'const99',type:'consequence'},{to:'pdvsa_lose',type:'cause'}]},
+  {id:'maletines07',date:'2007-06-01',title:'Empresas de Maletín ($25.000M)',cat:'corrupcion',loc:'Caracas / Panamá',impact:'critical',
+   summary:'A network of 1,700+ shell companies receives preferential dollars from CADIVI for "imports" that never existed. The total: $25 billion. Companies exist on paper only, registered days before receiving millions.',
+   sources:[{label:'MEGA – CADIVI Audit',url:'#'},{label:'Runrunes: Máquina de corrupción',url:'https://runrun.es/nacional/venezuela-2/149106/la-maquina-de-corrupcion-de-los-dolares-cadivi'}],
+   evidence:['MEGA list: 1,700+ recipient companies','Containers with garbage at Puerto Cabello','CADIVI payment orders, Gaceta Oficial records'],
+   expediente:'MEGA-2009-001',
+   conexiones:[{to:'cadivi03',type:'consequence'},{to:'dolar_difundido13',type:'cause'}]},
+  {id:'triplex07',date:'2007-08-01',title:'Triplex de los Palos Grandes',cat:'corrupcion',loc:'Caracas',impact:'high',
+   summary:'Three luxury apartments in the Torre David complex, Los Palos Grandes, are linked to PDVSA officials and regime-connected families. The properties are valued at $30+ million. Investigation reveals funds traced to PDVSA contracts.',
+   sources:[{label:'Armando.info: PDVSA corruption',url:'https://armando.info'}],
+   evidence:['Property registry documents','PDVSA contract records linking buyers','Appraisal valuations'],
+   expediente:'MEGA-PDVSA-PROPIEDADES',
+   conexiones:[{to:'pdvsa_lose',type:'consequence'},{to:'andrade07',type:'cause'}]},
+  {id:'rctv07',date:'2007-05-27',title:'Cierre de RCTV',cat:'politica',loc:'Caracas',impact:'high',
+   summary:'Chávez does not renew RCTV\'s broadcast concession. RCTV, the oldest private TV station in Venezuela (since 1953), goes dark. TVES, a state channel, replaces it. Massive student protests erupt ("Generación RCTV").',
+   sources:[{label:'Wikipedia: Closure of RCTV',url:'https://en.wikipedia.org/wiki/Closure_of_RCTV'}],
+   evidence:['CONATEL decision','Final RCTV broadcast','Student protest footage'],
+   conexiones:[{to:'coup02',type:'cause'},{to:'exprop07',type:'cause'}]},
+  {id:'andrade07',date:'2007-09-01',title:'Andrade: guardaespaldas a tesorero',cat:'corrupcion',loc:'Miami / Zurich',impact:'critical',
+   summary:'Alejandro Andrade, Chávez\'s former bodyguard, is named National Treasurer. He receives over $1 billion in bribes from Odebrecht, PB Energy, and other companies. In 2018 he pleads guilty and is sentenced to 10 years in federal prison.',
+   sources:[{label:'DOJ: Andrade sentencing',url:'https://www.justice.gov/opa/pr/former-venezuelan-treasurer-sentenced-10-years-prison'},{label:'OCCRP: Andrade',url:'https://www.occrp.org/en/andrade'}],
+   evidence:['Guilty plea, USA v. Andrade, Case 16-cr-20384 (S.D. Fla.)','10-year sentence, 31 Oct 2018','Swiss and Florida bank records showing $1B+ in bribes'],
+   expediente:'USA-v-ANDRADE-16-20384',
+   conexiones:[{to:'maletines07',type:'consequence'},{to:'odebrecht16',type:'cause'},{to:'triplex07',type:'cause'}]},
+  {id:'pdvsa_lose',date:'2012-12-01',title:'PDVSA: caída irreversible',cat:'economia',loc:'Venezuela',impact:'critical',
+   summary:'PDVSA production falls from 3.1M to 2.4M barrels/day (2008-2012). The company accumulates $45 billion in debt. Technical capacity is destroyed after the 2002 firing of 18,000 workers. PDVSA becomes a social fund.',
+   sources:[{label:'OPEP Annual Statistical Bulletin',url:'https://www.opec.org'}],
+   evidence:['OPEP production data','PDVSA audited financial statements','IGPDVSA internal reports'],
+   conexiones:[{to:'strike02',type:'consequence'},{to:'pdvsa_crypto18',type:'cause'},{to:'triplex07',type:'cause'}]},
+  {id:'dolar_difundido13',date:'2013-01-01',title:'Dólar difundido: $14.000M fantasma',cat:'corrupcion',loc:'Caracas',impact:'critical',
+   summary:'The MEGA audit reveals $14 billion in CADIVI dollars with no documentary justification. The funds were transferred to offshore accounts in Panama, Andorra, and Switzerland. Maduro himself admits the fraud in December 2013.',
+   sources:[{label:'MEGA – Final CADIVI Report',url:'#'}],
+   evidence:['MEGA final audit report','Maduro interview with José Vicente Rangel, Televen','Offshore transfer records'],
+   expediente:'MEGA-2013-FINAL',
+   conexiones:[{to:'cadivi03',type:'consequence'},{to:'maletines07',type:'consequence'}]},
+  {id:'maduro13',date:'2013-04-14',title:'Maduro asume por 1,49%',cat:'politica',loc:'Caracas',impact:'critical',
+   summary:'Nicolás Maduro wins with 7,587,579 votes (50.61%) vs. Henrique Capriles\' 7,363,980 (49.12%). The margin: 223,599 votes (1.49%). Capriles demands a full audit. The CNE partial audit never completes.',
+   sources:[{label:'CNE – Official results',url:'#'},{label:'Wikipedia: 2013 election',url:'https://en.wikipedia.org/wiki/2013_Venezuelan_presidential_election'}],
+   evidence:['CNE official tally','Capriles demand for audit','OEA/UNASUR observations'],
+   expediente:'CNE-2013-001'},
+  {id:'arco_minero16',date:'2016-02-01',title:'Arco Minero del Orinoco',cat:'economia',loc:'Bolívar',impact:'high',
+   summary:'Maduro decrees the Arco Minero (Decree 2.248): 12% of national territory opened to indiscriminate mining. An estimated $20 billion/year is diverted through illegal gold, coltan, and diamond extraction.',
+   sources:[{label:'Decreto 2.248 – Gaceta Oficial 40.855',url:'#'}],
+   evidence:['Decree 2.248 published','Satellite imagery of deforestation','Pemón and Ye\'kwana community testimonies'],
+   expediente:'DECRETO-2248-2016'},
+  {id:'odebrecht16',date:'2016-12-21',title:'Escándalo Odebrecht: $98M sobornos',cat:'internacional',loc:'Caracas / Miami',impact:'critical',
+   summary:'Odebrecht pleads guilty to paying $788 million in bribes across 12 countries. In Venezuela: $98 million to officials including Alejandro Andrade ($1B total bribes across his tenure), Diosdado Cabello, and others.',
+   sources:[{label:'DOJ: Odebrecht plea',url:'https://www.justice.gov/opa/pr/brazilian-petrochemical-company-odebrecht-sa-and-its-subsidiary-braskem-sa-plead-guilty'},{label:'OCCRP: Odebrecht Files',url:'https://www.occrp.org/en/odebrecht'}],
+   evidence:['Odebrecht plea agreement, DOJ','Payment records to Andrade','Lava Jato task force documents'],
+   expediente:'USA-v-ODEBRECHT-16-476',
+   conexiones:[{to:'andrade07',type:'consequence'},{to:'saab19',type:'cause'}]},
+  {id:'bloqueos17',date:'2017-08-25',title:'Sanciones EE.UU.: EO 13808',cat:'internacional',loc:'Washington DC',impact:'high',
+   summary:'Trump signs Executive Order 13808. Prohibits new Venezuelan debt. Sanctions PDVSA and Maduro. Freezes government assets. The order cuts off Venezuela\'s access to US capital markets.',
+   sources:[{label:'EO 13808 – Federal Register',url:'https://www.federalregister.gov/documents/2017/08/28/2017-18313/'},{label:'OFAC: Venezuela sanctions',url:'https://www.treasury.gov/resource-center/sanctions/Programs/pages/venezuela.aspx'}],
+   evidence:['EO 13808 text','OFAC SDN list updates','PDVSA bond market data'],
+   expediente:'EO-13808-2017'},
+  {id:'maduro2018',date:'2018-05-20',title:'Reelección no reconocida',cat:'politica',loc:'Caracas',impact:'high',
+   summary:'Maduro wins presidential election with 67.8% amid opposition boycott. Turnout: 46%. Over 50 countries do not recognize the result.',
+   sources:[{label:'Wikipedia: 2018 election',url:'https://en.wikipedia.org/wiki/2018_Venezuelan_presidential_election'}],
+   evidence:['CNE results','EU and OEA non-recognition statements','Lima Group joint declaration'],
+   expediente:'CNE-2018-001'},
+  {id:'pdvsa_crypto18',date:'2018-11-01',title:'PDVSA-Crypto: Petro y $5.500M',cat:'corrupcion',loc:'Caracas',impact:'critical',
+   summary:'The regime launches the "Petro" cryptocurrency. $5.5 billion is diverted through crypto transactions via companies like Amazonas Trading and Crypto Capital.',
+   sources:[{label:'GAO: PDVSA-Crypto',url:'#'}],
+   evidence:['Blockchain transaction records','OFAC designation documents','Exchange cooperation records'],
+   expediente:'OFAC-2018-CRYPTO',
+   conexiones:[{to:'pdvsa_lose',type:'consequence'},{to:'odebrecht16',type:'cause'}]},
+  {id:'hiperinflacion',date:'2018-11-01',title:'Hiperinflación: 1.300.000%',cat:'economia',loc:'Venezuela',impact:'critical',
+   summary:'Venezuela reaches hyperinflation of 1,370,000% annualized (IMF estimate). The bolívar loses 99.99% of its value in a decade. GDP contracts 65% since 2013.',
+   sources:[{label:'BCV – Inflation indices',url:'#'},{label:'IMF Article IV Consultation',url:'https://www.imf.org/en/Countries/VEN'}],
+   evidence:['BCV inflation data','IMF economic outlook','Consumer price index comparisons with Weimar Germany'],
+   conexiones:[{to:'cadivi03',type:'consequence'},{to:'dolar_difundido13',type:'consequence'}]},
+  {id:'saab19',date:'2019-09-14',title:'Alex Saab capturado en Cabo Verde',cat:'internacional',loc:'Cabo Verde',impact:'critical',
+   summary:'Alex Nain Saab Morán, Maduro\'s special envoy, is arrested during a fuel stop in Cape Verde en route to Iran. Found with $3.5 million in cash. The USS San Jacinto is deployed offshore.',
+   sources:[{label:'DOJ: Saab arrest',url:'https://www.justice.gov/opa/pr/maduro-regime-ally-alex-saab-arrested-money-laundering-charges-involving-venezuelan-food'},{label:'Wikipedia: Alex Saab',url:'https://en.wikipedia.org/wiki/Alex_Saab'}],
+   evidence:['Interpol red notice','$3.5M cash seizure record','USS San Jacinto deployment confirmation'],
+   expediente:'USA-v-SAAB-19-20531',
+   conexiones:[{to:'odebrecht16',type:'consequence'},{to:'clap20',type:'cause'}]},
+  {id:'guaido19',date:'2019-01-23',title:'Guaidó se autoproclama presidente',cat:'politica',loc:'Caracas',impact:'high',
+   summary:'Juan Guaidó, president of the National Assembly, invokes Article 233 of the Constitution and assumes the presidency. Over 50 countries recognize him.',
+   sources:[{label:'Wikipedia: Presidential crisis',url:'https://en.wikipedia.org/wiki/Venezuelan_presidential_crisis'}],
+   evidence:['Oath ceremony at Plaza Altamista','Recognition statements from US, EU, Lima Group','Embassy crisis'],
+   expediente:'AN-2019-PRESIDENCIA'},
+  {id:'clap20',date:'2020-03-01',title:'CLAP: Alex Saab y caja de comida',cat:'corrupcion',loc:'México / Turkey',impact:'critical',
+   summary:'The CLAP food box program, operated by Saab and Álvaro Pulido via Group Grand Limited (Mexico), diverts $2+ billion. Food is purchased at market prices and sold to the state at 3-5x markup.',
+   sources:[{label:'Treasury: CLAP designations',url:'https://home.treasury.gov/news/press-releases/sm741'},{label:'Armando.info: CLAP',url:'https://armando.info'}],
+   evidence:['OFAC designation: Saab, Pulido, Rubio, and family','Group Grand Limited corporate records','Colombia seized 400 CLAP boxes with weevils'],
+   expediente:'USA-v-SAAB-CLAP',
+   conexiones:[{to:'saab19',type:'cause'},{to:'saab_indict26',type:'cause'}]},
+  {id:'bloqueos20',date:'2020-03-01',title:'EO 13908: Sanciones al TSJ',cat:'internacional',loc:'Washington DC',impact:'high',
+   summary:'Trump signs EO 13908 sanctioning the Supreme Tribunal of Justice. Adds to existing sanctions against Maduro, Cabello, and other officials.',
+   sources:[{label:'EO 13908',url:'#'}],
+   evidence:['EO 13908 text','OFAC SDN updates','PDVSA production data'],
+   expediente:'EO-13908-2020'},
+  {id:'transparencia25',date:'2025-05-01',title:'Transparency / ONU: $800B+',cat:'internacional',loc:'Geneva',impact:'high',
+   summary:'Transparency International and the UN publish reports detailing systemic corruption. They document $800 billion+ stolen across 34 years. 172 judicial cases in 73 countries.',
+   sources:[{label:'Transparency International',url:'https://www.transparency.org'}],
+   evidence:['TI comprehensive report','UN testimony transcripts','Cross-border financial database']},
+  {id:'abs_resolve',date:'2026-01-03',title:'Operación "Absoluto Resolve"',cat:'legal',loc:'Caracas',impact:'critical',
+   summary:'Maduro orders mass raids against dissidents. Over 2,000 detained in 48 hours. Reports of torture and extrajudicial killings.',
+   sources:[{label:'Human Rights Watch',url:'https://www.hrw.org'}],
+   evidence:['Operational videos','Detainee testimonies','Satellite imagery of detentions'],
+   expediente:'OEA-CIDH-2026-001'},
+  {id:'maduro_arrest',date:'2026-05-20',title:'Arresto de Nicolás Maduro',cat:'legal',loc:'Caracas → MDC Brooklyn',impact:'critical',
+   summary:'International joint operation captures Maduro. Extradited to the US. Charges: narcoterrorism conspiracy, money laundering, narco-trafficking. Held at MDC Brooklyn.',
+   sources:[{label:'DOJ: Maduro charges',url:'https://www.justice.gov/opa/pr/nicolás-maduro-moros-charged-narcoterrorism-conspiracy'}],
+   evidence:['Arrest video','Extradition documents','DOJ indictment (multiple counts)','MDC booking record'],
+   expediente:'USA-v-MADURO-2026',
+   conexiones:[{to:'abs_resolve',type:'consequence'},{to:'saab_indict26',type:'cause'}]},
+  {id:'saab_indict26',date:'2026-05-15',title:'Alex Saab: acusación ampliada',cat:'legal',loc:'Miami',impact:'high',
+   summary:'Saab receives superseding indictment: money laundering conspiracy, sanctions evasion, and $10 billion in corrupt contracts (2013-2020).',
+   sources:[{label:'DOJ: Saab superseding indictment',url:'https://www.justice.gov/opa/pr/maduro-regime-ally-alex-saab-arrested-money-laundering-charges-involving-venezuelan-food'}],
+   evidence:['Superseding indictment, S.D. Fla.','19 shell companies identified','$1.5B in unpaid PDVSA invoices'],
+   expediente:'USA-v-SAAB-SUPER-2026',
+   conexiones:[{to:'saab19',type:'consequence'},{to:'clap20',type:'consequence'},{to:'maduro_arrest',type:'cause'}]},
+];
+
+// Build links from conexiones
+const LINKS = [];
+NODES.forEach(n => {
+  if (n.conexiones) {
+    n.conexiones.forEach(c => {
+      if (NODES.find(x => x.id === c.to)) {
+        LINKS.push({source: n.id, target: c.to, type: c.type});
+      }
+    });
+  }
+});
+
+// ═══════════════════════════════════════════════════
+// CONSTANTS
+// ═══════════════════════════════════════════════════
+const CARD_W = 200;
+const CARD_H = 90;
+const DOT_R = 7;
+const STEMS_H = 32;
+const LANE_H = CARD_H + 20;
+const MIN_GAP_X = 30;
+const TIMELINE_Y = 240;
+const PADDING_LEFT = 80;
+const PADDING_RIGHT = 120;
+const YEAR_LABEL_W = 100;
+
+// ═══════════════════════════════════════════════════
+// LAYOUT ENGINE
+// ═══════════════════════════════════════════════════
+function parseDate(ds) {
+  const [y,m,d] = ds.split('-').map(Number);
+  return new Date(y, m-1, d);
+}
+
+function buildLayout(nodes) {
+  const sorted = [...nodes].sort((a,b) => parseDate(a.date) - parseDate(b.date));
+  const minY = parseDate(sorted[0].date).getFullYear();
+  const maxY = parseDate(sorted[sorted.length-1].date).getFullYear();
+
+  // Total time span in days
+  const t0 = parseDate(sorted[0].date).getTime();
+  const t1 = parseDate(sorted[sorted.length-1].date).getTime();
+  const totalDays = (t1 - t0) / (1000*60*60*24);
+
+  // Available width — use count-based spacing, not time-proportional
+  const availableW = sorted.length * (CARD_W + MIN_GAP_X);
+  const totalW = PADDING_LEFT + availableW + PADDING_RIGHT;
+
+  // Calculate x positions — evenly spaced by index, not by date ratio
+  sorted.forEach((n, i) => {
+    n._x = PADDING_LEFT + i * (CARD_W + MIN_GAP_X);
+  });
+
+  // Lane allocation: alternate above/below timeline
+  // Sort by x, then assign lanes
+  sorted.sort((a,b) => a._x - b._x);
+
+  const lanesAbove = []; // each lane: lastX (rightmost edge)
+  const lanesBelow = [];
+
+  sorted.forEach((n, i) => {
+    const cardRight = n._x + CARD_W / 2;
+    const cardLeft = n._x - CARD_W / 2;
+
+    // Try to place above first, then below, alternating
+    const preferAbove = i % 2 === 0;
+    let placed = false;
+
+    if (preferAbove) {
+      // Try lanes above
+      for (let l = 0; l < lanesAbove.length; l++) {
+        if (cardLeft >= lanesAbove[l] + MIN_GAP_X) {
+          n._lane = -1 - l;
+          lanesAbove[l] = cardRight;
+          placed = true;
+          break;
+        }
+      }
+      if (!placed) {
+        n._lane = -1 - lanesAbove.length;
+        lanesAbove.push(cardRight);
+        placed = true;
+      }
+    } else {
+      // Try lanes below
+      for (let l = 0; l < lanesBelow.length; l++) {
+        if (cardLeft >= lanesBelow[l] + MIN_GAP_X) {
+          n._lane = l;
+          lanesBelow[l] = cardRight;
+          placed = true;
+          break;
+        }
+      }
+      if (!placed) {
+        n._lane = lanesBelow.length;
+        lanesBelow.push(cardRight);
+        placed = true;
+      }
+    }
+
+    // Fallback: try opposite side
+    if (!placed) {
+      if (preferAbove) {
+        for (let l = 0; l < lanesBelow.length; l++) {
+          if (cardLeft >= lanesBelow[l] + MIN_GAP_X) {
+            n._lane = l;
+            lanesBelow[l] = cardRight;
+            placed = true;
+            break;
+          }
+        }
+        if (!placed) {
+          n._lane = lanesBelow.length;
+          lanesBelow.push(cardRight);
+        }
+      } else {
+        for (let l = 0; l < lanesAbove.length; l++) {
+          if (cardLeft >= lanesAbove[l] + MIN_GAP_X) {
+            n._lane = -1 - l;
+            lanesAbove[l] = cardRight;
+            placed = true;
+            break;
+          }
+        }
+        if (!placed) {
+          n._lane = -1 - lanesAbove.length;
+          lanesAbove.push(cardRight);
+        }
+      }
+    }
+  });
+
+  // Calculate y positions
+  const maxLanesAbove = lanesAbove.length;
+  const maxLanesBelow = lanesBelow.length;
+
+  sorted.forEach(n => {
+    if (n._lane < 0) {
+      // Above: lane -1 is closest to timeline, -2 next, etc.
+      const laneIdx = -1 - n._lane;
+      n._y = TIMELINE_Y - STEMS_H - laneIdx * LANE_H - LANE_H;
+    } else {
+      // Below: lane 0 is closest to timeline, 1 next, etc.
+      n._y = TIMELINE_Y + STEMS_H + n._lane * LANE_H;
+    }
+  });
+
+  const totalH = TIMELINE_Y + STEMS_H + maxLanesBelow * LANE_H + LANE_H + 80;
+
+  return { sorted, totalW, totalH, minY, maxY, t0, t1, availableW };
+}
+
+// ═══════════════════════════════════════════════════
+// RENDERING
+// ═══════════════════════════════════════════════════
+const isMobile = window.innerWidth <= 768;
+let layout, canvas, linksSvg, minimapEl, viewportEl, minimapDots;
+let scale = 1, panX = 0, panY = 0;
+let selectedNode = null;
+let activeFilters = new Set();
+let isDragging = false, dragStartX, dragStartY, dragPanX, dragPanY;
+
+function init() {
+  layout = buildLayout(NODES);
+
+  if (isMobile) {
+    renderMobile();
+  } else {
+    renderDesktop();
+  }
+
+  renderFilters();
+  renderStats();
+  renderMinimap();
+  setupZoom();
+  setupSearch();
+  setupKeyboard();
+  fitToScreen();
+}
+
+function renderDesktop() {
+  canvas = document.getElementById('timeline-canvas');
+  linksSvg = document.getElementById('links-svg');
+
+  // Set canvas size
+  canvas.style.width = layout.totalW + 'px';
+  canvas.style.height = layout.totalH + 'px';
+  linksSvg.style.width = layout.totalW + 'px';
+  linksSvg.style.height = layout.totalH + 'px';
+  linksSvg.setAttribute('viewBox', `0 0 ${layout.totalW} ${layout.totalH}`);
+
+  // Draw timeline axis
+  const axisEl = document.createElement('div');
+  axisEl.style.cssText = `position:absolute;left:0;right:0;top:${TIMELINE_Y}px;height:1px;background:var(--border2)`;
+  canvas.appendChild(axisEl);
+
+  // Draw year markers — place at first event of each year
+  const yearFirst = {};
+  layout.sorted.forEach(n => {
+    const yr = n.date.slice(0,4);
+    if (!yearFirst[yr]) yearFirst[yr] = n._x;
+  });
+  Object.entries(yearFirst).forEach(([yr, x]) => {
+    // Vertical line
+    const line = document.createElement('div');
+    line.style.cssText = `position:absolute;left:${x}px;top:0;width:1px;height:${layout.totalH}px;background:var(--border);opacity:.25`;
+    canvas.appendChild(line);
+
+    // Year label
+    const label = document.createElement('div');
+    label.className = 'year-marker';
+    label.style.cssText = `left:${x}px;top:${TIMELINE_Y - 16}px;position:absolute`;
+    label.textContent = yr;
+    canvas.appendChild(label);
+  });
+
+  // Draw links (behind nodes)
+  LINKS.forEach(l => {
+    const source = NODES.find(n => n.id === l.source);
+    const target = NODES.find(n => n.id === l.target);
+    if (!source || !target) return;
+
+    const sx = source._x;
+    const sy = source._y + (source._lane < 0 ? CARD_H + 4 : -4);
+    const tx = target._x;
+    const ty = target._y + (target._lane < 0 ? CARD_H + 4 : -4);
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const midY = TIMELINE_Y;
+    // Shorter control points — curves stay tight to nodes
+    const dx = (tx - sx) * 0.4;
+    const d = `M${sx},${sy} C${sx + dx},${sy} ${tx - dx},${ty} ${tx},${ty}`;
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'link-line ' + l.type);
+    path.setAttribute('stroke', CATEGORIES[source.cat].color);
+    path.dataset.source = l.source;
+    path.dataset.target = l.target;
+    linksSvg.appendChild(path);
+  });
+
+  // Draw nodes
+  layout.sorted.forEach(n => {
+    const cat = CATEGORIES[n.cat];
+    const node = document.createElement('div');
+    node.className = 'event-node';
+    node.dataset.id = n.id;
+    node.style.cssText = `left:${n._x - CARD_W/2}px;top:${n._y}px;width:${CARD_W}px`;
+    node.style.setProperty('--cat-color', cat.color);
+
+    // Stem line
+    const stemH = n._lane < 0 ? STEMS_H : STEMS_H;
+    const stemTop = n._lane < 0 ? CARD_H + 2 : -STEMS_H - 2;
+    const stem = document.createElement('div');
+    stem.className = 'node-stem';
+    stem.style.cssText = `top:${stemTop}px;height:${stemH}px`;
+    node.appendChild(stem);
+
+    // Dot
+    const dot = document.createElement('div');
+    dot.className = 'node-dot';
+    dot.style.cssText = `width:${DOT_R*2}px;height:${DOT_R*2}px;background:${cat.color};border:2px solid ${cat.color}`;
+    node.appendChild(dot);
+
+    // Card
+    const card = document.createElement('div');
+    card.className = 'node-card';
+    const cardTop = n._lane < 0 ? 0 : STEMS_H + DOT_R * 2 + 2;
+    card.style.top = cardTop + 'px';
+
+    const impactLabel = {critical:'CRÍTICO',high:'ALTO',medium:'MEDIO',info:'INFO'};
+    card.innerHTML = `
+      <div class="node-date">${formatDate(n.date)}</div>
+      <div class="node-title">${n.title}</div>
+      <div class="node-meta">
+        <span class="node-cat" style="background:${cat.color}22;color:${cat.color}">${cat.label}</span>
+        <span class="node-impact" style="border-color:${cat.color};background:${n.impact==='critical'?cat.color:n.impact==='high'?'var(--orange)':'transparent'}"></span>
+      </div>
+    `;
+    node.appendChild(card);
+
+    // Click handler
+    node.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectNode(n);
+    });
+
+    // Tooltip
+    node.addEventListener('mouseenter', (e) => {
+      const tt = document.getElementById('tooltip');
+      tt.innerHTML = `<div style="font-family:var(--font-mono);font-size:9px;color:${cat.color};letter-spacing:.1em;text-transform:uppercase">${cat.icon} ${cat.label} · ${impactLabel[n.impact]}</div>
+        <div style="font-family:var(--font-display);font-size:14px;font-weight:600;margin-top:4px">${n.title}</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text3);margin-top:4px">${formatDate(n.date)} · ${n.loc}</div>`;
+      tt.classList.add('visible');
+    });
+    node.addEventListener('mousemove', (e) => {
+      const tt = document.getElementById('tooltip');
+      tt.style.left = (e.clientX + 16) + 'px';
+      tt.style.top = (e.clientY - 10) + 'px';
+    });
+    node.addEventListener('mouseleave', () => {
+      document.getElementById('tooltip').classList.remove('visible');
+    });
+
+    canvas.appendChild(node);
+  });
+}
+
+function renderMobile() {
+  canvas = document.getElementById('timeline-canvas');
+  linksSvg = document.getElementById('links-svg');
+  document.getElementById('minimap').style.display = 'none';
+
+  // Mobile: vertical timeline
+  const MOBILE_CARD_W = Math.min(window.innerWidth - 80, 340);
+  const MOBILE_GAP = 16;
+  const MOBILE_TIMELINE_X = 40;
+
+  let y = 80;
+  layout.sorted.forEach((n, i) => {
+    const cat = CATEGORIES[n.cat];
+
+    const node = document.createElement('div');
+    node.className = 'event-node';
+    node.dataset.id = n.id;
+    node.style.cssText = `position:relative;left:${MOBILE_TIMELINE_X - 4}px;top:${y}px;width:${MOBILE_CARD_W + 60}px;margin-bottom:${MOBILE_GAP}px`;
+    node.style.setProperty('--cat-color', cat.color);
+
+    // Vertical line segment
+    if (i < layout.sorted.length - 1) {
+      const vLine = document.createElement('div');
+      vLine.style.cssText = `position:absolute;left:4px;top:18px;width:1px;height:${CARD_H + MOBILE_GAP + 10}px;background:var(--border)`;
+      node.appendChild(vLine);
+    }
+
+    // Dot
+    const dot = document.createElement('div');
+    dot.className = 'node-dot';
+    dot.style.cssText = `position:absolute;left:0;top:8px;width:10px;height:10px;background:${cat.color};transform:none`;
+    node.appendChild(dot);
+
+    // Card
+    const card = document.createElement('div');
+    card.className = 'node-card';
+    card.style.cssText = `position:relative;left:24px;top:auto;width:${MOBILE_CARD_W}px;transform:none`;
+    card.innerHTML = `
+      <div class="node-date">${formatDate(n.date)}</div>
+      <div class="node-title">${n.title}</div>
+      <div class="node-meta">
+        <span class="node-cat" style="background:${cat.color}22;color:${cat.color}">${cat.label}</span>
+        <span class="node-impact" style="border-color:${cat.color};background:${n.impact==='critical'?cat.color:'transparent'}"></span>
+      </div>
+    `;
+    node.appendChild(card);
+
+    node.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectNode(n);
+    });
+
+    canvas.appendChild(node);
+    y += CARD_H + MOBILE_GAP;
+  });
+
+  canvas.style.width = (MOBILE_TIMELINE_X + MOBILE_CARD_W + 60) + 'px';
+  canvas.style.height = (y + 100) + 'px';
+}
+
+// ═══════════════════════════════════════════════════
+// MINIMAP
+// ═══════════════════════════════════════════════════
+function renderMinimap() {
+  if (isMobile) return;
+  minimapEl = document.getElementById('minimap');
+  viewportEl = document.getElementById('minimap-viewport');
+  minimapDots = document.getElementById('minimap-dots');
+
+  const mmW = minimapEl.offsetWidth;
+  const mmH = minimapEl.offsetHeight;
+
+  // Draw dots
+  layout.sorted.forEach(n => {
+    const cat = CATEGORIES[n.cat];
+    const dot = document.createElement('div');
+    const rx = (n._x / layout.totalW) * mmW;
+    const ry = (n._y / layout.totalH) * mmH;
+    dot.style.cssText = `position:absolute;left:${rx-2}px;top:${ry-2}px;width:4px;height:4px;border-radius:50%;background:${cat.color}`;
+    minimapDots.appendChild(dot);
+  });
+
+  updateMinimap();
+
+  // Minimap click to navigate
+  minimapEl.addEventListener('click', (e) => {
+    const rect = minimapEl.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const ratio = clickX / rect.width;
+    const targetX = ratio * layout.totalW * scale;
+    panX = -targetX + window.innerWidth / 2;
+    applyTransform();
+    updateMinimap();
+  });
+}
+
+function updateMinimap() {
+  if (isMobile || !viewportEl) return;
+  const mmW = minimapEl.offsetWidth;
+  const mmH = minimapEl.offsetHeight;
+
+  const viewW = window.innerWidth / scale;
+  const viewH = window.innerHeight / scale;
+  const viewX = -panX / scale;
+  const viewY = -panY / scale;
+
+  const vpLeft = (viewX / layout.totalW) * mmW;
+  const vpTop = (viewY / layout.totalH) * mmH;
+  const vpWidth = Math.min((viewW / layout.totalW) * mmW, mmW);
+  const vpHeight = Math.min((viewH / layout.totalH) * mmH, mmH);
+
+  viewportEl.style.left = Math.max(0, vpLeft) + 'px';
+  viewportEl.style.top = Math.max(0, vpTop) + 'px';
+  viewportEl.style.width = vpWidth + 'px';
+  viewportEl.style.height = vpHeight + 'px';
+}
+
+// ═══════════════════════════════════════════════════
+// ZOOM & PAN
+// ═══════════════════════════════════════════════════
+function setupZoom() {
+  if (isMobile) return;
+  const wrap = document.getElementById('timeline-wrap');
+
+  wrap.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = Math.max(0.15, Math.min(3, scale * delta));
+
+    // Zoom toward cursor
+    const rect = wrap.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+
+    panX = mx - (mx - panX) * (newScale / scale);
+    panY = my - (my - panY) * (newScale / scale);
+    scale = newScale;
+
+    applyTransform();
+    updateMinimap();
+  }, {passive: false});
+
+  // Drag to pan
+  wrap.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    isDragging = true;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    dragPanX = panX;
+    dragPanY = panY;
+    wrap.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    panX = dragPanX + (e.clientX - dragStartX);
+    panY = dragPanY + (e.clientY - dragStartY);
+    applyTransform();
+    updateMinimap();
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    if (wrap) wrap.style.cursor = '';
+  });
+
+  // Touch support
+  let lastTouchDist = 0;
+  wrap.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      dragStartX = e.touches[0].clientX;
+      dragStartY = e.touches[0].clientY;
+      dragPanX = panX;
+      dragPanY = panY;
+    } else if (e.touches.length === 2) {
+      lastTouchDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+    }
+  }, {passive: true});
+
+  wrap.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 1 && isDragging) {
+      panX = dragPanX + (e.touches[0].clientX - dragStartX);
+      panY = dragPanY + (e.touches[0].clientY - dragStartY);
+      applyTransform();
+      updateMinimap();
+    } else if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const delta = dist / lastTouchDist;
+      scale = Math.max(0.15, Math.min(3, scale * delta));
+      lastTouchDist = dist;
+      applyTransform();
+      updateMinimap();
+    }
+  }, {passive: true});
+
+  wrap.addEventListener('touchend', () => { isDragging = false; });
+}
+
+function applyTransform() {
+  if (canvas) canvas.style.transform = `translate(${panX}px,${panY}px) scale(${scale})`;
+  if (linksSvg) linksSvg.style.transform = `translate(${panX}px,${panY}px) scale(${scale})`;
+}
+
+function fitToScreen() {
+  if (isMobile) return;
+  const wrapW = window.innerWidth;
+  const wrapH = window.innerHeight;
+  const scaleX = wrapW / layout.totalW;
+  const scaleY = wrapH / layout.totalH;
+  scale = Math.min(scaleX, scaleY) * 0.92;
+  panX = (wrapW - layout.totalW * scale) / 2;
+  panY = (wrapH - layout.totalH * scale) / 2;
+  applyTransform();
+  updateMinimap();
+}
+
+function zoomIn() {
+  scale = Math.min(3, scale * 1.4);
+  applyTransform();
+  updateMinimap();
+}
+
+function zoomOut() {
+  scale = Math.max(0.15, scale * 0.7);
+  applyTransform();
+  updateMinimap();
+}
+
+function resetView() {
+  fitToScreen();
+  deselectAll();
+}
+
+function zoomToNode(n) {
+  if (isMobile) return;
+  const wrapW = window.innerWidth;
+  const wrapH = window.innerHeight;
+  scale = 1.2;
+  panX = wrapW / 2 - n._x * scale;
+  panY = wrapH / 2 - n._y * scale;
+  applyTransform();
+  updateMinimap();
+}
+
+// ═══════════════════════════════════════════════════
+// SELECTION & PANEL
+// ═══════════════════════════════════════════════════
+function selectNode(d) {
+  selectedNode = d;
+  const connected = new Set();
+  connected.add(d.id);
+  LINKS.forEach(l => {
+    if (l.source === d.id) connected.add(l.target);
+    if (l.target === d.id) connected.add(l.source);
+  });
+
+  document.querySelectorAll('.event-node').forEach(el => {
+    const id = el.dataset.id;
+    el.classList.toggle('dimmed', !connected.has(id));
+    el.classList.toggle('selected', id === d.id);
+  });
+
+  document.querySelectorAll('.link-line').forEach(el => {
+    el.classList.toggle('highlighted', el.dataset.source === d.id || el.dataset.target === d.id);
+  });
+
+  openPanel(d);
+}
+
+function deselectAll() {
+  selectedNode = null;
+  document.querySelectorAll('.event-node').forEach(el => {
+    el.classList.remove('dimmed', 'selected');
+  });
+  document.querySelectorAll('.link-line').forEach(el => {
+    el.classList.remove('highlighted');
+  });
+  closePanel();
+}
+
+function openPanel(d) {
+  const cat = CATEGORIES[d.cat];
+  document.getElementById('panel-category').innerHTML = `<span style="color:${cat.color}">${cat.icon} ${cat.label}</span>`;
+  document.getElementById('panel-title').textContent = d.title;
+  document.getElementById('panel-date').textContent = formatDate(d.date) + ' · ' + d.loc;
+
+  let html = '';
+
+  html += `<div class="panel-section">
+    <div class="panel-section-title">Nivel de impacto</div>
+    <span class="panel-impact ${d.impact}">${d.impact === 'critical' ? '◉ CRÍTICO' : d.impact === 'high' ? '◉ ALTO' : d.impact === 'medium' ? '◉ MEDIO' : '◉ INFO'}</span>
+  </div>`;
+
+  html += `<div class="panel-section">
+    <div class="panel-section-title">Resumen</div>
+    <div class="panel-summary">${d.summary}</div>
+  </div>`;
+
+  html += `<div class="panel-section">
+    <div class="panel-section-title">Datos</div>
+    <div class="panel-meta-grid">
+      <div class="panel-meta-item"><div class="panel-meta-label">Fecha</div><div class="panel-meta-value">${formatDate(d.date)}</div></div>
+      <div class="panel-meta-item"><div class="panel-meta-label">Ubicación</div><div class="panel-meta-value">${d.loc}</div></div>
+      <div class="panel-meta-item"><div class="panel-meta-label">Categoría</div><div class="panel-meta-value" style="color:${cat.color}">${cat.label}</div></div>
+      <div class="panel-meta-item"><div class="panel-meta-label">Expediente</div><div class="panel-meta-value">${d.expediente || '—'}</div></div>
+    </div>
+  </div>`;
+
+  if (d.evidence?.length) {
+    html += `<div class="panel-section">
+      <div class="panel-section-title">Evidencias</div>
+      <div class="panel-evidence">${d.evidence.map(e => `<div class="panel-ev-item">${e}</div>`).join('')}</div>
+    </div>`;
+  }
+
+  if (d.sources?.length) {
+    html += `<div class="panel-section">
+      <div class="panel-section-title">Fuentes</div>
+      <div class="panel-sources">${d.sources.map(s => `
+        <a class="panel-source" href="${s.url}" target="_blank" rel="noopener">
+          <span>${s.url.includes('wikipedia') ? '📖' : s.url.includes('justice.gov') ? '⚖️' : s.url.includes('treasury.gov') ? '💰' : '📄'}</span>
+          ${s.label}
+        </a>`).join('')}</div>
+    </div>`;
+  }
+
+  // Connected nodes
+  const conns = [];
+  LINKS.forEach(l => {
+    if (l.source === d.id) {
+      const target = NODES.find(n => n.id === l.target);
+      if (target) conns.push({node: target, type: l.type});
+    }
+    if (l.target === d.id) {
+      const source = NODES.find(n => n.id === l.source);
+      if (source) conns.push({node: source, type: 'referencia'});
+    }
+  });
+  if (conns.length) {
+    html += `<div class="panel-section">
+      <div class="panel-section-title">Conexiones (${conns.length})</div>
+      <div class="panel-connections">${conns.map(c => {
+        const cc = CATEGORIES[c.node.cat];
+        return `<div class="panel-conn" onclick="focusNode('${c.node.id}')">
+          <div class="panel-conn-dot" style="background:${cc.color}"></div>
+          <span>${c.node.title}</span>
+          <span class="panel-conn-type">${c.type}</span>
+        </div>`;
+      }).join('')}</div>
+    </div>`;
+  }
+
+  document.getElementById('panel-body').innerHTML = html;
+  document.getElementById('side-panel').classList.add('open');
+  document.getElementById('overlay').classList.add('visible');
+}
+
+function closePanel() {
+  document.getElementById('side-panel').classList.remove('open');
+  document.getElementById('overlay').classList.remove('visible');
+}
+
+function focusNode(id) {
+  const d = NODES.find(n => n.id === id);
+  if (d) {
+    selectNode(d);
+    zoomToNode(d);
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// FILTERS
+// ═══════════════════════════════════════════════════
+function renderFilters() {
+  const filtersEl = document.getElementById('filters');
+  Object.entries(CATEGORIES).forEach(([key, cat]) => {
+    const chip = document.createElement('div');
+    chip.className = 'filter-chip';
+    chip.dataset.cat = key;
+    chip.textContent = cat.icon + ' ' + cat.label;
+    chip.addEventListener('click', () => {
+      if (activeFilters.has(key)) activeFilters.delete(key); else activeFilters.add(key);
+      applyFilters();
+    });
+    filtersEl.appendChild(chip);
+  });
+}
+
+function applyFilters() {
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', activeFilters.has(c.dataset.cat)));
+  const hasF = activeFilters.size > 0;
+  document.querySelectorAll('.event-node').forEach(el => {
+    const n = NODES.find(x => x.id === el.dataset.id);
+    if (n) el.style.display = (hasF && !activeFilters.has(n.cat)) ? 'none' : '';
+  });
+  document.querySelectorAll('.link-line').forEach(el => {
+    if (!hasF) { el.style.display = ''; return; }
+    const sNode = NODES.find(n => n.id === el.dataset.source);
+    const tNode = NODES.find(n => n.id === el.dataset.target);
+    el.style.display = (sNode && activeFilters.has(sNode.cat)) || (tNode && activeFilters.has(tNode.cat)) ? '' : 'none';
+  });
+  renderStats();
+}
+
+// ═══════════════════════════════════════════════════
+// SEARCH
+// ═══════════════════════════════════════════════════
+function setupSearch() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    if (!q) { searchResults.classList.remove('visible'); return; }
+    const matches = NODES.filter(n =>
+      n.title.toLowerCase().includes(q) ||
+      n.summary.toLowerCase().includes(q) ||
+      n.loc.toLowerCase().includes(q) ||
+      (n.expediente||'').toLowerCase().includes(q)
+    );
+    searchResults.innerHTML = matches.map(n => `
+      <div class="sr-item" data-id="${n.id}">
+        <div class="sr-title">${CATEGORIES[n.cat]?.icon||''} ${n.title}</div>
+        <div class="sr-meta">${formatDate(n.date)} · ${n.loc}</div>
+      </div>
+    `).join('');
+    searchResults.classList.add('visible');
+    searchResults.querySelectorAll('.sr-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const d = NODES.find(n => n.id === item.dataset.id);
+        if (d) { selectNode(d); zoomToNode(d); }
+        searchResults.classList.remove('visible');
+        searchInput.value = '';
+      });
+    });
+  });
+
+  searchInput.addEventListener('blur', () => setTimeout(() => searchResults.classList.remove('visible'), 200));
+}
+
+// ═══════════════════════════════════════════════════
+// STATS
+// ═══════════════════════════════════════════════════
+function renderStats() {
+  const visible = activeFilters.size > 0 ? NODES.filter(n => activeFilters.has(n.cat)).length : NODES.length;
+  const years = new Set(NODES.map(n => n.date.slice(0,4))).size;
+  document.getElementById('s-events').textContent = visible;
+  document.getElementById('s-edges').textContent = LINKS.length;
+  document.getElementById('s-years').textContent = years;
+}
+
+// ═══════════════════════════════════════════════════
+// KEYBOARD
+// ═══════════════════════════════════════════════════
+function setupKeyboard() {
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'Escape') deselectAll();
+    if (e.key === '+' || e.key === '=') zoomIn();
+    if (e.key === '-') zoomOut();
+    if (e.key === '0') resetView();
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════
+function formatDate(ds) {
+  const d = new Date(ds);
+  return d.toLocaleDateString('es-VE', {day:'numeric',month:'long',year:'numeric'});
+}
+
+// Click on background to deselect
+document.getElementById('timeline-wrap').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('timeline-wrap') || e.target === canvas) {
+    deselectAll();
+  }
+});
+
+// ═══════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', init);
+
+// Handle resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => location.reload(), 300);
+});
+</script>
+</body>
+</html>

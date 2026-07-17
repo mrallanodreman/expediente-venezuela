@@ -890,14 +890,15 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
     if (!res.ok) return;
     const data = await res.json();
     const denuncias = data.denuncias || [];
+    const withMedia = denuncias.filter(d => d.video_url || (d.images && d.images.length > 0));
 
     updateStats(data);
-    initSlider(denuncias);
+    initSlider(withMedia);
     updateCategories(data.categories);
 
     const status = document.getElementById('slider-status');
     if (status && denuncias.length) {
-      status.textContent = denuncias.length + ' denuncias · actualizado ' + new Date(data.updated_at).toLocaleString('es-VE');
+      status.textContent = withMedia.length + ' denuncias con evidencia · ' + denuncias.length + ' total · actualizado ' + new Date(data.updated_at).toLocaleString('es-VE');
     }
   } catch (e) {
     console.log('Expediente Venezuela: could not load data', e);

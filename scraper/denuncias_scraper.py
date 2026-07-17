@@ -98,7 +98,113 @@ def save_seen_ids(ids):
         json.dump(recent, f)
 
 
-def _save_to_db(all_tweets: List[Dict], conn) -> Dict[str, Any]:
+def _is_venezuela_related(text: str) -> bool:
+    """Check if tweet text is a Venezuelan DENUNCIA — strict filter.
+
+    Must be about Venezuela AND about a denuncia/abuse/corruption/help topic.
+    Generic mentions of Venezuela from foreign accounts → filtered out.
+    """
+    if not text:
+        return False
+
+    t = text.lower()
+
+    # ── HARD REJECT: non-Venezuela content ──
+    reject_place = [
+        'mexico', 'méxico', 'oaxaca', 'guadalajara', 'monterrey',
+        'colombia', 'bogotá', 'bogota', 'cali', 'medellin',
+        'ecuador', 'guayaquil', 'quito',
+        'españa', 'madrid', 'barcelona',
+        'argentina', 'buenos aires',
+        'chile', 'santiago',
+        'perú', 'peru', 'lima',
+        'brasil', 'são paulo',
+        'usa', 'eeuu', 'united states', 'texas', 'florida', 'california',
+        'china', 'russia', 'israel', 'palestine', 'gaza', 'iran',
+        'uruguay', 'paraguay', 'bolivia', 'panama', 'cuba',
+        'bangladesh', 'india', 'pakistan',
+    ]
+    reject_kw = [
+        'westcol', 'mrbeast', 'super bowl', 'burger king', 'el xokas',
+        'jake paul', 'john cena', 'hailey bieber', 'kylie jenner', 'justin bieber',
+        'jlo', 'jennifer lopez', 'opera', 'verdi', 'traviata',
+        'meme', 'pov:', 'vibe coding', 'chatgpt', 'ai art',
+        'crypto', 'bitcoin', 'roxom', 'gift cards', 'esim',
+        'magnesiacore', 'link building', 'seo',
+        'kubernetes', 'cron job', 'tesla', 'huawei', 'localiza rent',
+        'ford gt', 'blue angels', 'robot fight', 'humanoid robot',
+        'clinton', 'trump', 'cia', 'fbi', 'nsa',
+        'palestina', 'gaza', 'lebanon', 'hezbollah',
+        'cliff jumping', 'phone run', 'exam',
+        'burgers', 'hot dog', 'recipe', 'cooking', 'gym', 'workout',
+        'tattoo', 'piercing', 'makeup', 'fashion', 'outfit',
+        'soccer', 'football', 'mundial', 'world cup', 'gol de',
+        'weather', 'flat earth', 'moon',
+        'concierto', 'baladas', 'pop-rock', 'album', 'spotify',
+        'juego', 'video game', 'playstation', 'xbox', 'nintendo',
+        'perrito', 'mascota', 'gatito', 'hamster',
+        'lit killah', 'la velada', 'streamer', 'twitch',
+        'selena', 'taylor swift',
+    ]
+    for kw in reject_place + reject_kw:
+        if kw in t:
+            return False
+
+    # ── HARD REJECT: too short or no media context ──
+    if len(t.strip()) < 30:
+        return False
+
+    # ── MUST MATCH: Venezuelan denuncia/abuse/help keywords ──
+    # The tweet must mention Venezuela AND a denuncia-related topic
+    venezuela_terms = [
+        'venezuela', 'venezolano', 'venezolana', 'venezolanos', 'venezolanas',
+        'caracas', 'guaira', 'la guaira', 'catia', 'maracaibo', 'valencia',
+        'barquisimeto', 'maracay', 'táchira', 'tachira', 'aragua', 'bolívar',
+        'bolivar', 'zulia', 'miranda', 'vargas', 'distrito capital',
+        'maduro', 'cabello', 'diosdado', 'delcy', 'psuv', 'chavismo', 'chavez',
+        'famb', 'fanb', 'colectivos',
+        '#venezuela', '#vargas', '#laguaira', '#caracas', '#maracaibo',
+    ]
+    denuncia_terms = [
+        'denuncia', 'abuso', 'corrupción', 'corrupcion', 'extorsion', 'extorsión',
+        'desalojo', 'reten', 'detención', 'detencion', 'tortura', 'desaparecido',
+        'desaparecida', 'preso político', 'preso politico', 'persecución', 'persecucion',
+        'represión', 'represion', 'censura', 'sicariato', 'homicidio', 'asesinato',
+        'terremoto', 'sismo', 'emergencia', 'víctima', 'victima', 'escombros',
+        'ayuda', 'humanitaria', 'donación', 'donacion', 'reconstrucción',
+        'ddhh', 'derechos humanos', 'libertad', 'justicia', 'solidaridad',
+        'robo', 'robó', 'huracán', 'huracan', 'guaidó', 'guaido', 'oposición',
+        'oposicion', 'preso', 'presos', 'rescate', 'rescatista',
+        'sin luz', 'sin agua', 'racionamiento', 'apagón', 'apagon',
+        'militar', 'policial', 'policía', 'policia', 'gnb', 'pnb',
+    ]
+
+    has_venezuela = any(kw in t for kw in venezuela_terms)
+    has_denuncia = any(kw in t for kw in denuncia_terms)
+
+    if has_venezuela and has_denuncia:
+        return True
+
+    # Also accept known Venezuelan denuncia accounts (they don't always say "Venezuela")
+    known_denuncia_accounts = [
+        'freddyzur', 'cristiancrespoj', 'fantasma_956', 'elpitazotv',
+        'caraotadigital', 'noticiasvzla', 'aborde', 'provea',
+        'centrode ddhh', 'vision24tv', 'vpitv', '2001online',
+        'informaorwell', 'sinmordaza', 'latvcalle', 'revistacicpc',
+        'contrapoder30', 'periodicodeuna', 'elinformadorve', 'gabyarocha',
+        'difundeloya', 'libre_oposicion', 'valvulapolitica', 'ari1979_v',
+        'shelbykrisel', 'tamara_suju', 'ntn24', 'luzmelyreyes',
+        'sergiohdzguerra', 'estebanoria', 'joshkr1441', 'robortecarlo14',
+        'gabygabygg', 'orlavision', 'uhn_plus', 'elganadorhenry',
+    ]
+    for acct in known_denuncia_accounts:
+        if acct in t:
+            return True
+
+    return False
+
+
+def _save_to_db(all_tweets: List[Dict], conn, venezuela_only: bool = True) -> Dict[str, Any]:
     """Save scraped tweets to SQLite. Merges same-topic tweets as sources.
 
     Returns counts of inserted, merged, skipped.
@@ -113,9 +219,15 @@ def _save_to_db(all_tweets: List[Dict], conn) -> Dict[str, Any]:
     inserted = 0
     merged = 0
     skipped = 0
+    filtered = 0
     expediente_ids = []
 
     for t in unique:
+        # Filter non-Venezuela content if enabled
+        if venezuela_only and not _is_venezuela_related(t.get("text", "")):
+            filtered += 1
+            continue
+            
         topic_hash = _topic_fingerprint(t.get("text", ""))
         result = insert_denuncia(conn, {
             "tweet_id": t["id"],
@@ -141,7 +253,7 @@ def _save_to_db(all_tweets: List[Dict], conn) -> Dict[str, Any]:
         else:
             skipped += 1
 
-    return {"inserted": inserted, "merged": merged, "skipped": skipped, "expediente_ids": expediente_ids}
+    return {"inserted": inserted, "merged": merged, "skipped": skipped, "filtered": filtered, "expediente_ids": expediente_ids}
 
 
 async def _wait_for_media(page, timeout_ms=5000):
@@ -597,10 +709,30 @@ async def run_scrape(
         q = q[:3]  # Run 3 queries per cycle (fast)
 
         for query in q:
-            tweets = await scrape_search(query, page, seen_ids)
-            all_tweets.extend(tweets)
+            # Navigate to X search
+            search_url = f"https://x.com/search?q={query.replace(' ', '%20')}&src=typed_query&f=live"
+            log(f"  Searching: '{query}'")
+            try:
+                await page.goto(search_url, wait_until="domcontentloaded", timeout=20000)
+                await asyncio.sleep(3)
+            except Exception as e:
+                log(f"  ERROR navigating to search: {e}")
+                continue
+
+            # Scroll to load more tweets
+            for scroll_round in range(scroll_rounds):
+                await page.evaluate("window.scrollBy(0, 1200)")
+                await asyncio.sleep(1.5)
+
+            # Extract tweets
+            tweets = await extract_tweets_from_page(page)
+            # Filter out already seen IDs
+            new_tweets = [t for t in tweets if t["id"] not in seen_ids]
+            for t in new_tweets:
+                seen_ids.add(t["id"])
+            all_tweets.extend(new_tweets)
             queries_used.append(query)
-            log(f"  Query '{query}': {len(tweets)} total new")
+            log(f"  Query '{query}': {len(new_tweets)} new, {len(tweets)} total on page")
             save_seen_ids(seen_ids)
             await asyncio.sleep(random.uniform(2.0, 4.0))
 
