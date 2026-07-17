@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T03:19:16.117662+00:00",
+  "updated_at": "2026-07-17T03:20:49.922615+00:00",
   "count": 20,
   "categories": {
     "corrupcion": 3,
@@ -107,6 +107,36 @@
         {
           "username": "vitugol",
           "url": "https://x.com/vitugol/status/2077833861459779937"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0030",
+      "username": "AndromedaOffic1",
+      "name": "AndromedaOfficial",
+      "text": "LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy alzamos la voz con fuerza: la transición no puede basarse en la mentira.\n\n LOS",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0030.mp4",
+      "images": [
+        "https://pbs.twimg.com/media/HNYNKHAXIAATL4M?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T20:29:18.000Z",
+      "url": "https://x.com/AndromedaOffic1/status/2077853100367356378",
+      "source_count": 2,
+      "sources": [
+        {
+          "username": "AndromedaOffic1",
+          "url": "https://x.com/AndromedaOffic1/status/2077853100367356378"
+        },
+        {
+          "username": "AndromedaOffic1",
+          "url": "https://x.com/AndromedaOffic1/status/2077862936320921663"
         }
       ]
     },
@@ -287,36 +317,6 @@
         {
           "username": "cristiancrespoj",
           "url": "https://x.com/cristiancrespoj/status/2060769325091323936"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0030",
-      "username": "AndromedaOffic1",
-      "name": "AndromedaOfficial",
-      "text": "LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy alzamos la voz con fuerza: la transición no puede basarse en la mentira.\n\n LOS",
-      "category": "salud",
-      "category_label": "Salud",
-      "severity": "info",
-      "resumen": null,
-      "video_url": null,
-      "images": [
-        "https://pbs.twimg.com/media/HNYNKHAXIAATL4M?format=jpg&name=small"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T20:29:18.000Z",
-      "url": "https://x.com/AndromedaOffic1/status/2077853100367356378",
-      "source_count": 2,
-      "sources": [
-        {
-          "username": "AndromedaOffic1",
-          "url": "https://x.com/AndromedaOffic1/status/2077853100367356378"
-        },
-        {
-          "username": "AndromedaOffic1",
-          "url": "https://x.com/AndromedaOffic1/status/2077862936320921663"
         }
       ]
     },

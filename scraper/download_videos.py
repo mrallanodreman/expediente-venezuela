@@ -24,7 +24,7 @@ def download_m3u8_as_mp4(m3u8_url: str, output_path: Path) -> bool:
     try:
         result = subprocess.run(
             ["ffmpeg", "-y", "-i", m3u8_url, "-c", "copy", "-movflags", "+faststart", str(output_path)],
-            capture_output=True, timeout=60
+            capture_output=True, timeout=180
         )
         return result.returncode == 0 and output_path.exists() and output_path.stat().st_size > 1000
     except Exception as e:
@@ -39,7 +39,7 @@ async def capture_and_download(max_videos: int = 20):
     rows = conn.execute(
         "SELECT expediente_id, tweet_id, source_url, video_url "
         "FROM denuncias "
-        "WHERE video_url IS NULL "
+        "WHERE video_url IS NULL OR video_url LIKE 'https://%' "
         "ORDER BY id DESC "
         f"LIMIT {max_videos}"
     ).fetchall()
