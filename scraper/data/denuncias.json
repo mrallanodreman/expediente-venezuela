@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-07-18T01:14:40.636480+00:00",
-  "count": 54,
+  "updated_at": "2026-07-18T01:29:55.182806+00:00",
+  "count": 57,
   "categories": {
-    "general": 29,
+    "general": 32,
     "abuso": 1,
     "salud": 5,
     "servicios": 12,
@@ -12,6 +12,87 @@
     "censura": 1
   },
   "denuncias": [
+    {
+      "expediente_id": "EV-2026-0464",
+      "username": "GenesisCS",
+      "name": "Genesis Carrero Soto",
+      "text": "La Guaira | Javier Navarro perdió a 9 familiares en la OPPE26, aún 7 siguen bajo los escombros. Con otros vecinos creó el centro de acopio “máquina de guerra”, con herramientas que se prestan entre ellos\nDice que su único afán es sacar a sus muertos #17Jul\n\nhttps://\nstorage.googleapis.com/qurium/cronica\n.uno/maquina-de-guerra-un-centro-de-acopio-en-el-que-familiares-de-la-guaira-prestan-herramientas.html\n…",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0464.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1555325971204554752/9pLZPIj9_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078154967290884096/img/ZH-D-cpQURE2Dl-e.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/GenesisCS/status/2078155813202403383",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "GenesisCS",
+          "url": "https://x.com/GenesisCS/status/2078155813202403383"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0463",
+      "username": "Javierito321",
+      "name": "Javierhalamadrid",
+      "text": "Que dice Delcy que desconoce todo relacionado a Michelo, que solo le parecía un bufón y que no le interesa como llegó ni como se fue de Venezuela:",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0463.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1684636424102985728/VLkXzRVJ_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078145102262800384/img/gXsWMOqxQp20UyVD.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Javierito321/status/2078145127000805847",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Javierito321",
+          "url": "https://x.com/Javierito321/status/2078145127000805847"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0462",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "Mientras la ayuda internacional se retira, Lorent Saleh sigue en el terreno, trabajando junto a voluntarios venezolanos. En esta etapa, la fuerza, la unión y la solidaridad son las que mantienen viva la esperanza.\n\n#Venezuela #FuerzaVenezuela",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": "media/videos/EV-2026-0462.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078284520202141696/img/-eMdgd28qXpafqzj.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2078284593506001218",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2078284593506001218"
+        }
+      ]
+    },
     {
       "expediente_id": "EV-2026-0461",
       "username": "cristiancrespoj",

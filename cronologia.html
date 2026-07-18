@@ -67,6 +67,38 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 .timeline-section{max-width:1100px;margin:60px auto 0;padding:0 var(--side-pad);position:relative}
 .tl-container{position:relative;padding:20px 0 80px}
 .tl-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border1);transform:translateX(-50%);z-index:0}
+.tl-blocks{position:relative;z-index:1}
+
+/* ===== ENTRY BLOCK ===== */
+.entry-block{max-width:var(--w-content);margin:36px auto 0;padding:0 var(--side-pad)}
+.entry-inner{background:var(--bg2);border:1px solid var(--border1);border-radius:10px;padding:20px 24px}
+.entry-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.entry-nav{display:flex;align-items:center;gap:12px}
+.entry-nav-label{font-size:.7rem;color:var(--text4);font-family:var(--mono);letter-spacing:.04em;white-space:nowrap}
+.entry-pills{display:flex;gap:6px}
+.entry-pill{padding:6px 16px;border-radius:999px;border:1px solid var(--border1);background:var(--bg3);color:var(--text3);font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.entry-pill:hover{color:var(--text2);border-color:var(--red)}
+.entry-pill.active{background:var(--red);color:#fff;border-color:var(--red)}
+.entry-actions{display:flex;gap:8px}
+.entry-action{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:8px;border:1px solid var(--border1);background:var(--bg3);color:var(--text3);font-family:var(--sans);font-size:.72rem;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.entry-action:hover{color:var(--text1);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)}
+.entry-info{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border1);font-size:.7rem;color:var(--text4);font-family:var(--mono)}
+.entry-info-sep{color:rgba(255,255,255,.08)}
+
+/* ===== LOADING STATE ===== */
+.tl-loading{position:absolute;top:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:16px;padding:60px 20px;z-index:1}
+.tl-loading-text{font-size:.85rem;color:var(--text3);font-family:var(--sans)}
+.tl-loading-spinner{width:32px;height:32px;border:2px solid var(--border1);border-top-color:var(--red);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tl-loading.done{opacity:0;pointer-events:none;transition:opacity .35s}
+
+/* ===== EMPTY STATE ===== */
+.tl-empty{position:absolute;top:60px;left:50%;transform:translateX(-50%);display:none;flex-direction:column;align-items:center;gap:14px;padding:80px 20px;text-align:center;z-index:1}
+.tl-empty.show{display:flex}
+.tl-empty-text{font-size:.88rem;color:var(--text3);max-width:360px;line-height:1.5}
+.tl-empty-btn{padding:8px 20px;border-radius:8px;border:1px solid var(--border1);background:var(--bg3);color:var(--text2);font-family:var(--sans);font-size:.78rem;cursor:pointer;transition:all .2s}
+.tl-empty-btn:hover{color:var(--text1);border-color:var(--red)}
+
 /* Events */
 
 /* Panel hero */
@@ -114,20 +146,17 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 .method-link:hover{color:var(--red)}
 
 /* ===== YEAR BLOCKS — Grid 3-col, strict ===== */
-.year-block{position:relative;display:grid;grid-template-columns:minmax(420px,1fr) 96px minmax(420px,1fr);align-items:start;column-gap:32px;width:min(1280px,calc(100% - 64px));margin:120px auto 0;padding:0}
-.year-block+.year-block{margin-top:120px}
-.year-main{width:100%;max-width:540px}
+.year-block{position:relative;display:grid;grid-template-columns:minmax(420px,1fr) 96px minmax(420px,1fr);align-items:start;column-gap:32px;width:min(1280px,calc(100% - 64px));margin:96px auto 0;padding:0}
+.year-block+.year-block{margin-top:96px}
+.year-main{width:100%;max-width:540px;grid-row:1}
 .year-main.right{grid-column:3;justify-self:end}
 .year-main.left{grid-column:1;justify-self:start}
 
 /* Central axis — top aligned with modules, no margin offsets */
-.year-tl-node{position:relative;grid-column:2;display:flex;flex-direction:column;align-items:center;padding-top:14px}
+.year-tl-node{position:relative;grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:center;padding-top:14px}
 .year-tl-node .node-year{display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:#111317;color:rgba(255,255,255,.72);font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.06em;z-index:2}
 .year-tl-node .node-dot{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.20);flex-shrink:0;margin-top:14px;position:relative;z-index:2}
-.year-tl-node .axis-line{width:1px;flex:1;margin-top:12px;background:rgba(255,255,255,.10);min-height:40px}
-.year-tl-node .connector{position:absolute;height:1px;background:rgba(255,255,255,.10);z-index:1;pointer-events:none}
-.year-tl-node .connector.left{right:calc(50% + 16px);left:0;top:calc(14px + 17px)}
-.year-tl-node .connector.right{left:calc(50% + 16px);right:0;top:calc(14px + 17px)}
+/* No axis-line or connectors — single continuous tl-line handles it */
 
 /* Main event card */
 .tl-card{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .25s,box-shadow .25s;display:flex;flex-direction:column;min-height:520px;max-height:620px}
@@ -158,10 +187,10 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 .card-btn:hover{color:var(--red)}
 
 /* Related viewer — single card, same vertical start as main card */
-.year-grained{width:100%;max-width:540px}
+.year-grained{width:100%;max-width:540px;grid-row:1}
 .year-grained.right{grid-column:3;justify-self:end}
 .year-grained.left{grid-column:1;justify-self:start}
-.gr-module{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:520px;max-height:620px}
+.gr-module{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:520px}
 
 /* Related header — 64px */
 .gr-header{min-height:64px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
@@ -177,7 +206,7 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 .gr-nav-btn:disabled{opacity:.25;cursor:default;pointer-events:none}
 
 /* Related list */
-.gr-list{padding:10px;max-height:220px;overflow-y:auto;border-bottom:1px solid rgba(255,255,255,.06);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent}
+.gr-list{padding:10px;flex:1;overflow-y:auto;border-bottom:1px solid rgba(255,255,255,.06);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent}
 .gr-list::-webkit-scrollbar{width:4px}
 .gr-list::-webkit-scrollbar-track{background:transparent}
 .gr-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:2px}
@@ -229,8 +258,7 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
   .year-main{grid-column:2;max-width:none;width:100%;justify-self:stretch}
   .year-main.right,.year-main.left{grid-column:2}
   .year-tl-node{grid-column:1;flex-direction:column;align-items:center;padding-top:0}
-  .year-tl-node .connector{display:none}
-  .year-tl-node .axis-line{display:none}
+  /* axis-line and connectors removed in refactor */
   .year-grained{grid-column:2;max-width:none;width:100%;justify-self:stretch}
   .year-grained.right,.year-grained.left{grid-column:2}
   .gr-module{max-height:none}
@@ -329,9 +357,52 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
   </div>
 </div>
 
+<!-- ENTRY BLOCK — Decade nav, controls, stats -->
+<div class="entry-block">
+  <div class="entry-inner">
+    <div class="entry-controls">
+      <div class="entry-nav">
+        <span class="entry-nav-label">Saltar a década:</span>
+        <div class="entry-pills" id="decadePills">
+          <button class="entry-pill" data-decade="1990">1990s</button>
+          <button class="entry-pill" data-decade="2000">2000s</button>
+          <button class="entry-pill" data-decade="2010">2010s</button>
+          <button class="entry-pill active" data-decade="2020">2020s</button>
+        </div>
+      </div>
+      <div class="entry-actions">
+        <button class="entry-action" id="btnToPresent" title="Ir al evento más reciente">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 10 10 6 14 10"/></svg>
+          Volver al presente
+        </button>
+        <button class="entry-action" id="btnToStart" title="Ir al primer evento">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 4 10 8 14 4"/></svg>
+          Explorar desde el inicio
+        </button>
+      </div>
+    </div>
+    <div class="entry-info">
+      <span id="entryCount">30 eventos · 34 años documentados</span>
+      <span class="entry-info-sep">·</span>
+      <span id="entryRange">1992 — 2025</span>
+    </div>
+  </div>
+</div>
+
 <!-- TIMELINE -->
 <section class="timeline-section">
   <div class="tl-container" id="timeline">
+    <div class="tl-line"></div>
+    <div class="tl-loading" id="tlLoading">
+      <span class="tl-loading-spinner"></span>
+      <span class="tl-loading-text">Cargando cronología...</span>
+    </div>
+    <div class="tl-empty" id="tlEmpty">
+      <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span class="tl-empty-text">No se encontraron eventos con los filtros seleccionados</span>
+      <button class="tl-empty-btn" id="tlEmptyReset">Limpiar filtros</button>
+    </div>
+    <div class="tl-blocks" id="tlBlocks"></div>
   </div>
 </section>
 
@@ -562,8 +633,24 @@ const yearFilter=document.getElementById('yearFilter');
 
 // Build timeline with grained events
 function buildTimeline(){
-  const tl=document.getElementById('timeline');
-  tl.innerHTML='';
+  const blocksContainer=document.getElementById('tlBlocks');
+  const loading=document.getElementById('tlLoading');
+  blocksContainer.innerHTML='';
+  loading.classList.remove('done');
+  try {
+    renderBlocks(blocksContainer);
+    loading.classList.add('done');
+    setTimeout(()=>{loading.style.display='none'},400);
+  } catch(e){
+    loading.classList.add('done');
+    loading.querySelector('.tl-loading-text').textContent='Error al cargar la cronología.';
+    console.error('buildTimeline error:',e);
+  }
+  // After blocks rendered, wire up hash
+  handleHashOnLoad();
+}
+
+function renderBlocks(container){
   let currentYear=null;
   EVENTS.forEach((ev,i)=>{
     if(ev.y!==currentYear){
@@ -604,13 +691,10 @@ function buildTimeline(){
       </div>
     </div>`;
 
-    // Central node + connectors
+    // Central node — year badge + dot (continuous tl-line handles the vertical line)
     const centralNode=`<div class="year-tl-node">
       <span class="node-year">${ev.y}</span>
       <div class="node-dot" style="background:${color}"></div>
-      <div class="axis-line"></div>
-      <div class="connector left"></div>
-      <div class="connector right"></div>
     </div>`;
 
     // Grained module — single integrated card, always opposite side
@@ -649,7 +733,7 @@ function buildTimeline(){
     }
 
     block.innerHTML=mainCard+centralNode+grainedHTML;
-    tl.appendChild(block);
+    container.appendChild(block);
   });
 
   // Auto-select first grained event for each year block
@@ -791,19 +875,163 @@ function applyFilters(){
   const q=document.getElementById('searchInput').value.toLowerCase();
   const cat=document.getElementById('catFilter').value;
   const yr=document.getElementById('yearFilter').value;
+  let visible=0;
   document.querySelectorAll('.year-block').forEach(el=>{
     const matchSearch=!q||el.dataset.search.includes(q);
     const matchCat=!cat||el.dataset.cat===cat;
     const matchYear=!yr||el.dataset.year===yr;
-    el.style.display=(matchSearch&&matchCat&&matchYear)?'':'none';
+    const show=matchSearch&&matchCat&&matchYear;
+    el.style.display=show?'':'none';
+    if(show)visible++;
   });
+  // Toggle empty state
+  const empty=document.getElementById('tlEmpty');
+  const total=document.querySelectorAll('.year-block').length;
+  if(visible===0&&total>0){
+    empty.classList.add('show');
+  }else{
+    empty.classList.remove('show');
+  }
 }
 document.getElementById('searchInput').addEventListener('input',applyFilters);
 document.getElementById('catFilter').addEventListener('change',applyFilters);
 document.getElementById('yearFilter').addEventListener('change',applyFilters);
 
+// ===== DECADE NAV =====
+function scrollToFirstBlockForDecade(decade){
+  const years=[...document.querySelectorAll('.year-block')].map(b=>parseInt(b.dataset.year));
+  const target=decade===1990?1998:decade; // 1998 is first event
+  const idx=years.findIndex(y=>y>=target);
+  if(idx>=0){
+    const blocks=document.querySelectorAll('.year-block');
+    blocks[idx].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+document.querySelectorAll('.entry-pill').forEach(pill=>{
+  pill.addEventListener('click',function(){
+    document.querySelectorAll('.entry-pill').forEach(p=>p.classList.remove('active'));
+    this.classList.add('active');
+    scrollToFirstBlockForDecade(parseInt(this.dataset.decade));
+  });
+});
+
+// ===== PRESENT / START BUTTONS =====
+document.getElementById('btnToPresent').addEventListener('click',()=>{
+  const blocks=document.querySelectorAll('.year-block');
+  if(blocks.length>0){
+    blocks[blocks.length-1].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+});
+document.getElementById('btnToStart').addEventListener('click',()=>{
+  const blocks=document.querySelectorAll('.year-block');
+  if(blocks.length>0){
+    blocks[0].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+});
+
+// ===== EMPTY STATE RESET =====
+document.getElementById('tlEmptyReset').addEventListener('click',()=>{
+  document.getElementById('searchInput').value='';
+  document.getElementById('catFilter').value='';
+  document.getElementById('yearFilter').value='';
+  applyFilters();
+});
+
+// ===== URL HASH ROUTING =====
+function handleHashOnLoad(){
+  const hash=window.location.hash.slice(1);
+  if(!hash)return;
+  const parts=hash.split('-');
+  const year=parseInt(parts[0]);
+  if(!year)return;
+  // Try to find main event by year
+  const idx=EVENTS.findIndex(e=>e.y===year);
+  if(idx>=0){
+    const blocks=document.querySelectorAll('.year-block');
+    const blockEl=[...blocks].find(b=>parseInt(b.dataset.year)===year);
+    if(blockEl){
+      setTimeout(()=>{
+        blockEl.scrollIntoView({behavior:'smooth',block:'start'});
+      },300);
+    }
+    // If hash has a secondary event index like -03, open that one
+    if(parts.length>=2){
+      const secIdx=parseInt(parts[parts.length-1])-1;
+      const secs=SECONDARY_EVENTS[year]||[];
+      if(secs[secIdx]){
+        populateGrExpanded(year,secIdx);
+      }else{
+        // Open side panel for main event
+        openPanel(idx);
+      }
+    }
+  }
+}
+
+function updateHash(year,secIdx){
+  const s=String(secIdx+1).padStart(2,'0');
+  const hash=`#${year}-evento-${s}`;
+  if(history.pushState){
+    history.pushState(null,'',hash);
+  }
+}
+
+// Override gr-entry click to also update hash
+document.addEventListener('click',function(e){
+  const entry=e.target.closest('.gr-entry');
+  if(entry){
+    const y=parseInt(entry.dataset.year);
+    const idx=parseInt(entry.dataset.idx);
+    updateHash(y,idx);
+  }
+});
+
+// Keyboard nav for related events
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+    const activeEntry=document.querySelector('.gr-entry.active');
+    if(activeEntry){
+      const y=parseInt(activeEntry.dataset.year);
+      const curIdx=parseInt(activeEntry.dataset.idx);
+      if(curIdx>0){
+        e.preventDefault();
+        populateGrExpanded(y,curIdx-1);
+        updateHash(y,curIdx-1);
+      }
+    }
+  }
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){
+    const activeEntry=document.querySelector('.gr-entry.active');
+    if(activeEntry){
+      const y=parseInt(activeEntry.dataset.year);
+      const secs=SECONDARY_EVENTS[y]||[];
+      const curIdx=parseInt(activeEntry.dataset.idx);
+      if(curIdx<secs.length-1){
+        e.preventDefault();
+        populateGrExpanded(y,curIdx+1);
+        updateHash(y,curIdx+1);
+      }
+    }
+  }
+  if(e.key==='Escape'){
+    closePanel();
+  }
+});
+
+// Update entry stats count
+function updateEntryStats(){
+  const total=EVENTS.length;
+  const years=new Set(EVENTS.map(e=>e.y)).size;
+  const minYear=Math.min(...EVENTS.map(e=>e.y));
+  const maxYear=Math.max(...EVENTS.map(e=>e.y));
+  document.getElementById('entryCount').textContent=`${total} eventos · ${years} años documentados`;
+  document.getElementById('entryRange').textContent=`${minYear} — ${maxYear}`;
+}
+
 // Init
 buildTimeline();
+updateEntryStats();
 </script>
 </body>
 </html>
