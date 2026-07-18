@@ -1,13 +1,14 @@
 {
-  "updated_at": "2026-07-18T01:01:24.448418+00:00",
+  "updated_at": "2026-07-18T01:14:40.636480+00:00",
   "count": 54,
   "categories": {
-    "general": 40,
-    "servicios": 5,
+    "general": 29,
+    "abuso": 1,
+    "salud": 5,
+    "servicios": 12,
+    "extorsion": 4,
     "persecucion": 1,
-    "extorsion": 3,
     "corrupcion": 1,
-    "salud": 3,
     "censura": 1
   },
   "denuncias": [
@@ -19,7 +20,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. En el día 23 después de la tragedia de La Guaira por los terremotos, siguen sacando cuerpos de la Misión Vivienda, conocida como OPP, de Caraballeda.\n\nQue en Paz Descansen todas esas almas.\n\n@maryorin...",
       "video_url": "media/videos/EV-2026-0461.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large"
@@ -45,7 +46,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Juanegron sobre incidente reportado en Venezuela. | Diego Ruzzarin asegura que “Estados Unidos empobreció a Venezuela”.\n\nEsa afirmación omite que la crisis venezolana comenzó años antes de las sanciones más severas, con controles de precios y de camb...",
       "video_url": "media/videos/EV-2026-0460.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2023451881197215744/e8Qpk61K_normal.jpg&name=large"
@@ -71,7 +72,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @yeligamboa sobre incidente reportado en Venezuela. Me tope con este video en Tik Tok, fue publicado antes del terremoto el mismo día 24 de junio , son los edificios OPP.\n \nTodos esos edificios quedaron bajos los escombros. La dueña del perfil no ha pu...",
       "video_url": "media/videos/EV-2026-0459.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1728071772019322880/B9IGyk25_normal.jpg&name=large",
@@ -98,7 +99,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @CaraotaDigital sobre incidente reportado en Venezuela. #17JUL | Cuando faltan pocas horas para la conmemoración del Día del Niño en el país, el fotógrafo Rodolfo Churion compartió una postal que muestra un altar con los juguetes de niños que perdieron la ...",
       "video_url": "media/videos/EV-2026-0458.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1947366753538805760/MBGnaw9g_normal.jpg&name=large",
@@ -125,7 +126,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @zuricht94 sobre incidente reportado en Venezuela. Nuestros valerosos bomberos nunca fueron dotados de los equipos necesarios, porque la prioridad era dotar de herramientas a la maquinaria de represión....",
       "video_url": "media/videos/EV-2026-0457.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1469813755114668038/srrcbx_j_normal.jpg&name=large",
@@ -153,7 +154,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Norbey_Marin_ sobre incidente reportado en Venezuela. Terremoto en Venezuela  | #16J \n\nLas familias del Bloque 3, de la Urbanización Páez en Catia La Mar, solicita una grúa telescópica y camiones para continuar con las labores de recuperación de los cuer...",
       "video_url": "media/videos/EV-2026-0432.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1931007850530160640/fSs2d-iR_normal.jpg&name=large"
@@ -179,7 +180,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Tu ex tóxica tiene más valor que el Bolívar, en el fondo lo sabes. Mientras sigues actualizando la paginita del $$ paralelo, la maquinita de la miseria sigue imprimiendo billetes que no sirven ni para...",
       "video_url": "media/videos/EV-2026-0400.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
@@ -203,10 +204,10 @@
       "username": "Fantasma_956",
       "name": "El Fantasma",
       "text": "Viviendas de la GMVV Ataúdes Habitacionales por toda Venezuela. \n\nEdificio Patria y Trabajo de #SanBernardino #Ccs con alto grado de destrucción, bases muy golpeadas, en el interior las paredes desplomadas o con fuertes grietas comprometiendo la estructura.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": null,
+      "category": "abuso",
+      "category_label": "Abuso",
+      "severity": "high",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Viviendas de la GMVV Ataúdes Habitacionales por toda Venezuela. \n\nEdificio Patria y Trabajo de #SanBernardino #Ccs con alto grado de destrucción, bases muy golpeadas, en el interior las paredes desplo...",
       "video_url": "media/videos/EV-2026-0381.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
@@ -230,10 +231,10 @@
       "username": "freddyzur",
       "name": "freddyzur@freddyzur·16h",
       "text": "¡Peligro en el Hospital Dr. Adolfo Prince Lara de Puerto Cabello! Las imágenes revelan daños estructurales severos que lo hacen inhabitable. Columnas expuestas y techos colapsados ponen en riesgo a pacientes y personal. ¿Reparaciones o solo un negocio más? La vida de los",
-      "category": "general",
-      "category_label": "General",
+      "category": "salud",
+      "category_label": "Salud",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. ¡Peligro en el Hospital Dr. Adolfo Prince Lara de Puerto Cabello! Las imágenes revelan daños estructurales severos que lo hacen inhabitable. Columnas expuestas y techos colapsados ponen en riesgo a pa...",
       "video_url": "media/videos/EV-2026-0371.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
@@ -260,7 +261,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. “Mire, yo no he visto un ser tan jakabola como  el de pelo azul, viene a decir que existía un manual de qué hacer y qué no hacer en los edificios.\n\nMientras las familias en La Guaira siguen enfrentand...",
       "video_url": "media/videos/EV-2026-0347.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
@@ -286,8 +287,8 @@
       "text": "Qué ironía: Diosdado se sorprende porque la gente usa sus teléfonos para mostrar la realidad.\n\nNo entiende que eso se llama libertad de expresión.\n\nLo que él llama “jauría” son ciudadanos documentando lo que el poder quisiera ocultar.\n\nY hay que agradecerle algo: confirmó que la",
       "category": "general",
       "category_label": "General",
-      "severity": "info",
-      "resumen": null,
+      "severity": "medium",
+      "resumen": "Denuncia ciudadana publicada por @estebanoria sobre incidente reportado en Venezuela. Qué ironía: Diosdado se sorprende porque la gente usa sus teléfonos para mostrar la realidad.\n\nNo entiende que eso se llama libertad de expresión.\n\nLo que él llama “jauría” son ciudadanos documentando...",
       "video_url": "media/videos/EV-2026-0346.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1727858043960909824/8CsaT5v1_normal.jpg&name=large",
@@ -314,7 +315,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Ya ocurrió en el Congreso.\n\nNo fue una sesión de leyes ni de decisiones inmediatas. Fue algo distinto,  y igual de importante. Después de años, el Congreso EEUU volvió a sentarse a escuchar directamen...",
       "video_url": "media/videos/EV-2026-0344.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
@@ -341,7 +342,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @RobertoCarlo14 sobre incidente reportado en Venezuela. Joven perdió a 12 familiares en \nel terremoto en #Venezuela. \n\n¿Cómo superas algo así?\n\n¿Cómo se supera la pérdidasde 12 familiares incluyendo padre y madre? \n\nEs la gran pregunta que intenta contesta...",
       "video_url": "media/videos/EV-2026-0341.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/897918525184110594/bNQadkY1_normal.jpg&name=large",
@@ -368,7 +369,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @GabyGabyGG sobre incidente reportado en Venezuela. La señora Angélica, sobreviviente del doble terremoto en la Guaira, sigue a la espera de encontrar a su hijo, de 15, y a sus dos sobrinos....",
       "video_url": "media/videos/EV-2026-0336.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1405273887189860354/wEm75vGk_normal.jpg&name=large",
@@ -395,7 +396,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @gabyarocha sobre incidente reportado en Venezuela. Es importante reactivar el comercio local en las zonas más afectadas por los terremotos, ya que eso evita la paralización económica. \n\nAquí Karen Brewer y Ronald Aristimuño nos explican por qué hay qu...",
       "video_url": "media/videos/EV-2026-0331.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1591869998187905025/Egg3pDXl_normal.jpg&name=large",
@@ -423,7 +424,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @ElGanadorHenry sobre incidente reportado en Venezuela. La voz del pueblo \n\nGraban a un señor en Vzla, que sin miedo demuestra su apoyo a la líder María Corina \n\nCon Delcy me como un cable!\n\nCon María corina comeré pan!...",
       "video_url": "media/videos/EV-2026-0300.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1876120323386441728/R2xRAaf1_normal.jpg&name=large",
@@ -447,10 +448,10 @@
       "username": "Fantasma_956",
       "name": "El Fantasma",
       "text": "Misión Vivienda GMVV, la gran estafa nacional, Ataúdes habitacionales para miles de venezolanos extorsionados. Ahora según los propagandistas, los habitantes son culpables de su propia muerte. El Pato del Pelo Azul, el tinte le quemo la única neurona que tenia.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": null,
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "critical",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Misión Vivienda GMVV, la gran estafa nacional, Ataúdes habitacionales para miles de venezolanos extorsionados. Ahora según los propagandistas, los habitantes son culpables de su propia muerte. El Pato...",
       "video_url": "media/videos/EV-2026-0292.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
@@ -477,7 +478,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. El chiste se cuenta solo. Delcy Rodriguez, Todos fuimos testigos de lo único que la FANB rescató de los escombros.\n\nelkevinjh\n\n #venezuela #humor #venezolanos #venezuela #delcyrodriguez...",
       "video_url": "media/videos/EV-2026-0289.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
@@ -501,10 +502,10 @@
       "username": "VPITV",
       "name": "VPItv",
       "text": "Afectado en Tanaguarenas, La Guaira, denunció la lentitud en la respuesta de las autoridades tras los terremotos y aseguró que las labores de búsqueda continúan con recursos insuficientes.\n\nSalvador afirmó que \"faltó mucho avance por parte del gobierno\" y sostuvo que \"mucha",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": null,
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "medium",
+      "resumen": "Denuncia ciudadana publicada por @VPITV sobre incidente reportado en Venezuela. Afectado en Tanaguarenas, La Guaira, denunció la lentitud en la respuesta de las autoridades tras los terremotos y aseguró que las labores de búsqueda continúan con recursos insuficientes.\n\nSalvador a...",
       "video_url": "media/videos/EV-2026-0282.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2071640295955906560/1pFVxkhV_normal.jpg&name=large",
@@ -528,10 +529,10 @@
       "username": "cristiancrespoj",
       "name": "Cristian Crespo F.",
       "text": "Sin palabras . \n\nUn miércoles a las 6:04 PM, y la vida cambia para siempre.\n\n#LaGuaira #Venezuela #TerremotoVE #FuerzaVenezuela",
-      "category": "general",
-      "category_label": "General",
+      "category": "servicios",
+      "category_label": "Servicios",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. Sin palabras . \n\nUn miércoles a las 6:04 PM, y la vida cambia para siempre.\n\n#LaGuaira #Venezuela #TerremotoVE #FuerzaVenezuela...",
       "video_url": "media/videos/EV-2026-0247.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
@@ -558,7 +559,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Ari1979_V sobre incidente reportado en Venezuela. Los rostros nuestros venezolanos que han dado todo desde su voluntad y empatía,pero con las uñas no lo voy a dejar de repetir.\n#Rescatistas \n#venezolanos...",
       "video_url": "media/videos/EV-2026-0246.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2074893813386993664/uI7IF8dd_normal.jpg&name=large",
@@ -585,7 +586,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @alejandraoraa sobre incidente reportado en Venezuela. Para entender la verdadera dimensión de la tragedia en Venezuela, hay que compararla con uno de los peores desastres naturales del siglo XXI: el terremoto de Japón de 2011.\n\nAunque el sismo de Japón f...",
       "video_url": "media/videos/EV-2026-0236.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2021370105817415680/oY6RfRZC_normal.jpg&name=large",
@@ -612,7 +613,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. “Si ayuda hubiera llegado a tiempo ¿qué  hubiese pasado?.\n\nMe lo responden estas hermanas en el complejo Luisa Cáceres de Arismendi en Catia La Mar, donde buscan a su otra hermana Yibisay, quien quedó...",
       "video_url": "media/videos/EV-2026-0235.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
@@ -636,10 +637,10 @@
       "username": "cristiancrespoj",
       "name": "Cristian Crespo F.",
       "text": "#16jul /#GUERRERO\nCon sus amigos y gente que voluntariamente le ayudó, Marcos De Sousa este jueves llevaba un ramo de flores y la foto de su único hijo rescatado de los escombros el pasado domingo 12 de julio junto con su mamá...\n\n#vargas #venezuela #luto",
-      "category": "general",
-      "category_label": "General",
+      "category": "servicios",
+      "category_label": "Servicios",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. #16jul /#GUERRERO\nCon sus amigos y gente que voluntariamente le ayudó, Marcos De Sousa este jueves llevaba un ramo de flores y la foto de su único hijo rescatado de los escombros el pasado domingo 12 ...",
       "video_url": "media/videos/EV-2026-0206.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
@@ -666,7 +667,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Ari1979_V sobre incidente reportado en Venezuela. Delcy y el meón no manden a bloquear ese día la vía como hicieron los primeros días para que nadie subiera ayudar.\nPruebas hay bastantes ejemplo\n\n#venezuela79 \nVídeo de los primeros días cuando el rég...",
       "video_url": "media/videos/EV-2026-0181.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2074893813386993664/uI7IF8dd_normal.jpg&name=large",
@@ -693,7 +694,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. ¡Dios los bendiga, qué grande Juan Pablo Dos Santos! Claro que sí volverá a levantarse esta guerrera, y más con tu ayuda y la de tu Fundación. \n\n“Ser ejemplo para los niños\nEsa será nuestra misión.\n\nE...",
       "video_url": "media/videos/EV-2026-0172.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
@@ -720,7 +721,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @pipogonza sobre incidente reportado en Venezuela. Mi gente vamos a compartir por favo URGENTE Señor Marcos Rubio Señor Barret Señor Bukele le pedimos urgente que ayude a esta mujer por que sabemos que la repuesta del régimen nunca va a llegar...",
       "video_url": "media/videos/EV-2026-0146.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/1949479189809082368/t6lQY_7J_normal.jpg&name=large",
@@ -744,10 +745,10 @@
       "username": "shelbykrisel",
       "name": "Shelby C",
       "text": "DUELE\nMuchos ya volvieron a la \"normalidad\", ya se acabó la viralidad... Pero en Vargas el dolor, la falta de ayuda, la falta de máquinarias, que agua, de comida aún CONTINÚA.\nNo dejes de hablar de VENEZUELA",
-      "category": "general",
-      "category_label": "General",
+      "category": "servicios",
+      "category_label": "Servicios",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @shelbykrisel sobre incidente reportado en Venezuela. DUELE\nMuchos ya volvieron a la \"normalidad\", ya se acabó la viralidad... Pero en Vargas el dolor, la falta de ayuda, la falta de máquinarias, que agua, de comida aún CONTINÚA.\nNo dejes de hablar de VE...",
       "video_url": "media/videos/EV-2026-0129.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2016877677123391488/rPtLDvWb_normal.jpg&name=large"
@@ -773,7 +774,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @DIFUNDELOYA sobre incidente reportado en Venezuela. URGENTE    | ¡ÚLTIMA HORA! | EE.UU enviará 3.000 técnicos para asumir la administración temporal de Venezuela.\n\nEE.UU acelerara la transición mediante la reconstrucción técnica y administrativa....",
       "video_url": "media/videos/EV-2026-0114.mp4",
       "images": [
         "https://pbs.twimg.com/profile_images/2074328250629722113/OEWB0d3y_normal.jpg&name=large"
@@ -1066,10 +1067,10 @@
       "username": "Joshkr1441",
       "name": "Josh Rod",
       "text": "Se llama Wisneyker García cédula 24.446.651 según es de aceiteira de San Mateo, Estado Aragua! Urge hayar a su familia...por favor ayúdenme a difundir! #venezuela",
-      "category": "general",
-      "category_label": "General",
+      "category": "servicios",
+      "category_label": "Servicios",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @Joshkr1441 sobre incidente reportado en Venezuela. Se llama Wisneyker García cédula 24.446.651 según es de aceiteira de San Mateo, Estado Aragua! Urge hayar a su familia...por favor ayúdenme a difundir! #venezuela...",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/1974903851686699008/jLT6vjXn_normal.jpg&name=large",
@@ -1093,10 +1094,10 @@
       "username": "orlavision",
       "name": "OrlandoVision",
       "text": "Voy a soltar un FACTO:\n\nEl Estado se llama VARGAS y su Capital es La Guaira \n\nFin del comunicado",
-      "category": "general",
-      "category_label": "General",
+      "category": "servicios",
+      "category_label": "Servicios",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @orlavision sobre incidente reportado en Venezuela. Voy a soltar un FACTO:\n\nEl Estado se llama VARGAS y su Capital es La Guaira \n\nFin del comunicado",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/1733967710361387008/tZenezLV_normal.jpg&name=large"
@@ -1119,10 +1120,10 @@
       "username": "ElInformadorVE",
       "name": "El Informador Venezuela @ElInformadorVE·13h",
       "text": "Acabo de postear una imagen en instagram https://instagr.am/p/Da2_KSeu2Qk/ Detrás de cada campaña de salud hay una familia que mantiene la fe intacta, pero que necesita un empujón de solidaridad para salir adelante. Hoy nos toca ponernos la mano en el corazón por la pequeña Aleska Yánez.…",
-      "category": "general",
-      "category_label": "General",
+      "category": "salud",
+      "category_label": "Salud",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @ElInformadorVE sobre incidente reportado en Venezuela. Acabo de postear una imagen en instagram https://instagr.am/p/Da2_KSeu2Qk/ Detrás de cada campaña de salud hay una familia que mantiene la fe intacta, pero que necesita un empujón de solidaridad para ...",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/1587386065886875649/4KmWcKWs_normal.jpg&name=large",
@@ -1148,8 +1149,8 @@
       "text": "Estoy asqueado de plataformas como Tik Tok…\n\nEs la red donde me he hecho mas viral (videos de humor) pero cuando subo del terremoto, videos de ayuda, niños desaparecidos, de escombros, me los eliminan y su respuesta es: “esta plataforma es para esparcir gozo, no para tragedias”",
       "category": "general",
       "category_label": "General",
-      "severity": "info",
-      "resumen": null,
+      "severity": "critical",
+      "resumen": "Denuncia ciudadana publicada por @Javierito321 sobre incidente reportado en Venezuela. Estoy asqueado de plataformas como Tik Tok…\n\nEs la red donde me he hecho mas viral (videos de humor) pero cuando subo del terremoto, videos de ayuda, niños desaparecidos, de escombros, me los eliminan...",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/1684636424102985728/VLkXzRVJ_normal.jpg&name=large"
@@ -1175,7 +1176,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @jrbermudezofi sobre incidente reportado en Venezuela. Prohibido olvidar, @jorgerpsuv el principal criminal del fraude en Venezuela",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/2071735212829016064/NIyruD-D_normal.jpg&name=large",
@@ -1199,10 +1200,10 @@
       "username": "A64029345",
       "name": "Carolina",
       "text": "Cuando colapsó parte de la Mansión Charaima por el terremoto de julio de 1967, los bomberos de entonces tuvieron un camión snorkel para hacer rescates en altura. Ahora, 59 años después, no contaron con ninguno disponible en La Guaira- Vargas. Ud no lo sabia yo tampoco",
-      "category": "general",
-      "category_label": "General",
+      "category": "servicios",
+      "category_label": "Servicios",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @A64029345 sobre incidente reportado en Venezuela. Cuando colapsó parte de la Mansión Charaima por el terremoto de julio de 1967, los bomberos de entonces tuvieron un camión snorkel para hacer rescates en altura. Ahora, 59 años después, no contaron co...",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/2075902071765676032/3DpB-hTr_normal.jpg&name=large",
@@ -1229,7 +1230,7 @@
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": null,
+      "resumen": "Denuncia ciudadana publicada por @OrlvndoA sobre incidente reportado en Venezuela. Jorge Rodríguez, the brother of Venezuela’s current interim leader, Delcy Rodríguez, was the architect of the country’s electoral fraud system (one the regime later sought to export to other countries...",
       "video_url": null,
       "images": [
         "https://pbs.twimg.com/profile_images/1852227338739556352/EEjmu39n_normal.jpg&name=large",
