@@ -138,10 +138,58 @@
 </footer>
 
 <script>
-document.getElementById('evidenceForm').addEventListener('submit', function(e) {
+document.getElementById('evidenceForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  document.getElementById('formWrapper').classList.add('sent');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  var btn = this.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  var form = new FormData(this);
+  var data = {
+    tipo: form.get('tipo'),
+    dominio: form.get('dominio'),
+    descripcion: form.get('descripcion'),
+    evidencia: form.get('evidencia'),
+    severidad: form.get('severidad'),
+    fecha: form.get('fecha')
+  };
+
+  try {
+    var res = await fetch('https://edgemarketing.art/api/denuncias/form', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    var json = await res.json();
+    if (json.ok) {
+      document.getElementById('formWrapper').classList.add('sent');
+      document.querySelector('.success-msg h2').textContent = 'Evidencia recibida';
+      document.querySelector('.success-msg p').textContent = 'Código: ' + json.expediente_id + '. Será revisada.';
+    } else {
+      alert('Error: ' + (json.error || 'desconocido'));
+    }
+  } catch(e) {
+    // Fallback: directo al servidor local
+    try {
+      var res = await fetch('http://127.0.0.1:8787/api/denuncias/form', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      var json = await res.json();
+      if (json.ok) {
+        document.getElementById('formWrapper').classList.add('sent');
+        document.querySelector('.success-msg h2').textContent = 'Evidencia recibida';
+        document.querySelector('.success-msg p').textContent = 'Código: ' + json.expediente_id + '. Será revisada.';
+      } else {
+        alert('Error: ' + (json.error || 'desconocido'));
+      }
+    } catch(e2) {
+      alert('No se pudo enviar. Intenta más tarde.');
+    }
+  }
+  btn.disabled = false;
+  btn.textContent = 'Enviar evidencia de forma segura';
 });
 </script>
 

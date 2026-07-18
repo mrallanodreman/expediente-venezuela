@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Expediente Venezuela — Plataforma de Investigación Ciudadana</title>
 <meta name="description" content="Plataforma independiente de investigación ciudadana. Recopila, verifica, organiza y expone denuncias públicas sobre corrupción, abuso de poder y derechos en Venezuela.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/">
 <meta property="og:title" content="Expediente Venezuela — Plataforma de Investigación Ciudadana">
 <meta property="og:description" content="Documentar no es acusar. Verificar no es callar. Preservar la evidencia es defender la memoria.">
@@ -292,9 +293,14 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
 .slide-media{background:#000;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
 .slide-media img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:opacity .4s}
 .slide-media:hover img{opacity:1}
-.slide-media video{width:100%;height:100%;object-fit:contain;background:#000;display:block}
-.slide-media-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono);font-size:.65rem;color:var(--text-dim);text-align:center;gap:.5rem}
+.slide-video-wrapper{width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center;background:#000}
+.slide-video-wrapper video{width:100%;height:100%;object-fit:contain;background:#000;display:block;cursor:pointer}
+.slide-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(139,37,0,.9);border:2px solid rgba(255,255,255,.3);color:#fff;font-size:1.5rem;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:all .25s;padding:0;line-height:1}
+.slide-play-btn:hover{background:var(--red);border-color:#fff;transform:translate(-50%,-50%) scale(1.08)}
+.slide-play-btn.playing{opacity:0;pointer-events:none}
+.slide-media-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono);font-size:.65rem;color:var(--text-dim);text-align:center;gap:.5rem;padding:1rem}
 .slide-media-placeholder::before{content:'';width:32px;height:1px;background:rgba(196,184,152,.15)}
+.slide-media-placeholder a{color:var(--yellow);margin-top:.5rem;text-decoration:underline}
 .slide-media-category{position:absolute;top:1rem;left:1rem;font-family:var(--mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid;z-index:3}
 .slide-orientation{position:absolute;bottom:1rem;right:1rem;font-family:var(--mono);font-size:.45rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .5rem;background:rgba(0,0,0,.7);color:var(--text-dim);border:1px solid rgba(196,184,152,.1);z-index:3}
 
@@ -354,8 +360,9 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
   .categories-grid{grid-template-columns:repeat(2,1fr)}
   .hero{padding:4rem 1.5rem 3rem}
   section{padding:3.5rem 1.5rem}
-  .slide{grid-template-columns:1fr;aspect-ratio:1/1}
-  .slide-media{min-height:200px}
+  .slide{grid-template-columns:1fr;aspect-ratio:auto}
+  .slide-media{min-height:240px}
+  .slide-play-btn{width:48px;height:48px;font-size:1.2rem}
   .slide-content{border-left:none;border-top:1px solid rgba(196,184,152,.06);padding:1rem 1.25rem}
   .slider-ticker{padding:.75rem 1rem}
   .slider-dots{padding:.75rem 1rem}
@@ -886,7 +893,8 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
 // --- DYNAMIC DATA LOADING ---
 (async function initExpediente() {
   try {
-    const res = await fetch('scraper/data/denuncias.json');
+    const ts = Date.now();
+    const res = await fetch('scraper/data/denuncias.json?_=' + ts);
     if (!res.ok) return;
     const data = await res.json();
     const denuncias = data.denuncias || [];
@@ -894,6 +902,7 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
 
     updateStats(data);
     initSlider(withMedia);
+    setupVideoPlayers();
     updateCategories(data.categories);
 
     const status = document.getElementById('slider-status');
@@ -907,7 +916,7 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
   }
 
   try {
-    const res2 = await fetch('scraper/data/cronologia.json');
+    const res2 = await fetch('scraper/data/cronologia.json?_=' + Date.now());
     if (res2.ok) {
       const cdata = await res2.json();
       initTimelineWidget(cdata.events || []);
@@ -928,6 +937,58 @@ function updateStats(data) {
   if (nums[2]) nums[2].textContent = '—';
   if (nums[3]) nums[3].textContent = total;
   if (nums[4]) nums[4].textContent = catCount;
+}
+
+// --- Video helpers ---
+function renderVideoHTML(t) {
+  const posterUrl = 'media/posters/' + esc(t.expediente_id) + '.jpg';
+  const tweetUrl = esc(t.url || '#');
+  const expId = esc(t.expediente_id);
+  return '<div class="slide-video-wrapper" data-exp="' + expId + '">' +
+    '<video src="' + esc(t.video_url) + '" poster="' + posterUrl + '" playsinline preload="none" data-exp="' + expId + '"></video>' +
+    '<button class="slide-play-btn">&#9654;</button>' +
+    '<div class="slide-orientation">...</div>' +
+    '</div>';
+}
+
+function setupVideoPlayers() {
+  document.querySelector('.slider-container')?.addEventListener('click', function(e) {
+    // Play button click
+    const btn = e.target.closest('.slide-play-btn');
+    if (btn) {
+      const wrapper = btn.closest('.slide-video-wrapper');
+      const video = wrapper?.querySelector('video');
+      if (video) {
+        video.play().then(() => { video.controls = true; btn.classList.add('playing'); }).catch(() => {});
+      }
+      return;
+    }
+    // Click on poster/video to play
+    const video = e.target.closest('.slide-video-wrapper video');
+    if (video && video.paused) {
+      video.play().then(() => { video.controls = true; video.closest('.slide-video-wrapper')?.querySelector('.slide-play-btn')?.classList.add('playing'); }).catch(() => {});
+    }
+  });
+  // Detect orientation on metadata load
+  document.querySelector('.slider-container')?.addEventListener('loadedmetadata', function(e) {
+    const video = e.target;
+    if (video.tagName !== 'VIDEO') return;
+    const ori = video.closest('.slide-video-wrapper')?.querySelector('.slide-orientation');
+    if (ori) ori.textContent = video.videoWidth > video.videoHeight ? 'HORIZONTAL' : 'VERTICAL';
+  }, true);
+  // Error fallback
+  document.querySelector('.slider-container')?.addEventListener('error', function(e) {
+    const video = e.target;
+    if (video.tagName !== 'VIDEO') return;
+    const wrapper = video.closest('.slide-video-wrapper');
+    if (!wrapper) return;
+    const expId = wrapper.dataset.exp || '';
+    const tweetUrl = sliderDenuncias.find(d => d.expediente_id === expId)?.url || '#';
+    wrapper.innerHTML = '<div class="slide-media-placeholder">' +
+      '<span>VIDEO NO DISPONIBLE</span>' +
+      '<a href="' + esc(tweetUrl) + '" target="_blank" rel="noopener">Ver original &rarr;</a>' +
+      '</div>';
+  }, true);
 }
 
 // --- Slider ---
@@ -956,7 +1017,7 @@ function initSlider(denuncias) {
   track.innerHTML = denuncias.map(t => {
     const hasVideo = !!t.video_url;
     const media = hasVideo
-      ? '<video src="' + esc(t.video_url) + '" controls muted playsinline preload="metadata" onloadedmetadata="this.parentElement.querySelector(\'.slide-orientation\').textContent=this.videoWidth>this.videoHeight?\'HORIZONTAL 16:9\':\'VERTICAL 9:16\'"></video>'
+      ? renderVideoHTML(t)
       : (t.images && t.images.length)
         ? '<img src="' + esc(t.images[0]) + '" alt="Evidencia" loading="lazy">'
         : '<div class="slide-media-placeholder"><span>SIN EVIDENCIA</span></div>';
@@ -968,7 +1029,6 @@ function initSlider(denuncias) {
     return '<div class="slide" data-cat="' + esc(t.category || 'general') + '">' +
       '<div class="slide-media">' +
         media +
-        (hasVideo ? '<div class="slide-orientation">...</div>' : '') +
         '<div class="slide-media-category" style="color:' + catColor + ';border-color:' + catColor + '30;background:' + catColor + '10">' + esc(catLabel) + '</div>' +
       '</div>' +
       '<div class="slide-content">' +
@@ -1005,16 +1065,25 @@ function initSlider(denuncias) {
   sliderIdx = 0;
   updateSliderProgress();
 
+  // Pause videos when sliding away
+  function pauseCurrentVideo() {
+    const activeSlide = track.querySelectorAll('.slide')[sliderIdx];
+    if (activeSlide) {
+      const v = activeSlide.querySelector('video');
+      if (v && !v.paused) { v.pause(); }
+    }
+  }
+
   // Wire up both sets of nav buttons
   const prevBtns = [document.getElementById('slider-prev'), document.getElementById('slider-prev-2')];
   const nextBtns = [document.getElementById('slider-next'), document.getElementById('slider-next-2')];
-  prevBtns.forEach(btn => btn?.addEventListener('click', () => goSlide(sliderIdx - 1)));
-  nextBtns.forEach(btn => btn?.addEventListener('click', () => goSlide(sliderIdx + 1)));
+  prevBtns.forEach(btn => btn?.addEventListener('click', () => { pauseCurrentVideo(); goSlide(sliderIdx - 1); }));
+  nextBtns.forEach(btn => btn?.addEventListener('click', () => { pauseCurrentVideo(); goSlide(sliderIdx + 1); }));
 
-  dots.addEventListener('click', e => { if (e.target.dataset.idx !== undefined) goSlide(+e.target.dataset.idx); });
+  dots.addEventListener('click', e => { if (e.target.dataset.idx !== undefined) { pauseCurrentVideo(); goSlide(+e.target.dataset.idx); } });
   document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') goSlide(sliderIdx - 1);
-    if (e.key === 'ArrowRight') goSlide(sliderIdx + 1);
+    if (e.key === 'ArrowLeft') { pauseCurrentVideo(); goSlide(sliderIdx - 1); }
+    if (e.key === 'ArrowRight') { pauseCurrentVideo(); goSlide(sliderIdx + 1); }
   });
 
   function goSlide(idx) {

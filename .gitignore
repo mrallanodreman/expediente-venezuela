@@ -15,8 +15,12 @@ venv/
 *.log
 scraper/data/seen_ids.json
 scraper/data/loop.pid
-scraper/data/denuncias.json
 scraper/data/denuncias.db
+
+# Large media (videos/posters) — too big for git
+scraper/media/
+media/videos/
+media/posters/
 
 # OS
 .DS_Store

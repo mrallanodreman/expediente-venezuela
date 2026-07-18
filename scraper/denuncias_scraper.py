@@ -263,11 +263,6 @@ def _save_to_db(all_tweets: List[Dict], conn, venezuela_only: bool = True) -> Di
     expediente_ids = []
 
     for t in unique:
-        # Filter non-Venezuela content if enabled
-        if venezuela_only and not _is_venezuela_related(t.get("text", "")):
-            filtered += 1
-            continue
-            
         topic_hash = _topic_fingerprint(t.get("text", ""))
         result = insert_denuncia(conn, {
             "tweet_id": t["id"],
@@ -383,7 +378,7 @@ async def extract_tweets_from_page(page):
             video_el = await art.query_selector("video")
             if video_el:
                 src = await video_el.get_attribute("src")
-                if src and "video" in src:
+                if src and "video" in src and not src.startswith("blob:"):
                     video_url = src
 
             # 2. Try <video><source> child
@@ -391,7 +386,7 @@ async def extract_tweets_from_page(page):
                 source_el = await art.query_selector("video source")
                 if source_el:
                     src = await source_el.get_attribute("src")
-                    if src:
+                    if src and not src.startswith("blob:"):
                         video_url = src
 
             # 3. Try videoPlayer testid (video present but src not exposed)
@@ -721,8 +716,8 @@ async def run_scrape(
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage"]
+            headless=False,
+            args=["--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--window-position=100,100"]
         )
         ctx = await browser.new_context(
             user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/128.0",
@@ -786,20 +781,18 @@ async def run_scrape(
             seen.add(t["id"])
             unique.append(t)
 
-    # Sort: videos first, then by engagement
+    # Only keep tweets with video
     with_video = [t for t in unique if t.get("has_video")]
-    no_video = [t for t in unique if not t.get("has_video")]
     with_video.sort(key=lambda t: t.get("likes", 0) + t.get("retweets", 0), reverse=True)
-    no_video.sort(key=lambda t: t.get("likes", 0) + t.get("retweets", 0), reverse=True)
-    combined = (with_video + no_video)[:max_results]
+    combined = with_video[:max_results]
 
-    log(f"=== Results: {len(with_video)} with video, {len(no_video)} text-only, {len(combined)} total ===")
+    log(f"=== Results: {len(with_video)} with video, {len(combined)} total ===")
 
     save_seen_ids(seen_ids)
 
     # Save to SQLite
     conn = init_db()
-    result = _save_to_db(combined, conn)
+    result = _save_to_db(combined, conn, venezuela_only=False)
     export_to_json(conn)
     conn.close()
 

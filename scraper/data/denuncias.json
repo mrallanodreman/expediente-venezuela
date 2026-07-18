@@ -1,1105 +1,44 @@
 {
-  "updated_at": "2026-07-18T01:29:55.182806+00:00",
-  "count": 57,
+  "updated_at": "2026-07-18T17:14:05.877479+00:00",
+  "count": 503,
   "categories": {
-    "general": 32,
-    "abuso": 1,
-    "salud": 5,
-    "servicios": 12,
-    "extorsion": 4,
-    "persecucion": 1,
-    "corrupcion": 1,
-    "censura": 1
+    "denuncia-funcionario": 75,
+    "terremotos": 49,
+    "fraude-electoral": 58,
+    "denuncia-ciudadana": 17,
+    "censura": 6,
+    "politica": 27,
+    "presos-politicos": 9,
+    "ayuda-humanitaria": 27,
+    "persecucion-judicial": 4,
+    "abuso-autoridad": 4,
+    "ciberseguridad": 1,
+    "desaparicion": 8,
+    "ddhh": 6,
+    "servicios": 37,
+    "solidaridad": 24,
+    "desastre": 2,
+    "infraestructura": 2,
+    "tortura": 3,
+    "corrupcion": 30,
+    "desaparicion-forzada": 2,
+    "economia": 1,
+    "preso-politico": 2,
+    "deportes": 2,
+    "denuncia-internacional": 1,
+    "judicial": 1,
+    "derechos-humanos": 1,
+    "geopolitica": 2,
+    "reconstruccion": 1,
+    "inteligencia": 1,
+    "general": 66,
+    "represion": 6,
+    "abuso": 10,
+    "salud": 10,
+    "persecucion": 4,
+    "extorsion": 4
   },
   "denuncias": [
-    {
-      "expediente_id": "EV-2026-0464",
-      "username": "GenesisCS",
-      "name": "Genesis Carrero Soto",
-      "text": "La Guaira | Javier Navarro perdió a 9 familiares en la OPPE26, aún 7 siguen bajo los escombros. Con otros vecinos creó el centro de acopio “máquina de guerra”, con herramientas que se prestan entre ellos\nDice que su único afán es sacar a sus muertos #17Jul\n\nhttps://\nstorage.googleapis.com/qurium/cronica\n.uno/maquina-de-guerra-un-centro-de-acopio-en-el-que-familiares-de-la-guaira-prestan-herramientas.html\n…",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": null,
-      "video_url": "media/videos/EV-2026-0464.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1555325971204554752/9pLZPIj9_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2078154967290884096/img/ZH-D-cpQURE2Dl-e.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/GenesisCS/status/2078155813202403383",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "GenesisCS",
-          "url": "https://x.com/GenesisCS/status/2078155813202403383"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0463",
-      "username": "Javierito321",
-      "name": "Javierhalamadrid",
-      "text": "Que dice Delcy que desconoce todo relacionado a Michelo, que solo le parecía un bufón y que no le interesa como llegó ni como se fue de Venezuela:",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": null,
-      "video_url": "media/videos/EV-2026-0463.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1684636424102985728/VLkXzRVJ_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2078145102262800384/img/gXsWMOqxQp20UyVD.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Javierito321/status/2078145127000805847",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Javierito321",
-          "url": "https://x.com/Javierito321/status/2078145127000805847"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0462",
-      "username": "freddyzur",
-      "name": "freddyzur",
-      "text": "Mientras la ayuda internacional se retira, Lorent Saleh sigue en el terreno, trabajando junto a voluntarios venezolanos. En esta etapa, la fuerza, la unión y la solidaridad son las que mantienen viva la esperanza.\n\n#Venezuela #FuerzaVenezuela",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": null,
-      "video_url": "media/videos/EV-2026-0462.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2078284520202141696/img/-eMdgd28qXpafqzj.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/freddyzur/status/2078284593506001218",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "freddyzur",
-          "url": "https://x.com/freddyzur/status/2078284593506001218"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0461",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F. @cristiancrespoj·28min",
-      "text": "En el día 23 después de la tragedia de La Guaira por los terremotos, siguen sacando cuerpos de la Misión Vivienda, conocida como OPP, de Caraballeda.\n\nQue en Paz Descansen todas esas almas.\n\n@maryorinmendez \n\n#Venezuela #FuerzaVenezuela",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. En el día 23 después de la tragedia de La Guaira por los terremotos, siguen sacando cuerpos de la Misión Vivienda, conocida como OPP, de Caraballeda.\n\nQue en Paz Descansen todas esas almas.\n\n@maryorin...",
-      "video_url": "media/videos/EV-2026-0461.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/cristiancrespoj/status/2078271594003083504",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2078271594003083504"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0460",
-      "username": "Juanegron",
-      "name": "Juan Pablo González @Juanegron·12h",
-      "text": "| Diego Ruzzarin asegura que “Estados Unidos empobreció a Venezuela”.\n\nEsa afirmación omite que la crisis venezolana comenzó años antes de las sanciones más severas, con controles de precios y de cambio, expropiaciones, corrupción, caída de la producción petrolera y el colapso",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Juanegron sobre incidente reportado en Venezuela. | Diego Ruzzarin asegura que “Estados Unidos empobreció a Venezuela”.\n\nEsa afirmación omite que la crisis venezolana comenzó años antes de las sanciones más severas, con controles de precios y de camb...",
-      "video_url": "media/videos/EV-2026-0460.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2023451881197215744/e8Qpk61K_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Juanegron/status/2078097513647591457",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Juanegron",
-          "url": "https://x.com/Juanegron/status/2078097513647591457"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0459",
-      "username": "yeligamboa",
-      "name": "Me dicen la Negra",
-      "text": "Me tope con este video en Tik Tok, fue publicado antes del terremoto el mismo día 24 de junio , son los edificios OPP.\n \nTodos esos edificios quedaron bajos los escombros. La dueña del perfil no ha publicado más desde ese día.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @yeligamboa sobre incidente reportado en Venezuela. Me tope con este video en Tik Tok, fue publicado antes del terremoto el mismo día 24 de junio , son los edificios OPP.\n \nTodos esos edificios quedaron bajos los escombros. La dueña del perfil no ha pu...",
-      "video_url": "media/videos/EV-2026-0459.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1728071772019322880/B9IGyk25_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2078139886142373888/img/n6wbFqrv3LUw7Z6q.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/yeligamboa/status/2078139921110376632",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "yeligamboa",
-          "url": "https://x.com/yeligamboa/status/2078139921110376632"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0458",
-      "username": "CaraotaDigital",
-      "name": "Caraota Digital",
-      "text": "#17JUL | Cuando faltan pocas horas para la conmemoración del Día del Niño en el país, el fotógrafo Rodolfo Churion compartió una postal que muestra un altar con los juguetes de niños que perdieron la vida durante los terremotos del 24 de junio en La Guaira.\n\nImágenes:",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @CaraotaDigital sobre incidente reportado en Venezuela. #17JUL | Cuando faltan pocas horas para la conmemoración del Día del Niño en el país, el fotógrafo Rodolfo Churion compartió una postal que muestra un altar con los juguetes de niños que perdieron la ...",
-      "video_url": "media/videos/EV-2026-0458.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1947366753538805760/MBGnaw9g_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2078198230982991872/img/qG1a2vdIxgwG1lCy.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/CaraotaDigital/status/2078198550291173526",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "CaraotaDigital",
-          "url": "https://x.com/CaraotaDigital/status/2078198550291173526"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0457",
-      "username": "zuricht94",
-      "name": "Cesar Moya",
-      "text": "Nuestros valerosos bomberos nunca fueron dotados de los equipos necesarios, porque la prioridad era dotar de herramientas a la maquinaria de represión.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @zuricht94 sobre incidente reportado en Venezuela. Nuestros valerosos bomberos nunca fueron dotados de los equipos necesarios, porque la prioridad era dotar de herramientas a la maquinaria de represión....",
-      "video_url": "media/videos/EV-2026-0457.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1469813755114668038/srrcbx_j_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077855503149916160/img/cScCSV4PcoX10m9Q.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077855503170887680/img/LR1XNGuf6cjIpm86.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/zuricht94/status/2077855622247162365",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "zuricht94",
-          "url": "https://x.com/zuricht94/status/2077855622247162365"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0432",
-      "username": "Norbey_Marin_",
-      "name": "Norbey A, Marín G.@Norbey_Marin_·17h",
-      "text": "Terremoto en Venezuela  | #16J \n\nLas familias del Bloque 3, de la Urbanización Páez en Catia La Mar, solicita una grúa telescópica y camiones para continuar con las labores de recuperación de los cuerpos de sus seres queridos.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Norbey_Marin_ sobre incidente reportado en Venezuela. Terremoto en Venezuela  | #16J \n\nLas familias del Bloque 3, de la Urbanización Páez en Catia La Mar, solicita una grúa telescópica y camiones para continuar con las labores de recuperación de los cuer...",
-      "video_url": "media/videos/EV-2026-0432.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1931007850530160640/fSs2d-iR_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Norbey_Marin_/status/2077725827920257365",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Norbey_Marin_",
-          "url": "https://x.com/Norbey_Marin_/status/2077725827920257365"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0400",
-      "username": "Fantasma_956",
-      "name": "El Fantasma",
-      "text": "Tu ex tóxica tiene más valor que el Bolívar, en el fondo lo sabes. Mientras sigues actualizando la paginita del $$ paralelo, la maquinita de la miseria sigue imprimiendo billetes que no sirven ni para dar un vuelto.\n\n¿La cura? Dolarizar. Pero no a lo loco.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Tu ex tóxica tiene más valor que el Bolívar, en el fondo lo sabes. Mientras sigues actualizando la paginita del $$ paralelo, la maquinita de la miseria sigue imprimiendo billetes que no sirven ni para...",
-      "video_url": "media/videos/EV-2026-0400.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077736451593084928/img/DqnzEzDQS7YWceuL.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Fantasma_956/status/2077736983900598432",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Fantasma_956",
-          "url": "https://x.com/Fantasma_956/status/2077736983900598432"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0381",
-      "username": "Fantasma_956",
-      "name": "El Fantasma",
-      "text": "Viviendas de la GMVV Ataúdes Habitacionales por toda Venezuela. \n\nEdificio Patria y Trabajo de #SanBernardino #Ccs con alto grado de destrucción, bases muy golpeadas, en el interior las paredes desplomadas o con fuertes grietas comprometiendo la estructura.",
-      "category": "abuso",
-      "category_label": "Abuso",
-      "severity": "high",
-      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Viviendas de la GMVV Ataúdes Habitacionales por toda Venezuela. \n\nEdificio Patria y Trabajo de #SanBernardino #Ccs con alto grado de destrucción, bases muy golpeadas, en el interior las paredes desplo...",
-      "video_url": "media/videos/EV-2026-0381.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077896701063356416/img/yQ5FSsNIj8oTZ71j.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Fantasma_956/status/2077897827879956848",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Fantasma_956",
-          "url": "https://x.com/Fantasma_956/status/2077897827879956848"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0371",
-      "username": "freddyzur",
-      "name": "freddyzur@freddyzur·16h",
-      "text": "¡Peligro en el Hospital Dr. Adolfo Prince Lara de Puerto Cabello! Las imágenes revelan daños estructurales severos que lo hacen inhabitable. Columnas expuestas y techos colapsados ponen en riesgo a pacientes y personal. ¿Reparaciones o solo un negocio más? La vida de los",
-      "category": "salud",
-      "category_label": "Salud",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. ¡Peligro en el Hospital Dr. Adolfo Prince Lara de Puerto Cabello! Las imágenes revelan daños estructurales severos que lo hacen inhabitable. Columnas expuestas y techos colapsados ponen en riesgo a pa...",
-      "video_url": "media/videos/EV-2026-0371.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077733366070198272/img/lYgvieX_tN5dQ1N1.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/freddyzur/status/2077733491928596945",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "freddyzur",
-          "url": "https://x.com/freddyzur/status/2077733491928596945"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0347",
-      "username": "freddyzur",
-      "name": "freddyzur",
-      "text": "“Mire, yo no he visto un ser tan jakabola como  el de pelo azul, viene a decir que existía un manual de qué hacer y qué no hacer en los edificios.\n\nMientras las familias en La Guaira siguen enfrentando el dolor de recuperar a sus seres queridos, resulta indignante escuchar",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. “Mire, yo no he visto un ser tan jakabola como  el de pelo azul, viene a decir que existía un manual de qué hacer y qué no hacer en los edificios.\n\nMientras las familias en La Guaira siguen enfrentand...",
-      "video_url": "media/videos/EV-2026-0347.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077869067797413889/img/pqavPyeeyG3DM0Tt.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/freddyzur/status/2077869167378571729",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "freddyzur",
-          "url": "https://x.com/freddyzur/status/2077869167378571729"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0346",
-      "username": "estebanoria",
-      "name": "Esteban Oria",
-      "text": "Qué ironía: Diosdado se sorprende porque la gente usa sus teléfonos para mostrar la realidad.\n\nNo entiende que eso se llama libertad de expresión.\n\nLo que él llama “jauría” son ciudadanos documentando lo que el poder quisiera ocultar.\n\nY hay que agradecerle algo: confirmó que la",
-      "category": "general",
-      "category_label": "General",
-      "severity": "medium",
-      "resumen": "Denuncia ciudadana publicada por @estebanoria sobre incidente reportado en Venezuela. Qué ironía: Diosdado se sorprende porque la gente usa sus teléfonos para mostrar la realidad.\n\nNo entiende que eso se llama libertad de expresión.\n\nLo que él llama “jauría” son ciudadanos documentando...",
-      "video_url": "media/videos/EV-2026-0346.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1727858043960909824/8CsaT5v1_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077573679869743104/img/ZYnKPXXigb_QlWYS.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/estebanoria/status/2077573789890601453",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "estebanoria",
-          "url": "https://x.com/estebanoria/status/2077573789890601453"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0344",
-      "username": "Fantasma_956",
-      "name": "El Fantasma",
-      "text": "Ya ocurrió en el Congreso.\n\nNo fue una sesión de leyes ni de decisiones inmediatas. Fue algo distinto,  y igual de importante. Después de años, el Congreso EEUU volvió a sentarse a escuchar directamente a quienes documentan la realidad de Venezuela desde adentro.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Ya ocurrió en el Congreso.\n\nNo fue una sesión de leyes ni de decisiones inmediatas. Fue algo distinto,  y igual de importante. Después de años, el Congreso EEUU volvió a sentarse a escuchar directamen...",
-      "video_url": "media/videos/EV-2026-0344.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077758490366382080/img/qqr3lQfWPTC4FsIF.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Fantasma_956/status/2077759163615039563",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Fantasma_956",
-          "url": "https://x.com/Fantasma_956/status/2077759163615039563"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0341",
-      "username": "RobertoCarlo14",
-      "name": "ROBERTO CARLO OLIVARES",
-      "text": "Joven perdió a 12 familiares en \nel terremoto en #Venezuela. \n\n¿Cómo superas algo así?\n\n¿Cómo se supera la pérdidasde 12 familiares incluyendo padre y madre? \n\nEs la gran pregunta que intenta contestar a diario José Luis Pacheco, quien mientras asume su realidad dice estar",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @RobertoCarlo14 sobre incidente reportado en Venezuela. Joven perdió a 12 familiares en \nel terremoto en #Venezuela. \n\n¿Cómo superas algo así?\n\n¿Cómo se supera la pérdidasde 12 familiares incluyendo padre y madre? \n\nEs la gran pregunta que intenta contesta...",
-      "video_url": "media/videos/EV-2026-0341.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/897918525184110594/bNQadkY1_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077908142340374528/img/0NpQaphpvrR4X1Lg.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/RobertoCarlo14/status/2077908337811693802",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "RobertoCarlo14",
-          "url": "https://x.com/RobertoCarlo14/status/2077908337811693802"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0336",
-      "username": "GabyGabyGG",
-      "name": "Gabriela Gonzalez",
-      "text": "La señora Angélica, sobreviviente del doble terremoto en la Guaira, sigue a la espera de encontrar a su hijo, de 15, y a sus dos sobrinos.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @GabyGabyGG sobre incidente reportado en Venezuela. La señora Angélica, sobreviviente del doble terremoto en la Guaira, sigue a la espera de encontrar a su hijo, de 15, y a sus dos sobrinos....",
-      "video_url": "media/videos/EV-2026-0336.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1405273887189860354/wEm75vGk_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077790269638926336/img/Ltp2pd16KHWnUkwX.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/GabyGabyGG/status/2077790434273669171",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "GabyGabyGG",
-          "url": "https://x.com/GabyGabyGG/status/2077790434273669171"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0331",
-      "username": "gabyarocha",
-      "name": "Gaby Arocha",
-      "text": "Es importante reactivar el comercio local en las zonas más afectadas por los terremotos, ya que eso evita la paralización económica. \n\nAquí Karen Brewer y Ronald Aristimuño nos explican por qué hay que tratar de que esto suceda y cómo podemos ayudar.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @gabyarocha sobre incidente reportado en Venezuela. Es importante reactivar el comercio local en las zonas más afectadas por los terremotos, ya que eso evita la paralización económica. \n\nAquí Karen Brewer y Ronald Aristimuño nos explican por qué hay qu...",
-      "video_url": "media/videos/EV-2026-0331.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1591869998187905025/Egg3pDXl_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077839962842525696/img/etTEiqq_6ikWMxxn.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077839962850852864/img/wLKnInqL5PGKO4aV.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/gabyarocha/status/2077840210444919061",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "gabyarocha",
-          "url": "https://x.com/gabyarocha/status/2077840210444919061"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0300",
-      "username": "ElGanadorHenry",
-      "name": "YO SOY",
-      "text": "La voz del pueblo \n\nGraban a un señor en Vzla, que sin miedo demuestra su apoyo a la líder María Corina \n\nCon Delcy me como un cable!\n\nCon María corina comeré pan!",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @ElGanadorHenry sobre incidente reportado en Venezuela. La voz del pueblo \n\nGraban a un señor en Vzla, que sin miedo demuestra su apoyo a la líder María Corina \n\nCon Delcy me como un cable!\n\nCon María corina comeré pan!...",
-      "video_url": "media/videos/EV-2026-0300.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1876120323386441728/R2xRAaf1_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077866142392066050/img/LawCYALtkYt5lIuB.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/ElGanadorHenry/status/2077926929642975240",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "ElGanadorHenry",
-          "url": "https://x.com/ElGanadorHenry/status/2077926929642975240"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0292",
-      "username": "Fantasma_956",
-      "name": "El Fantasma",
-      "text": "Misión Vivienda GMVV, la gran estafa nacional, Ataúdes habitacionales para miles de venezolanos extorsionados. Ahora según los propagandistas, los habitantes son culpables de su propia muerte. El Pato del Pelo Azul, el tinte le quemo la única neurona que tenia.",
-      "category": "extorsion",
-      "category_label": "Extorsión",
-      "severity": "critical",
-      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Misión Vivienda GMVV, la gran estafa nacional, Ataúdes habitacionales para miles de venezolanos extorsionados. Ahora según los propagandistas, los habitantes son culpables de su propia muerte. El Pato...",
-      "video_url": "media/videos/EV-2026-0292.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077744053404192768/img/CYog0392Dfw4-FT9.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Fantasma_956/status/2077745419623223332",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Fantasma_956",
-          "url": "https://x.com/Fantasma_956/status/2077745419623223332"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0289",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F.",
-      "text": "El chiste se cuenta solo. Delcy Rodriguez, Todos fuimos testigos de lo único que la FANB rescató de los escombros.\n\nelkevinjh\n\n #venezuela #humor #venezolanos #venezuela #delcyrodriguez",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. El chiste se cuenta solo. Delcy Rodriguez, Todos fuimos testigos de lo único que la FANB rescató de los escombros.\n\nelkevinjh\n\n #venezuela #humor #venezolanos #venezuela #delcyrodriguez...",
-      "video_url": "media/videos/EV-2026-0289.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077776453358247936/img/K9wfyENcw1_8ogOp.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/cristiancrespoj/status/2077776491446739062",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2077776491446739062"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0282",
-      "username": "VPITV",
-      "name": "VPItv",
-      "text": "Afectado en Tanaguarenas, La Guaira, denunció la lentitud en la respuesta de las autoridades tras los terremotos y aseguró que las labores de búsqueda continúan con recursos insuficientes.\n\nSalvador afirmó que \"faltó mucho avance por parte del gobierno\" y sostuvo que \"mucha",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "medium",
-      "resumen": "Denuncia ciudadana publicada por @VPITV sobre incidente reportado en Venezuela. Afectado en Tanaguarenas, La Guaira, denunció la lentitud en la respuesta de las autoridades tras los terremotos y aseguró que las labores de búsqueda continúan con recursos insuficientes.\n\nSalvador a...",
-      "video_url": "media/videos/EV-2026-0282.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2071640295955906560/1pFVxkhV_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077828384718000128/img/mLxEzC7FwPf3KtqT.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/VPITV/status/2077828626288951778",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "VPITV",
-          "url": "https://x.com/VPITV/status/2077828626288951778"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0247",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F.",
-      "text": "Sin palabras . \n\nUn miércoles a las 6:04 PM, y la vida cambia para siempre.\n\n#LaGuaira #Venezuela #TerremotoVE #FuerzaVenezuela",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. Sin palabras . \n\nUn miércoles a las 6:04 PM, y la vida cambia para siempre.\n\n#LaGuaira #Venezuela #TerremotoVE #FuerzaVenezuela...",
-      "video_url": "media/videos/EV-2026-0247.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077848126077968384/img/yqFbxPJnaBBwD8oI.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/cristiancrespoj/status/2077848272618561916",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2077848272618561916"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0246",
-      "username": "Ari1979_V",
-      "name": "Veronica Ariza.",
-      "text": "Los rostros nuestros venezolanos que han dado todo desde su voluntad y empatía,pero con las uñas no lo voy a dejar de repetir.\n#Rescatistas \n#venezolanos",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Ari1979_V sobre incidente reportado en Venezuela. Los rostros nuestros venezolanos que han dado todo desde su voluntad y empatía,pero con las uñas no lo voy a dejar de repetir.\n#Rescatistas \n#venezolanos...",
-      "video_url": "media/videos/EV-2026-0246.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2074893813386993664/uI7IF8dd_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077961185681444864/img/0mQBOZH_CkJH50cJ.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Ari1979_V/status/2077961278744645926",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Ari1979_V",
-          "url": "https://x.com/Ari1979_V/status/2077961278744645926"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0236",
-      "username": "alejandraoraa",
-      "name": "Alejandra Oraa@alejandraoraa·12h",
-      "text": "Para entender la verdadera dimensión de la tragedia en Venezuela, hay que compararla con uno de los peores desastres naturales del siglo XXI: el terremoto de Japón de 2011.\n\nAunque el sismo de Japón fue aproximadamente dos grados más fuerte, Venezuela podría terminar registrando",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @alejandraoraa sobre incidente reportado en Venezuela. Para entender la verdadera dimensión de la tragedia en Venezuela, hay que compararla con uno de los peores desastres naturales del siglo XXI: el terremoto de Japón de 2011.\n\nAunque el sismo de Japón f...",
-      "video_url": "media/videos/EV-2026-0236.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2021370105817415680/oY6RfRZC_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077791672658800640/img/eE-QgDW9Hz6QOPum.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/alejandraoraa/status/2077791778984390777",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "alejandraoraa",
-          "url": "https://x.com/alejandraoraa/status/2077791778984390777"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0235",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F.",
-      "text": "“Si ayuda hubiera llegado a tiempo ¿qué  hubiese pasado?.\n\nMe lo responden estas hermanas en el complejo Luisa Cáceres de Arismendi en Catia La Mar, donde buscan a su otra hermana Yibisay, quien quedó bajo los escombros junto a su hijo Bryan. \n\nNubia Toledo y Jessica de Duran",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. “Si ayuda hubiera llegado a tiempo ¿qué  hubiese pasado?.\n\nMe lo responden estas hermanas en el complejo Luisa Cáceres de Arismendi en Catia La Mar, donde buscan a su otra hermana Yibisay, quien quedó...",
-      "video_url": "media/videos/EV-2026-0235.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077863799592292353/img/HgCQBvGFD6jW0HN-.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/cristiancrespoj/status/2077864129470087282",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2077864129470087282"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0206",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F.",
-      "text": "#16jul /#GUERRERO\nCon sus amigos y gente que voluntariamente le ayudó, Marcos De Sousa este jueves llevaba un ramo de flores y la foto de su único hijo rescatado de los escombros el pasado domingo 12 de julio junto con su mamá...\n\n#vargas #venezuela #luto",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. #16jul /#GUERRERO\nCon sus amigos y gente que voluntariamente le ayudó, Marcos De Sousa este jueves llevaba un ramo de flores y la foto de su único hijo rescatado de los escombros el pasado domingo 12 ...",
-      "video_url": "media/videos/EV-2026-0206.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077922917866725376/img/T1hKXiOymCtiSLOS.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/cristiancrespoj/status/2077923012637081808",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2077923012637081808"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0181",
-      "username": "Ari1979_V",
-      "name": "Veronica Ariza.",
-      "text": "Delcy y el meón no manden a bloquear ese día la vía como hicieron los primeros días para que nadie subiera ayudar.\nPruebas hay bastantes ejemplo\n\n#venezuela79 \nVídeo de los primeros días cuando el régimen reaccionó a la tragedia,pero impidiendo la ayuda.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Ari1979_V sobre incidente reportado en Venezuela. Delcy y el meón no manden a bloquear ese día la vía como hicieron los primeros días para que nadie subiera ayudar.\nPruebas hay bastantes ejemplo\n\n#venezuela79 \nVídeo de los primeros días cuando el rég...",
-      "video_url": "media/videos/EV-2026-0181.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2074893813386993664/uI7IF8dd_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077770277119725568/img/eMFBeqJ8D5eQSOMv.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Ari1979_V/status/2077770391833940278",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Ari1979_V",
-          "url": "https://x.com/Ari1979_V/status/2077770391833940278"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0172",
-      "username": "cristiancrespoj",
-      "name": "Cristian Crespo F. @cristiancrespoj·16h",
-      "text": "¡Dios los bendiga, qué grande Juan Pablo Dos Santos! Claro que sí volverá a levantarse esta guerrera, y más con tu ayuda y la de tu Fundación. \n\n“Ser ejemplo para los niños\nEsa será nuestra misión.\n\nElla es la hija de uno de los trabajadores del Club Puerto Azul vamos que",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. ¡Dios los bendiga, qué grande Juan Pablo Dos Santos! Claro que sí volverá a levantarse esta guerrera, y más con tu ayuda y la de tu Fundación. \n\n“Ser ejemplo para los niños\nEsa será nuestra misión.\n\nE...",
-      "video_url": "media/videos/EV-2026-0172.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077725338948218880/img/rVH6tZ1OvC-1vNCo.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/cristiancrespoj/status/2077725476940853698",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "cristiancrespoj",
-          "url": "https://x.com/cristiancrespoj/status/2077725476940853698"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0146",
-      "username": "pipogonza",
-      "name": "ER PELUCON@pipogonza·6h",
-      "text": "Mi gente vamos a compartir por favo URGENTE Señor Marcos Rubio Señor Barret Señor Bukele le pedimos urgente que ayude a esta mujer por que sabemos que la repuesta del régimen nunca va a llegar",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @pipogonza sobre incidente reportado en Venezuela. Mi gente vamos a compartir por favo URGENTE Señor Marcos Rubio Señor Barret Señor Bukele le pedimos urgente que ayude a esta mujer por que sabemos que la repuesta del régimen nunca va a llegar...",
-      "video_url": "media/videos/EV-2026-0146.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1949479189809082368/t6lQY_7J_normal.jpg&name=large",
-        "https://pbs.twimg.com/amplify_video_thumb/2077884355083485184/img/eQrb3-d0GmxWVIA2.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/pipogonza/status/2077884384191893947",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "pipogonza",
-          "url": "https://x.com/pipogonza/status/2077884384191893947"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0129",
-      "username": "shelbykrisel",
-      "name": "Shelby C",
-      "text": "DUELE\nMuchos ya volvieron a la \"normalidad\", ya se acabó la viralidad... Pero en Vargas el dolor, la falta de ayuda, la falta de máquinarias, que agua, de comida aún CONTINÚA.\nNo dejes de hablar de VENEZUELA",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @shelbykrisel sobre incidente reportado en Venezuela. DUELE\nMuchos ya volvieron a la \"normalidad\", ya se acabó la viralidad... Pero en Vargas el dolor, la falta de ayuda, la falta de máquinarias, que agua, de comida aún CONTINÚA.\nNo dejes de hablar de VE...",
-      "video_url": "media/videos/EV-2026-0129.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2016877677123391488/rPtLDvWb_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/shelbykrisel/status/2077906362840052170",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "shelbykrisel",
-          "url": "https://x.com/shelbykrisel/status/2077906362840052170"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0114",
-      "username": "DIFUNDELOYA",
-      "name": "¡DIFUNDELO YA!",
-      "text": "URGENTE    | ¡ÚLTIMA HORA! | EE.UU enviará 3.000 técnicos para asumir la administración temporal de Venezuela.\n\nEE.UU acelerara la transición mediante la reconstrucción técnica y administrativa.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @DIFUNDELOYA sobre incidente reportado en Venezuela. URGENTE    | ¡ÚLTIMA HORA! | EE.UU enviará 3.000 técnicos para asumir la administración temporal de Venezuela.\n\nEE.UU acelerara la transición mediante la reconstrucción técnica y administrativa....",
-      "video_url": "media/videos/EV-2026-0114.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/2074328250629722113/OEWB0d3y_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/DIFUNDELOYA/status/2077853318571839954",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "DIFUNDELOYA",
-          "url": "https://x.com/DIFUNDELOYA/status/2077853318571839954"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0096",
-      "username": "TAMARA_SUJU",
-      "name": "Tamara Suju",
-      "text": "#Venezuela. #Vargas. \n\nOPP 25 de Tanaguarena. Video de ayer 15 de Julio.  Madre esta pidiendo ayuda para encontrar a sus hijas Roxana Masiel de 2 años y Maria Victoria de 10 meses.  Necesita herramientas de trabajo e insumos.   \n\nLa periodista \n@maryorinmendez\n dijo esto en un",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @TAMARA_SUJU sobre incidente reportado en Venezuela. #Venezuela. #Vargas. \n\nOPP 25 de Tanaguarena. Video de ayer 15 de Julio.  Madre esta pidiendo ayuda para encontrar a sus hijas Roxana Masiel de 2 años y Maria Victoria de 10 meses.  Necesita herramien...",
-      "video_url": "media/videos/EV-2026-0096.mp4",
-      "images": [
-        "https://pbs.twimg.com/media/HNVR1eBWIAA4Njf?format=jpg&name=360x360",
-        "https://pbs.twimg.com/media/HNVR1e-WoAA9Vw3?format=jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T07:31:53.000Z",
-      "url": "https://x.com/TAMARA_SUJU/status/2077657458642767989",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "TAMARA_SUJU",
-          "url": "https://x.com/TAMARA_SUJU/status/2077657458642767989"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0094",
-      "username": "Sol651",
-      "name": "Sol Rojas",
-      "text": "#Un2026SinPresosPoliticos \n\n#23Mar El #4Ago del 2023, varios militares venezolanos, entre ellos el 1Tte JOSE DANIEL MENDOZA TORRES el 1Tte JOSE GREGORIO MONTIEL y el Sgto JOSE ANTONIO MORENO quienes fueron víctimas de detencion arbitraria y acusados de una",
-      "category": "persecucion",
-      "category_label": "Persecución",
-      "severity": "high",
-      "resumen": "Denuncia ciudadana publicada por @Sol651 sobre incidente reportado en Venezuela. #Un2026SinPresosPoliticos \n\n#23Mar El #4Ago del 2023, varios militares venezolanos, entre ellos el 1Tte JOSE DANIEL MENDOZA TORRES el 1Tte JOSE GREGORIO MONTIEL y el Sgto JOSE ANTONIO MORENO quienes f...",
-      "video_url": "media/videos/EV-2026-0094.mp4",
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-03-23T22:24:13.000Z",
-      "url": "https://x.com/Sol651/status/2036207416576970964",
-      "source_count": 3,
-      "sources": [
-        {
-          "username": "Sol651",
-          "url": "https://x.com/Sol651/status/2036207416576970964"
-        },
-        {
-          "username": "Sol651",
-          "url": "https://x.com/Sol651/status/2035584447467163731"
-        },
-        {
-          "username": "Sol651",
-          "url": "https://x.com/Sol651/status/2035147459614101800"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0076",
-      "username": "LuzMelyReyes",
-      "name": "Luz Mely Reyes",
-      "text": "Reporteros sin fronteras desplegó una misión en Venezuela entre el 8 y 12 de julio. Junto al SNTP instalaron un centro de conexiones en Catia La Mar para que los periodistas pudieran tener acceso a internet.\nTambién hallaron lo siguiente: \nPeriodistas recientemente liberados",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @LuzMelyReyes sobre incidente reportado en Venezuela. Reporteros sin fronteras desplegó una misión en Venezuela entre el 8 y 12 de julio. Junto al SNTP instalaron un centro de conexiones en Catia La Mar para que los periodistas pudieran tener acceso a in...",
-      "video_url": "media/videos/EV-2026-0076.mp4",
-      "images": [
-        "media/images/EV-2026-0076.jpg"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T22:40:09.000Z",
-      "url": "https://x.com/LuzMelyReyes/status/2077886028992385181",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "LuzMelyReyes",
-          "url": "https://x.com/LuzMelyReyes/status/2077886028992385181"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0066",
-      "username": "coracijohana",
-      "name": "coracis",
-      "text": "En venezuela no hay educacion ya , hay es extorsion , con las fulanas  \"colaboraciones\" , si colaboras es buena nota , pasas, eres excelente,  y solo efectivo.",
-      "category": "extorsion",
-      "category_label": "Extorsión",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @coracijohana sobre incidente reportado en Venezuela. En venezuela no hay educacion ya , hay es extorsion , con las fulanas  \"colaboraciones\" , si colaboras es buena nota , pasas, eres excelente,  y solo efectivo....",
-      "video_url": "media/videos/EV-2026-0066.mp4",
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-05-12T11:26:40.000Z",
-      "url": "https://x.com/coracijohana/status/2054161329863151865",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "coracijohana",
-          "url": "https://x.com/coracijohana/status/2054161329863151865"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0050",
-      "username": "Fantasma_956",
-      "name": "El Fantasma",
-      "text": "Los hijos de Diosdado con el Moño Suelto, Extorsion y Matraca es su Divisa. Los PNB de Transito deben cumplir la cuota de la extorsion y el resto le queda limpio de Polvo y Paja. La GNB es punto aparte....... las vías de Venezuela",
-      "category": "extorsion",
-      "category_label": "Extorsión",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Los hijos de Diosdado con el Moño Suelto, Extorsion y Matraca es su Divisa. Los PNB de Transito deben cumplir la cuota de la extorsion y el resto le queda limpio de Polvo y Paja. La GNB es punto apart...",
-      "video_url": "media/videos/EV-2026-0050.mp4",
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-05-22T00:27:52.000Z",
-      "url": "https://x.com/Fantasma_956/status/2057619417022767598",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Fantasma_956",
-          "url": "https://x.com/Fantasma_956/status/2057619417022767598"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0047",
-      "username": "JuanArismendi30",
-      "name": "Juan Carlos Arismendi",
-      "text": "@usembassyve\n así es como se atrae y se mantiene la inversión en Venezuela \n\nImagínense el tamaño de la extorsion en empresas grandes",
-      "category": "extorsion",
-      "category_label": "Extorsión",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @JuanArismendi30 sobre incidente reportado en Venezuela. @usembassyve\n así es como se atrae y se mantiene la inversión en Venezuela \n\nImagínense el tamaño de la extorsion en empresas grandes...",
-      "video_url": "media/videos/EV-2026-0047.mp4",
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-06-17T21:26:05.000Z",
-      "url": "https://x.com/JuanArismendi30/status/2067358144477397259",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "JuanArismendi30",
-          "url": "https://x.com/JuanArismendi30/status/2067358144477397259"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0030",
-      "username": "AndromedaOffic1",
-      "name": "AndromedaOfficial",
-      "text": "LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy alzamos la voz con fuerza: la transición no puede basarse en la mentira.\n\n LOS",
-      "category": "salud",
-      "category_label": "Salud",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @AndromedaOffic1 sobre incidente reportado en Venezuela. LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy al...",
-      "video_url": "media/videos/EV-2026-0030.mp4",
-      "images": [
-        "https://pbs.twimg.com/media/HNYNKHAXIAATL4M?format=jpg&name=small"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T20:29:18.000Z",
-      "url": "https://x.com/AndromedaOffic1/status/2077853100367356378",
-      "source_count": 2,
-      "sources": [
-        {
-          "username": "AndromedaOffic1",
-          "url": "https://x.com/AndromedaOffic1/status/2077853100367356378"
-        },
-        {
-          "username": "AndromedaOffic1",
-          "url": "https://x.com/AndromedaOffic1/status/2077862936320921663"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0022",
-      "username": "NTN24",
-      "name": "NTN24",
-      "text": "Editorial de La Tarde con \n@IdaniaChirinos\n | Los días siguen avanzando, como avanzan las agujas del reloj. Y en esa fracción territorial de Venezuela, azotada y destruida por dos terremotos, aún hoy la gente sigue esperando ayuda, y aún hoy siguen reclamando al Estado.\n\nPero la",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @NTN24 sobre incidente reportado en Venezuela. Editorial de La Tarde con \n@IdaniaChirinos\n | Los días siguen avanzando, como avanzan las agujas del reloj. Y en esa fracción territorial de Venezuela, azotada y destruida por dos terremotos, aún hoy ...",
-      "video_url": "media/videos/EV-2026-0022.mp4",
-      "images": [
-        "https://pbs.twimg.com/profile_images/1884645253715496960/HU2dxbpa_normal.jpg"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T21:40:16.000Z",
-      "url": "https://x.com/NTN24/status/2077870961823760730",
-      "source_count": 1,
-      "sources": []
-    },
-    {
-      "expediente_id": "EV-2026-0021",
-      "username": "freddyzur",
-      "name": "freddyzur",
-      "text": "Diego Saúl Reyna revela la atroz realidad dentro de los hospitales en Venezuela: una mafia enquistada no solo roba insumos médicos vitales, sino que está haciendo desaparecer niños, incluyendo casos confirmados de menores como Emma. Existe una red de complicidad institucional que",
-      "category": "salud",
-      "category_label": "Salud",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. Diego Saúl Reyna revela la atroz realidad dentro de los hospitales en Venezuela: una mafia enquistada no solo roba insumos médicos vitales, sino que está haciendo desaparecer niños, incluyendo casos c...",
-      "video_url": "media/videos/EV-2026-0021.mp4",
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T23:06:13.000Z",
-      "url": "https://x.com/freddyzur/status/2077892591383916999",
-      "source_count": 1,
-      "sources": []
-    },
     {
       "expediente_id": "EV-2026-0001",
       "username": "estebanoria",
@@ -1144,357 +83,1124 @@
       "sources": []
     },
     {
-      "expediente_id": "EV-2026-0370",
-      "username": "Joshkr1441",
-      "name": "Josh Rod",
-      "text": "Se llama Wisneyker García cédula 24.446.651 según es de aceiteira de San Mateo, Estado Aragua! Urge hayar a su familia...por favor ayúdenme a difundir! #venezuela",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Joshkr1441 sobre incidente reportado en Venezuela. Se llama Wisneyker García cédula 24.446.651 según es de aceiteira de San Mateo, Estado Aragua! Urge hayar a su familia...por favor ayúdenme a difundir! #venezuela...",
-      "video_url": null,
-      "images": [
-        "https://pbs.twimg.com/profile_images/1974903851686699008/jLT6vjXn_normal.jpg&name=large",
-        "https://pbs.twimg.com/media/HNXrApmXwAAn3yI?format=jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Joshkr1441/status/2077825206908047593",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Joshkr1441",
-          "url": "https://x.com/Joshkr1441/status/2077825206908047593"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0321",
-      "username": "orlavision",
-      "name": "OrlandoVision",
-      "text": "Voy a soltar un FACTO:\n\nEl Estado se llama VARGAS y su Capital es La Guaira \n\nFin del comunicado",
-      "category": "servicios",
-      "category_label": "Servicios",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @orlavision sobre incidente reportado en Venezuela. Voy a soltar un FACTO:\n\nEl Estado se llama VARGAS y su Capital es La Guaira \n\nFin del comunicado",
-      "video_url": null,
-      "images": [
-        "https://pbs.twimg.com/profile_images/1733967710361387008/tZenezLV_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/orlavision/status/2077419607992766528",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "orlavision",
-          "url": "https://x.com/orlavision/status/2077419607992766528"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0285",
-      "username": "ElInformadorVE",
-      "name": "El Informador Venezuela @ElInformadorVE·13h",
-      "text": "Acabo de postear una imagen en instagram https://instagr.am/p/Da2_KSeu2Qk/ Detrás de cada campaña de salud hay una familia que mantiene la fe intacta, pero que necesita un empujón de solidaridad para salir adelante. Hoy nos toca ponernos la mano en el corazón por la pequeña Aleska Yánez.…",
+      "expediente_id": "EV-2026-0021",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "Diego Saúl Reyna revela la atroz realidad dentro de los hospitales en Venezuela: una mafia enquistada no solo roba insumos médicos vitales, sino que está haciendo desaparecer niños, incluyendo casos confirmados de menores como Emma. Existe una red de complicidad institucional que",
       "category": "salud",
       "category_label": "Salud",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @ElInformadorVE sobre incidente reportado en Venezuela. Acabo de postear una imagen en instagram https://instagr.am/p/Da2_KSeu2Qk/ Detrás de cada campaña de salud hay una familia que mantiene la fe intacta, pero que necesita un empujón de solidaridad para ...",
-      "video_url": null,
-      "images": [
-        "https://pbs.twimg.com/profile_images/1587386065886875649/4KmWcKWs_normal.jpg&name=large",
-        "https://pbs.twimg.com/media/HNXCxmwWAAAtEvQ?format=jpg&name=large"
-      ],
+      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. Diego Saúl Reyna revela la atroz realidad dentro de los hospitales en Venezuela: una mafia enquistada no solo roba insumos médicos vitales, sino que está haciendo desaparecer niños, incluyendo casos c...",
+      "video_url": "media/videos/EV-2026-0021.mp4",
+      "images": [],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/ElInformadorVE/status/2077780963002610130",
+      "created_at": "2026-07-16T23:06:13.000Z",
+      "url": "https://x.com/freddyzur/status/2077892591383916999",
       "source_count": 1,
-      "sources": [
-        {
-          "username": "ElInformadorVE",
-          "url": "https://x.com/ElInformadorVE/status/2077780963002610130"
-        }
-      ]
+      "sources": []
     },
     {
-      "expediente_id": "EV-2026-0268",
-      "username": "Javierito321",
-      "name": "Javierhalamadrid",
-      "text": "Estoy asqueado de plataformas como Tik Tok…\n\nEs la red donde me he hecho mas viral (videos de humor) pero cuando subo del terremoto, videos de ayuda, niños desaparecidos, de escombros, me los eliminan y su respuesta es: “esta plataforma es para esparcir gozo, no para tragedias”",
-      "category": "general",
-      "category_label": "General",
-      "severity": "critical",
-      "resumen": "Denuncia ciudadana publicada por @Javierito321 sobre incidente reportado en Venezuela. Estoy asqueado de plataformas como Tik Tok…\n\nEs la red donde me he hecho mas viral (videos de humor) pero cuando subo del terremoto, videos de ayuda, niños desaparecidos, de escombros, me los eliminan...",
-      "video_url": null,
-      "images": [
-        "https://pbs.twimg.com/profile_images/1684636424102985728/VLkXzRVJ_normal.jpg&name=large"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/Javierito321/status/2077918484793573852",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "Javierito321",
-          "url": "https://x.com/Javierito321/status/2077918484793573852"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0220",
-      "username": "jrbermudezofi",
-      "name": "Roberto Junior@jrbermudezofi·2h",
-      "text": "Prohibido olvidar, @jorgerpsuv el principal criminal del fraude en Venezuela",
+      "expediente_id": "EV-2026-0022",
+      "username": "NTN24",
+      "name": "NTN24",
+      "text": "Editorial de La Tarde con \n@IdaniaChirinos\n | Los días siguen avanzando, como avanzan las agujas del reloj. Y en esa fracción territorial de Venezuela, azotada y destruida por dos terremotos, aún hoy la gente sigue esperando ayuda, y aún hoy siguen reclamando al Estado.\n\nPero la",
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @jrbermudezofi sobre incidente reportado en Venezuela. Prohibido olvidar, @jorgerpsuv el principal criminal del fraude en Venezuela",
-      "video_url": null,
+      "resumen": "Denuncia ciudadana publicada por @NTN24 sobre incidente reportado en Venezuela. Editorial de La Tarde con \n@IdaniaChirinos\n | Los días siguen avanzando, como avanzan las agujas del reloj. Y en esa fracción territorial de Venezuela, azotada y destruida por dos terremotos, aún hoy ...",
+      "video_url": "media/videos/EV-2026-0022.mp4",
       "images": [
-        "https://pbs.twimg.com/profile_images/2071735212829016064/NIyruD-D_normal.jpg&name=large",
-        "https://pbs.twimg.com/media/HNZXF7_WAAA_glR?format=jpg&name=large"
+        "https://pbs.twimg.com/profile_images/1884645253715496960/HU2dxbpa_normal.jpg"
       ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/jrbermudezofi/status/2077944042579476961",
+      "created_at": "2026-07-16T21:40:16.000Z",
+      "url": "https://x.com/NTN24/status/2077870961823760730",
       "source_count": 1,
+      "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-0030",
+      "username": "AndromedaOffic1",
+      "name": "AndromedaOfficial",
+      "text": "LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy alzamos la voz con fuerza: la transición no puede basarse en la mentira.\n\n LOS",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @AndromedaOffic1 sobre incidente reportado en Venezuela. LA VERDAD QUE SE OCULTA SOBRE VENEZUELA.\n\nMientras la comunidad internacional permanece en una \"Inacción cómplice\" (ONU/CPI), Venezuela se desangra bajo una usurpación que pretenden normalizar. Hoy al...",
+      "video_url": "media/videos/EV-2026-0030.mp4",
+      "images": [
+        "https://pbs.twimg.com/media/HNYNKHAXIAATL4M?format=jpg&name=small"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-07-16T20:29:18.000Z",
+      "url": "https://x.com/AndromedaOffic1/status/2077853100367356378",
+      "source_count": 2,
       "sources": [
         {
-          "username": "jrbermudezofi",
-          "url": "https://x.com/jrbermudezofi/status/2077944042579476961"
+          "username": "AndromedaOffic1",
+          "url": "https://x.com/AndromedaOffic1/status/2077853100367356378"
+        },
+        {
+          "username": "AndromedaOffic1",
+          "url": "https://x.com/AndromedaOffic1/status/2077862936320921663"
         }
       ]
     },
     {
-      "expediente_id": "EV-2026-0212",
-      "username": "A64029345",
-      "name": "Carolina",
-      "text": "Cuando colapsó parte de la Mansión Charaima por el terremoto de julio de 1967, los bomberos de entonces tuvieron un camión snorkel para hacer rescates en altura. Ahora, 59 años después, no contaron con ninguno disponible en La Guaira- Vargas. Ud no lo sabia yo tampoco",
+      "expediente_id": "EV-2026-0047",
+      "username": "JuanArismendi30",
+      "name": "Juan Carlos Arismendi",
+      "text": "@usembassyve\n así es como se atrae y se mantiene la inversión en Venezuela \n\nImagínense el tamaño de la extorsion en empresas grandes",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @JuanArismendi30 sobre incidente reportado en Venezuela. @usembassyve\n así es como se atrae y se mantiene la inversión en Venezuela \n\nImagínense el tamaño de la extorsion en empresas grandes...",
+      "video_url": "media/videos/EV-2026-0047.mp4",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-06-17T21:26:05.000Z",
+      "url": "https://x.com/JuanArismendi30/status/2067358144477397259",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "JuanArismendi30",
+          "url": "https://x.com/JuanArismendi30/status/2067358144477397259"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0050",
+      "username": "Fantasma_956",
+      "name": "El Fantasma",
+      "text": "Los hijos de Diosdado con el Moño Suelto, Extorsion y Matraca es su Divisa. Los PNB de Transito deben cumplir la cuota de la extorsion y el resto le queda limpio de Polvo y Paja. La GNB es punto aparte....... las vías de Venezuela",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Los hijos de Diosdado con el Moño Suelto, Extorsion y Matraca es su Divisa. Los PNB de Transito deben cumplir la cuota de la extorsion y el resto le queda limpio de Polvo y Paja. La GNB es punto apart...",
+      "video_url": "media/videos/EV-2026-0050.mp4",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-05-22T00:27:52.000Z",
+      "url": "https://x.com/Fantasma_956/status/2057619417022767598",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Fantasma_956",
+          "url": "https://x.com/Fantasma_956/status/2057619417022767598"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0066",
+      "username": "coracijohana",
+      "name": "coracis",
+      "text": "En venezuela no hay educacion ya , hay es extorsion , con las fulanas  \"colaboraciones\" , si colaboras es buena nota , pasas, eres excelente,  y solo efectivo.",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @coracijohana sobre incidente reportado en Venezuela. En venezuela no hay educacion ya , hay es extorsion , con las fulanas  \"colaboraciones\" , si colaboras es buena nota , pasas, eres excelente,  y solo efectivo....",
+      "video_url": "media/videos/EV-2026-0066.mp4",
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "2026-05-12T11:26:40.000Z",
+      "url": "https://x.com/coracijohana/status/2054161329863151865",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "coracijohana",
+          "url": "https://x.com/coracijohana/status/2054161329863151865"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0076",
+      "username": "LuzMelyReyes",
+      "name": "Luz Mely Reyes",
+      "text": "Reporteros sin fronteras desplegó una misión en Venezuela entre el 8 y 12 de julio. Junto al SNTP instalaron un centro de conexiones en Catia La Mar para que los periodistas pudieran tener acceso a internet.\nTambién hallaron lo siguiente: \nPeriodistas recientemente liberados",
       "category": "servicios",
       "category_label": "Servicios",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @A64029345 sobre incidente reportado en Venezuela. Cuando colapsó parte de la Mansión Charaima por el terremoto de julio de 1967, los bomberos de entonces tuvieron un camión snorkel para hacer rescates en altura. Ahora, 59 años después, no contaron co...",
-      "video_url": null,
+      "resumen": "Denuncia ciudadana publicada por @LuzMelyReyes sobre incidente reportado en Venezuela. Reporteros sin fronteras desplegó una misión en Venezuela entre el 8 y 12 de julio. Junto al SNTP instalaron un centro de conexiones en Catia La Mar para que los periodistas pudieran tener acceso a in...",
+      "video_url": "media/videos/EV-2026-0076.mp4",
       "images": [
-        "https://pbs.twimg.com/profile_images/2075902071765676032/3DpB-hTr_normal.jpg&name=large",
-        "https://pbs.twimg.com/media/HNWNVyCWcAApgdT?format=jpg&name=large"
+        "media/images/EV-2026-0076.jpg"
       ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/A64029345/status/2077722401777848775",
+      "created_at": "2026-07-16T22:40:09.000Z",
+      "url": "https://x.com/LuzMelyReyes/status/2077886028992385181",
       "source_count": 1,
       "sources": [
         {
-          "username": "A64029345",
-          "url": "https://x.com/A64029345/status/2077722401777848775"
+          "username": "LuzMelyReyes",
+          "url": "https://x.com/LuzMelyReyes/status/2077886028992385181"
         }
       ]
     },
     {
-      "expediente_id": "EV-2026-0179",
-      "username": "OrlvndoA",
-      "name": "Orlando Avendaño",
-      "text": "Jorge Rodríguez, the brother of Venezuela’s current interim leader, Delcy Rodríguez, was the architect of the country’s electoral fraud system (one the regime later sought to export to other countries, including the United States).\n\nWhile serving as president of Venezuela’s",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @OrlvndoA sobre incidente reportado en Venezuela. Jorge Rodríguez, the brother of Venezuela’s current interim leader, Delcy Rodríguez, was the architect of the country’s electoral fraud system (one the regime later sought to export to other countries...",
-      "video_url": null,
-      "images": [
-        "https://pbs.twimg.com/profile_images/1852227338739556352/EEjmu39n_normal.jpg&name=large",
-        "https://pbs.twimg.com/media/HNZXWH7WwAA-UZl?format=jpg&name=360x360",
-        "https://pbs.twimg.com/media/HNZXWH_WQAAV32g?format=jpg&name=360x360",
-        "https://pbs.twimg.com/media/HNZXWH8XEAAMyVy?format=jpg&name=360x360"
-      ],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "",
-      "url": "https://x.com/OrlvndoA/status/2077944321550983180",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "OrlvndoA",
-          "url": "https://x.com/OrlvndoA/status/2077944321550983180"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0061",
-      "username": "7uanF",
-      "name": "Juan",
-      "text": "lavado de activos, delito de suma gravedad en la mayoría de países del mundo\n\ndinero que dicho sea de paso viene de secuestros, asesinatos, extorsion, venta de drogas y muchísimo sufrimiento humano en Venezuela",
-      "category": "corrupcion",
-      "category_label": "Corrupción",
-      "severity": "critical",
-      "resumen": "Denuncia ciudadana publicada por @7uanF sobre incidente reportado en Venezuela. lavado de activos, delito de suma gravedad en la mayoría de países del mundo\n\ndinero que dicho sea de paso viene de secuestros, asesinatos, extorsion, venta de drogas y muchísimo sufrimiento humano en...",
-      "video_url": null,
+      "expediente_id": "EV-2026-0094",
+      "username": "Sol651",
+      "name": "Sol Rojas",
+      "text": "#Un2026SinPresosPoliticos \n\n#23Mar El #4Ago del 2023, varios militares venezolanos, entre ellos el 1Tte JOSE DANIEL MENDOZA TORRES el 1Tte JOSE GREGORIO MONTIEL y el Sgto JOSE ANTONIO MORENO quienes fueron víctimas de detencion arbitraria y acusados de una",
+      "category": "persecucion",
+      "category_label": "Persecución",
+      "severity": "high",
+      "resumen": "Denuncia ciudadana publicada por @Sol651 sobre incidente reportado en Venezuela. #Un2026SinPresosPoliticos \n\n#23Mar El #4Ago del 2023, varios militares venezolanos, entre ellos el 1Tte JOSE DANIEL MENDOZA TORRES el 1Tte JOSE GREGORIO MONTIEL y el Sgto JOSE ANTONIO MORENO quienes f...",
+      "video_url": "media/videos/EV-2026-0094.mp4",
       "images": [],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "2026-06-06T15:20:09.000Z",
-      "url": "https://x.com/7uanF/status/2063279786688987360",
-      "source_count": 1,
+      "created_at": "2026-03-23T22:24:13.000Z",
+      "url": "https://x.com/Sol651/status/2036207416576970964",
+      "source_count": 3,
       "sources": [
         {
-          "username": "7uanF",
-          "url": "https://x.com/7uanF/status/2063279786688987360"
+          "username": "Sol651",
+          "url": "https://x.com/Sol651/status/2036207416576970964"
+        },
+        {
+          "username": "Sol651",
+          "url": "https://x.com/Sol651/status/2035584447467163731"
+        },
+        {
+          "username": "Sol651",
+          "url": "https://x.com/Sol651/status/2035147459614101800"
         }
       ]
     },
     {
-      "expediente_id": "EV-2026-0058",
-      "username": "NicolasRubioB",
-      "name": "Nicolás Rubio B.",
-      "text": "Grave que los militares en #Venezuela reten la supremacía del poder civil sobre el poder militar. #Militarismo ha sido un mal de larga data.",
-      "category": "general",
-      "category_label": "General",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @NicolasRubioB sobre incidente reportado en Venezuela. Grave que los militares en #Venezuela reten la supremacía del poder civil sobre el poder militar. #Militarismo ha sido un mal de larga data....",
-      "video_url": null,
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2016-01-23T01:59:51.000Z",
-      "url": "https://x.com/NicolasRubioB/status/690715534787215360",
-      "source_count": 1,
-      "sources": [
-        {
-          "username": "NicolasRubioB",
-          "url": "https://x.com/NicolasRubioB/status/690715534787215360"
-        }
-      ]
-    },
-    {
-      "expediente_id": "EV-2026-0053",
-      "username": "Jorhum11",
-      "name": "Jorge H. R. Camacho",
-      "text": "MAS DE 5 HORAS SIN LUZ DESDE 12:30PM 16/7/26 ZONA PUNTA DE MATA, VIOLACIÓN DE DDHH AL TRABAJO Y LA SALUD POR OLA DE CALOR.  #Zulia #Venezuela #SinLuz #SinAgua #Maracaibo #Racionamiento\n\n@LuisCalderaPSUV\n\n\n@minenergia_ve\n\n\n@gcdimartino\n\n\n@CorpoelecInfo\n\n\n@delcyrodriguezv\n \n\n@usembassyve",
+      "expediente_id": "EV-2026-0096",
+      "username": "TAMARA_SUJU",
+      "name": "Tamara Suju",
+      "text": "#Venezuela. #Vargas. \n\nOPP 25 de Tanaguarena. Video de ayer 15 de Julio.  Madre esta pidiendo ayuda para encontrar a sus hijas Roxana Masiel de 2 años y Maria Victoria de 10 meses.  Necesita herramientas de trabajo e insumos.   \n\nLa periodista \n@maryorinmendez\n dijo esto en un",
       "category": "servicios",
       "category_label": "Servicios",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Jorhum11 sobre incidente reportado en Maracaibo. MAS DE 5 HORAS SIN LUZ DESDE 12:30PM 16/7/26 ZONA PUNTA DE MATA, VIOLACIÓN DE DDHH AL TRABAJO Y LA SALUD POR OLA DE CALOR.  #Zulia #Venezuela #SinLuz #SinAgua #Maracaibo #Racionamiento\n\n@LuisCalderaPS...",
-      "video_url": null,
-      "images": [],
+      "resumen": "Denuncia ciudadana publicada por @TAMARA_SUJU sobre incidente reportado en Venezuela. #Venezuela. #Vargas. \n\nOPP 25 de Tanaguarena. Video de ayer 15 de Julio.  Madre esta pidiendo ayuda para encontrar a sus hijas Roxana Masiel de 2 años y Maria Victoria de 10 meses.  Necesita herramien...",
+      "video_url": "media/videos/EV-2026-0096.mp4",
+      "images": [
+        "https://pbs.twimg.com/media/HNVR1eBWIAA4Njf?format=jpg&name=360x360",
+        "https://pbs.twimg.com/media/HNVR1e-WoAA9Vw3?format=jpg&name=large"
+      ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "2026-07-16T21:42:04.000Z",
-      "url": "https://x.com/Jorhum11/status/2077871412723814602",
+      "created_at": "2026-07-16T07:31:53.000Z",
+      "url": "https://x.com/TAMARA_SUJU/status/2077657458642767989",
       "source_count": 1,
       "sources": [
         {
-          "username": "Jorhum11",
-          "url": "https://x.com/Jorhum11/status/2077871412723814602"
+          "username": "TAMARA_SUJU",
+          "url": "https://x.com/TAMARA_SUJU/status/2077657458642767989"
         }
       ]
     },
     {
-      "expediente_id": "EV-2026-0044",
+      "expediente_id": "EV-2026-0114",
+      "username": "DIFUNDELOYA",
+      "name": "¡DIFUNDELO YA!",
+      "text": "URGENTE    | ¡ÚLTIMA HORA! | EE.UU enviará 3.000 técnicos para asumir la administración temporal de Venezuela.\n\nEE.UU acelerara la transición mediante la reconstrucción técnica y administrativa.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @DIFUNDELOYA sobre incidente reportado en Venezuela. URGENTE    | ¡ÚLTIMA HORA! | EE.UU enviará 3.000 técnicos para asumir la administración temporal de Venezuela.\n\nEE.UU acelerara la transición mediante la reconstrucción técnica y administrativa....",
+      "video_url": "media/videos/EV-2026-0114.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2074328250629722113/OEWB0d3y_normal.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/DIFUNDELOYA/status/2077853318571839954",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "DIFUNDELOYA",
+          "url": "https://x.com/DIFUNDELOYA/status/2077853318571839954"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0129",
+      "username": "shelbykrisel",
+      "name": "Shelby C",
+      "text": "DUELE\nMuchos ya volvieron a la \"normalidad\", ya se acabó la viralidad... Pero en Vargas el dolor, la falta de ayuda, la falta de máquinarias, que agua, de comida aún CONTINÚA.\nNo dejes de hablar de VENEZUELA",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @shelbykrisel sobre incidente reportado en Venezuela. DUELE\nMuchos ya volvieron a la \"normalidad\", ya se acabó la viralidad... Pero en Vargas el dolor, la falta de ayuda, la falta de máquinarias, que agua, de comida aún CONTINÚA.\nNo dejes de hablar de VE...",
+      "video_url": "media/videos/EV-2026-0129.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2016877677123391488/rPtLDvWb_normal.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/shelbykrisel/status/2077906362840052170",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "shelbykrisel",
+          "url": "https://x.com/shelbykrisel/status/2077906362840052170"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0146",
+      "username": "pipogonza",
+      "name": "ER PELUCON@pipogonza·6h",
+      "text": "Mi gente vamos a compartir por favo URGENTE Señor Marcos Rubio Señor Barret Señor Bukele le pedimos urgente que ayude a esta mujer por que sabemos que la repuesta del régimen nunca va a llegar",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @pipogonza sobre incidente reportado en Venezuela. Mi gente vamos a compartir por favo URGENTE Señor Marcos Rubio Señor Barret Señor Bukele le pedimos urgente que ayude a esta mujer por que sabemos que la repuesta del régimen nunca va a llegar...",
+      "video_url": "media/videos/EV-2026-0146.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1949479189809082368/t6lQY_7J_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077884355083485184/img/eQrb3-d0GmxWVIA2.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/pipogonza/status/2077884384191893947",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "pipogonza",
+          "url": "https://x.com/pipogonza/status/2077884384191893947"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0172",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F. @cristiancrespoj·16h",
+      "text": "¡Dios los bendiga, qué grande Juan Pablo Dos Santos! Claro que sí volverá a levantarse esta guerrera, y más con tu ayuda y la de tu Fundación. \n\n“Ser ejemplo para los niños\nEsa será nuestra misión.\n\nElla es la hija de uno de los trabajadores del Club Puerto Azul vamos que",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. ¡Dios los bendiga, qué grande Juan Pablo Dos Santos! Claro que sí volverá a levantarse esta guerrera, y más con tu ayuda y la de tu Fundación. \n\n“Ser ejemplo para los niños\nEsa será nuestra misión.\n\nE...",
+      "video_url": "media/videos/EV-2026-0172.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077725338948218880/img/rVH6tZ1OvC-1vNCo.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2077725476940853698",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2077725476940853698"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0181",
+      "username": "Ari1979_V",
+      "name": "Veronica Ariza.",
+      "text": "Delcy y el meón no manden a bloquear ese día la vía como hicieron los primeros días para que nadie subiera ayudar.\nPruebas hay bastantes ejemplo\n\n#venezuela79 \nVídeo de los primeros días cuando el régimen reaccionó a la tragedia,pero impidiendo la ayuda.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Ari1979_V sobre incidente reportado en Venezuela. Delcy y el meón no manden a bloquear ese día la vía como hicieron los primeros días para que nadie subiera ayudar.\nPruebas hay bastantes ejemplo\n\n#venezuela79 \nVídeo de los primeros días cuando el rég...",
+      "video_url": "media/videos/EV-2026-0181.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2074893813386993664/uI7IF8dd_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077770277119725568/img/eMFBeqJ8D5eQSOMv.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Ari1979_V/status/2077770391833940278",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Ari1979_V",
+          "url": "https://x.com/Ari1979_V/status/2077770391833940278"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0206",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "#16jul /#GUERRERO\nCon sus amigos y gente que voluntariamente le ayudó, Marcos De Sousa este jueves llevaba un ramo de flores y la foto de su único hijo rescatado de los escombros el pasado domingo 12 de julio junto con su mamá...\n\n#vargas #venezuela #luto",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. #16jul /#GUERRERO\nCon sus amigos y gente que voluntariamente le ayudó, Marcos De Sousa este jueves llevaba un ramo de flores y la foto de su único hijo rescatado de los escombros el pasado domingo 12 ...",
+      "video_url": "media/videos/EV-2026-0206.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077922917866725376/img/T1hKXiOymCtiSLOS.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2077923012637081808",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2077923012637081808"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0235",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "“Si ayuda hubiera llegado a tiempo ¿qué  hubiese pasado?.\n\nMe lo responden estas hermanas en el complejo Luisa Cáceres de Arismendi en Catia La Mar, donde buscan a su otra hermana Yibisay, quien quedó bajo los escombros junto a su hijo Bryan. \n\nNubia Toledo y Jessica de Duran",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. “Si ayuda hubiera llegado a tiempo ¿qué  hubiese pasado?.\n\nMe lo responden estas hermanas en el complejo Luisa Cáceres de Arismendi en Catia La Mar, donde buscan a su otra hermana Yibisay, quien quedó...",
+      "video_url": "media/videos/EV-2026-0235.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077863799592292353/img/HgCQBvGFD6jW0HN-.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2077864129470087282",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2077864129470087282"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0236",
+      "username": "alejandraoraa",
+      "name": "Alejandra Oraa@alejandraoraa·12h",
+      "text": "Para entender la verdadera dimensión de la tragedia en Venezuela, hay que compararla con uno de los peores desastres naturales del siglo XXI: el terremoto de Japón de 2011.\n\nAunque el sismo de Japón fue aproximadamente dos grados más fuerte, Venezuela podría terminar registrando",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @alejandraoraa sobre incidente reportado en Venezuela. Para entender la verdadera dimensión de la tragedia en Venezuela, hay que compararla con uno de los peores desastres naturales del siglo XXI: el terremoto de Japón de 2011.\n\nAunque el sismo de Japón f...",
+      "video_url": "media/videos/EV-2026-0236.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2021370105817415680/oY6RfRZC_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077791672658800640/img/eE-QgDW9Hz6QOPum.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/alejandraoraa/status/2077791778984390777",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "alejandraoraa",
+          "url": "https://x.com/alejandraoraa/status/2077791778984390777"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0246",
+      "username": "Ari1979_V",
+      "name": "Veronica Ariza.",
+      "text": "Los rostros nuestros venezolanos que han dado todo desde su voluntad y empatía,pero con las uñas no lo voy a dejar de repetir.\n#Rescatistas \n#venezolanos",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Ari1979_V sobre incidente reportado en Venezuela. Los rostros nuestros venezolanos que han dado todo desde su voluntad y empatía,pero con las uñas no lo voy a dejar de repetir.\n#Rescatistas \n#venezolanos...",
+      "video_url": "media/videos/EV-2026-0246.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2074893813386993664/uI7IF8dd_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077961185681444864/img/0mQBOZH_CkJH50cJ.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Ari1979_V/status/2077961278744645926",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Ari1979_V",
+          "url": "https://x.com/Ari1979_V/status/2077961278744645926"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0247",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "Sin palabras . \n\nUn miércoles a las 6:04 PM, y la vida cambia para siempre.\n\n#LaGuaira #Venezuela #TerremotoVE #FuerzaVenezuela",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. Sin palabras . \n\nUn miércoles a las 6:04 PM, y la vida cambia para siempre.\n\n#LaGuaira #Venezuela #TerremotoVE #FuerzaVenezuela...",
+      "video_url": "media/videos/EV-2026-0247.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077848126077968384/img/yqFbxPJnaBBwD8oI.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2077848272618561916",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2077848272618561916"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0282",
+      "username": "VPITV",
+      "name": "VPItv",
+      "text": "Afectado en Tanaguarenas, La Guaira, denunció la lentitud en la respuesta de las autoridades tras los terremotos y aseguró que las labores de búsqueda continúan con recursos insuficientes.\n\nSalvador afirmó que \"faltó mucho avance por parte del gobierno\" y sostuvo que \"mucha",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "medium",
+      "resumen": "Denuncia ciudadana publicada por @VPITV sobre incidente reportado en Venezuela. Afectado en Tanaguarenas, La Guaira, denunció la lentitud en la respuesta de las autoridades tras los terremotos y aseguró que las labores de búsqueda continúan con recursos insuficientes.\n\nSalvador a...",
+      "video_url": "media/videos/EV-2026-0282.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2071640295955906560/1pFVxkhV_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077828384718000128/img/mLxEzC7FwPf3KtqT.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/VPITV/status/2077828626288951778",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "VPITV",
+          "url": "https://x.com/VPITV/status/2077828626288951778"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0289",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "text": "El chiste se cuenta solo. Delcy Rodriguez, Todos fuimos testigos de lo único que la FANB rescató de los escombros.\n\nelkevinjh\n\n #venezuela #humor #venezolanos #venezuela #delcyrodriguez",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. El chiste se cuenta solo. Delcy Rodriguez, Todos fuimos testigos de lo único que la FANB rescató de los escombros.\n\nelkevinjh\n\n #venezuela #humor #venezolanos #venezuela #delcyrodriguez...",
+      "video_url": "media/videos/EV-2026-0289.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077776453358247936/img/K9wfyENcw1_8ogOp.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2077776491446739062",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2077776491446739062"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0292",
+      "username": "Fantasma_956",
+      "name": "El Fantasma",
+      "text": "Misión Vivienda GMVV, la gran estafa nacional, Ataúdes habitacionales para miles de venezolanos extorsionados. Ahora según los propagandistas, los habitantes son culpables de su propia muerte. El Pato del Pelo Azul, el tinte le quemo la única neurona que tenia.",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "critical",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Misión Vivienda GMVV, la gran estafa nacional, Ataúdes habitacionales para miles de venezolanos extorsionados. Ahora según los propagandistas, los habitantes son culpables de su propia muerte. El Pato...",
+      "video_url": "media/videos/EV-2026-0292.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077744053404192768/img/CYog0392Dfw4-FT9.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Fantasma_956/status/2077745419623223332",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Fantasma_956",
+          "url": "https://x.com/Fantasma_956/status/2077745419623223332"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0300",
+      "username": "ElGanadorHenry",
+      "name": "YO SOY",
+      "text": "La voz del pueblo \n\nGraban a un señor en Vzla, que sin miedo demuestra su apoyo a la líder María Corina \n\nCon Delcy me como un cable!\n\nCon María corina comeré pan!",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @ElGanadorHenry sobre incidente reportado en Venezuela. La voz del pueblo \n\nGraban a un señor en Vzla, que sin miedo demuestra su apoyo a la líder María Corina \n\nCon Delcy me como un cable!\n\nCon María corina comeré pan!...",
+      "video_url": "media/videos/EV-2026-0300.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1876120323386441728/R2xRAaf1_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077866142392066050/img/LawCYALtkYt5lIuB.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ElGanadorHenry/status/2077926929642975240",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ElGanadorHenry",
+          "url": "https://x.com/ElGanadorHenry/status/2077926929642975240"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0331",
+      "username": "gabyarocha",
+      "name": "Gaby Arocha",
+      "text": "Es importante reactivar el comercio local en las zonas más afectadas por los terremotos, ya que eso evita la paralización económica. \n\nAquí Karen Brewer y Ronald Aristimuño nos explican por qué hay que tratar de que esto suceda y cómo podemos ayudar.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @gabyarocha sobre incidente reportado en Venezuela. Es importante reactivar el comercio local en las zonas más afectadas por los terremotos, ya que eso evita la paralización económica. \n\nAquí Karen Brewer y Ronald Aristimuño nos explican por qué hay qu...",
+      "video_url": "media/videos/EV-2026-0331.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1591869998187905025/Egg3pDXl_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077839962842525696/img/etTEiqq_6ikWMxxn.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077839962850852864/img/wLKnInqL5PGKO4aV.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/gabyarocha/status/2077840210444919061",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "gabyarocha",
+          "url": "https://x.com/gabyarocha/status/2077840210444919061"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0336",
+      "username": "GabyGabyGG",
+      "name": "Gabriela Gonzalez",
+      "text": "La señora Angélica, sobreviviente del doble terremoto en la Guaira, sigue a la espera de encontrar a su hijo, de 15, y a sus dos sobrinos.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @GabyGabyGG sobre incidente reportado en Venezuela. La señora Angélica, sobreviviente del doble terremoto en la Guaira, sigue a la espera de encontrar a su hijo, de 15, y a sus dos sobrinos....",
+      "video_url": "media/videos/EV-2026-0336.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1405273887189860354/wEm75vGk_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077790269638926336/img/Ltp2pd16KHWnUkwX.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/GabyGabyGG/status/2077790434273669171",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "GabyGabyGG",
+          "url": "https://x.com/GabyGabyGG/status/2077790434273669171"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0341",
+      "username": "RobertoCarlo14",
+      "name": "ROBERTO CARLO OLIVARES",
+      "text": "Joven perdió a 12 familiares en \nel terremoto en #Venezuela. \n\n¿Cómo superas algo así?\n\n¿Cómo se supera la pérdidasde 12 familiares incluyendo padre y madre? \n\nEs la gran pregunta que intenta contestar a diario José Luis Pacheco, quien mientras asume su realidad dice estar",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @RobertoCarlo14 sobre incidente reportado en Venezuela. Joven perdió a 12 familiares en \nel terremoto en #Venezuela. \n\n¿Cómo superas algo así?\n\n¿Cómo se supera la pérdidasde 12 familiares incluyendo padre y madre? \n\nEs la gran pregunta que intenta contesta...",
+      "video_url": "media/videos/EV-2026-0341.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/897918525184110594/bNQadkY1_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077908142340374528/img/0NpQaphpvrR4X1Lg.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/RobertoCarlo14/status/2077908337811693802",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "RobertoCarlo14",
+          "url": "https://x.com/RobertoCarlo14/status/2077908337811693802"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0344",
+      "username": "Fantasma_956",
+      "name": "El Fantasma",
+      "text": "Ya ocurrió en el Congreso.\n\nNo fue una sesión de leyes ni de decisiones inmediatas. Fue algo distinto,  y igual de importante. Después de años, el Congreso EEUU volvió a sentarse a escuchar directamente a quienes documentan la realidad de Venezuela desde adentro.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Ya ocurrió en el Congreso.\n\nNo fue una sesión de leyes ni de decisiones inmediatas. Fue algo distinto,  y igual de importante. Después de años, el Congreso EEUU volvió a sentarse a escuchar directamen...",
+      "video_url": "media/videos/EV-2026-0344.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077758490366382080/img/qqr3lQfWPTC4FsIF.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Fantasma_956/status/2077759163615039563",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Fantasma_956",
+          "url": "https://x.com/Fantasma_956/status/2077759163615039563"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0346",
+      "username": "estebanoria",
+      "name": "Esteban Oria",
+      "text": "Qué ironía: Diosdado se sorprende porque la gente usa sus teléfonos para mostrar la realidad.\n\nNo entiende que eso se llama libertad de expresión.\n\nLo que él llama “jauría” son ciudadanos documentando lo que el poder quisiera ocultar.\n\nY hay que agradecerle algo: confirmó que la",
+      "category": "general",
+      "category_label": "General",
+      "severity": "medium",
+      "resumen": "Denuncia ciudadana publicada por @estebanoria sobre incidente reportado en Venezuela. Qué ironía: Diosdado se sorprende porque la gente usa sus teléfonos para mostrar la realidad.\n\nNo entiende que eso se llama libertad de expresión.\n\nLo que él llama “jauría” son ciudadanos documentando...",
+      "video_url": "media/videos/EV-2026-0346.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1727858043960909824/8CsaT5v1_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077573679869743104/img/ZYnKPXXigb_QlWYS.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/estebanoria/status/2077573789890601453",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "estebanoria",
+          "url": "https://x.com/estebanoria/status/2077573789890601453"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0347",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "“Mire, yo no he visto un ser tan jakabola como  el de pelo azul, viene a decir que existía un manual de qué hacer y qué no hacer en los edificios.\n\nMientras las familias en La Guaira siguen enfrentando el dolor de recuperar a sus seres queridos, resulta indignante escuchar",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. “Mire, yo no he visto un ser tan jakabola como  el de pelo azul, viene a decir que existía un manual de qué hacer y qué no hacer en los edificios.\n\nMientras las familias en La Guaira siguen enfrentand...",
+      "video_url": "media/videos/EV-2026-0347.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077869067797413889/img/pqavPyeeyG3DM0Tt.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2077869167378571729",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2077869167378571729"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0371",
+      "username": "freddyzur",
+      "name": "freddyzur@freddyzur·16h",
+      "text": "¡Peligro en el Hospital Dr. Adolfo Prince Lara de Puerto Cabello! Las imágenes revelan daños estructurales severos que lo hacen inhabitable. Columnas expuestas y techos colapsados ponen en riesgo a pacientes y personal. ¿Reparaciones o solo un negocio más? La vida de los",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. ¡Peligro en el Hospital Dr. Adolfo Prince Lara de Puerto Cabello! Las imágenes revelan daños estructurales severos que lo hacen inhabitable. Columnas expuestas y techos colapsados ponen en riesgo a pa...",
+      "video_url": "media/videos/EV-2026-0371.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077733366070198272/img/lYgvieX_tN5dQ1N1.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2077733491928596945",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2077733491928596945"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0381",
+      "username": "Fantasma_956",
+      "name": "El Fantasma",
+      "text": "Viviendas de la GMVV Ataúdes Habitacionales por toda Venezuela. \n\nEdificio Patria y Trabajo de #SanBernardino #Ccs con alto grado de destrucción, bases muy golpeadas, en el interior las paredes desplomadas o con fuertes grietas comprometiendo la estructura.",
+      "category": "abuso",
+      "category_label": "Abuso",
+      "severity": "high",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Viviendas de la GMVV Ataúdes Habitacionales por toda Venezuela. \n\nEdificio Patria y Trabajo de #SanBernardino #Ccs con alto grado de destrucción, bases muy golpeadas, en el interior las paredes desplo...",
+      "video_url": "media/videos/EV-2026-0381.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077896701063356416/img/yQ5FSsNIj8oTZ71j.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Fantasma_956/status/2077897827879956848",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Fantasma_956",
+          "url": "https://x.com/Fantasma_956/status/2077897827879956848"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0400",
+      "username": "Fantasma_956",
+      "name": "El Fantasma",
+      "text": "Tu ex tóxica tiene más valor que el Bolívar, en el fondo lo sabes. Mientras sigues actualizando la paginita del $$ paralelo, la maquinita de la miseria sigue imprimiendo billetes que no sirven ni para dar un vuelto.\n\n¿La cura? Dolarizar. Pero no a lo loco.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Fantasma_956 sobre incidente reportado en Venezuela. Tu ex tóxica tiene más valor que el Bolívar, en el fondo lo sabes. Mientras sigues actualizando la paginita del $$ paralelo, la maquinita de la miseria sigue imprimiendo billetes que no sirven ni para...",
+      "video_url": "media/videos/EV-2026-0400.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/859621881367932930/ZZifpHeq_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077736451593084928/img/DqnzEzDQS7YWceuL.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Fantasma_956/status/2077736983900598432",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Fantasma_956",
+          "url": "https://x.com/Fantasma_956/status/2077736983900598432"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0432",
+      "username": "Norbey_Marin_",
+      "name": "Norbey A, Marín G.@Norbey_Marin_·17h",
+      "text": "Terremoto en Venezuela  | #16J \n\nLas familias del Bloque 3, de la Urbanización Páez en Catia La Mar, solicita una grúa telescópica y camiones para continuar con las labores de recuperación de los cuerpos de sus seres queridos.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Norbey_Marin_ sobre incidente reportado en Venezuela. Terremoto en Venezuela  | #16J \n\nLas familias del Bloque 3, de la Urbanización Páez en Catia La Mar, solicita una grúa telescópica y camiones para continuar con las labores de recuperación de los cuer...",
+      "video_url": "media/videos/EV-2026-0432.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1931007850530160640/fSs2d-iR_normal.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Norbey_Marin_/status/2077725827920257365",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Norbey_Marin_",
+          "url": "https://x.com/Norbey_Marin_/status/2077725827920257365"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0457",
+      "username": "zuricht94",
+      "name": "Cesar Moya",
+      "text": "Nuestros valerosos bomberos nunca fueron dotados de los equipos necesarios, porque la prioridad era dotar de herramientas a la maquinaria de represión.",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @zuricht94 sobre incidente reportado en Venezuela. Nuestros valerosos bomberos nunca fueron dotados de los equipos necesarios, porque la prioridad era dotar de herramientas a la maquinaria de represión....",
+      "video_url": "media/videos/EV-2026-0457.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1469813755114668038/srrcbx_j_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077855503149916160/img/cScCSV4PcoX10m9Q.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2077855503170887680/img/LR1XNGuf6cjIpm86.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/zuricht94/status/2077855622247162365",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "zuricht94",
+          "url": "https://x.com/zuricht94/status/2077855622247162365"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0458",
       "username": "CaraotaDigital",
       "name": "Caraota Digital",
-      "text": "#EEUU | VIDEO: Organizaciones de DDHH pidieron al Congreso de EEUU transición democrática en Venezuela .- \nhttps://\nfbvo.short.gy/WL9QNs -iM",
+      "text": "#17JUL | Cuando faltan pocas horas para la conmemoración del Día del Niño en el país, el fotógrafo Rodolfo Churion compartió una postal que muestra un altar con los juguetes de niños que perdieron la vida durante los terremotos del 24 de junio en La Guaira.\n\nImágenes:",
       "category": "general",
       "category_label": "General",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @CaraotaDigital sobre incidente reportado en Venezuela. #EEUU | VIDEO: Organizaciones de DDHH pidieron al Congreso de EEUU transición democrática en Venezuela .- \nhttps://\nfbvo.short.gy/WL9QNs -iM...",
-      "video_url": null,
-      "images": [],
+      "resumen": "Denuncia ciudadana publicada por @CaraotaDigital sobre incidente reportado en Venezuela. #17JUL | Cuando faltan pocas horas para la conmemoración del Día del Niño en el país, el fotógrafo Rodolfo Churion compartió una postal que muestra un altar con los juguetes de niños que perdieron la ...",
+      "video_url": "media/videos/EV-2026-0458.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1947366753538805760/MBGnaw9g_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078198230982991872/img/qG1a2vdIxgwG1lCy.jpg&name=large"
+      ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "2026-07-16T19:40:25.000Z",
-      "url": "https://x.com/CaraotaDigital/status/2077840799312826565",
+      "created_at": "",
+      "url": "https://x.com/CaraotaDigital/status/2078198550291173526",
       "source_count": 1,
       "sources": [
         {
           "username": "CaraotaDigital",
-          "url": "https://x.com/CaraotaDigital/status/2077840799312826565"
+          "url": "https://x.com/CaraotaDigital/status/2078198550291173526"
         }
       ]
     },
     {
-      "expediente_id": "EV-2026-0039",
-      "username": "RandyCorreaVE",
-      "name": "Randy Correa",
-      "text": "#Venezuela | PROSTITUÍA A SU HIJA DE 12 AÑOS POR 5$ DÓLARES\n\nUna mujer de 39 años y un hombre fueron detenidos, por el abuso sexual continuado de una menor de 12 años. Los capturados fueron identificados como Rosaura Aura Flores (madre de la víctima) y Nelson Torres González.\n\nDe",
-      "category": "servicios",
-      "category_label": "Servicios",
+      "expediente_id": "EV-2026-0459",
+      "username": "yeligamboa",
+      "name": "Me dicen la Negra",
+      "text": "Me tope con este video en Tik Tok, fue publicado antes del terremoto el mismo día 24 de junio , son los edificios OPP.\n \nTodos esos edificios quedaron bajos los escombros. La dueña del perfil no ha publicado más desde ese día.",
+      "category": "general",
+      "category_label": "General",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @RandyCorreaVE sobre incidente reportado en Venezuela. #Venezuela | PROSTITUÍA A SU HIJA DE 12 AÑOS POR 5$ DÓLARES\n\nUna mujer de 39 años y un hombre fueron detenidos, por el abuso sexual continuado de una menor de 12 años. Los capturados fueron identifica...",
-      "video_url": null,
+      "resumen": "Denuncia ciudadana publicada por @yeligamboa sobre incidente reportado en Venezuela. Me tope con este video en Tik Tok, fue publicado antes del terremoto el mismo día 24 de junio , son los edificios OPP.\n \nTodos esos edificios quedaron bajos los escombros. La dueña del perfil no ha pu...",
+      "video_url": "media/videos/EV-2026-0459.mp4",
       "images": [
-        "https://pbs.twimg.com/media/HIzUAltWMAA12Ow?format=jpg&name=360x360",
-        "https://pbs.twimg.com/media/HIzUCp3XAAAigFx?format=jpg&name=360x360",
-        "https://pbs.twimg.com/media/HIzUCqJW0AA-MHa?format=jpg&name=360x360"
+        "https://pbs.twimg.com/profile_images/1728071772019322880/B9IGyk25_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078139886142373888/img/n6wbFqrv3LUw7Z6q.jpg&name=large"
       ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "2026-05-21T00:09:02.000Z",
-      "url": "https://x.com/RandyCorreaVE/status/2057252289715261447",
+      "created_at": "",
+      "url": "https://x.com/yeligamboa/status/2078139921110376632",
       "source_count": 1,
       "sources": [
         {
-          "username": "RandyCorreaVE",
-          "url": "https://x.com/RandyCorreaVE/status/2057252289715261447"
+          "username": "yeligamboa",
+          "url": "https://x.com/yeligamboa/status/2078139921110376632"
         }
       ]
     },
     {
-      "expediente_id": "EV-2026-0029",
-      "username": "alexvzlalibre",
-      "name": "AlexVzlaLibre",
-      "text": "ALERTA MÁXIMA \nEl tráfico de niños es uno de los mercados ilícitos más grandes del mundo.\n\nEn Venezuela, tras el terremoto, miles de niños están en grave peligro de ser víctimas de trata. El caos, el desplazamiento y la desesperación son el mejor terreno para las redes",
-      "category": "censura",
-      "category_label": "Censura",
+      "expediente_id": "EV-2026-0460",
+      "username": "Juanegron",
+      "name": "Juan Pablo González @Juanegron·12h",
+      "text": "| Diego Ruzzarin asegura que “Estados Unidos empobreció a Venezuela”.\n\nEsa afirmación omite que la crisis venezolana comenzó años antes de las sanciones más severas, con controles de precios y de cambio, expropiaciones, corrupción, caída de la producción petrolera y el colapso",
+      "category": "general",
+      "category_label": "General",
       "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @alexvzlalibre sobre incidente reportado en Venezuela. ALERTA MÁXIMA \nEl tráfico de niños es uno de los mercados ilícitos más grandes del mundo.\n\nEn Venezuela, tras el terremoto, miles de niños están en grave peligro de ser víctimas de trata. El caos, el ...",
-      "video_url": null,
-      "images": [],
-      "likes": 0,
-      "retweets": 0,
-      "replies": 0,
-      "created_at": "2026-07-16T20:11:00.000Z",
-      "url": "https://x.com/alexvzlalibre/status/2077848493553750347",
-      "source_count": 1,
-      "sources": []
-    },
-    {
-      "expediente_id": "EV-2026-0026",
-      "username": "Sinmordaza",
-      "name": "Un Mundo Sin Mordaza",
-      "text": "#AlertaSinMordaza \n\nEl Comité de Derechos Humanos de Vente Venezuela denunció este jueves 16 de julio el delicado estado de salud de la presa política Lenny Cruz, quien permanece recluida en el centro de reclusión femenino Las Crisálidas. De acuerdo con la organización, la vida",
-      "category": "salud",
-      "category_label": "Salud",
-      "severity": "info",
-      "resumen": "Denuncia ciudadana publicada por @Sinmordaza sobre incidente reportado en Venezuela. #AlertaSinMordaza \n\nEl Comité de Derechos Humanos de Vente Venezuela denunció este jueves 16 de julio el delicado estado de salud de la presa política Lenny Cruz, quien permanece recluida en el centro...",
-      "video_url": null,
+      "resumen": "Denuncia ciudadana publicada por @Juanegron sobre incidente reportado en Venezuela. | Diego Ruzzarin asegura que “Estados Unidos empobreció a Venezuela”.\n\nEsa afirmación omite que la crisis venezolana comenzó años antes de las sanciones más severas, con controles de precios y de camb...",
+      "video_url": "media/videos/EV-2026-0460.mp4",
       "images": [
-        "https://pbs.twimg.com/media/HNYeNoNX0AAgyrU?format=jpg&name=small"
+        "https://pbs.twimg.com/profile_images/2023451881197215744/e8Qpk61K_normal.jpg&name=large"
       ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,
-      "created_at": "2026-07-16T22:22:09.000Z",
-      "url": "https://x.com/Sinmordaza/status/2077881502314954961",
+      "created_at": "",
+      "url": "https://x.com/Juanegron/status/2078097513647591457",
       "source_count": 1,
-      "sources": []
+      "sources": [
+        {
+          "username": "Juanegron",
+          "url": "https://x.com/Juanegron/status/2078097513647591457"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0461",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F. @cristiancrespoj·28min",
+      "text": "En el día 23 después de la tragedia de La Guaira por los terremotos, siguen sacando cuerpos de la Misión Vivienda, conocida como OPP, de Caraballeda.\n\nQue en Paz Descansen todas esas almas.\n\n@maryorinmendez \n\n#Venezuela #FuerzaVenezuela",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @cristiancrespoj sobre incidente reportado en Venezuela. En el día 23 después de la tragedia de La Guaira por los terremotos, siguen sacando cuerpos de la Misión Vivienda, conocida como OPP, de Caraballeda.\n\nQue en Paz Descansen todas esas almas.\n\n@maryorin...",
+      "video_url": "media/videos/EV-2026-0461.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/2032980127856865280/FO6t3x8I_normal.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2078271594003083504",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2078271594003083504"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0462",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "Mientras la ayuda internacional se retira, Lorent Saleh sigue en el terreno, trabajando junto a voluntarios venezolanos. En esta etapa, la fuerza, la unión y la solidaridad son las que mantienen viva la esperanza.\n\n#Venezuela #FuerzaVenezuela",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @freddyzur sobre incidente reportado en Venezuela. Mientras la ayuda internacional se retira, Lorent Saleh sigue en el terreno, trabajando junto a voluntarios venezolanos. En esta etapa, la fuerza, la unión y la solidaridad son las que mantienen viva ...",
+      "video_url": "media/videos/EV-2026-0462.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/512772477563305984/j5pnCZZy_normal.jpeg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078284520202141696/img/-eMdgd28qXpafqzj.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2078284593506001218",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2078284593506001218"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0463",
+      "username": "Javierito321",
+      "name": "Javierhalamadrid",
+      "text": "Que dice Delcy que desconoce todo relacionado a Michelo, que solo le parecía un bufón y que no le interesa como llegó ni como se fue de Venezuela:",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @Javierito321 sobre incidente reportado en Venezuela. Que dice Delcy que desconoce todo relacionado a Michelo, que solo le parecía un bufón y que no le interesa como llegó ni como se fue de Venezuela:...",
+      "video_url": "media/videos/EV-2026-0463.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1684636424102985728/VLkXzRVJ_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078145102262800384/img/gXsWMOqxQp20UyVD.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Javierito321/status/2078145127000805847",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Javierito321",
+          "url": "https://x.com/Javierito321/status/2078145127000805847"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-0464",
+      "username": "GenesisCS",
+      "name": "Genesis Carrero Soto",
+      "text": "La Guaira | Javier Navarro perdió a 9 familiares en la OPPE26, aún 7 siguen bajo los escombros. Con otros vecinos creó el centro de acopio “máquina de guerra”, con herramientas que se prestan entre ellos\nDice que su único afán es sacar a sus muertos #17Jul\n\nhttps://\nstorage.googleapis.com/qurium/cronica\n.uno/maquina-de-guerra-un-centro-de-acopio-en-el-que-familiares-de-la-guaira-prestan-herramientas.html\n…",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": "Denuncia ciudadana publicada por @GenesisCS sobre incidente reportado en Venezuela. La Guaira | Javier Navarro perdió a 9 familiares en la OPPE26, aún 7 siguen bajo los escombros. Con otros vecinos creó el centro de acopio “máquina de guerra”, con herramientas que se prestan entre el...",
+      "video_url": "media/videos/EV-2026-0464.mp4",
+      "images": [
+        "https://pbs.twimg.com/profile_images/1555325971204554752/9pLZPIj9_normal.jpg&name=large",
+        "https://pbs.twimg.com/amplify_video_thumb/2078154967290884096/img/ZH-D-cpQURE2Dl-e.jpg&name=large"
+      ],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/GenesisCS/status/2078155813202403383",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "GenesisCS",
+          "url": "https://x.com/GenesisCS/status/2078155813202403383"
+        }
+      ]
+    },
+    {
+      "id": 467,
+      "expediente_id": "EV-2026-0465",
+      "tweet_id": "2078151513969393703",
+      "username": "LabPazVe",
+      "display_name": "LabPazVe",
+      "text": "DDHH a domicilio \n\n17/07/2026\n\nPresentado por La TV Calle  y el Laboratorio de Paz \n\n RRSS: \n@latvcalle\n \n@LabPazVe\n \n\n Tu delivery informativo:\n\nCentro de acopio de la UCV mantiene llamado a donar insumos para afectados por los terremoto \n\nEl centro de acopio de la",
+      "category": "general",
+      "severity": "info",
+      "status": "published",
+      "video_url": "media/videos/EV-2026-0465.mp4",
+      "images": "[]",
+      "retweets": 0,
+      "likes": 0,
+      "replies": 0,
+      "created_at": "2026-07-17T16:15:05.000Z",
+      "scraped_at": "2026-07-18T03:14:38.669047+00:00",
+      "published_at": "2026-07-18T03:16:42.418750+00:00",
+      "source_url": "https://x.com/LabPazVe/status/2078151513969393703",
+      "query_used": null,
+      "tags": null,
+      "resumen": null,
+      "contexto": null,
+      "fuentes": null,
+      "evidencias": null,
+      "conclusion": null,
+      "topic_hash": "99838dd04068cfb4",
+      "source_tweets": "[{\"tweet_id\": \"2078151513969393703\", \"username\": \"LabPazVe\", \"text\": \"DDHH a domicilio \\n\\n17/07/2026\\n\\nPresentado por La TV Calle  y el Laboratorio de Paz \\n\\n RRSS: \\n@latvcalle\\n \\n@LabPazVe\\n \\n\\n Tu delivery informativo:\\n\\nCentro de acopio de la UCV mantiene llamado a donar in\", \"url\": \"https://x.com/LabPazVe/status/2078151513969393703\"}]",
+      "source_count": 1,
+      "kg_synced": 1,
+      "dossier_synced": 0
     }
   ]
 }
