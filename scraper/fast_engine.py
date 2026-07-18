@@ -549,53 +549,27 @@ def auto_publish():
 # CYCLE
 # ═══════════════════════════════════════════════════════════════════
 def run_cycle():
-    """Execute one full cycle: scroll timeline → save → download → publish."""
-    log_engine("=== Starting cycle ===")
+    """Execute one full cycle using agent pipeline: scroll → review → download → DB → publish."""
+    log_engine("=== Starting cycle (agent pipeline) ===")
 
-    # 1. Scroll timeline
-    tweets = asyncio.run(scrape_timeline(scroll_count=15))
-    log_engine(f"Scraped {len(tweets)} tweets with media from timeline")
+    try:
+        from agent_pipeline import run_pipeline
+        result = run_pipeline(max_scrolls=30)
 
-    # 2. Save to DB
-    if tweets:
-        save_result = save_tweets_to_db(tweets)
-        log_engine(f"DB: {save_result['inserted']} new, {save_result['merged']} merged, {save_result['skipped']} skipped, {save_result.get('filtered', 0)} filtered")
-    else:
-        log_engine("No media tweets found in timeline")
+        log_engine(f"Stats: {result['total_in_db']} total, {result['videos_on_disk']} videos on disk")
+        log_engine("=== Cycle complete ===")
+        return result
+    except Exception as e:
+        log_engine(f"Agent pipeline error: {e}")
+        log_engine("Falling back to legacy cycle...")
 
-    # 3. Download pending videos (yt-dlp)
-    log_engine("Downloading pending videos...")
-    downloaded = download_all_pending()
-    log_engine(f"Downloaded: {downloaded} videos")
-
-    # 3b. Verify all videos have valid tracks
-    log_engine("Verifying video integrity...")
-    fixed = verify_all_videos()
-    if fixed:
-        log_engine(f"Fixed: {fixed} broken videos")
-
-    # 4. Auto-publish
-    published = auto_publish()
-    if published:
-        log_engine(f"Published: {published} denuncias")
-
-    # 5. Stats
-    conn = init_db()
-    stats = get_stats(conn)
-    conn.close()
-
-    video_count = len(list(VIDEOS_DIR.glob('*.mp4'))) if VIDEOS_DIR.exists() else 0
-
-    log_engine(f"Stats: {stats.get('total', 0)} total, {stats.get('published', 0)} published, {video_count} videos on disk")
-    log_engine("=== Cycle complete ===")
-
-    return {
-        "tweets_scraped": len(tweets),
-        "inserted": save_result.get("inserted", 0) if tweets else 0,
-        "downloaded": downloaded,
-        "published": published,
-        "videos_on_disk": video_count,
-    }
+        # Legacy fallback
+        tweets = asyncio.run(scrape_timeline(scroll_count=15))
+        if tweets:
+            save_tweets_to_db(tweets)
+        downloaded = download_all_pending()
+        published = auto_publish()
+        return {"captured": len(tweets), "downloaded": downloaded, "published": published}
 
 
 # ═══════════════════════════════════════════════════════════════════
