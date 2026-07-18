@@ -371,14 +371,14 @@ def _get_cookie_file():
 
 
 def download_all_pending():
-    """Download all videos with HTTP URLs using yt-dlp."""
+    """Download all videos using yt-dlp from tweet URLs."""
     conn = init_db()
+    # Get tweets that need video download: either have HTTP video_url OR have source_url but no local video
     rows = conn.execute('''
         SELECT expediente_id, source_url, video_url
         FROM denuncias 
-        WHERE video_url LIKE 'http%'
-        AND video_url NOT LIKE 'blob:%'
-        AND video_url NOT LIKE 'media/%'
+        WHERE (video_url LIKE 'http%' AND video_url NOT LIKE 'blob:%' AND video_url NOT LIKE 'media/%')
+           OR (video_url IS NULL AND source_url IS NOT NULL AND source_url != '')
         ORDER BY id DESC
     ''').fetchall()
     conn.close()
@@ -388,7 +388,12 @@ def download_all_pending():
 
     downloaded = 0
     for exp_id, source_url, video_url in rows:
-        # Use source_url (tweet URL) for yt-dlp, not the video URL
+        # Skip if already downloaded locally
+        local_file = VIDEOS_DIR / f'{exp_id}.mp4'
+        if local_file.exists() and local_file.stat().st_size > 10000:
+            continue
+
+        # Use source_url (tweet URL) for yt-dlp
         tweet_url = source_url if source_url else video_url
         if not tweet_url:
             continue
