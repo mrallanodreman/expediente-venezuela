@@ -218,7 +218,7 @@ async def _extract_tweets_from_page(page):
 
 
 async def _enrich_full_text(page, tweets):
-    """Visit each tweet individually to get the full (non-truncated) text."""
+    """Visit each tweet individually to get full text AND real video URL."""
     for i, t in enumerate(tweets):
         tweet_url = t.get("url", "")
         if not tweet_url:
@@ -234,6 +234,39 @@ async def _enrich_full_text(page, tweets):
                 full_text = (await text_el.inner_text()).strip()
                 if len(full_text) > len(t.get("text", "")):
                     t["text"] = full_text
+
+            # Extract real video URL from individual tweet page
+            if not t.get("video_url") or t.get("video_url") == "HAS_VIDEO":
+                # Try <video> src
+                video_el = await page.query_selector("video")
+                if video_el:
+                    src = await video_el.get_attribute("src")
+                    if src and ("video" in src or "blob:" not in src):
+                        t["video_url"] = src
+                        t["has_video"] = True
+
+                # Try <video><source>
+                if not t.get("video_url") or t.get("video_url") == "HAS_VIDEO":
+                    source_el = await page.query_selector("video source")
+                    if source_el:
+                        src = await source_el.get_attribute("src")
+                        if src:
+                            t["video_url"] = src
+                            t["has_video"] = True
+
+            # Extract images if missing
+            if not t.get("images"):
+                img_els = await page.query_selector_all("img[src*='pbs.twimg.com/media']")
+                images = []
+                for img in img_els[:4]:
+                    src = await img.get_attribute("src")
+                    if src:
+                        high = src.replace("name=small", "name=large").replace("name=medium", "name=large")
+                        if "name=" not in high:
+                            high += "&name=large"
+                        images.append(high)
+                if images:
+                    t["images"] = images
 
             # Go back to timeline
             await page.goto("https://x.com/home", wait_until="domcontentloaded", timeout=15000)

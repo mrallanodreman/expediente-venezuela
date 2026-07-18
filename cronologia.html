@@ -113,101 +113,101 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 .method-link{flex-shrink:0;font-size:.78rem;font-weight:600;color:var(--red-light);text-decoration:none;transition:color .2s}
 .method-link:hover{color:var(--red)}
 
-/* ===== YEAR BLOCKS — Grid 3-col ===== */
-.year-block{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);align-items:start;column-gap:28px;max-width:1100px;margin:0 auto 100px;padding:0}
-.year-main{width:100%;max-width:520px}
-.year-main.right{grid-column:3}
-.year-main.left{grid-column:1}
+/* ===== YEAR BLOCKS — Grid 3-col, balanced ===== */
+.year-block{position:relative;display:grid;grid-template-columns:minmax(420px,1fr) 96px minmax(420px,1fr);align-items:start;column-gap:32px;width:min(1280px,calc(100% - 64px));margin:100px auto 0;padding:0}
+.year-main{width:100%;max-width:540px;margin-top:48px}
+.year-main.right{grid-column:3;justify-self:end}
+.year-main.left{grid-column:1;justify-self:start}
 
-/* Central node + connectors */
-.year-tl-node{position:relative;grid-column:2;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:0;padding-top:0}
-.year-tl-node .node-dot{width:16px;height:16px;border-radius:50%;border:3px solid var(--bg0);box-shadow:0 0 0 2px var(--border1);transition:box-shadow .3s;position:relative;z-index:2;flex-shrink:0}
-.year-tl-node .node-year{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--text3);background:var(--bg0);padding:2px 10px;border:1px solid var(--border1);border-radius:12px;white-space:nowrap;letter-spacing:.06em;z-index:3;margin-bottom:6px}
-.year-tl-node .connector{position:absolute;height:1px;background:var(--border1);z-index:1;top:calc(8px + 2.4rem + 6px)}
-.year-tl-node .connector.left{right:50%;width:calc(50% - 8px)}
-.year-tl-node .connector.right{left:50%;width:calc(50% - 8px)}
+/* Central axis */
+.year-tl-node{position:relative;grid-column:2;display:flex;flex-direction:column;align-items:center;position:relative;min-height:100%;padding-top:48px}
+.year-tl-node .node-year{display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:#111317;color:rgba(255,255,255,.72);font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.06em;z-index:2}
+.year-tl-node .node-dot{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.20);flex-shrink:0;margin-top:14px;position:relative;z-index:2}
+.year-tl-node .axis-line{width:1px;flex:1;margin-top:12px;background:rgba(255,255,255,.10);min-height:40px}
+.year-tl-node .connector{position:absolute;height:1px;background:rgba(255,255,255,.10);z-index:1;pointer-events:none}
+.year-tl-node .connector.left{right:calc(50% + 16px);left:0;top:calc(48px + 17px)}
+.year-tl-node .connector.right{left:calc(50% + 16px);right:0;top:calc(48px + 17px)}
 
 /* Main event card */
-.tl-card{background:var(--bg2);border:1px solid var(--border1);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .25s,box-shadow .25s;max-height:600px;display:flex;flex-direction:column}
+.tl-card{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .25s,box-shadow .25s;max-height:620px;display:flex;flex-direction:column}
 .tl-card:hover{border-color:var(--red);box-shadow:0 4px 24px rgba(0,0,0,.3)}
 .tl-card.hidden{display:none}
 
-/* Card image */
-.card-img{width:100%;height:280px;overflow:hidden;position:relative;background:var(--bg3);flex-shrink:0}
-.card-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.75) contrast(1.05);transition:filter .3s,transform .5s}
+/* Card image 260px — emoji fallback on gradient */
+.card-img{width:100%;height:260px;overflow:hidden;position:relative;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.75) contrast(1.05);transition:filter .3s,transform .5s;z-index:1}
 .tl-card:hover .card-img img{filter:brightness(.85) contrast(1.1);transform:scale(1.04)}
-.card-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--text3);letter-spacing:.04em;font-family:var(--sans)}
+.card-img-fallback{font-size:3.4rem;opacity:.85;z-index:0;pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));transition:transform .4s}
+.tl-card:hover .card-img-fallback{transform:scale(1.08)}
+.card-img-credit{position:absolute;bottom:4px;right:6px;font-size:.55rem;color:rgba(255,255,255,.4);letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.8);z-index:2}
 .card-img-credit{position:absolute;bottom:4px;right:6px;font-size:.55rem;color:rgba(255,255,255,.5);letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.8)}
 
-/* Card body */
-.card-body{padding:16px 20px 20px;flex:1;display:flex;flex-direction:column;min-height:0;gap:10px}
+/* Card body — 22px padding, 12px gap */
+.card-body{padding:22px;flex:1;display:flex;flex-direction:column;gap:12px}
 .card-meta{display:flex;align-items:center;gap:8px}
 .card-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .card-date{font-family:var(--mono);font-size:.68rem;color:var(--text3)}
 .card-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--text1);line-height:1.3}
-.card-badge{display:inline-block;font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;align-self:flex-start}
-.card-text{font-size:.76rem;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card-status{display:flex;align-items:center;gap:5px;padding-top:10px;border-top:1px solid var(--border2);margin-top:auto}
-.card-status-dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+.card-badge{display:inline-block;font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;align-self:flex-start}
+.card-text{font-size:.76rem;color:var(--text2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-status{display:flex;align-items:center;gap:5px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);margin-top:auto}
+.card-status-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
 .card-status-text{font-size:.62rem;color:var(--text4);font-family:var(--mono);letter-spacing:.04em}
 .card-btn{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:600;color:var(--red-light);cursor:pointer;transition:color .2s;background:none;border:none;padding:0;margin-top:4px;align-self:flex-start}
 .card-btn:hover{color:var(--red)}
 
-/* Grained module — single integrated card */
-.year-grained{width:100%;max-width:520px}
-.year-grained.right{grid-column:3}
-.year-grained.left{grid-column:1}
-.gr-module{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:560px;max-height:620px}
+/* Related viewer — single card */
+.year-grained{width:100%;max-width:540px;margin-top:48px}
+.year-grained.right{grid-column:3;justify-self:end}
+.year-grained.left{grid-column:1;justify-self:start}
+.gr-module{background:#181a1d;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
 
-/* Grained header — fixed */
-.gr-header{display:flex;align-items:center;gap:8px;padding:16px 16px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;height:56px}
+/* Related header — 64px */
+.gr-header{min-height:64px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
 .gr-header-left{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
 .gr-header-title{font-family:var(--mono);font-size:.62rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
-.gr-header-sep{color:var(--border1);margin:0 2px}
+.gr-header-sep{color:rgba(255,255,255,.12)}
 .gr-header-year{font-family:var(--mono);font-size:.62rem;color:var(--text3);white-space:nowrap}
 .gr-header-count{font-size:.58rem;color:var(--text4);font-family:var(--mono);white-space:nowrap}
 .gr-active-indicator{font-size:.6rem;color:var(--red-light);font-family:var(--mono);margin-left:auto;white-space:nowrap}
-.gr-nav{display:flex;gap:2px;margin-left:8px}
-.gr-nav-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:none;color:var(--text3);cursor:pointer;transition:all .2s;font-size:.7rem}
+.gr-nav{display:flex;gap:4px}
+.gr-nav-btn{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08);border-radius:6px;background:none;color:var(--text3);cursor:pointer;transition:all .2s;font-size:.75rem}
 .gr-nav-btn:hover{color:var(--text1);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)}
-.gr-nav-btn:disabled{opacity:.3;cursor:default}
+.gr-nav-btn:disabled{opacity:.25;cursor:default;pointer-events:none}
 
-/* Grained list — compact */
-.gr-list{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent;padding:8px 0}
+/* Related list */
+.gr-list{padding:10px;max-height:220px;overflow-y:auto;border-bottom:1px solid rgba(255,255,255,.06);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent}
 .gr-list::-webkit-scrollbar{width:4px}
 .gr-list::-webkit-scrollbar-track{background:transparent}
 .gr-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:2px}
-.gr-entry{display:flex;align-items:flex-start;gap:10px;padding:10px 16px;cursor:pointer;transition:all .2s;border-left:2px solid transparent}
+.gr-entry{display:grid;grid-template-columns:12px 1fr;gap:12px;padding:14px 12px;border-radius:8px;cursor:pointer;transition:background .2s}
 .gr-entry:hover{background:rgba(255,255,255,.02)}
-.gr-entry.active{background:rgba(168,50,50,.06);border-left-color:var(--red-light)}
-.gr-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px;border:2px solid #181a1d;z-index:2;transition:transform .2s}
-.gr-entry.active .gr-dot{transform:scale(1.3);box-shadow:0 0 0 3px rgba(168,50,50,.2)}
-.gr-info{flex:1;min-width:0}
+.gr-entry.active{background:rgba(168,44,44,.14)}
+.gr-dot{width:9px;height:9px;border-radius:50%;margin-top:3px;flex-shrink:0}
+.gr-info{min-width:0}
 .gr-date{font-family:var(--mono);font-size:.58rem;color:var(--text4);margin-bottom:2px}
 .gr-title{font-size:.74rem;color:var(--text2);line-height:1.35;font-weight:500}
 .gr-entry:hover .gr-title{color:var(--text1)}
 .gr-entry.active .gr-title{color:var(--text1);font-weight:600}
 
-/* Grained expanded — bottom of same card */
-.gr-expanded{border-top:1px solid rgba(255,255,255,.06);padding:16px;display:none;animation:grFadeIn .25s ease;flex-shrink:0;max-height:300px;overflow-y:auto}
+/* Related detail — bottom section */
+.gr-expanded{border-top:1px solid rgba(255,255,255,.06);padding:22px;display:none;animation:grFadeIn .25s ease;min-height:220px;max-height:320px;overflow-y:auto}
 .gr-expanded.open{display:block}
 @keyframes grFadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
-.gr-exp-meta{display:flex;align-items:center;gap:6px;margin-bottom:8px}
-.gr-exp-badge{font-size:.55rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px}
-.gr-exp-status{font-size:.55rem;color:var(--text4);font-family:var(--mono)}
-.gr-exp-date{font-family:var(--mono);font-size:.62rem;color:var(--text3);margin-bottom:4px}
-.gr-exp-title{font-family:var(--serif);font-size:.88rem;font-weight:600;color:var(--text1);line-height:1.3;margin-bottom:6px}
-.gr-exp-summary{font-size:.72rem;color:var(--text2);line-height:1.5;margin-bottom:8px}
-.gr-exp-source{font-size:.58rem;color:var(--text4);font-style:italic;margin-bottom:10px}
+.gr-exp-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.gr-exp-badge{font-size:.55rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+.gr-exp-status{font-size:.55rem;color:var(--text4);font-family:var(--mono);letter-spacing:.04em}
+.gr-exp-date{font-family:var(--mono);font-size:.62rem;color:var(--text3);margin-bottom:6px}
+.gr-exp-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--text1);line-height:1.35;margin-bottom:8px}
+.gr-exp-summary{font-size:.73rem;color:var(--text2);line-height:1.55;margin-bottom:10px}
+.gr-exp-source{font-size:.58rem;color:var(--text4);font-style:italic;margin-bottom:12px}
 .gr-exp-btn{display:inline-flex;align-items:center;gap:4px;font-size:.65rem;font-weight:600;color:var(--red-light);cursor:pointer;transition:color .2s;background:none;border:none;padding:0}
 .gr-exp-btn:hover{color:var(--red)}
 
 /* ===== RESPONSIVE — Tablet ===== */
 @media(max-width:1024px){
-  .year-block{grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr);column-gap:18px;max-width:900px}
-  .year-main{max-width:100%}
-  .year-grained{max-width:100%}
-  .gr-module{min-height:auto;max-height:620px}
+  .year-block{grid-template-columns:minmax(320px,1fr) 72px minmax(320px,1fr);column-gap:24px}
+  .year-main,.year-grained{max-width:100%}
 }
 
 /* ===== RESPONSIVE — Mobile ===== */
@@ -223,17 +223,17 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
   .tl-line{display:none}
   .method-inner{flex-direction:column;text-align:center}
   .side-panel{width:100vw}
-  .year-block{grid-template-columns:1fr;gap:16px;margin-bottom:60px;padding:0 0 0 20px}
-  .year-main{grid-column:1!important;max-width:100%}
-  .year-main.right,.year-main.left{grid-column:1}
-  .year-tl-node{grid-column:1;flex-direction:row;gap:10px;padding-top:0;margin-bottom:4px}
-  .year-tl-node .node-year{margin-bottom:0;margin-right:4px}
+  .year-block{grid-template-columns:32px minmax(0,1fr);gap:16px;margin:80px auto 0}
+  .year-main{grid-column:2;max-width:none;width:100%;justify-self:stretch;margin-top:0}
+  .year-main.right,.year-main.left{grid-column:2}
+  .year-tl-node{grid-column:1;flex-direction:column;align-items:center;padding-top:0;min-height:100%}
   .year-tl-node .connector{display:none}
-  .year-grained{grid-column:1!important;max-width:100%}
-  .year-grained.right,.year-grained.left{grid-column:1}
-  .gr-module{min-height:auto;max-height:none}
+  .year-tl-node .axis-line{display:none}
+  .year-grained{grid-column:2;max-width:none;width:100%;justify-self:stretch;margin-top:0}
+  .year-grained.right,.year-grained.left{grid-column:2}
+  .gr-module{max-height:none}
   .gr-list{max-height:none}
-  .gr-expanded{max-height:none}
+  .gr-expanded{min-height:auto;max-height:none}
 }
 </style>
 </head>
@@ -381,7 +381,7 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 
 <script>
 const CAT_COLORS={POLÍTICA:'#a83232',ECONOMÍA:'#2d8a4e',CORRUPCIÓN:'#3272a8',SOCIAL:'#a88732',INTERNACIONAL:'#7a3da8',EMPRESAS:'#3294a8',LEGAL:'#a89878'};
-const CAT_BG={POLÍTICA:'rgba(168,50,50,.12)',ECONOMÍA:'rgba(45,138,78,.12)',CORRUPCIÓN:'rgba(50,114,168,.12)',SOCIAL:'rgba(168,135,50,.12)',INTERNACIONAL:'rgba(122,61,168,.12)',EMPRESAS:'rgba(50,148,168,.12)',LEGAL:'rgba(168,152,120,.12)'};
+const CAT_BG={POLÍTICA:'linear-gradient(135deg,#1a0e0e,#0f0808)',ECONOMÍA:'linear-gradient(135deg,#0e1a0e,#080f08)',CORRUPCIÓN:'linear-gradient(135deg,#0e0e1a,#08080f)',SOCIAL:'linear-gradient(135deg,#1a160e,#0f0e08)',INTERNACIONAL:'linear-gradient(135deg,#120e1a,#0c080f)',EMPRESAS:'linear-gradient(135deg,#0e161a,#080c0f)',LEGAL:'linear-gradient(135deg,#1a1610,#0f0e0a)'};
 
 const EVENTS=[
 {id:1,y:1998,date:'1998-12-06',displayDate:'6 DIC 1998',title:'Chávez gana la presidencia',cat:'POLÍTICA',summary:'Hugo Chávez Frías, ex teniente coronel que lideró el golpe de 1992, gana la presidencia con 3.673.663 votos (56,20%) representando el MVR. Su campaña "Patria para todos" promete una revolución bolivariana contra la "cuarta república" corrupta.',impact:'Inicio de 25+ años de chavismo-madurismo. Reestructuración institucional, control judicial y militar, y erosión progresiva de separación de poderes que facilita el saqueo sistemático.',context:'Tras el Caracazo de 1989 y la crisis bancaria de 1994, la desconfianza ciudadana en los partidos tradicionales (AD, COPEI) alcanza niveles históricos. Chávez capitaliza el descontento con un discurso anti-establishment que promete refundar la nación.',sources:['CNE Electoral Archive 1998','Transparencia Venezuela','Human Rights Watch World Report 1999'],tags:['elecciones','presidencia','Chávez','MVR','revolución bolivariana'],img:'🏛️',imgSrc:'https://upload.wikimedia.org/wikipedia/commons/3/35/Hugo_Ch%C3%A1vez_en_1998.png',imgCredit:'Wikimedia · CC BY 3.0'},
@@ -567,7 +567,8 @@ function buildTimeline(){
     if(ev.y!==currentYear){
       currentYear=ev.y;
     }
-    const side=i%2===0?'right':'left';
+    const mainSide=i%2===0?'right':'left';
+    const grainedSide=mainSide==='right'?'left':'right';
     const color=CAT_COLORS[ev.cat]||'#888';
     const bg=CAT_BG[ev.cat]||'rgba(136,136,136,.1)';
     const secs=SECONDARY_EVENTS[ev.y]||[];
@@ -577,11 +578,11 @@ function buildTimeline(){
     block.dataset.cat=ev.cat;
     block.dataset.search=(ev.title+' '+ev.summary+' '+ev.displayDate+' '+ev.cat+' '+(ev.tags||[]).join(' ')).toLowerCase();
 
-    // Main card
+    const fallbackIcon=ev.img||'📄';
     const imgHTML=ev.imgSrc
-      ?`<div class="card-img"><img src="${ev.imgSrc}" alt="${ev.title}" loading="lazy">${ev.imgCredit?`<div class="card-img-credit">${ev.imgCredit}</div>`:''}</div>`
-      :`<div class="card-img" style="background:${bg}"><div class="card-img-inner" style="background:linear-gradient(135deg,${bg},var(--bg3))"><span style="font-size:2rem;opacity:.5">${ev.img||'📄'}</span></div></div>`;
-    const mainCard=`<div class="year-main ${side}">
+      ?`<div class="card-img" style="background:${bg}"><div class="card-img-fallback">${fallbackIcon}</div><img src="${ev.imgSrc}" alt="${ev.title}" loading="lazy" onerror="this.style.display='none'">${ev.imgCredit?`<div class="card-img-credit">${ev.imgCredit}</div>`:''}</div>`
+      :`<div class="card-img" style="background:${bg}"><div class="card-img-fallback">${fallbackIcon}</div></div>`;
+    const mainCard=`<div class="year-main ${mainSide}">
       <div class="tl-card" data-idx="${i}">
         ${imgHTML}
         <div class="card-body">
@@ -605,15 +606,15 @@ function buildTimeline(){
     const centralNode=`<div class="year-tl-node">
       <span class="node-year">${ev.y}</span>
       <div class="node-dot" style="background:${color}"></div>
+      <div class="axis-line"></div>
       <div class="connector left"></div>
       <div class="connector right"></div>
     </div>`;
 
-    // Grained module — single integrated card
+    // Grained module — single integrated card, always opposite side
     let grainedHTML='';
     if(secs.length>0){
-      const hasMore=secs.length>4;
-      grainedHTML=`<div class="year-grained ${side}">
+      grainedHTML=`<div class="year-grained ${grainedSide}">
         <div class="gr-module">
           <div class="gr-header">
             <div class="gr-header-left">
