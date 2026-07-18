@@ -164,12 +164,16 @@ def _is_venezuela_related(text: str) -> bool:
         'maduro', 'cabello', 'diosdado', 'delcy', 'psuv', 'chavismo', 'chavez',
         'famb', 'fanb', 'colectivos',
         '#venezuela', '#vargas', '#laguaira', '#caracas', '#maracaibo',
+        'lguaira', 'laguaira', 'san bernardino', 'puerto cabello',
+        'san mateo', 'aceiteira',
     ]
     denuncia_terms = [
         'denuncia', 'abuso', 'corrupción', 'corrupcion', 'extorsion', 'extorsión',
         'desalojo', 'reten', 'detención', 'detencion', 'tortura', 'desaparecido',
-        'desaparecida', 'preso político', 'preso politico', 'persecución', 'persecucion',
-        'represión', 'represion', 'censura', 'sicariato', 'homicidio', 'asesinato',
+        'desaparecida', 'desaparecidos', 'preso político', 'preso politico',
+        'presa política', 'presa politica', 'presos políticos',
+        'persecución', 'persecucion', 'represión', 'represion', 'censura',
+        'sicariato', 'homicidio', 'asesinato', 'muerte',
         'terremoto', 'sismo', 'emergencia', 'víctima', 'victima', 'escombros',
         'ayuda', 'humanitaria', 'donación', 'donacion', 'reconstrucción',
         'ddhh', 'derechos humanos', 'libertad', 'justicia', 'solidaridad',
@@ -177,15 +181,42 @@ def _is_venezuela_related(text: str) -> bool:
         'oposicion', 'preso', 'presos', 'rescate', 'rescatista',
         'sin luz', 'sin agua', 'racionamiento', 'apagón', 'apagon',
         'militar', 'policial', 'policía', 'policia', 'gnb', 'pnb',
+        'discapacidad', 'enfermedad', 'hospital', 'médico', 'medico',
+        'bono', 'examen', 'tratamiento', 'cirugía', 'cirugia',
+        'fallecido', 'fallecida', 'víctimas', 'victimas',
+        'bloqueo', 'escasez', 'colapso', 'emergencia',
+        'protección', 'proteccion', 'menor', 'niño', 'niña', 'trata',
+        'femicidio', 'violación', 'violacion', 'violencia',
+        'arresto', 'arrestada', 'arrestado', 'captura', 'capturado',
+        'injusticia', 'abuso de poder', 'exilio', 'proscripción',
     ]
 
     has_venezuela = any(kw in t for kw in venezuela_terms)
     has_denuncia = any(kw in t for kw in denuncia_terms)
 
+    # Path 1: Venezuela + denuncia = pass
     if has_venezuela and has_denuncia:
         return True
 
-    # Also accept known Venezuelan denuncia accounts (they don't always say "Venezuela")
+    # Path 2: High-confidence Venezuela names = pass (they only tweet about VZ)
+    high_confidence_vz = ['maduro', 'diosdado', 'delcy', 'cabello', 'psuv', 'chavismo']
+    if any(kw in t for kw in high_confidence_vz):
+        return True
+
+    # Path 3: Strong denuncia keywords = pass (terremoto, presa política, etc.)
+    strong_denuncia = [
+        'terremoto', 'sismo', 'escombros', 'desaparecido', 'desaparecida',
+        'desaparecidos', 'preso político', 'presa política', 'presos políticos',
+        'extorsión', 'extorsion', 'ddhh', 'derechos humanos',
+        'sin luz', 'sin agua', 'apagón', 'racionamiento',
+        'trata de personas', 'tráfico de niños', 'femicidio',
+        'bono', 'discapacidad', 'enfermedad', 'hospital',
+        'urgente', 'difundir', 'auxilio', 'socorro',
+    ]
+    if any(kw in t for kw in strong_denuncia):
+        return True
+
+    # Path 4: Known Venezuelan denuncia accounts = pass
     known_denuncia_accounts = [
         'freddyzur', 'cristiancrespoj', 'fantasma_956', 'elpitazotv',
         'caraotadigital', 'noticiasvzla', 'aborde', 'provea',
@@ -196,9 +227,18 @@ def _is_venezuela_related(text: str) -> bool:
         'shelbykrisel', 'tamara_suju', 'ntn24', 'luzmelyreyes',
         'sergiohdzguerra', 'estebanoria', 'joshkr1441', 'robortecarlo14',
         'gabygabygg', 'orlavision', 'uhn_plus', 'elganadorhenry',
+        'sosvenezuelaj', 'vr_vzlalibre_3', 'pipogonza',
     ]
     for acct in known_denuncia_accounts:
         if acct in t:
+            return True
+
+    # Path 5: Missing person pattern (family member + full name)
+    import re
+    if re.search(r'señora|señor|hijo|madre|padre|familia|hermano|hermana', t):
+        # Check if there's a full name (title case OR ALL CAPS)
+        if re.search(r'[A-ZÁÉÍÓÚ][a-záéíóú]+ [A-ZÁÉÍÓÚ][a-záéíóú]+', text) or \
+           re.search(r'[A-ZÁÉÍÓÚ]{2,} [A-ZÁÉÍÓÚ]{2,}', text):
             return True
 
     return False

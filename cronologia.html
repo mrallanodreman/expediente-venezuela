@@ -65,16 +65,8 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 
 /* ===== TIMELINE ===== */
 .timeline-section{max-width:1100px;margin:60px auto 0;padding:0 var(--side-pad);position:relative}
-.tl-year-rule{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:24px;z-index:50}
-.tl-year-rule .yr{font-size:.65rem;color:var(--text4);font-family:var(--mono);cursor:pointer;transition:color .2s;text-decoration:none}
-.tl-year-rule .yr:hover{color:var(--text2)}
-.tl-year-rule .yr.yr-active{color:var(--red-light)}
-.tl-year-rule .yr-line{width:1px;height:16px;background:var(--border1);margin:0 auto}
 .tl-container{position:relative;padding:20px 0 80px}
 .tl-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border1);transform:translateX(-50%);z-index:0}
-.tl-year-label{position:relative;text-align:center;margin:48px 0 24px;z-index:2}
-.tl-year-label span{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--text3);background:var(--bg0);padding:4px 14px;border:1px solid var(--border1);border-radius:20px;letter-spacing:.08em}
-
 /* Events */
 
 /* Panel hero */
@@ -229,8 +221,6 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .stat-block+.stat-block{border-left:none}
   .tl-line{display:none}
-  .tl-year-label{text-align:left;padding-left:44px}
-  .tl-year-rule{display:none}
   .method-inner{flex-direction:column;text-align:center}
   .side-panel{width:100vw}
   .year-block{grid-template-columns:1fr;gap:16px;margin-bottom:60px;padding:0 0 0 20px}
@@ -339,9 +329,7 @@ nav a.active{color:var(--text1);border-bottom:2px solid var(--red)}
 
 <!-- TIMELINE -->
 <section class="timeline-section">
-  <div class="tl-year-rule" id="yearRule"></div>
   <div class="tl-container" id="timeline">
-    <div class="tl-line"></div>
   </div>
 </section>
 
@@ -805,39 +793,14 @@ function applyFilters(){
     const matchCat=!cat||el.dataset.cat===cat;
     const matchYear=!yr||el.dataset.year===yr;
     el.style.display=(matchSearch&&matchCat&&matchYear)?'':'none';
-    // Also filter year labels
-    if(matchSearch&&matchCat&&matchYear){
-      const yl=document.getElementById('year-'+el.dataset.year);
-      if(yl)yl.style.display='';
-    }
-  });
-  // Hide year labels with no visible blocks
-  document.querySelectorAll('.tl-year-label').forEach(yl=>{
-    const y=yl.id.replace('year-','');
-    const hasVisible=document.querySelector(`.year-block[data-year="${y}"]:not([style*="display: none"])`);
-    yl.style.display=hasVisible?'':'none';
   });
 }
 document.getElementById('searchInput').addEventListener('input',applyFilters);
 document.getElementById('catFilter').addEventListener('change',applyFilters);
 document.getElementById('yearFilter').addEventListener('change',applyFilters);
 
-// Year rule sidebar
-function buildYearRule(){
-  const rule=document.getElementById('yearRule');
-  const years=[...yearSet].sort();
-  rule.innerHTML='';
-  years.forEach((y,i)=>{
-    if(i>0){const line=document.createElement('div');line.className='yr-line';rule.appendChild(line);}
-    const a=document.createElement('a');a.className='yr';a.textContent=y;a.href='#year-'+y;
-    a.addEventListener('click',e=>{e.preventDefault();document.getElementById('year-'+y)?.scrollIntoView({behavior:'smooth',block:'center'});});
-    rule.appendChild(a);
-  });
-}
-
 // Init
 buildTimeline();
-buildYearRule();
 </script>
 </body>
 </html>
