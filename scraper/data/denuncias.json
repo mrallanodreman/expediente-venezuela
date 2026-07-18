@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-18T00:49:09.598565+00:00",
+  "updated_at": "2026-07-18T01:01:24.448418+00:00",
   "count": 54,
   "categories": {
     "general": 40,
@@ -860,7 +860,9 @@
       "severity": "info",
       "resumen": "Denuncia ciudadana publicada por @LuzMelyReyes sobre incidente reportado en Venezuela. Reporteros sin fronteras desplegó una misión en Venezuela entre el 8 y 12 de julio. Junto al SNTP instalaron un centro de conexiones en Catia La Mar para que los periodistas pudieran tener acceso a in...",
       "video_url": "media/videos/EV-2026-0076.mp4",
-      "images": [],
+      "images": [
+        "media/images/EV-2026-0076.jpg"
+      ],
       "likes": 0,
       "retweets": 0,
       "replies": 0,

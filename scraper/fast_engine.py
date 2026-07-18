@@ -292,21 +292,40 @@ async def _enrich_full_text(page, tweets):
 # ═══════════════════════════════════════════════════════════════════
 # VIDEO DOWNLOAD — yt-dlp (much more reliable)
 # ═══════════════════════════════════════════════════════════════════
+YT_DLP = '/home/pctorre/.local/bin/yt-dlp'
+
+
+def _has_video_track(filepath: Path) -> bool:
+    """Check if a video file actually has a video codec (not audio-only)."""
+    try:
+        result = subprocess.run(
+            ['ffprobe', '-v', 'quiet', '-show_entries', 'stream=codec_type', '-of', 'csv=p=0', str(filepath)],
+            capture_output=True, text=True, timeout=10
+        )
+        return 'video' in result.stdout
+    except Exception:
+        return False
+
+
 def download_video_ytdlp(exp_id, tweet_url):
     """Download video from tweet URL using yt-dlp. Returns True if successful."""
     VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
     local_file = VIDEOS_DIR / f"{exp_id}.mp4"
 
-    if local_file.exists() and local_file.stat().st_size > 1000:
-        return True
+    # Skip if already downloaded AND verified as video
+    if local_file.exists() and local_file.stat().st_size > 10000:
+        if _has_video_track(local_file):
+            return True
+        else:
+            # File exists but is audio-only — delete and re-download
+            local_file.unlink()
 
     try:
-        # yt-dlp with cookies from Ferdium
         cookie_file = _get_cookie_file()
         cmd = [
-            'yt-dlp',
+            YT_DLP,
             '--no-warnings',
-            '-f', 'best[ext=mp4]/best',
+            '-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
             '-o', str(local_file),
             '--no-playlist',
         ]
@@ -314,12 +333,17 @@ def download_video_ytdlp(exp_id, tweet_url):
             cmd.extend(['--cookies', cookie_file])
         cmd.append(tweet_url)
 
-        result = subprocess.run(cmd, capture_output=True, timeout=120)
+        result = subprocess.run(cmd, capture_output=True, timeout=180)
 
-        if result.returncode == 0 and local_file.exists() and local_file.stat().st_size > 1000:
-            size_kb = local_file.stat().st_size / 1024
-            log_engine(f"    Downloaded {exp_id}: {size_kb:.0f} KB")
-            return True
+        if result.returncode == 0 and local_file.exists() and local_file.stat().st_size > 10000:
+            if _has_video_track(local_file):
+                size_kb = local_file.stat().st_size / 1024
+                log_engine(f"    Downloaded {exp_id}: {size_kb:.0f} KB")
+                return True
+            else:
+                log_engine(f"    WARN: {exp_id} downloaded but no video track — removing")
+                local_file.unlink()
+                return False
         else:
             if local_file.exists():
                 local_file.unlink()
@@ -373,7 +397,6 @@ def _get_cookie_file():
 def download_all_pending():
     """Download all videos using yt-dlp from tweet URLs."""
     conn = init_db()
-    # Get tweets that need video download: either have HTTP video_url OR have source_url but no local video
     rows = conn.execute('''
         SELECT expediente_id, source_url, video_url
         FROM denuncias 
@@ -388,12 +411,16 @@ def download_all_pending():
 
     downloaded = 0
     for exp_id, source_url, video_url in rows:
-        # Skip if already downloaded locally
         local_file = VIDEOS_DIR / f'{exp_id}.mp4'
-        if local_file.exists() and local_file.stat().st_size > 10000:
-            continue
 
-        # Use source_url (tweet URL) for yt-dlp
+        # If file exists, verify it has a video track
+        if local_file.exists():
+            if local_file.stat().st_size > 10000 and _has_video_track(local_file):
+                continue
+            else:
+                # Audio-only or tiny — delete and re-download
+                local_file.unlink()
+
         tweet_url = source_url if source_url else video_url
         if not tweet_url:
             continue
@@ -408,9 +435,44 @@ def download_all_pending():
     return downloaded
 
 
-# ═══════════════════════════════════════════════════════════════════
-# SAVE TO DB
-# ═══════════════════════════════════════════════════════════════════
+def verify_all_videos():
+    """Verify all videos in DB have valid video tracks. Re-download broken ones."""
+    conn = init_db()
+    rows = conn.execute('''
+        SELECT expediente_id, source_url, video_url
+        FROM denuncias 
+        WHERE video_url LIKE 'media/%'
+        ORDER BY id DESC
+    ''').fetchall()
+    conn.close()
+
+    fixed = 0
+    for exp_id, source_url, video_url in rows:
+        local_file = VIDEOS_DIR / f'{exp_id}.mp4'
+        if not local_file.exists():
+            # File missing — try to re-download
+            if source_url and download_video_ytdlp(exp_id, source_url):
+                conn = init_db()
+                update_denuncia(conn, exp_id, {'video_url': f'media/videos/{exp_id}.mp4'})
+                export_to_json(conn)
+                conn.close()
+                fixed += 1
+            continue
+
+        if not _has_video_track(local_file):
+            log_engine(f"  FIX: {exp_id} has no video track, re-downloading...")
+            local_file.unlink()
+            if source_url and download_video_ytdlp(exp_id, source_url):
+                conn = init_db()
+                update_denuncia(conn, exp_id, {'video_url': f'media/videos/{exp_id}.mp4'})
+                export_to_json(conn)
+                conn.close()
+                fixed += 1
+
+    return fixed
+
+
+
 def save_tweets_to_db(tweets):
     """Save tweets to DB. Only saves those with media AND Venezuela-related."""
     from denuncias_db import insert_denuncia
@@ -505,6 +567,12 @@ def run_cycle():
     log_engine("Downloading pending videos...")
     downloaded = download_all_pending()
     log_engine(f"Downloaded: {downloaded} videos")
+
+    # 3b. Verify all videos have valid tracks
+    log_engine("Verifying video integrity...")
+    fixed = verify_all_videos()
+    if fixed:
+        log_engine(f"Fixed: {fixed} broken videos")
 
     # 4. Auto-publish
     published = auto_publish()
