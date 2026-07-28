@@ -301,6 +301,27 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
 .slide-media-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono);font-size:.65rem;color:var(--text-dim);text-align:center;gap:.5rem;padding:1rem}
 .slide-media-placeholder::before{content:'';width:32px;height:1px;background:rgba(196,184,152,.15)}
 .slide-media-placeholder a{color:var(--yellow);margin-top:.5rem;text-decoration:underline}
+
+    /* ── TEXT-ONLY DENUNCIAS LIST ── */
+    .text-list{display:flex;flex-direction:column;gap:1px;background:rgba(196,184,152,.06)}
+    .text-item{background:var(--bg);padding:1.25rem 1.5rem;transition:background .2s}
+    .text-item:hover{background:var(--bg2)}
+    .text-item-header{display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem;flex-wrap:wrap}
+    .text-item-exp{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;font-weight:600}
+    .text-item-cat{font-family:var(--mono);font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border:1px solid;border-radius:2px}
+    .text-item-time{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);margin-left:auto}
+    .text-item-body{display:flex;gap:1rem;align-items:flex-start}
+    .text-item-thumb{width:80px;height:80px;object-fit:cover;border-radius:4px;flex-shrink:0;opacity:.8}
+    .text-item-content{flex:1;min-width:0}
+    .text-item-user{font-size:.75rem;color:var(--text-dim);margin-bottom:.35rem}
+    .text-item-avatar{display:inline-flex;width:20px;height:20px;border-radius:50%;background:rgba(196,184,152,.15);color:var(--beige);align-items:center;justify-content:center;font-size:.65rem;font-weight:700;margin-right:4px;vertical-align:middle}
+    .text-item-username{color:var(--text-dim);opacity:.6}
+    .text-item-text{font-size:.82rem;color:var(--text-bright);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .text-item-footer{margin-top:.75rem}
+    .text-item-link{font-family:var(--mono);font-size:.6rem;color:var(--beige);text-decoration:none;letter-spacing:.05em}
+    .text-item-link:hover{color:var(--yellow)}
+    .text-list-empty{text-align:center;padding:2rem;font-family:var(--mono);font-size:.7rem;color:var(--text-dim)}
+    @media(max-width:600px){.text-item{padding:.85rem 1rem}.text-item-body{flex-direction:column}.text-item-thumb{width:100%;height:120px}}
 .slide-media-category{position:absolute;top:1rem;left:1rem;font-family:var(--mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid;z-index:3}
 .slide-orientation{position:absolute;bottom:1rem;right:1rem;font-family:var(--mono);font-size:.45rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .5rem;background:rgba(0,0,0,.7);color:var(--text-dim);border:1px solid rgba(196,184,152,.1);z-index:3}
 
@@ -482,6 +503,18 @@ footer{border-top:1px solid rgba(196,184,152,.06);padding:3rem 2rem;background:v
 
     <div class="slider-dots" id="slider-dots"></div>
     <div class="slider-status" id="slider-status"></div>
+  </div>
+</section>
+
+<!-- DENUNCIAS DE TEXTO -->
+<section id="text-denuncias" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Denuncias de texto</div>
+      <h2 class="section-title">Más denuncias recibidas</h2>
+      <p class="section-desc">Denuncias sin evidencia multimedia que requieren verificación adicional.</p>
+    </div>
+    <div class="text-list" id="text-list"></div>
   </div>
 </section>
 
@@ -898,16 +931,19 @@ document.querySelector('form')?.addEventListener('submit', (e) => {
     if (!res.ok) return;
     const data = await res.json();
     const denuncias = data.denuncias || [];
-    const withMedia = denuncias.filter(d => d.video_url || (d.images && d.images.length > 0));
+    // Solo denuncias con video real van al slider multimedia
+    const withVideo = denuncias.filter(d => d.video_url);
+    const textOnly = denuncias.filter(d => !d.video_url);
 
     updateStats(data);
-    initSlider(withMedia);
+    initSlider(withVideo);
+    initTextList(textOnly);
     setupVideoPlayers();
     updateCategories(data.categories);
 
     const status = document.getElementById('slider-status');
     if (status && denuncias.length) {
-      status.textContent = withMedia.length + ' denuncias con evidencia · ' + denuncias.length + ' total · actualizado ' + new Date(data.updated_at).toLocaleString('es-VE');
+      status.textContent = withVideo.length + ' videos · ' + textOnly.length + ' texto · ' + denuncias.length + ' total · ' + new Date(data.updated_at).toLocaleString('es-VE');
     }
   } catch (e) {
     console.log('Expediente Venezuela: could not load data', e);
@@ -1105,6 +1141,40 @@ function initSlider(denuncias) {
   const container = document.querySelector('.slider-container');
   container?.addEventListener('mouseenter', () => clearInterval(sliderTimer));
   container?.addEventListener('mouseleave', resetSliderTimer);
+}
+
+// --- Text-only denuncias list ---
+function initTextList(denuncias) {
+  const list = document.getElementById('text-list');
+  if (!list) return;
+  if (!denuncias.length) {
+    list.innerHTML = '<div class="text-list-empty">Todas las denuncias tienen evidencia multimedia</div>';
+    return;
+  }
+  list.innerHTML = denuncias.map(t => {
+    const initial = (t.username || '?')[0].toUpperCase();
+    const timeAgo = timeSince(t.created_at);
+    const catColor = CAT_COLORS[t.category] || CAT_COLORS.general;
+    const catLabel = t.category_label || CAT_LABELS[t.category] || t.category || 'General';
+    const hasImages = t.images && t.images.length;
+    return '<div class="text-item">' +
+      '<div class="text-item-header">' +
+        '<div class="text-item-exp" style="color:' + catColor + '">' + esc(t.expediente_id || 'SIN EXPEDIENTE') + '</div>' +
+        '<span class="text-item-cat" style="color:' + catColor + ';border-color:' + catColor + '30">' + esc(catLabel) + '</span>' +
+        '<span class="text-item-time">hace ' + timeAgo + '</span>' +
+      '</div>' +
+      '<div class="text-item-body">' +
+        (hasImages ? '<img src="' + esc(t.images[0]) + '" alt="" loading="lazy" class="text-item-thumb">' : '') +
+        '<div class="text-item-content">' +
+          '<div class="text-item-user"><span class="text-item-avatar">' + initial + '</span> <strong>' + esc(t.name) + '</strong> <span class="text-item-username">@' + esc(t.username) + '</span></div>' +
+          '<p class="text-item-text">' + esc(t.text) + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="text-item-footer">' +
+        '<a href="' + esc(t.url) + '" target="_blank" rel="noopener" class="text-item-link">Ver fuente &rarr;</a>' +
+      '</div>' +
+    '</div>';
+  }).join('');
 }
 
 // --- Timeline Widget Horizontal ---

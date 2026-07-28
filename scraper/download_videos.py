@@ -15,7 +15,7 @@ except ImportError:
     from denuncias_db import init_db, update_denuncia, export_to_json
     from denuncias_scraper import load_x_cookies, _wait_for_media
 
-VIDEOS_DIR = Path("/mnt/sdb1/MoneyMakers_webops/Web1/expediente-venezuela/media/videos")
+VIDEOS_DIR = Path("/media/hobeat/CC06471F06470A42/app/expediente-venezuela/media/videos")
 VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -46,8 +46,7 @@ async def capture_and_download(max_videos: int = 50):
     rows = conn.execute(
         "SELECT expediente_id, tweet_id, source_url, video_url "
         "FROM denuncias "
-        "WHERE (video_url IS NULL OR video_url = 'None' OR video_url LIKE 'http%' OR video_url LIKE 'blob:%') "
-        "AND source_url IS NOT NULL "
+        "WHERE source_url IS NOT NULL AND source_url != '' "
         "ORDER BY id DESC "
         f"LIMIT {max_videos}"
     ).fetchall()
