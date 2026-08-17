@@ -119,6 +119,27 @@ def bootstrap_database() -> int:
         if not isinstance(rows, list):
             return 0
 
+        valid_pairs = []
+        for item in rows:
+            if not isinstance(item, dict):
+                continue
+            source_url = _clean_text(item.get("url"), 2000)
+            tweet_id = _tweet_id_from_url(source_url)
+            expediente_id = _clean_text(item.get("expediente_id"), 64)
+            if tweet_id and expediente_id:
+                valid_pairs.append((expediente_id, tweet_id))
+
+        unique_expedientes = {expediente_id for expediente_id, _ in valid_pairs}
+        unique_tweets = {tweet_id for _, tweet_id in valid_pairs}
+        print(
+            "Snapshot identity diagnostics: "
+            f"rows={len(rows)} valid={len(valid_pairs)} "
+            f"unique_expedientes={len(unique_expedientes)} "
+            f"unique_tweets={len(unique_tweets)} "
+            f"duplicate_expediente_rows={len(valid_pairs) - len(unique_expedientes)} "
+            f"duplicate_tweet_rows={len(valid_pairs) - len(unique_tweets)}"
+        )
+
         snapshot_time = _clean_text(payload.get("updated_at"), 80) or datetime.now(timezone.utc).isoformat()
         inserted = 0
 
