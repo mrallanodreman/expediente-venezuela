@@ -1,6 +1,7 @@
 """SQLite database layer for Expediente Venezuela denuncias."""
 import hashlib
 import json
+import os
 import re
 import sqlite3
 from pathlib import Path
@@ -118,7 +119,16 @@ def _keywords_overlap(kw1: List[str], kw2: List[str]) -> float:
 
 TOPIC_THRESHOLD = 0.35  # Min keyword overlap to consider "same topic"
 
-DB_DIR = Path(__file__).parent / "data"
+def _default_data_dir() -> Path:
+    """Operational data dir. Overridable via DATA_DIR env so the runtime DB can
+    live on a persistent volume while the seed snapshot stays in the image."""
+    override = os.getenv("DATA_DIR")
+    if override:
+        return Path(override)
+    return Path(__file__).parent / "data"
+
+
+DB_DIR = _default_data_dir()
 DB_PATH = DB_DIR / "denuncias.db"
 EXPORT_PATH = DB_DIR / "denuncias.json"
 
