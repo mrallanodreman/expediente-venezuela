@@ -1,13 +1,19 @@
 {
-  "updated_at": "2026-08-17T04:06:39.395744+00:00",
-  "count": 520,
+  "updated_at": "2026-08-17T04:27:33.436718+00:00",
+  "count": 538,
   "categories": {
-    "denuncia-funcionario": 77,
-    "presos-politicos": 14,
-    "extorsion": 7,
+    "abuso-autoridad": 9,
+    "presos-politicos": 17,
+    "represion": 7,
+    "desaparicion": 9,
+    "salud": 15,
+    "corrupcion": 31,
+    "ayuda-humanitaria": 28,
+    "denuncia-funcionario": 78,
+    "general": 67,
+    "extorsion": 8,
     "desaparicion-forzada": 3,
     "desastre": 4,
-    "abuso-autoridad": 6,
     "infraestructura": 3,
     "servicios": 38,
     "terremotos": 49,
@@ -15,14 +21,11 @@
     "denuncia-ciudadana": 17,
     "censura": 6,
     "politica": 27,
-    "ayuda-humanitaria": 27,
     "persecucion-judicial": 4,
     "ciberseguridad": 1,
-    "desaparicion": 8,
     "ddhh": 6,
     "solidaridad": 24,
     "tortura": 3,
-    "corrupcion": 30,
     "economia": 1,
     "preso-politico": 2,
     "deportes": 2,
@@ -32,10 +35,7 @@
     "geopolitica": 2,
     "reconstruccion": 1,
     "inteligencia": 1,
-    "general": 66,
-    "represion": 6,
     "abuso": 10,
-    "salud": 10,
     "persecucion": 4
   },
   "denuncias": [
@@ -1150,6 +1150,438 @@
       "url": "https://x.com/estebanoria/status/2077776231940940088",
       "source_count": 1,
       "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-8668",
+      "username": "ElGanadorHenry",
+      "name": "ElGanadorHenry",
+      "text": "VIRAL: el régimen hizo un cabildo abierto y resultó en que una valiente mujer trabajadora señaló al comandante de la policía de frente.",
+      "category": "abuso-autoridad",
+      "category_label": "abuso-autoridad",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ElGanadorHenry/status/2087914142803910995",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ElGanadorHenry",
+          "url": "https://x.com/ElGanadorHenry/status/2087914142803910995"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8667",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "Denuncias de golpizas y maltratos dentro de las prisiones en Venezuela. Las liberaciones forman parte de la primera fase de negociaciones.",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2088989783053738114",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2088989783053738114"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8666",
+      "username": "EVTVMiami",
+      "name": "EVTVMiami",
+      "text": "Cardenal Porras clama por los presos políticos y alerta: el mal también está en la Iglesia.",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/EVTVMiami/status/2014694999842058722",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "EVTVMiami",
+          "url": "https://x.com/EVTVMiami/status/2014694999842058722"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8665",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "DENUNCIA PÚBLICA URGENTE | Sujetos presuntamente vinculados a grupos paramilitares (colectivos) grabaron y fotografiaron a familiares.",
+      "category": "represion",
+      "category_label": "Represión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2018206589006577749",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2018206589006577749"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8664",
+      "username": "alejabolivarian",
+      "name": "alejabolivarian",
+      "text": "DENUNCIA PÚBLICA. Presidente Nicolas Maduro da detalles del asalto al buque petrolero y denuncia que sus tripulantes están secuestrados.",
+      "category": "desaparicion",
+      "category_label": "desaparicion",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/alejabolivarian/status/1999263186454032705",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "alejabolivarian",
+          "url": "https://x.com/alejabolivarian/status/1999263186454032705"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8663",
+      "username": "llaneroinforma",
+      "name": "llaneroinforma",
+      "text": "#14Ago | El Hospital Clínico Universitario, UCV, Caracas, fue denunciado una vez más por familiares afectados.",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/llaneroinforma/status/2088415373767102560",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "llaneroinforma",
+          "url": "https://x.com/llaneroinforma/status/2088415373767102560"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8662",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "SALUD | DENUNCIA. En el Hospital Vargas, trabajadores denuncian cucarachas y roedores en el área donde se prepara la comida de los pacientes.",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2088030092991898101",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2088030092991898101"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8661",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "Barinas | Denuncia por presunta mala praxis. Katerin Castillo, de 22 años, se encuentra en delicado estado de salud tras dar a luz.",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2087713678560825384",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2087713678560825384"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8660",
+      "username": "JPActivista",
+      "name": "JPActivista",
+      "text": "JESSI URIBE Y EL CARTEL DE LOS SOLES: denuncian entradas obligatorias mientras pacientes renales quedan sin diálisis.",
+      "category": "corrupcion",
+      "category_label": "Corrupción",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/JPActivista/status/2085443158247461121",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "JPActivista",
+          "url": "https://x.com/JPActivista/status/2085443158247461121"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8659",
+      "username": "ReporteYa",
+      "name": "ReporteYa",
+      "text": "#14Ago #CrisisHospitalaria #ClínicoUniversitario. El Hospital Clínico Universitario ubicado en la Ciudad Universitaria, UCV, Caracas, fue denunciado.",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ReporteYa/status/2088422598266823130",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ReporteYa",
+          "url": "https://x.com/ReporteYa/status/2088422598266823130"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8658",
+      "username": "EmmaRincon",
+      "name": "EmmaRincon",
+      "text": "Uruguay suspendió el envío de un avión militar con 15 toneladas de ayuda humanitaria para Venezuela. La ministra de Defensa, Sandra Lazo...",
+      "category": "ayuda-humanitaria",
+      "category_label": "ayuda-humanitaria",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/EmmaRincon/status/2077386005963772129",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "EmmaRincon",
+          "url": "https://x.com/EmmaRincon/status/2077386005963772129"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8657",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "Q.E.P.D. Abuelo! MUERE BAJO CASA POR CÁRCEL EL PRESO POLÍTICO JOSÉ RICARDO PEPE BREIJO: denuncian que al salir de prisión encontró su casa...",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2085355996403187878",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2085355996403187878"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8656",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "Mientras el discurso oficial habla de un sistema de salud que supuestamente funciona, la realidad vuelve a golpear a las puertas de los hospitales.",
+      "category": "salud",
+      "category_label": "Salud",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2088677162454765667",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2088677162454765667"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8655",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "Caracas | Funcionarios de la Guardia Nacional retuvieron un autobús en el que se trasladaban al menos 50 jubilados petroleros.",
+      "category": "denuncia-funcionario",
+      "category_label": "denuncia-funcionario",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2086947056237584629",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2086947056237584629"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8654",
+      "username": "Javierito321",
+      "name": "Javierito321",
+      "text": "Video viral de denuncia en Venezuela (texto sin contexto claro).",
+      "category": "general",
+      "category_label": "General",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Javierito321/status/2088739428550185193",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Javierito321",
+          "url": "https://x.com/Javierito321/status/2088739428550185193"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8653",
+      "username": "amilcarrock",
+      "name": "amilcarrock",
+      "text": "Cabildo abierto, la comunidad descontenta, se cansó de tantos atropellos por parte de los organismos. Testimonios de tortura, robos, matraqueo y corrupción.",
+      "category": "abuso-autoridad",
+      "category_label": "abuso-autoridad",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/amilcarrock/status/2088027145155076187",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "amilcarrock",
+          "url": "https://x.com/amilcarrock/status/2088027145155076187"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8652",
+      "username": "llaneroinforma",
+      "name": "llaneroinforma",
+      "text": "#14Ago | Siguen saliendo videos del cabildo abierto de San Rafael de Onoto, Portuguesa, donde una mujer denunció presuntas extorsiones y cobro.",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/llaneroinforma/status/2088354975864795367",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "llaneroinforma",
+          "url": "https://x.com/llaneroinforma/status/2088354975864795367"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8651",
+      "username": "DelmiroDeBarrio",
+      "name": "DelmiroDeBarrio",
+      "text": "Un funcionario de la Policía Nacional Bolivariana (PNB) le disparó con un fusil de asalto a un civil desarmado, en una flagrante violación de los DD.HH.",
+      "category": "abuso-autoridad",
+      "category_label": "abuso-autoridad",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/DelmiroDeBarrio/status/2089059425281823179",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "DelmiroDeBarrio",
+          "url": "https://x.com/DelmiroDeBarrio/status/2089059425281823179"
+        }
+      ]
     },
     {
       "expediente_id": "EV-2026-8650",

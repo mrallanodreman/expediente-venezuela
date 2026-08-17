@@ -1,0 +1,135 @@
+{
+  "fecha": "2026-08-16",
+  "fuente": "X/Twitter via BrowserOS",
+  "metodo": "busquedas x.com/search f=top (abuso policial venezuela denuncia / denuncio venezuela / salud venezuela denuncian hospital / desaparecidos venezuela denuncia / represion venezuela denuncia video)",
+  "total": 18,
+  "con_video": 18,
+  "denuncias": [
+    {
+      "url": "https://x.com/DelmiroDeBarrio/status/2089059425281823179",
+      "username": "DelmiroDeBarrio",
+      "categoria": "abuso-autoridad",
+      "texto": "Un funcionario de la Policía Nacional Bolivariana (PNB) le disparó con un fusil de asalto a un civil desarmado, en una flagrante violación de los DD.HH.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/llaneroinforma/status/2088354975864795367",
+      "username": "llaneroinforma",
+      "categoria": "extorsion",
+      "texto": "#14Ago | Siguen saliendo videos del cabildo abierto de San Rafael de Onoto, Portuguesa, donde una mujer denunció presuntas extorsiones y cobro.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/amilcarrock/status/2088027145155076187",
+      "username": "amilcarrock",
+      "categoria": "abuso-autoridad",
+      "texto": "Cabildo abierto, la comunidad descontenta, se cansó de tantos atropellos por parte de los organismos. Testimonios de tortura, robos, matraqueo y corrupción.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/Javierito321/status/2088739428550185193",
+      "username": "Javierito321",
+      "categoria": "general",
+      "texto": "Video viral de denuncia en Venezuela (texto sin contexto claro).",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2086947056237584629",
+      "username": "cristiancrespoj",
+      "categoria": "denuncia-funcionario",
+      "texto": "Caracas | Funcionarios de la Guardia Nacional retuvieron un autobús en el que se trasladaban al menos 50 jubilados petroleros.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/freddyzur/status/2088677162454765667",
+      "username": "freddyzur",
+      "categoria": "salud",
+      "texto": "Mientras el discurso oficial habla de un sistema de salud que supuestamente funciona, la realidad vuelve a golpear a las puertas de los hospitales.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2085355996403187878",
+      "username": "cristiancrespoj",
+      "categoria": "presos-politicos",
+      "texto": "Q.E.P.D. Abuelo! MUERE BAJO CASA POR CÁRCEL EL PRESO POLÍTICO JOSÉ RICARDO PEPE BREIJO: denuncian que al salir de prisión encontró su casa...",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/EmmaRincon/status/2077386005963772129",
+      "username": "EmmaRincon",
+      "categoria": "ayuda-humanitaria",
+      "texto": "Uruguay suspendió el envío de un avión militar con 15 toneladas de ayuda humanitaria para Venezuela. La ministra de Defensa, Sandra Lazo...",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/ReporteYa/status/2088422598266823130",
+      "username": "ReporteYa",
+      "categoria": "salud",
+      "texto": "#14Ago #CrisisHospitalaria #ClínicoUniversitario. El Hospital Clínico Universitario ubicado en la Ciudad Universitaria, UCV, Caracas, fue denunciado.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/JPActivista/status/2085443158247461121",
+      "username": "JPActivista",
+      "categoria": "corrupcion",
+      "texto": "JESSI URIBE Y EL CARTEL DE LOS SOLES: denuncian entradas obligatorias mientras pacientes renales quedan sin diálisis.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/freddyzur/status/2087713678560825384",
+      "username": "freddyzur",
+      "categoria": "salud",
+      "texto": "Barinas | Denuncia por presunta mala praxis. Katerin Castillo, de 22 años, se encuentra en delicado estado de salud tras dar a luz.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/freddyzur/status/2088030092991898101",
+      "username": "freddyzur",
+      "categoria": "salud",
+      "texto": "SALUD | DENUNCIA. En el Hospital Vargas, trabajadores denuncian cucarachas y roedores en el área donde se prepara la comida de los pacientes.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/llaneroinforma/status/2088415373767102560",
+      "username": "llaneroinforma",
+      "categoria": "salud",
+      "texto": "#14Ago | El Hospital Clínico Universitario, UCV, Caracas, fue denunciado una vez más por familiares afectados.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/alejabolivarian/status/1999263186454032705",
+      "username": "alejabolivarian",
+      "categoria": "desaparicion",
+      "texto": "DENUNCIA PÚBLICA. Presidente Nicolas Maduro da detalles del asalto al buque petrolero y denuncia que sus tripulantes están secuestrados.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2018206589006577749",
+      "username": "cristiancrespoj",
+      "categoria": "represion",
+      "texto": "DENUNCIA PÚBLICA URGENTE | Sujetos presuntamente vinculados a grupos paramilitares (colectivos) grabaron y fotografiaron a familiares.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/EVTVMiami/status/2014694999842058722",
+      "username": "EVTVMiami",
+      "categoria": "presos-politicos",
+      "texto": "Cardenal Porras clama por los presos políticos y alerta: el mal también está en la Iglesia.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2088989783053738114",
+      "username": "cristiancrespoj",
+      "categoria": "presos-politicos",
+      "texto": "Denuncias de golpizas y maltratos dentro de las prisiones en Venezuela. Las liberaciones forman parte de la primera fase de negociaciones.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/ElGanadorHenry/status/2087914142803910995",
+      "username": "ElGanadorHenry",
+      "categoria": "abuso-autoridad",
+      "texto": "VIRAL: el régimen hizo un cabildo abierto y resultó en que una valiente mujer trabajadora señaló al comandante de la policía de frente.",
+      "has_video": true
+    }
+  ]
+}
