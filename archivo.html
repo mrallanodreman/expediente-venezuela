@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<base href="/expediente-venezuela/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorar expedientes — Expediente Venezuela</title>
+<meta name="description" content="Explora expedientes documentales, sus evidencias, fuentes y conexiones. Cada expediente puede reunir videos, imágenes, publicaciones y documentos sobre un mismo hecho.">
+<link rel="canonical" href="https://edgemarketing.art/expediente-venezuela/archivo.html">
+<meta property="og:title" content="Explorar expedientes — Expediente Venezuela">
+<meta property="og:description" content="Archivo visual de expedientes y evidencias públicas sobre Venezuela.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://edgemarketing.art/expediente-venezuela/archivo.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="archivo-explorer.css">
+</head>
+<body class="archive-page">
+<div class="texture"></div>
+<header class="header"><div class="header-inner"><a href="index.html" class="logo"><div class="logo-mark">EV</div>Expediente Venezuela</a><nav class="nav"><a href="index.html">Inicio</a><a href="archivo.html" class="active">Expedientes</a><a href="cronologia.html">Cronología</a><a href="metodologia.html">Cómo verificamos</a><a href="enviar.html">Enviar información</a></nav><button class="mobile-menu" aria-label="Abrir navegación" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></div></header>
+<main class="archive-main">
+<section class="archive-hero"><div class="archive-kicker">Archivo documental · Expedientes y evidencias</div><div class="archive-hero-grid"><div><h1>Un hecho puede tener muchas pruebas.</h1><p>El archivo está organizado por <strong>expedientes</strong>. Cada expediente puede reunir varias publicaciones, videos, imágenes, documentos o testimonios relacionados con el mismo hecho. Abre una ficha para ver <strong>qué ocurrió, quién aparece, cuándo, dónde, por qué se investiga y qué evidencia lo sostiene</strong>.</p></div><div class="archive-principle"><span>CÓMO FUNCIONA</span><p><strong>Expediente</strong> = el caso.<br><strong>Evidencia</strong> = cada pieza que lo sustenta.<br><strong>Conexión</strong> = vínculo editorial con otro expediente.<br><strong>Verificado</strong> = solo lo corroborado.</p></div></div><div class="archive-metrics" aria-live="polite"><div><strong id="metricCases">—</strong><span>expedientes visibles</span></div><div><strong id="metricEvidence">—</strong><span>evidencias registradas</span></div><div><strong id="metricVideo">—</strong><span>evidencias con video</span></div><div><strong id="metricMulti">—</strong><span>expedientes con 2+ pruebas</span></div></div></section>
+<section class="archive-toolbar" id="archivo" aria-label="Buscar y filtrar expedientes"><div class="archive-search-wrap"><span class="archive-search-mark">⌕</span><input id="archiveSearch" type="search" autocomplete="off" placeholder="Buscar expediente, persona, institución, lugar, autor o tema…" aria-label="Buscar expedientes"><kbd>/</kbd></div><div class="archive-filter-row"><div class="archive-pills" id="mediaFilters" role="group" aria-label="Tipo de expediente"><button class="is-active" data-media="all">Todos</button><button data-media="video">Con video</button><button data-media="image">Con imagen</button><button data-media="multi">2+ pruebas</button><button data-media="manual">Nuevos</button></div><div class="archive-selects"><label><span>Categoría</span><select id="categoryFilter"><option value="all">Todas</option></select></label><label><span>Orden</span><select id="sortFilter"><option value="newest">Actividad reciente</option><option value="evidence">Más evidencia</option><option value="oldest">Más antiguos</option><option value="id">ID de expediente</option></select></label></div></div></section>
+<section class="archive-results-head"><p id="archiveCount">Construyendo el archivo…</p><p class="archive-source-note">Selecciona cualquier tarjeta para abrir su ficha completa.</p></section><section id="archiveGrid" class="archive-grid" aria-live="polite"></section><div class="archive-more-wrap"><button id="loadMore" class="archive-more" hidden>Cargar más expedientes</button></div><section class="archive-empty" id="archiveEmpty" hidden><span>0 resultados</span><h2>No encontramos expedientes con esos filtros.</h2><button id="clearFilters">Limpiar búsqueda</button></section>
+</main>
+<div class="case-drawer-backdrop" id="caseDrawerBackdrop" hidden></div><aside class="case-drawer" id="caseDrawer" aria-hidden="true" aria-label="Ficha del expediente"><div class="case-drawer-head"><div><span class="case-drawer-eyebrow" id="drawerCategory">EXPEDIENTE</span><strong id="drawerId">—</strong></div><button type="button" id="drawerClose" class="case-drawer-close" aria-label="Cerrar expediente">×</button></div><div class="case-drawer-scroll" id="caseDrawerContent"></div></aside>
+<footer class="footer archive-footer"><p>Expediente Venezuela · Archivo documental · <a href="metodologia.html">Cómo verificamos</a> · <a href="privacidad.html">Privacidad</a></p></footer>
+<script src="archivo-explorer.js" defer></script>
+</body>
+</html>
