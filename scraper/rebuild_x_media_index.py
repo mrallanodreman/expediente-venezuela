@@ -33,6 +33,31 @@ def batch_date(payload: dict, path: Path) -> str:
     return name_match.group(1) if name_match else ""
 
 
+# Keywords used to decide whether a liked post is a relevant Venezuela denuncia.
+# Retweet channels are always treated as relevant (the owner chose to amplify them).
+VEN_KEYWORDS = (
+    "venezuela", "denuncia", "denunci", "prision", "prisiones", "presos",
+    "represión", "represion", "golpiza", "maltrato", "aeropuerto", "táchira",
+    "tachira", "funcionario", "funcionarios", "malandro", "uniforme",
+)
+
+
+def _is_relevant_denuncia(item: dict) -> bool:
+    text = str(item.get("text") or "").lower()
+    return any(kw in text for kw in VEN_KEYWORDS)
+
+
+def _channel_rows(path: Path) -> list[dict]:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    rows = payload.get("sources", []) if isinstance(payload, dict) else []
+    if not isinstance(rows, list):
+        return []
+    return [r for r in rows if isinstance(r, dict)]
+
+
 def main() -> None:
     merged: dict[str, dict] = {}
 
@@ -66,6 +91,32 @@ def main() -> None:
                 "source_status": "captured",
             }
             # Later capture batches win when a post is re-observed with richer metadata.
+            merged[tweet_id] = record
+
+    # Integrate personal X channels (likes / retweets) as an additional denuncia source.
+    # Retweets are always relevant (the owner chose to amplify them). Likes are only
+    # folded in when the post text matches Venezuela denuncia keywords.
+    for path in sorted(DATA_DIR.glob("canal-*.json")):
+        is_retweet = "retweets" in path.name
+        for item in _channel_rows(path):
+            if not is_retweet and not _is_relevant_denuncia(item):
+                continue
+            post = parse_post(item.get("url", ""))
+            if not post:
+                continue
+            username, tweet_id, canonical_url = post
+            has_video = item.get("has_video") is True
+            record = {
+                "tweet_id": tweet_id,
+                "username": item.get("username") or username,
+                "name": item.get("name") or "",
+                "url": canonical_url,
+                "category": "denuncia" if is_retweet else "por-clasificar",
+                "has_video": has_video,
+                "media_type": "video" if has_video else "post",
+                "captured_at": "2026-08-16",
+                "source_status": "canal-" + ("retweet" if is_retweet else "like"),
+            }
             merged[tweet_id] = record
 
     sources = sorted(

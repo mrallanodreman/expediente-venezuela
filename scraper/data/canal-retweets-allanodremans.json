@@ -1,0 +1,54 @@
+{
+  "canal": "retweets",
+  "cuenta": "AllanOdremans",
+  "capturado_por": "BrowserOS (X web)",
+  "updated_at": "2026-08-17T00:00:00+00:00",
+  "count": 3,
+  "sources": [
+    {
+      "tweet_id": "2088989783053738114",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "url": "https://x.com/cristiancrespoj/status/2088989783053738114",
+      "text": "Denuncias de golpizas y maltratos dentro de las prisiones en #Venezuela \n\n Las liberaciones forman parte de la primera fase de negociaciones entre oficialismo y oposición, pero algunos aún tienen familiares tras las rejas y exigen su libertad.\n\n@Telemundo",
+      "created_at": "2026-08-16T14:02:30.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "retweeted_by": "AllanOdremans",
+      "source": "retweet",
+      "likes": 503,
+      "retweets": 436,
+      "replies": 4
+    },
+    {
+      "tweet_id": "2084015409737470009",
+      "username": "Javierito321",
+      "name": "Javierhalamadrid",
+      "url": "https://x.com/Javierito321/status/2084015409737470009",
+      "text": "Andan vueltos locos los funcionarios de Venezuela sembrando a la gente, puro malandro con uniforme:",
+      "created_at": "2026-08-02T20:36:07.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "retweeted_by": "AllanOdremans",
+      "source": "retweet",
+      "likes": 5977,
+      "retweets": 2996,
+      "replies": 172
+    },
+    {
+      "tweet_id": "2083914139378799025",
+      "username": "Bitacora58news",
+      "name": "Bitácora 58",
+      "url": "https://x.com/Bitacora58news/status/2083914139378799025",
+      "text": "#Denuncia \n\nEn el aeropuerto de Santo Domingo del Táchira las  oficiales aeroportuarias se roban descaradamente lo que les da la gana,  les abren las maletas a los viajeros y lo que les gusta sencillamente se lo quedan.\n\nLadronas",
+      "created_at": "2026-08-02T13:53:42.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "retweeted_by": "AllanOdremans",
+      "source": "retweet",
+      "likes": 1844,
+      "retweets": 2523,
+      "replies": 144
+    }
+  ]
+}

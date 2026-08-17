@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-08-17T04:27:33.436718+00:00",
-  "count": 538,
+  "updated_at": "2026-08-17T15:01:19.534749+00:00",
+  "count": 540,
   "categories": {
+    "corrupcion": 32,
+    "denuncia-funcionario": 79,
     "abuso-autoridad": 9,
     "presos-politicos": 17,
     "represion": 7,
     "desaparicion": 9,
     "salud": 15,
-    "corrupcion": 31,
     "ayuda-humanitaria": 28,
-    "denuncia-funcionario": 78,
     "general": 67,
     "extorsion": 8,
     "desaparicion-forzada": 3,
@@ -1150,6 +1150,54 @@
       "url": "https://x.com/estebanoria/status/2077776231940940088",
       "source_count": 1,
       "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-8670",
+      "username": "Bitacora58news",
+      "name": "Bitácora 58",
+      "text": "#Denuncia En el aeropuerto de Santo Domingo del Táchira las oficiales aeroportuarias se roban descaradamente lo que les da la gana, les abren las maletas a los viajeros y lo que les gusta sencillamente se lo quedan. Ladronas",
+      "category": "corrupcion",
+      "category_label": "Corrupción",
+      "severity": "high",
+      "resumen": "Oficiales del aeropuerto de Santo Domingo del Táchira roban pertenencias de las maletas de los viajeros.",
+      "video_url": null,
+      "images": [],
+      "likes": 1844,
+      "retweets": 2523,
+      "replies": 144,
+      "created_at": "2026-08-02T13:53:42.000Z",
+      "url": "https://x.com/Bitacora58news/status/2083914139378799025",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Bitacora58news",
+          "url": "https://x.com/Bitacora58news/status/2083914139378799025"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8669",
+      "username": "Javierito321",
+      "name": "Javierhalamadrid",
+      "text": "Andan vueltos locos los funcionarios de Venezuela sembrando a la gente, puro malandro con uniforme:",
+      "category": "denuncia-funcionario",
+      "category_label": "denuncia-funcionario",
+      "severity": "high",
+      "resumen": "Funcionarios de Venezuela siembran a la gente, puro malandro con uniforme.",
+      "video_url": null,
+      "images": [],
+      "likes": 5977,
+      "retweets": 2996,
+      "replies": 172,
+      "created_at": "2026-08-02T20:36:07.000Z",
+      "url": "https://x.com/Javierito321/status/2084015409737470009",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Javierito321",
+          "url": "https://x.com/Javierito321/status/2084015409737470009"
+        }
+      ]
     },
     {
       "expediente_id": "EV-2026-8668",

@@ -1,0 +1,81 @@
+{
+  "canal": "likes",
+  "cuenta": "AllanOdremans",
+  "capturado_por": "BrowserOS (X web)",
+  "updated_at": "2026-08-17T00:00:00+00:00",
+  "count": 6,
+  "sources": [
+    {
+      "tweet_id": "2088989783053738114",
+      "username": "cristiancrespoj",
+      "name": "Cristian Crespo F.",
+      "url": "https://x.com/cristiancrespoj/status/2088989783053738114",
+      "text": "Denuncias de golpizas y maltratos dentro de las prisiones en #Venezuela \n\n Las liberaciones forman parte de la primera fase de negociaciones entre oficialismo y oposición, pero algunos aún tienen familiares tras las rejas y exigen su libertad.\n\n@Telemundo",
+      "created_at": "2026-08-16T14:02:30.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "liked_by": "AllanOdremans",
+      "source": "like"
+    },
+    {
+      "tweet_id": "2086311005076795672",
+      "username": "hisoy_pndora",
+      "name": "Hippie Tinkerbell",
+      "url": "https://x.com/hisoy_pndora/status/2086311005076795672",
+      "text": "Oficialmente somos topos y valió la pena ser cacheteada por este hombre y hacerlo sentir orgulloso",
+      "created_at": "2026-08-09T04:38:00.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "liked_by": "AllanOdremans",
+      "source": "like"
+    },
+    {
+      "tweet_id": "2085463131850178820",
+      "username": "ShegunTweets",
+      "name": "Shegun",
+      "url": "https://x.com/ShegunTweets/status/2085463131850178820",
+      "text": "i absolutely loved this movie",
+      "created_at": "2026-08-06T20:28:51.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "liked_by": "AllanOdremans",
+      "source": "like"
+    },
+    {
+      "tweet_id": "2085729943934091386",
+      "username": "RaminNasibov",
+      "name": "Ramin Nasibov",
+      "url": "https://x.com/RaminNasibov/status/2085729943934091386",
+      "text": "by \nwallbychance",
+      "created_at": "2026-08-07T14:09:04.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "liked_by": "AllanOdremans",
+      "source": "like"
+    },
+    {
+      "tweet_id": "2086015246917927081",
+      "username": "hisoy_pndora",
+      "name": "Hippie Tinkerbell",
+      "url": "https://x.com/hisoy_pndora/status/2086015246917927081",
+      "text": "Prácticas y parte la experiencia real de estar en un edificio y tener que avanzar como se pueda",
+      "created_at": "2026-08-08T09:02:45.000Z",
+      "has_video": true,
+      "media_type": "video",
+      "liked_by": "AllanOdremans",
+      "source": "like"
+    },
+    {
+      "tweet_id": "2084698159775654255",
+      "username": "Architectolder",
+      "name": "Architectolder",
+      "url": "https://x.com/Architectolder/status/2084698159775654255",
+      "text": "A nice place for a coffee and a friend",
+      "created_at": "2026-08-04T17:49:07.000Z",
+      "has_video": false,
+      "media_type": "none",
+      "liked_by": "AllanOdremans",
+      "source": "like"
+    }
+  ]
+}
