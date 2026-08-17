@@ -1,0 +1,4 @@
+providers = ["python"]
+
+[staticfile]
+disabled = true
