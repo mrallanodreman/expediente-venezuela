@@ -65,12 +65,45 @@ def _tweet_id_from_url(url: str) -> str:
     return value if value.isdigit() else ""
 
 
+def _snapshot_sources(item: Dict[str, Any], primary_tweet_id: str, primary_url: str) -> list:
+    """Preserve source references from the publication snapshot without merging cases."""
+    sources = []
+    raw_sources = item.get("sources", [])
+    if isinstance(raw_sources, list):
+        for source in raw_sources:
+            if not isinstance(source, dict):
+                continue
+            url = _clean_text(source.get("url"), 2000)
+            if not url:
+                continue
+            sources.append(
+                {
+                    "tweet_id": _tweet_id_from_url(url),
+                    "username": _clean_text(source.get("username"), 120),
+                    "text": "",
+                    "url": url,
+                }
+            )
+
+    if not sources:
+        sources.append(
+            {
+                "tweet_id": primary_tweet_id,
+                "username": _clean_text(item.get("username"), 120),
+                "text": _clean_text(item.get("text"), 200),
+                "url": primary_url,
+            }
+        )
+    return sources
+
+
 def bootstrap_database() -> int:
     """Seed a brand-new operational DB from the canonical published snapshot.
 
-    Railway volumes may begin empty. Without this bootstrap, a later export from
-    the operational DB could replace a valid public snapshot with an empty or
-    incomplete file. Existing databases are never overwritten here.
+    This is a restoration path, not an ingestion path. Every canonical snapshot
+    row must be restored one-to-one, preserving its expediente_id. Topic-based
+    merging is intentionally bypassed here because merging is only appropriate
+    for new draft ingestion, never for historical restoration.
     """
     conn = init_db()
     try:
@@ -88,42 +121,54 @@ def bootstrap_database() -> int:
 
         snapshot_time = _clean_text(payload.get("updated_at"), 80) or datetime.now(timezone.utc).isoformat()
         inserted = 0
+
         for item in rows:
             if not isinstance(item, dict):
                 continue
+
             source_url = _clean_text(item.get("url"), 2000)
             tweet_id = _tweet_id_from_url(source_url)
             expediente_id = _clean_text(item.get("expediente_id"), 64)
             if not tweet_id or not expediente_id:
                 continue
 
-            result = insert_denuncia(
-                conn,
-                {
-                    "expediente_id": expediente_id,
-                    "tweet_id": tweet_id,
-                    "username": _clean_text(item.get("username"), 120),
-                    "display_name": _clean_text(item.get("name") or item.get("username"), 180),
-                    "text": _clean_text(item.get("text"), MAX_DESCRIPTION_CHARS),
-                    "category": _clean_text(item.get("category") or "general", 64),
-                    "severity": _clean_text(item.get("severity") or "info", 32),
-                    "status": "published",
-                    "video_url": _clean_text(item.get("video_url"), 2000) or None,
-                    "images": item.get("images", []) if isinstance(item.get("images", []), list) else [],
-                    "retweets": int(item.get("retweets", 0) or 0),
-                    "likes": int(item.get("likes", 0) or 0),
-                    "replies": int(item.get("replies", 0) or 0),
-                    "created_at": _clean_text(item.get("created_at"), 80),
-                    "scraped_at": snapshot_time,
-                    "published_at": snapshot_time,
-                    "source_url": source_url,
-                    "resumen": _clean_text(item.get("resumen"), 2000) or None,
-                    # Snapshot imports must preserve one row per canonical tweet.
-                    "topic_hash": f"snapshot-{tweet_id}",
-                },
+            images = item.get("images", []) if isinstance(item.get("images", []), list) else []
+            sources = _snapshot_sources(item, tweet_id, source_url)
+            source_count = max(1, int(item.get("source_count", len(sources)) or len(sources) or 1))
+
+            cur = conn.execute(
+                """INSERT OR IGNORE INTO denuncias
+                (expediente_id, tweet_id, username, display_name, text, category, severity,
+                 status, video_url, images, retweets, likes, replies, created_at, scraped_at,
+                 published_at, source_url, resumen, topic_hash, source_tweets, source_count)
+                VALUES (?, ?, ?, ?, ?, ?, ?, 'published', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    expediente_id,
+                    tweet_id,
+                    _clean_text(item.get("username"), 120),
+                    _clean_text(item.get("name") or item.get("username"), 180),
+                    _clean_text(item.get("text"), MAX_DESCRIPTION_CHARS),
+                    _clean_text(item.get("category") or "general", 64),
+                    _clean_text(item.get("severity") or "info", 32),
+                    _clean_text(item.get("video_url"), 2000) or None,
+                    json.dumps(images, ensure_ascii=False),
+                    int(item.get("retweets", 0) or 0),
+                    int(item.get("likes", 0) or 0),
+                    int(item.get("replies", 0) or 0),
+                    _clean_text(item.get("created_at"), 80),
+                    snapshot_time,
+                    snapshot_time,
+                    source_url,
+                    _clean_text(item.get("resumen"), 2000) or None,
+                    f"snapshot-{tweet_id}",
+                    json.dumps(sources, ensure_ascii=False),
+                    source_count,
+                ),
             )
-            if result.get("is_new"):
+            if cur.rowcount > 0:
                 inserted += 1
+
+        conn.commit()
         return inserted
     finally:
         conn.close()
