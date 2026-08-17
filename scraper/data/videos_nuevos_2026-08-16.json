@@ -1,0 +1,128 @@
+{
+  "fecha": "2026-08-16",
+  "fuente": "X/Twitter via BrowserOS",
+  "metodo": "busquedas x.com/search f=top (denuncia venezuela / denuncian venezuela / extorsion venezuela denuncia / presos politicos venezuela denuncia)",
+  "total": 17,
+  "con_video": 15,
+  "denuncias": [
+    {
+      "url": "https://x.com/freddyzur/status/2089134329171530030",
+      "username": "freddyzur",
+      "categoria": "desastre",
+      "texto": "La gran obra de los refugios temporales. Delcy Rodriguez y Jorge promocionaban en Ciudad Caribia supuestos refugios para victimas del terremoto.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/freddyzur/status/2087922387090129302",
+      "username": "freddyzur",
+      "categoria": "extorsion",
+      "texto": "EL MIEDO CAMBIO DE BANDO. Cabildo abierto: trabajadora senalo al comandante de la policia y denuncio presuntas extorsiones y amenazas.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2086249108226900074",
+      "username": "cristiancrespoj",
+      "categoria": "abuso-autoridad",
+      "texto": "DENUNCIAN ABUSO POLICIAL EN ACARIGUA. Portuguesa: presuntos funcionarios policiales irrumpieron en la vivienda de una familia.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/ReporteYa/status/2089136452978266486",
+      "username": "ReporteYa",
+      "categoria": "servicios",
+      "texto": "#16Ago #Caracas #DenunciaCiudadana. El dirigente social denuncio que diversas quebradas y drenajes de Caracas (La Vega, Carapita, San Pedro, San...)",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2087905680908787966",
+      "username": "cristiancrespoj",
+      "categoria": "denuncia-funcionario",
+      "texto": "Ascenso de Johnnie Javier Arevalo Vargas a General de Division; en marzo 2022 fue detenido por funcionarios.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/ElMartilloVen/status/2089054911497466068",
+      "username": "ElMartilloVen",
+      "categoria": "infraestructura",
+      "texto": "Denuncian el mal estado del Puente Santander, parroquia El Paraiso de Caracas.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/BrayanZp/status/2088500221349077125",
+      "username": "BrayanZp",
+      "categoria": "abuso-autoridad",
+      "texto": "Los venezolanos perdieron el miedo y denuncian los abusos policiales en un cabildo abierto en el estado Portuguesa.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/ErPipex/status/2087697377792516426",
+      "username": "ErPipex",
+      "categoria": "desastre",
+      "texto": "MIENTRAS EL REGIMEN HABLA, LOS TOPOS SIGUEN SACANDO CADAVERES. 11 de agosto. Operaciones en el Caribe, Topos de Venezuela.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/freddyzur/status/2083031247085867406",
+      "username": "freddyzur",
+      "categoria": "extorsion",
+      "texto": "DENUNCIA URGENTE ZULIA. GNB de Bachaquero amenaza de muerte a un venezolano y sus 3 hijos menores con el arma de reglamento.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/ROSINACALCINA3/status/2061261764444967421",
+      "username": "ROSINACALCINA3",
+      "categoria": "desaparicion-forzada",
+      "texto": "Pareja de EEUU regreso a Venezuela; denuncia que su esposa fue secuestrada por la PNB.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/abogadosvenezu1/status/2069026359972655143",
+      "username": "abogadosvenezu1",
+      "categoria": "extorsion",
+      "texto": "0800 EXTORSIÓN de DELCY. Venezuela estado Carabobo, Naguanagua. Delito: fue a poner una denuncia de que una senora extorsiona.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/SeirContreras/status/2088508689049088352",
+      "username": "SeirContreras",
+      "categoria": "presos-politicos",
+      "texto": "Reporte desde Caracas para Telemundo51 sobre la excarcelacion de presos politicos en Venezuela.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/Libertaria17082/status/2089036052124365072",
+      "username": "Libertaria17082",
+      "categoria": "presos-politicos",
+      "texto": "El regimen evita revelar los nombres de todos los supuestos liberados. Ejemplo: el de un teniente.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/cristiancrespoj/status/2088245945532063929",
+      "username": "cristiancrespoj",
+      "categoria": "presos-politicos",
+      "texto": "Tribunal chavista condena a seis anos de prision a tres pescadores de Falcon (competencia en Terrorismo).",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/JuanPGuanipa/status/2089016362395922795",
+      "username": "JuanPGuanipa",
+      "categoria": "presos-politicos",
+      "texto": "Dos dias despues del anuncio de 131 excarcelaciones, las organizaciones de DDHH apenas han podido verificar cerca de 80.",
+      "has_video": false
+    },
+    {
+      "url": "https://x.com/gabyarocha/status/2088217148724301950",
+      "username": "gabyarocha",
+      "categoria": "presos-politicos",
+      "texto": "Liberen al general Hector Hernandez Da Costa. Libertad para los 382 presos politicos de Venezuela.",
+      "has_video": true
+    },
+    {
+      "url": "https://x.com/gusipati19/status/2088263671239590238",
+      "username": "gusipati19",
+      "categoria": "denuncia-funcionario",
+      "texto": "Caryslia Rodriguez, presidenta del TSJ. Mas alla de su apariencia o maquillaje.",
+      "has_video": true
+    }
+  ]
+}

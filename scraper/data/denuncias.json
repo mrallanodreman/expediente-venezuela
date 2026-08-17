@@ -1,27 +1,28 @@
 {
-  "updated_at": "2026-07-28T15:07:53.424226+00:00",
-  "count": 503,
+  "updated_at": "2026-08-17T04:06:39.395744+00:00",
+  "count": 520,
   "categories": {
-    "denuncia-funcionario": 75,
+    "denuncia-funcionario": 77,
+    "presos-politicos": 14,
+    "extorsion": 7,
+    "desaparicion-forzada": 3,
+    "desastre": 4,
+    "abuso-autoridad": 6,
+    "infraestructura": 3,
+    "servicios": 38,
     "terremotos": 49,
     "fraude-electoral": 58,
     "denuncia-ciudadana": 17,
     "censura": 6,
     "politica": 27,
-    "presos-politicos": 9,
     "ayuda-humanitaria": 27,
     "persecucion-judicial": 4,
-    "abuso-autoridad": 4,
     "ciberseguridad": 1,
     "desaparicion": 8,
     "ddhh": 6,
-    "servicios": 37,
     "solidaridad": 24,
-    "desastre": 2,
-    "infraestructura": 2,
     "tortura": 3,
     "corrupcion": 30,
-    "desaparicion-forzada": 2,
     "economia": 1,
     "preso-politico": 2,
     "deportes": 2,
@@ -35,8 +36,7 @@
     "represion": 6,
     "abuso": 10,
     "salud": 10,
-    "persecucion": 4,
-    "extorsion": 4
+    "persecucion": 4
   },
   "denuncias": [
     {
@@ -1150,6 +1150,414 @@
       "url": "https://x.com/estebanoria/status/2077776231940940088",
       "source_count": 1,
       "sources": []
+    },
+    {
+      "expediente_id": "EV-2026-8650",
+      "username": "gusipati19",
+      "name": "gusipati19",
+      "text": "Caryslia Rodriguez, presidenta del TSJ. Mas alla de su apariencia o maquillaje.",
+      "category": "denuncia-funcionario",
+      "category_label": "denuncia-funcionario",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/gusipati19/status/2088263671239590238",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "gusipati19",
+          "url": "https://x.com/gusipati19/status/2088263671239590238"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8649",
+      "username": "gabyarocha",
+      "name": "gabyarocha",
+      "text": "Liberen al general Hector Hernandez Da Costa. Libertad para los 382 presos politicos de Venezuela.",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/gabyarocha/status/2088217148724301950",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "gabyarocha",
+          "url": "https://x.com/gabyarocha/status/2088217148724301950"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8648",
+      "username": "JuanPGuanipa",
+      "name": "JuanPGuanipa",
+      "text": "Dos dias despues del anuncio de 131 excarcelaciones, las organizaciones de DDHH apenas han podido verificar cerca de 80.",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/JuanPGuanipa/status/2089016362395922795",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "JuanPGuanipa",
+          "url": "https://x.com/JuanPGuanipa/status/2089016362395922795"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8647",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "Tribunal chavista condena a seis anos de prision a tres pescadores de Falcon (competencia en Terrorismo).",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2088245945532063929",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2088245945532063929"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8646",
+      "username": "Libertaria17082",
+      "name": "Libertaria17082",
+      "text": "El regimen evita revelar los nombres de todos los supuestos liberados. Ejemplo: el de un teniente.",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/Libertaria17082/status/2089036052124365072",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "Libertaria17082",
+          "url": "https://x.com/Libertaria17082/status/2089036052124365072"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8645",
+      "username": "SeirContreras",
+      "name": "SeirContreras",
+      "text": "Reporte desde Caracas para Telemundo51 sobre la excarcelacion de presos politicos en Venezuela.",
+      "category": "presos-politicos",
+      "category_label": "presos-politicos",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/SeirContreras/status/2088508689049088352",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "SeirContreras",
+          "url": "https://x.com/SeirContreras/status/2088508689049088352"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8644",
+      "username": "abogadosvenezu1",
+      "name": "abogadosvenezu1",
+      "text": "0800 EXTORSIÓN de DELCY. Venezuela estado Carabobo, Naguanagua. Delito: fue a poner una denuncia de que una senora extorsiona.",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/abogadosvenezu1/status/2069026359972655143",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "abogadosvenezu1",
+          "url": "https://x.com/abogadosvenezu1/status/2069026359972655143"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8643",
+      "username": "ROSINACALCINA3",
+      "name": "ROSINACALCINA3",
+      "text": "Pareja de EEUU regreso a Venezuela; denuncia que su esposa fue secuestrada por la PNB.",
+      "category": "desaparicion-forzada",
+      "category_label": "desaparicion-forzada",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ROSINACALCINA3/status/2061261764444967421",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ROSINACALCINA3",
+          "url": "https://x.com/ROSINACALCINA3/status/2061261764444967421"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8642",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "DENUNCIA URGENTE ZULIA. GNB de Bachaquero amenaza de muerte a un venezolano y sus 3 hijos menores con el arma de reglamento.",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2083031247085867406",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2083031247085867406"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8641",
+      "username": "ErPipex",
+      "name": "ErPipex",
+      "text": "MIENTRAS EL REGIMEN HABLA, LOS TOPOS SIGUEN SACANDO CADAVERES. 11 de agosto. Operaciones en el Caribe, Topos de Venezuela.",
+      "category": "desastre",
+      "category_label": "desastre",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ErPipex/status/2087697377792516426",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ErPipex",
+          "url": "https://x.com/ErPipex/status/2087697377792516426"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8640",
+      "username": "BrayanZp",
+      "name": "BrayanZp",
+      "text": "Los venezolanos perdieron el miedo y denuncian los abusos policiales en un cabildo abierto en el estado Portuguesa.",
+      "category": "abuso-autoridad",
+      "category_label": "abuso-autoridad",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/BrayanZp/status/2088500221349077125",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "BrayanZp",
+          "url": "https://x.com/BrayanZp/status/2088500221349077125"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8639",
+      "username": "ElMartilloVen",
+      "name": "ElMartilloVen",
+      "text": "Denuncian el mal estado del Puente Santander, parroquia El Paraiso de Caracas.",
+      "category": "infraestructura",
+      "category_label": "infraestructura",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ElMartilloVen/status/2089054911497466068",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ElMartilloVen",
+          "url": "https://x.com/ElMartilloVen/status/2089054911497466068"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8638",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "Ascenso de Johnnie Javier Arevalo Vargas a General de Division; en marzo 2022 fue detenido por funcionarios.",
+      "category": "denuncia-funcionario",
+      "category_label": "denuncia-funcionario",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2087905680908787966",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2087905680908787966"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8637",
+      "username": "ReporteYa",
+      "name": "ReporteYa",
+      "text": "#16Ago #Caracas #DenunciaCiudadana. El dirigente social denuncio que diversas quebradas y drenajes de Caracas (La Vega, Carapita, San Pedro, San...)",
+      "category": "servicios",
+      "category_label": "Servicios",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/ReporteYa/status/2089136452978266486",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "ReporteYa",
+          "url": "https://x.com/ReporteYa/status/2089136452978266486"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8636",
+      "username": "cristiancrespoj",
+      "name": "cristiancrespoj",
+      "text": "DENUNCIAN ABUSO POLICIAL EN ACARIGUA. Portuguesa: presuntos funcionarios policiales irrumpieron en la vivienda de una familia.",
+      "category": "abuso-autoridad",
+      "category_label": "abuso-autoridad",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/cristiancrespoj/status/2086249108226900074",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "cristiancrespoj",
+          "url": "https://x.com/cristiancrespoj/status/2086249108226900074"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8635",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "EL MIEDO CAMBIO DE BANDO. Cabildo abierto: trabajadora senalo al comandante de la policia y denuncio presuntas extorsiones y amenazas.",
+      "category": "extorsion",
+      "category_label": "Extorsión",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2087922387090129302",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2087922387090129302"
+        }
+      ]
+    },
+    {
+      "expediente_id": "EV-2026-8634",
+      "username": "freddyzur",
+      "name": "freddyzur",
+      "text": "La gran obra de los refugios temporales. Delcy Rodriguez y Jorge promocionaban en Ciudad Caribia supuestos refugios para victimas del terremoto.",
+      "category": "desastre",
+      "category_label": "desastre",
+      "severity": "info",
+      "resumen": null,
+      "video_url": null,
+      "images": [],
+      "likes": 0,
+      "retweets": 0,
+      "replies": 0,
+      "created_at": "",
+      "url": "https://x.com/freddyzur/status/2089134329171530030",
+      "source_count": 1,
+      "sources": [
+        {
+          "username": "freddyzur",
+          "url": "https://x.com/freddyzur/status/2089134329171530030"
+        }
+      ]
     },
     {
       "expediente_id": "EV-2026-7767",
