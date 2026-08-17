@@ -33,6 +33,7 @@ MAX_BODY_BYTES = int(os.getenv("MAX_BODY_BYTES", str(256 * 1024)))
 MAX_DESCRIPTION_CHARS = 12_000
 MAX_EVIDENCE_CHARS = 4_000
 MAX_DOMAIN_CHARS = 255
+SNAPSHOT_PATH = Path(__file__).parent / "data" / "denuncias.json"
 
 ALLOWED_SEVERITIES = {"critical", "high", "medium", "info"}
 ALLOWED_TYPES = {
@@ -55,6 +56,77 @@ def _clean_text(value: Any, max_chars: int) -> str:
         return ""
     text = str(value).replace("\x00", "").strip()
     return text[:max_chars]
+
+
+def _tweet_id_from_url(url: str) -> str:
+    if "/status/" not in url:
+        return ""
+    value = url.rstrip("/").split("/status/", 1)[-1].split("?", 1)[0].split("/", 1)[0]
+    return value if value.isdigit() else ""
+
+
+def bootstrap_database() -> int:
+    """Seed a brand-new operational DB from the canonical published snapshot.
+
+    Railway volumes may begin empty. Without this bootstrap, a later export from
+    the operational DB could replace a valid public snapshot with an empty or
+    incomplete file. Existing databases are never overwritten here.
+    """
+    conn = init_db()
+    try:
+        if get_stats(conn).get("total", 0) > 0 or not SNAPSHOT_PATH.exists():
+            return 0
+
+        try:
+            payload = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return 0
+
+        rows = payload.get("denuncias", []) if isinstance(payload, dict) else []
+        if not isinstance(rows, list):
+            return 0
+
+        snapshot_time = _clean_text(payload.get("updated_at"), 80) or datetime.now(timezone.utc).isoformat()
+        inserted = 0
+        for item in rows:
+            if not isinstance(item, dict):
+                continue
+            source_url = _clean_text(item.get("url"), 2000)
+            tweet_id = _tweet_id_from_url(source_url)
+            expediente_id = _clean_text(item.get("expediente_id"), 64)
+            if not tweet_id or not expediente_id:
+                continue
+
+            result = insert_denuncia(
+                conn,
+                {
+                    "expediente_id": expediente_id,
+                    "tweet_id": tweet_id,
+                    "username": _clean_text(item.get("username"), 120),
+                    "display_name": _clean_text(item.get("name") or item.get("username"), 180),
+                    "text": _clean_text(item.get("text"), MAX_DESCRIPTION_CHARS),
+                    "category": _clean_text(item.get("category") or "general", 64),
+                    "severity": _clean_text(item.get("severity") or "info", 32),
+                    "status": "published",
+                    "video_url": _clean_text(item.get("video_url"), 2000) or None,
+                    "images": item.get("images", []) if isinstance(item.get("images", []), list) else [],
+                    "retweets": int(item.get("retweets", 0) or 0),
+                    "likes": int(item.get("likes", 0) or 0),
+                    "replies": int(item.get("replies", 0) or 0),
+                    "created_at": _clean_text(item.get("created_at"), 80),
+                    "scraped_at": snapshot_time,
+                    "published_at": snapshot_time,
+                    "source_url": source_url,
+                    "resumen": _clean_text(item.get("resumen"), 2000) or None,
+                    # Snapshot imports must preserve one row per canonical tweet.
+                    "topic_hash": f"snapshot-{tweet_id}",
+                },
+            )
+            if result.get("is_new"):
+                inserted += 1
+        return inserted
+    finally:
+        conn.close()
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -82,8 +154,6 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, {"ok": True, "stats": stats})
 
         if path == "/api/denuncias/pending":
-            # This endpoint is intentionally operational, not a public publication API.
-            # It should only be exposed behind Railway/internal networking or an auth layer.
             token = os.getenv("ADMIN_READ_TOKEN")
             if not token or self.headers.get("Authorization") != f"Bearer {token}":
                 return self._json(401, {"ok": False, "error": "Unauthorized"})
@@ -165,7 +235,6 @@ class Handler(BaseHTTPRequestHandler):
                     },
                 )
                 results.append(result)
-            # Export only already-published rows. Draft ingestion cannot leak into the site.
             export_to_json(conn)
         finally:
             conn.close()
@@ -261,12 +330,13 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def log_message(self, fmt: str, *args):
-        # Application logs deliberately omit client IP and request headers.
-        # Infrastructure/proxy logs are governed separately by the hosting provider.
         sys.stderr.write("%s\n" % (fmt % args))
 
 
 def main():
+    seeded = bootstrap_database()
+    if seeded:
+        print(f"Bootstrapped operational DB from canonical snapshot: {seeded} published records")
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     print(f"Expediente Venezuela intake API listening on {HOST}:{PORT}")
     server.serve_forever()
