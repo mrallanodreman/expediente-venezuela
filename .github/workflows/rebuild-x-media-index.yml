@@ -1,0 +1,41 @@
+name: Rebuild X media index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scraper/data/videos_nuevos*.json'
+      - 'scraper/rebuild_x_media_index.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild canonical media index
+        run: python scraper/rebuild_x_media_index.py
+
+      - name: Commit updated index
+        run: |
+          if git diff --quiet -- scraper/data/x-media-index.json; then
+            echo 'Media index already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scraper/data/x-media-index.json
+          git commit -m 'chore: rebuild X media index'
+          git push
