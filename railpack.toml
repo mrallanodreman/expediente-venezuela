@@ -1,4 +1,1 @@
-providers = ["python"]
-
-[staticfile]
-disabled = true
+# Deprecated: Railway/Railpack configuration now lives in railpack.json.
