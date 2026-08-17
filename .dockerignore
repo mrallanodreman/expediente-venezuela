@@ -1,0 +1,8 @@
+# Frontend + source data live in this repository.
+# Keep VCS and local caches out of the Railway/Nginx image.
+.git
+.github
+__pycache__
+*.pyc
+.env
+.env.*
