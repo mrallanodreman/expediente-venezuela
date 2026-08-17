@@ -6,9 +6,8 @@ Usage:
     cat links.txt | python3 scraper/import_x_links.py -
 
 The importer stores references only. It does not claim that a submitted post is
-verified, and it does not download media. The archive frontend can merge these
-references with the canonical denuncias.json dataset and lazy-load the original
-X post when a reader asks to view it.
+verified and it does not infer media that has not been inspected. Media metadata
+can later be enriched in scraper/data/x-media-index.json.
 """
 from __future__ import annotations
 
@@ -56,7 +55,11 @@ def load_feed():
     sources = data.get("sources") if isinstance(data, dict) else []
     if not isinstance(sources, list):
         sources = []
-    return {"updated_at": data.get("updated_at") if isinstance(data, dict) else None, "count": len(sources), "sources": sources}
+    return {
+        "updated_at": data.get("updated_at") if isinstance(data, dict) else None,
+        "count": len(sources),
+        "sources": sources,
+    }
 
 
 def main():
@@ -70,6 +73,7 @@ def main():
 
     added = 0
     rejected = 0
+    now = datetime.now(timezone.utc).isoformat()
     for line in read_lines(sys.argv[1]):
         source = normalize_url(line)
         if not source:
@@ -81,7 +85,12 @@ def main():
         source.update({
             "category": "por-clasificar",
             "status": "source-recorded",
-            "added_at": datetime.now(timezone.utc).isoformat(),
+            "source_status": "captured",
+            "media_type": "unknown",
+            "has_video": None,
+            "tweet_created_at": None,
+            "captured_at": now,
+            "added_at": now,
             "note": "Fuente incorporada manualmente; requiere clasificación y revisión editorial."
         })
         feed["sources"].append(source)
@@ -89,7 +98,7 @@ def main():
         existing_urls.add(source["url"])
         added += 1
 
-    feed["sources"].sort(key=lambda item: item.get("added_at") or "", reverse=True)
+    feed["sources"].sort(key=lambda item: item.get("captured_at") or item.get("added_at") or "", reverse=True)
     feed["count"] = len(feed["sources"])
     feed["updated_at"] = datetime.now(timezone.utc).isoformat()
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
