@@ -7,6 +7,7 @@ separate editorial action: receiving a report never means it has been verified.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import secrets
@@ -65,7 +66,30 @@ def _tweet_id_from_url(url: str) -> str:
     return value if value.isdigit() else ""
 
 
-def _snapshot_sources(item: Dict[str, Any], primary_tweet_id: str, primary_url: str) -> list:
+def _snapshot_source_id(item: Dict[str, Any], expediente_id: str, source_url: str) -> str:
+    """Return a deterministic internal source id when a row is not an X status URL.
+
+    The database schema still calls this legacy identity column ``tweet_id``.
+    Historical snapshots, however, contain non-X and missing URLs. Those rows
+    must not disappear merely because they are not tweets, so restoration uses
+    a stable synthetic identifier without pretending that an X post exists.
+    """
+    native = _tweet_id_from_url(source_url)
+    if native:
+        return native
+    seed = "|".join(
+        [
+            expediente_id,
+            source_url,
+            _clean_text(item.get("username"), 120),
+            _clean_text(item.get("text"), 500),
+        ]
+    )
+    digest = hashlib.sha256(seed.encode("utf-8", errors="ignore")).hexdigest()[:24]
+    return f"snapshot-{digest}"
+
+
+def _snapshot_sources(item: Dict[str, Any], primary_source_id: str, primary_url: str) -> list:
     """Preserve source references from the publication snapshot without merging cases."""
     sources = []
     raw_sources = item.get("sources", [])
@@ -88,7 +112,7 @@ def _snapshot_sources(item: Dict[str, Any], primary_tweet_id: str, primary_url: 
     if not sources:
         sources.append(
             {
-                "tweet_id": primary_tweet_id,
+                "tweet_id": primary_source_id if primary_source_id.isdigit() else "",
                 "username": _clean_text(item.get("username"), 120),
                 "text": _clean_text(item.get("text"), 200),
                 "url": primary_url,
@@ -101,9 +125,9 @@ def bootstrap_database() -> int:
     """Seed a brand-new operational DB from the canonical published snapshot.
 
     This is a restoration path, not an ingestion path. Every canonical snapshot
-    row must be restored one-to-one, preserving its expediente_id. Topic-based
-    merging is intentionally bypassed here because merging is only appropriate
-    for new draft ingestion, never for historical restoration.
+    row is restored one-to-one, preserving its expediente_id. Topic-based
+    merging is intentionally bypassed here. Non-X rows receive deterministic
+    internal source ids because the legacy schema requires an identity value.
     """
     conn = init_db()
     try:
@@ -119,25 +143,26 @@ def bootstrap_database() -> int:
         if not isinstance(rows, list):
             return 0
 
-        valid_pairs = []
+        identities = []
+        native_x = 0
         for item in rows:
             if not isinstance(item, dict):
                 continue
-            source_url = _clean_text(item.get("url"), 2000)
-            tweet_id = _tweet_id_from_url(source_url)
             expediente_id = _clean_text(item.get("expediente_id"), 64)
-            if tweet_id and expediente_id:
-                valid_pairs.append((expediente_id, tweet_id))
+            if not expediente_id:
+                continue
+            source_url = _clean_text(item.get("url"), 2000)
+            native_x += 1 if _tweet_id_from_url(source_url) else 0
+            identities.append((expediente_id, _snapshot_source_id(item, expediente_id, source_url)))
 
-        unique_expedientes = {expediente_id for expediente_id, _ in valid_pairs}
-        unique_tweets = {tweet_id for _, tweet_id in valid_pairs}
+        unique_expedientes = {expediente_id for expediente_id, _ in identities}
+        unique_source_ids = {source_id for _, source_id in identities}
         print(
             "Snapshot identity diagnostics: "
-            f"rows={len(rows)} valid={len(valid_pairs)} "
+            f"rows={len(rows)} restorable={len(identities)} "
             f"unique_expedientes={len(unique_expedientes)} "
-            f"unique_tweets={len(unique_tweets)} "
-            f"duplicate_expediente_rows={len(valid_pairs) - len(unique_expedientes)} "
-            f"duplicate_tweet_rows={len(valid_pairs) - len(unique_tweets)}"
+            f"native_x_ids={native_x} synthetic_ids={len(identities) - native_x} "
+            f"unique_source_ids={len(unique_source_ids)}"
         )
 
         snapshot_time = _clean_text(payload.get("updated_at"), 80) or datetime.now(timezone.utc).isoformat()
@@ -147,14 +172,14 @@ def bootstrap_database() -> int:
             if not isinstance(item, dict):
                 continue
 
-            source_url = _clean_text(item.get("url"), 2000)
-            tweet_id = _tweet_id_from_url(source_url)
             expediente_id = _clean_text(item.get("expediente_id"), 64)
-            if not tweet_id or not expediente_id:
+            if not expediente_id:
                 continue
+            source_url = _clean_text(item.get("url"), 2000)
+            source_id = _snapshot_source_id(item, expediente_id, source_url)
 
             images = item.get("images", []) if isinstance(item.get("images", []), list) else []
-            sources = _snapshot_sources(item, tweet_id, source_url)
+            sources = _snapshot_sources(item, source_id, source_url)
             source_count = max(1, int(item.get("source_count", len(sources)) or len(sources) or 1))
 
             cur = conn.execute(
@@ -165,7 +190,7 @@ def bootstrap_database() -> int:
                 VALUES (?, ?, ?, ?, ?, ?, ?, 'published', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     expediente_id,
-                    tweet_id,
+                    source_id,
                     _clean_text(item.get("username"), 120),
                     _clean_text(item.get("name") or item.get("username"), 180),
                     _clean_text(item.get("text"), MAX_DESCRIPTION_CHARS),
@@ -181,7 +206,7 @@ def bootstrap_database() -> int:
                     snapshot_time,
                     source_url,
                     _clean_text(item.get("resumen"), 2000) or None,
-                    f"snapshot-{tweet_id}",
+                    f"snapshot-{source_id}",
                     json.dumps(sources, ensure_ascii=False),
                     source_count,
                 ),
