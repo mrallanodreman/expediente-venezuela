@@ -1,0 +1,7 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "provider": "python",
+  "deploy": {
+    "startCommand": "python3 scraper/ingest_server.py"
+  }
+}
